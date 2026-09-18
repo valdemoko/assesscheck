@@ -71,6 +71,51 @@ export default function Page() {
         hearing, which is scheduled separately.
       </p>
 
+      <h2>Worked example: a conference in three moves (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative scenario — not a script, and not a prediction of what
+          any district will offer.
+        </em>
+      </p>
+      <ol>
+        <li>
+          <strong>Scenario:</strong> your assessment is $520,000 and your
+          strongest evidence is an adjusted comparable sale near $470,000.
+          The district's staff opens by checking your square footage against
+          their card and finds it is overstated by 150 sq ft.
+        </li>
+        <li>
+          <strong>Move — lead with your point, let them check theirs:</strong>
+          present the comparable first; the factual correction the staff
+          found on their own is now working in the same direction as your
+          evidence instead of against a number you defended.
+        </li>
+        <li>
+          <strong>Move — evaluate the offer against your evidence, not
+          against the assessment:</strong> a settlement at $495,000 is a
+          $25,000 reduction, but it is still $25,000 above what your
+          comparable supports — decide whether the certainty of settling is
+          worth that gap, since declining does not forfeit your hearing.
+        </li>
+        <li>
+          <strong>Move — read the disposition before signing:</strong>
+          confirm the value, the year, and that the document is what you
+          agreed to; keep a copy, because the agreed order sets the value for
+          the tax year.
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> the informal conference rewards
+        the same preparation as the hearing — and settling is a choice to
+        weigh, not an obligation.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> whether your district
+        offers conferences at all, what its staff will propose, or how a
+        settled value interacts with next year's assessment.
+      </p>
+
       <SourceList sourceIds={["tx-comptroller-appraisal-protests"]} />
     </PageShell>
   );

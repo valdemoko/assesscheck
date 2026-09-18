@@ -83,6 +83,46 @@ export default function Page() {
         was timely, your proof matters.
       </p>
 
+      <h2>Worked example: a valid letter-style filing (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative wording — not legal advice, and not a substitute for
+          the official form if you prefer it.
+        </em>
+      </p>
+      <p>
+        Because the legal bar is low, a short letter works. What matters is
+        that it hits the three required elements:
+      </p>
+      <ol>
+        <li>
+          <strong>Identify the owner:</strong> "I am the owner of record of
+          123 Main Street, Anytown, Texas."
+        </li>
+        <li>
+          <strong>Identify the property:</strong> "This letter concerns the
+          residence at 123 Main Street, account number 0123456789 if known."
+        </li>
+        <li>
+          <strong>Indicate dissatisfaction:</strong> "I protest the 2026
+          appraised value of $520,000. I believe the value exceeds market
+          value, and that the property is unequally appraised compared with
+          comparable properties." Checking both grounds on Form 50-132, or
+          stating both in a letter, preserves both lines of argument.
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> the notice does not need your
+        evidence, your opinion of value, or a length of any kind — it needs
+        the three elements and a timely filing. Keeping a dated copy is what
+        protects you if timeliness is ever questioned.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> whether online filing in
+        your county has additional steps, or how your ARB treats filings made
+        close to the deadline.
+      </p>
+
       <SourceList
         sourceIds={[
           "tx-comptroller-appraisal-protests",

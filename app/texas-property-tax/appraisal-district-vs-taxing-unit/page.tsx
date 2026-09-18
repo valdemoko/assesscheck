@@ -76,6 +76,50 @@ export default function Page() {
         </li>
       </ul>
 
+      <h2>Worked example: the same bill, three different actors (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative scenario with made-up numbers — actual amounts depend
+          on your district and each unit's adopted rate.
+        </em>
+      </p>
+      <ol>
+        <li>
+          <strong>Scenario:</strong> your home is appraised at $450,000. Your
+          tax bill lists four lines: county, city, school district, and
+          community college.
+        </li>
+        <li>
+          <strong>What the appraisal district did:</strong> set the $450,000
+          value once — the same value feeds every line, because all taxing
+          units use the single appraised value from the appraisal roll.
+        </li>
+        <li>
+          <strong>What the taxing units did:</strong> each adopted its own
+          rate against that value. At (illustrative) rates of $0.40, $0.60,
+          $1.00, and $0.10 per $100, the school line is $4,500 while the
+          college line is $450 — different bodies, different budgets, same
+          value.
+        </li>
+        <li>
+          <strong>Why the split matters when you disagree:</strong> if you
+          think $450,000 is too high, that is a value question for the
+          appraisal district and ARB — protesting will not change any unit's
+          rate. If you think the school rate is too high, that is decided by
+          the school board's budget process, not by the protest.
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> value and rate are independent
+        decisions made by different entities, and knowing which one you
+        disagree with determines where your effort goes.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> the actual rates adopted
+        in your area, the payment deadlines your assessor-collector applies,
+        or the effect exemptions have on each line.
+      </p>
+
       <SourceList sourceIds={["tx-comptroller-basics"]} />
     </PageShell>
   );

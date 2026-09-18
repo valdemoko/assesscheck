@@ -101,6 +101,54 @@ export default function Page() {
         </Link>.
       </p>
 
+      <h2>Worked example: the process on a calendar (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative timeline with made-up dates — real dates depend on
+          when your district mails notices and schedules hearings.
+        </em>
+      </p>
+      <ol>
+        <li>
+          <strong>April 10 — notice arrives:</strong> the notice shows
+          $520,000, up from $470,000. You check the characteristics and find
+          the living area is overstated by 150 sq ft, and you gather a
+          comparable sale.
+        </li>
+        <li>
+          <strong>April 25 — you file:</strong> well inside the May 15
+          deadline, you file a letter identifying you, the property, and the
+          grounds (value exceeds market value; unequal appraisal), keeping a
+          dated copy.
+        </li>
+        <li>
+          <strong>Early May — informal conference:</strong> the district's
+          staff confirms the square-footage error and offers $495,000. You
+          decline — your comparable supports closer to $470,000 — and the
+          protest continues.
+        </li>
+        <li>
+          <strong>June 20 — hearing notice:</strong> at least 15 days before
+          the hearing you receive the date, time, place, and subject matter;
+          14 days out, the district's hearing packet and the ARB's procedures
+          arrive.
+        </li>
+        <li>
+          <strong>July 8 — hearing and order:</strong> you present the
+          comparable and the measurement issue; the ARB's written order
+          arrives within the statutory window stating the value it found.
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> every step is dated and
+        documented, which is why the standard advice is to keep proof at each
+        stage — the process is procedural, and deadlines do the sorting.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> your county's actual
+        schedule, or how long an informal resolution takes — districts vary.
+      </p>
+
       <SourceList
         sourceIds={[
           "tx-comptroller-appraisal-protests",

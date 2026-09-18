@@ -90,6 +90,51 @@ export default function Page() {
         </li>
       </ul>
 
+      <h2>Worked example: reading the order and the refund arithmetic (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative scenario with made-up numbers — actual refunds depend
+          on each taxing unit's rate and your payment timing.
+        </em>
+      </p>
+      <ol>
+        <li>
+          <strong>Scenario:</strong> the ARB's order reduces your value from
+          $520,000 to $480,000, and you had already paid taxes computed on
+          $520,000 at an (illustrative) combined rate of $2.10 per $100.
+        </li>
+        <li>
+          <strong>Step — check the order's two values:</strong> the order
+          shows the ARB's determination alongside the chief appraiser's
+          submitted value. Confirm the $480,000 appears as the determination
+          for the correct tax year, and note the appeal-rights block the
+          order must state prominently.
+        </li>
+        <li>
+          <strong>Step — what happens mechanically:</strong> the ARB
+          instructs the chief appraiser to notify the taxing units; the
+          corrected value flows into your bill. Taxing units refund the
+          difference resulting from the change if you already paid.
+        </li>
+        <li>
+          <strong>Step — the arithmetic behind the refund:</strong> the
+          $40,000 reduction is worth $40,000 × 2.10 / 100 = <strong>$840</strong>
+          at this rate — but only units' actual adopted rates determine your
+          real refund, and only for this tax year.
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> a $40,000 reduction is not a
+        $40,000 refund — the value change, the rate, and the tax year are
+        three different numbers, and the order's binding effect ends with
+        the year in question.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> when your refund arrives
+        (units and collector practices vary), or whether the late remedies
+        above could still reach a different year's problem.
+      </p>
+
       <SourceList
         sourceIds={[
           "tx-comptroller-appraisal-protests",

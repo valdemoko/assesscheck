@@ -80,6 +80,56 @@ export default function Page() {
         pages.
       </p>
 
+      <h2>Worked example: mapping one disagreement to the right ground (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative scenario — not advice on what to file in your
+          situation.
+        </em>
+      </p>
+      <ol>
+        <li>
+          <strong>Scenario:</strong> your notice shows appraised value
+          $520,000, up 18% from last year, and your identical-floor-plan
+          neighbor is appraised at $455,000.
+        </li>
+        <li>
+          <strong>Right — equal and uniform taxation:</strong> if your
+          property is appraised higher than comparable properties for no
+          reason rooted in the property itself, that is the unequal-appraisal
+          ground under § 41.41 — supported by a median level of appraisal
+          comparison, not just the neighbor's number.
+        </li>
+        <li>
+          <strong>Right — market value:</strong> independently, if recent
+          comparable sales show a buyer would pay materially less than
+          $520,000, that is the market-value ground — supported by sales
+          documentation. The two grounds are separate and you can protest on
+          both.
+        </li>
+        <li>
+          <strong>Right — notice:</strong> the 18% increase triggered your
+          right to reasonable notice; the notice itself and its required
+          contents start the deadline clock (generally May 15 or 30 days
+          after delivery, whichever is later).
+        </li>
+        <li>
+          <strong>Cost check:</strong> filing the protest itself carries no
+          fee — districts and ARBs cannot charge one — though an appointed
+          agent works under their own fee arrangement.
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> the rights are not abstract —
+        each maps to a specific protest ground with its own evidence, and
+        picking the ground first determines the evidence you need.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> how your ARB weighs each
+        ground in practice, or whether your situation fits a ground not
+        described here (the statute covers other adverse actions too).
+      </p>
+
       <SourceList
         sourceIds={["tx-comptroller-basics", "tx-tax-code-41-41", "tx-comptroller-forms"]}
       />

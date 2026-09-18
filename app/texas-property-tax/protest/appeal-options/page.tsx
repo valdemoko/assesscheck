@@ -66,6 +66,52 @@ export default function Page() {
         refunds, but is prohibited from advising on a pending arbitration.
       </p>
 
+      <h2>Worked example: comparing the two main routes (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative comparison — choosing a route is a professional-judgment
+          decision the Comptroller itself says to discuss with an attorney.
+        </em>
+      </p>
+      <ol>
+        <li>
+          <strong>Scenario:</strong> the ARB's order leaves your value at
+          $520,000 and your comparable still supports ~$470,000. Both appeal
+          windows close 60 days after you received the order.
+        </li>
+        <li>
+          <strong>Route — district court:</strong> no value ceiling, and the
+          case can end in a jury trial or settlement — but you must pay the
+          taxes not in dispute before the delinquency date, and the Comptroller
+          advises consulting an attorney about whether you have a case.
+        </li>
+        <li>
+          <strong>Route — regular binding arbitration:</strong> your home is
+          a residence homestead, so the $5 million cap is no obstacle; the
+          process is before a single independent arbitrator and generally
+          less formal than court — but the arbitrator's decision is binding,
+          you must have paid taxes timely, and the request and deposit are
+          due in the same 60-day window.
+        </li>
+        <li>
+          <strong>The common deadline:</strong> both routes open and close in
+          the same 60-day period, so the choice is about forum and trade-offs,
+          not about buying time.
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> for a homestead, eligibility
+        rarely eliminates either route — cost, formality, bindingness, and
+        whether you want a judge/jury or a neutral arbitrator are what
+        separate them, and eligibility conditions (timely taxes, no pending
+        suit) must be checked before filing either.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> filing fees and deposits
+        in current amounts, your county's practice, or whether your case is
+        strong enough to justify either route.
+      </p>
+
       <h2>State Office of Administrative Hearings (SOAH)</h2>
       <p>
         If the ARB-determined value exceeds $1 million, you may be able to

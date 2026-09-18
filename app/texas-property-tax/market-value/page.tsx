@@ -69,8 +69,60 @@ export default function Page() {
         circumstances does not.
       </p>
 
+      <h2>Worked example: testing a comparable against the definition (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative scenario with made-up numbers — not a valuation, not
+          your property, and not a prediction of what the ARB will decide.
+        </em>
+      </p>
+      <ol>
+        <li>
+          <strong>Scenario:</strong> your appraised value is $520,000. You
+          find a sale at $455,000 in your neighborhood from eleven months
+          ago.
+        </li>
+        <li>
+          <strong>Step — check the sale against the definition:</strong> was
+          it an arm's-length sale on the open market (not a relative-to-
+          relative transfer, not a foreclosure, not a lease-option)? A
+          distressed sale does not evidence the hypothetical transaction
+          § 23.01 describes.
+        </li>
+        <li>
+          <strong>Step — check recency and comparability:</strong> the
+          statute's comparable-sale method expects sales within the lookback
+          window and adjustments for differences in location, size, age,
+          condition, access, and amenities. The sale is 11 months old —
+          within the window. The comparable has 200 fewer square feet and no
+          garage; you note both and adjust rather than ignore them.
+        </li>
+        <li>
+          <strong>Step — state the conclusion:</strong> "An arm's-length sale
+          11 months old, adjusted upward for the missing garage, supports a
+          market value near $470,000, not $520,000."
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> the definition is the test your
+        evidence has to pass. A comparable that fails one element — a
+        non-arm's-length sale, a sale outside the recency window, a property
+        that differs in ways you cannot adjust for — weakens rather than
+        supports your case, so it is better to filter your evidence through
+        the definition before you file.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> what the district's own
+        comparables show, how the ARB will weigh your adjustments, or whether
+        a different method (income or cost) fits your property type better.
+      </p>
+
       <SourceList
-        sourceIds={["tx-comptroller-valuing-property", "tx-comptroller-appraisal-protests"]}
+        sourceIds={[
+          "tx-comptroller-valuing-property",
+          "tx-comptroller-appraisal-protests",
+          "tx-tax-code-23-013",
+        ]}
       />
     </PageShell>
   );

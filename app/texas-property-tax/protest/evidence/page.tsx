@@ -77,6 +77,52 @@ export default function Page() {
         hearing, organized by evidence category.
       </p>
 
+      <h2>Worked example: sorting a packet for one ground (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative scenario — not advice on what your protest should
+          claim, and not a prediction of any hearing outcome.
+        </em>
+      </p>
+      <ol>
+        <li>
+          <strong>Scenario:</strong> you plan to protest on market value
+          only. Your folder currently holds a closing statement from your own
+          2019 purchase, three neighbor opinions, a contractor's roof
+          estimate, and a comparable sale from last year at $455,000 against
+          your $520,000 assessment.
+        </li>
+        <li>
+          <strong>Step — filter by ground:</strong> the 2019 closing
+          statement is six years old and speaks to what you paid, not what a
+          buyer would pay now; the neighbor opinions are not sales
+          documentation. Both go to the bottom of the folder.
+        </li>
+        <li>
+          <strong>Step — keep what speaks to the ground:</strong> the recent
+          comparable sale is your primary exhibit; the contractor's estimate
+          stays because condition can affect what a buyer would pay, and you
+          can present it as a secondary factor.
+        </li>
+        <li>
+          <strong>Step — prepare for exchange:</strong> the material you
+          intend to offer must be shared with the other side at or before the
+          hearing, so make two identical packets and label every exhibit.
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> a smaller packet where every
+        exhibit maps to your stated ground reads better than a large folder of
+        loosely related documents — and matches the exchange rule you must
+        follow anyway.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> whether the comparable you
+        chose survives the comparability test (see{" "}
+        <Link href="/texas-property-tax/market-value/">market value</Link>),
+        or how the ARB will weigh each exhibit.
+      </p>
+
       <SourceList sourceIds={["tx-comptroller-appraisal-protests", "tx-tax-code-41-45"]} />
     </PageShell>
   );

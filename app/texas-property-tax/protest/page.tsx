@@ -83,6 +83,50 @@ export default function ProtestHubPage() {
         </li>
       </ol>
 
+      <h2>Worked example: the decision in one pass (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative scenario — not advice on your specific situation.
+        </em>
+      </p>
+      <ol>
+        <li>
+          <strong>The notice says $520,000, up 18%.</strong> First question:
+          is the description right? The living area shows 150 sq ft more
+          than your floor plan — a factual error worth fixing on its own.
+        </li>
+        <li>
+          <strong>Second question: what does your evidence say?</strong> A
+          comparable sale at $455,000 from last year supports a lower
+          market value; your equal-quality neighbor at $455,000 supports an
+          unequal-appraisal argument. You decide to protest on both
+          grounds.
+        </li>
+        <li>
+          <strong>Third question: are you inside the window?</strong> The
+          notice arrived April 10; May 15 is later than 30 days out, so
+          that is your deadline. You file a letter-style notice (no fee),
+          keep a dated copy, and request the informal conference.
+        </li>
+        <li>
+          <strong>Outcome branches:</strong> settle informally at a value
+          your evidence supports, or continue to the ARB hearing — and if
+          the order disappoints, appeal routes remain for 60 days.
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> the process is a chain of
+        dated, documented decisions — description, evidence, deadline,
+        forum — and every step has a dedicated page in this section.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> whether your county's
+        practice differs in scheduling, or what your evidence actually
+        supports — that is the work of the{" "}
+        <Link href="/evidence/">evidence section</Link> and the{" "}
+        <Link href="/property-tax-checker/">assessment checker</Link>.
+      </p>
+
       <h2>The section in detail</h2>
       <ul>
         {PAGES.map((p) => (

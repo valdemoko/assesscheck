@@ -77,6 +77,46 @@ export default function Page() {
         the appraisal district; it exists to hear disputes with it.
       </p>
 
+      <h2>Worked example: what the ARB can and cannot decide (illustrative)</h2>
+      <p>
+        <em>
+          Illustrative scenario — not a prediction of any panel's decision.
+        </em>
+      </p>
+      <ol>
+        <li>
+          <strong>Scenario:</strong> the chief appraiser submitted $520,000.
+          You ask the ARB to find $470,000 based on an adjusted comparable.
+        </li>
+        <li>
+          <strong>Within the ARB's power:</strong> finding a value anywhere
+          at or below $520,000 — including a number different from both
+          parties' figures — because the board determines the issue heard,
+          not merely choosing between two numbers.
+        </li>
+        <li>
+          <strong>Outside the ARB's power (absent your request):</strong>
+          raising the value above the $520,000 the chief appraiser submitted
+          — the statute permits it only if the owner requests and agrees.
+        </li>
+        <li>
+          <strong>Also outside this year's reach:</strong> changing next
+          year's assessment. Whatever the order says, it binds only the tax
+          year heard; next January 1 starts a new appraisal.
+        </li>
+      </ol>
+      <p>
+        <strong>What this tells you:</strong> the board's decision is
+        bounded in your favor by the submitted value — filing a protest can
+        reduce your value, never increase it, unless you ask for that — and
+        bounded in time by the single tax year.
+      </p>
+      <p>
+        <strong>What it does not tell you:</strong> how the panel weighs
+        competing evidence, or what your county's adopted procedures add to
+        the state's model procedures.
+      </p>
+
       <SourceList
         sourceIds={["tx-comptroller-arb", "tx-tax-code-41-47", "tx-comptroller-basics"]}
       />
