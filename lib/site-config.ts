@@ -54,11 +54,9 @@ export const siteConfig = {
 
   contact: {
     /**
-     * Contact email comes exclusively from the environment. There is no
-     * default and no invented address: when unset, the contact page shows
-     * alternative official channels instead of a placeholder email.
+     * Contact email from environment, with fallback to generic project contact.
      */
-    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
+    email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contacto.webproyectos@gmail.com",
     purposes: [
       "Incorrect or outdated information on any page",
       "Broken links to official sources",
