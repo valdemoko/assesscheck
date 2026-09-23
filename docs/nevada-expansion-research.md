@@ -148,13 +148,17 @@ same page states.
   agency pages that name the section. If a future session can reach
   `leg.state.nv.us`, sections 361.471–361.4735, 361.227, 361.453 and 361.4734
   should be read and the registry notes upgraded.
-  **Re-attempted 2026-09-23: blocked at the host, not at the URL.**
-  `leg.state.nv.us/nrs/nrs-361.html` — the lower-case path, which is the form
-  search engines index and which returns the chapter's text to a browser —
-  answers 403 here, exactly like the `/NRS/NRS-361.html` form tried in the
-  original session. Changing the path or its case therefore does not help; the
-  whole host refuses this environment. A future attempt needs either a different
-  network or an official mirror, not a different URL.
+  **Re-attempted 2026-09-23 and now diagnosed: Cloudflare blocks the host, not
+  the URL and not the client.** The lower-case `leg.state.nv.us/nrs/nrs-361.html`
+  path answers 403 to a text fetch, exactly like the upper-case form tried
+  originally. It was then loaded in a real browser that executes JavaScript — the
+  same method that successfully read California's statute text from leginfo — and
+  it returned a Cloudflare interstitial: "Sorry, you have been blocked. You are
+  unable to access leg.state.nv.us", with a Ray ID. So this is active bot
+  protection on the whole host, and no client available here gets through it.
+  A future attempt needs a different route entirely: an official mirror, a
+  printed/published copy of the statutes, or a network the block does not cover.
+  Do not spend more attempts on URL shapes.
 - **N2 — AB 377 (2025) is not characterised.** The claim mechanism the content
   describes is the one the counties document. What the 2025 legislation changed
   about claiming, and when the implementing regulations took effect, remain

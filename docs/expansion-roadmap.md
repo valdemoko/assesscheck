@@ -23,7 +23,7 @@ that follow.
 |---|---|---|---|---|
 | Texas | 19 state + 3 Harris County | `docs/florida-expansion-research.md` (shared origin) | Statute and Comptroller text | County layer beyond Harris (§5) |
 | Florida | 7 state (incl. checker) | `docs/florida-expansion-research.md` | Statute and DOR text | Miami-Dade county pages, SOH CPI figure |
-| California | 6 state | `docs/california-expansion-research.md` | Official pages stating the rule (`leginfo` unreadable) | `C1` statute text |
+| California | 6 state | `docs/california-expansion-research.md` | Statute text read (2026-09-23, via a JS-capable browser) | `C1` Article XIII A § 2 |
 | Arizona | 6 state | `docs/arizona-expansion-research.md` | Statute text read, plus SBOE and counties | `A3` checker, `A4` counties |
 | Nevada | 6 state | `docs/nevada-expansion-research.md` | Agencies naming the rule (`leg.state.nv.us` 403) | `N1`–`N4` |
 | Oregon | 6 state | `docs/oregon-expansion-research.md` | An administrative rule in full, plus counties | `O1`–`O4` |

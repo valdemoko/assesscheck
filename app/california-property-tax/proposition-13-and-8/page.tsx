@@ -187,7 +187,9 @@ export default function Page() {
         </li>
       </ul>
 
-      <SourceList sourceIds={["ca-boe-decline-in-value", "ca-boe-appeals-faq"]} />
+      <SourceList
+        sourceIds={["ca-rtc-51", "ca-boe-decline-in-value", "ca-boe-appeals-faq"]}
+      />
     </PageShell>
   );
 }

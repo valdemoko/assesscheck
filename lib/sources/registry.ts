@@ -624,6 +624,38 @@ export const SOURCES: Record<string, SourceRecord> = {
   // Yolo County Assessor). Section numbers appear only where the official
   // page itself names them. See docs/california-expansion-research.md §1.2.
   // ------------------------------------------------------------------
+  "ca-rtc-51": {
+    sourceId: "ca-rtc-51",
+    title:
+      "California Revenue and Taxation Code § 51 — Taxable value of real property; base year value and full cash value",
+    publisher: "California Legislative Counsel (leginfo.legislature.ca.gov)",
+    authorityLevel: "primary",
+    url: "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=51",
+    lastVerifiedDate: "2026-09-23",
+    jurisdiction: "California",
+    jurisdictionLevel: "state",
+    jurisdictionId: "california",
+    topic: "statute-base-year-value",
+    notes:
+      "Read in full, 2026-09-23, and this is the first California source on the site that is the statute rather than a page describing it. Closes open item C1 for § 51. It states the rule the California pages are built on: taxable value is the LESSER of (1) base year value compounded annually by an inflation factor or (2) full cash value as of the lien date taking into account damage, destruction, depreciation, obsolescence, removal or other factors causing a decline in value — statutory paragraph (a)(2), which is the decline-in-value rule. The 2% ceiling is in the statute's own words at (a)(1)(D): 'In no event shall the percentage increase for any assessment year determined pursuant to subparagraph (A), (B), or (C) exceed 2 percent of the prior year's value.' The index is defined at (a)(1)(C): for assessment years from January 1, 1998, the percentage change from OCTOBER of the prior fiscal year to October of the current fiscal year in the California Consumer Price Index for all items, rounded to the nearest one-thousandth of 1 percent, as determined by the Department of Industrial Relations — note October, not December, which is why the CPI factor and the tax year are not the same window. Subdivision (b) and (c) handle disaster-damaged property with and without a § 170 county ordinance; (d) defines 'real property' as the appraisal unit commonly bought and sold as a unit. Subdivision (e) is the one worth knowing beyond the pages: after the first lien date on which value is reduced under (a)(2), the property must be ANNUALLY REAPPRAISED at full cash value until that value exceeds the (a)(1) figure, and 'in no event shall the assessor condition the implementation of the preceding sentence in any year upon the filing of an assessment appeal'. That is the statutory basis for a lawful increase far above 2% in a single year, and the sentence that removes the appeal from the equation. Amended by Stats. 2000, Ch. 647, § 1, effective January 1, 2001.",
+    status: "verified",
+  },
+  "ca-rtc-1603": {
+    sourceId: "ca-rtc-1603",
+    title:
+      "California Revenue and Taxation Code § 1603 — Application for reduction in assessment; filing period",
+    publisher: "California Legislative Counsel (leginfo.legislature.ca.gov)",
+    authorityLevel: "primary",
+    url: "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=1603",
+    lastVerifiedDate: "2026-09-23",
+    jurisdiction: "California",
+    jurisdictionLevel: "state",
+    jurisdictionId: "california",
+    topic: "statute-appeal-window",
+    notes:
+      "Read in full, 2026-09-23. Closes open item C1 for § 1603 and settles the California filing window from the statute: (b)(1) the application 'shall be filed within the time period from July 2 to September 15, inclusive', with an application mailed and postmarked September 15 or earlier deemed filed in time. Two exceptions the site's deadline record has to carry: (b)(2) if the taxpayer does not receive the § 619 notice of assessment at least 15 calendar days before that deadline, they may file within 60 days of receipt of the notice or 60 days of the mailing of the tax bill, whichever is EARLIER, with an affidavit under penalty of perjury; and (b)(3) the last filing day is extended to NOVEMBER 30 where the county assessor does not provide the § 619 notice to all assessees of real property on the local secured roll by August 1 — including the annual inflation increases, described as not to exceed 2 percent under Article XIII A § 2(b). (b)(3)(A) requires the assessor to tell the clerk of the board of equalization and the county tax collector by April 1 each year whether that notice will be provided by August 1. This is why the 'September 15 or November 30?' question is decided county by county and not by the taxpayer's preference. Also (a): the application must be verified and in writing, stating the facts claimed to require the reduction and the applicant's opinion of the full value, on a form prescribed by the State Board of Equalization.",
+    status: "verified",
+  },
   "ca-boe-decline-in-value": {
     sourceId: "ca-boe-decline-in-value",
     title: "Decline in Value – Proposition 8",

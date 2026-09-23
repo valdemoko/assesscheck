@@ -249,10 +249,33 @@ consistent with state law) has not been applied to any California county.
 
 # 6. Open items (carry forward)
 
-- **C1 (before promoting beyond `ready`/at next review):** read R&TC § 51,
-  § 51(a)(2), § 1603 and Article XIII A on a readable official source and record
-  the statute text in the registry. Until then the pages cite the BOE/CDTFA
-  statements, never a paraphrase of unread statute text.
+- ~~**C1:** read R&TC § 51, § 51(a)(2), § 1603 and Article XIII A on a readable
+  official source.~~ **PARTLY CLOSED 2026-09-23.** Two of the four are now read at
+  the source and registered:
+  - **§ 51** — `ca-rtc-51`. The lesser-of rule, the 2% ceiling in the statute's
+    own words at (a)(1)(D), the October-to-October CPI index at (a)(1)(C), the
+    decline-in-value rule at (a)(2), the disaster subdivisions, and the
+    mechanism in (e) that requires annual reappraisal after a (a)(2) reduction
+    and forbids conditioning it on the filing of an appeal. That last one is the
+    statutory basis for the page's claim that an assessed value may lawfully rise
+    far above 2% in a year.
+  - **§ 1603** — `ca-rtc-1603`. The filing window runs July 2 to September 15
+    inclusive with the postmark rule; the 60-day fallback applies where the § 619
+    notice arrived less than 15 days before the deadline; and the last day moves
+    to November 30 where the assessor does not provide that notice by August 1.
+    The April 1 notification duty at (b)(3)(A) is what makes the September 15
+    versus November 30 question a county-by-county fact rather than a choice.
+  - **Still open:** Article XIII A § 2 itself (the constitutional 2% and the
+    change-of-ownership rule) was not read. Nothing on the site quotes the
+    constitution, so this is a lower priority than it looks — but it is not
+    closed, and the California pages still cite the constitution only through
+    statutes that reference it.
+- ~~**C2:** `leginfo.legislature.ca.gov` readability.~~ **SOLVED 2026-09-23.**
+  The section text is rendered client-side, so a text-extracting fetch returns
+  only the page title — but a browser that EXECUTES JavaScript reads the section
+  in full. That is how § 51 and § 1603 were read. Any future California code
+  citation should be taken through a real browser session; do not conclude from
+  an empty fetch that leginfo is unavailable.
 - **C2:** `leginfo.legislature.ca.gov` readability — needed for every future
   California code citation.
   **Re-attempted 2026-09-23 and confirmed still blocked, with the routes now

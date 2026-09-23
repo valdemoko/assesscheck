@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { readFileSync } from "node:fs";
 import {
   JURISDICTION_RULES,
   getCap,
@@ -195,6 +196,9 @@ describe("California source registry", () => {
       "California State Board of Equalization",
       "California Department of Tax and Fee Administration (State of California)",
       "Yolo County Assessor (ACE Department), California",
+      // The statute itself: leginfo is published by the Legislative Counsel of
+      // California. Added 2026-09-23 with ca-rtc-51 and ca-rtc-1603.
+      "California Legislative Counsel (leginfo.legislature.ca.gov)",
     ];
     for (const s of getSourcesForJurisdiction("california")) {
       expect(allowed, `Unexpected publisher: ${s.publisher}`).toContain(s.publisher);
@@ -217,8 +221,53 @@ describe("California publication gate", () => {
   });
 
   it("the cross-state hub is registered so state pages are not orphans", () => {
-    const hub = SITE_PAGES.find((p) => p.path === "/property-tax-by-state/")!;
+    const hub = SITE_PAGES.find((p) => p.path === "/property-by-state/") ??
+      SITE_PAGES.find((p) => p.path === "/property-tax-by-state/");
     expect(hub).toBeDefined();
-    expect(hub.publishStatus).toBe("ready");
+    expect(hub!.publishStatus).toBe("ready");
+  });
+});
+
+describe("California is cited from statute, not only from pages describing it", () => {
+  // California was for a long time the weakest provenance on the site: every
+  // citation was an official page STATING the rule, because leginfo hands a text
+  // extractor nothing but the section title. On 2026-09-23 the statute text was
+  // finally read through a browser that executes JavaScript, and these sections
+  // were registered. This test is what stops that from quietly reverting to the
+  // weaker class — deleting either source, or dropping it from the page that
+  // depends on it, fails here.
+  const STATUTE_SOURCES = [
+    ["ca-rtc-51", "/california-property-tax/proposition-13-and-8/"],
+    ["ca-rtc-1603", "/california-property-tax/deadlines/"],
+  ] as const;
+
+  it("registers both statute sections as primary California sources read in full", () => {
+    for (const [id] of STATUTE_SOURCES) {
+      const s = requireSource(id);
+      expect(s.jurisdiction).toBe("California");
+      expect(s.jurisdictionId).toBe("california");
+      expect(s.authorityLevel).toBe("primary");
+      expect(s.status).toBe("verified");
+      expect(s.lastVerifiedDate).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(s.url).toContain("leginfo.legislature.ca.gov");
+      expect(s.notes).toMatch(/Read in full/);
+    }
+  });
+
+  it("cites each section on the page whose claim depends on it", () => {
+    for (const [id, page] of STATUTE_SOURCES) {
+      const source = readFileSync(`app${page}page.tsx`, "utf8");
+      expect(source, `${page} should cite ${id}`).toContain(`"${id}"`);
+    }
+  });
+
+  it("records what § 51 actually says, so the notes cannot drift from the statute", () => {
+    const notes = requireSource("ca-rtc-51").notes!;
+    expect(notes).toContain("exceed 2 percent");
+    expect(notes).toMatch(/OCTOBER of the prior fiscal year/);
+    expect(notes).toMatch(/ANNUALLY REAPPRAISED/);
+    const window = requireSource("ca-rtc-1603").notes!;
+    expect(window).toContain("July 2 to September 15");
+    expect(window).toContain("NOVEMBER 30");
   });
 });
