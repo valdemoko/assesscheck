@@ -3,25 +3,19 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandMark } from "@/components/brand/BrandMark";
-import { siteConfig } from "@/lib/site-config";
-
-const NAV = [
-  { href: "/property-tax-checker/", label: "Assessment Checker" },
-  { href: siteConfig.statesHubPath, label: "By State" },
-  { href: "/texas-property-tax/", label: "Texas" },
-  { href: "/florida-property-tax/", label: "Florida" },
-  { href: "/california-property-tax/", label: "California" },
-  { href: "/arizona-property-tax/", label: "Arizona" },
-  { href: "/nevada-property-tax/", label: "Nevada" },
-  { href: "/oregon-property-tax/", label: "Oregon" },
-  { href: "/evidence/property-tax-protest-evidence/", label: "Evidence" },
-  { href: "/resources/", label: "Resources" },
-  { href: "/about/", label: "About" },
-];
+import { activeStateLabel, primaryNav, statesNavGroup } from "@/lib/nav";
 
 export function SiteHeader() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const state = activeStateLabel(pathname);
+
+  // The group stays closed. Passing `open` here would make React own the
+  // element's state, and a re-render would then reopen a menu the reader just
+  // closed — the control would fight the person using it. Orientation is carried
+  // by the summary label instead ("States: Oregon"), which needs no interaction
+  // and no height.
+  const inStatesGroup = Boolean(state);
 
   return (
     <header className="site-header" data-home={isHome ? "true" : undefined}>
@@ -32,11 +26,47 @@ export function SiteHeader() {
         </Link>
         <nav className="site-header__nav" aria-label="Primary">
           <ul>
-            {NAV.map((item) => (
+            {primaryNav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href}>{item.label}</Link>
+                <Link
+                  href={item.href}
+                  aria-current={pathname === item.href ? "page" : undefined}
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
+            <li className="site-header__group">
+              {/*
+                A native <details> rather than a hover menu: it works with a
+                keyboard, it works without JavaScript, and it needs no focus
+                trap or click-outside handler. The trade is that it opens on
+                click instead of hover, which is also why it is predictable.
+              */}
+              <details>
+                <summary
+                  className="site-header__summary"
+                  aria-current={inStatesGroup ? "true" : undefined}
+                >
+                  {state ? `States: ${state}` : statesNavGroup.label}
+                </summary>
+                <div className="site-header__menu">
+                  <p className="site-header__menu-note">{statesNavGroup.description}</p>
+                  <ul>
+                    {statesNavGroup.links.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          aria-current={pathname === item.href ? "page" : undefined}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </details>
+            </li>
           </ul>
         </nav>
       </div>

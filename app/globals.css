@@ -197,6 +197,101 @@ body {
 }
 
 /* ----------------------------------------------------------------
+   Header — the states group
+   Replaces six top-level state links, which wrapped to three lines once
+   the sixth state was published and would have taken a fourth with the
+   seventh. A native <details> keeps it keyboard-accessible and working
+   without JavaScript; the menu is absolutely positioned so opening it
+   never reflows the page.
+   ---------------------------------------------------------------- */
+.site-header__group {
+  position: relative;
+}
+
+.site-header__group > details > summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  border-radius: var(--radius-sm);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+/* The default disclosure triangle is replaced by a caret that rotates, so the
+   control reads the same on every platform. */
+.site-header__group > details > summary::marker,
+.site-header__group > details > summary::-webkit-details-marker {
+  display: none;
+  content: "";
+}
+
+.site-header__group > details > summary::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  transition: transform 120ms ease;
+}
+
+.site-header__group > details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.site-header__group > details > summary:hover,
+.site-header__group > details[open] > summary {
+  background: var(--color-success-bg);
+  color: var(--color-accent-ink);
+}
+
+/* When the reader is inside a state, the summary says so. */
+.site-header__group > details > summary[aria-current="true"] {
+  color: var(--color-accent-ink);
+  font-weight: 600;
+}
+
+.site-header__menu {
+  position: absolute;
+  /* Anchored to the right so it grows leftwards: the trigger is the last item
+     in the row, and left-anchoring overflowed the viewport on mid-width
+     screens. The offset clears the header's own bottom border rather than
+     covering it. */
+  top: calc(100% + var(--space-5));
+  right: 0;
+  z-index: 20;
+  min-width: 240px;
+  padding: var(--space-3);
+  background: var(--color-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-elevated);
+}
+
+.site-header__menu-note {
+  margin: 0 0 var(--space-2);
+  padding: 0 var(--space-3);
+  max-width: 32ch;
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.site-header__menu ul {
+  display: block;
+  gap: 0;
+}
+
+.site-header__menu a {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+}
+
+/* ----------------------------------------------------------------
    Breadcrumbs
    ---------------------------------------------------------------- */
 .breadcrumbs {
