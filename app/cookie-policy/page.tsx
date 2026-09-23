@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
 export default function CookiePolicyPage() {
   return (
     <PageShell
-      breadcrumbs={[{ label: "Legal" }, { label: "Cookie policy" }]}
+      breadcrumbs={[{ href: "/", label: "Home" }, { label: "Legal" }, { label: "Cookie policy" }]}
     >
       <h1>Cookie Policy</h1>
       <p>

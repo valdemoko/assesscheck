@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
 export default function PrivacyPage() {
   const updated = siteConfig.legal.lastUpdated.privacy;
   return (
-    <PageShell breadcrumbs={[{ label: "Legal" }, { label: "Privacy policy" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Legal" }, { label: "Privacy policy" }]}>
       <h1>Privacy Policy</h1>
       <p>
         Last updated: <time dateTime={updated}>{updated}</time>

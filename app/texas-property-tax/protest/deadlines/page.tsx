@@ -22,6 +22,7 @@ export default function Page() {
   return (
     <PageShell
       breadcrumbs={[
+        { href: "/", label: "Home" },
         { href: "/texas-property-tax/", label: "Texas Property Tax" },
         { href: "/texas-property-tax/protest/", label: "Protest" },
         { label: "Deadlines" },

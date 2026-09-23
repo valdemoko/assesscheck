@@ -77,7 +77,7 @@ const TOPICS = [
 
 export default function TexasPropertyTaxPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "Texas Property Tax" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Texas Property Tax" }]}>
       <h1>Texas Property Tax</h1>
       <p>
         Texas has no state property tax. Property taxes are locally assessed and

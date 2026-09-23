@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
 export default function AuthorPage() {
   return (
     <PageShell
-      breadcrumbs={[{ href: "/about/", label: "About" }, { label: "Author" }]}
+      breadcrumbs={[{ href: "/", label: "Home" }, { href: "/about/", label: "About" }, { label: "Author" }]}
     >
       <h1>About the Author</h1>
 

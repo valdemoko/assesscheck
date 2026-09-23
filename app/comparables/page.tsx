@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function ComparablesPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "Comparable Properties" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Comparable Properties" }]}>
       <h1>Comparable Properties</h1>
 
       <h2>Why comparability is a legal question in Texas</h2>

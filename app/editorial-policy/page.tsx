@@ -14,7 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function EditorialPolicyPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "Editorial Policy" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Editorial Policy" }]}>
       <h1>Editorial Policy</h1>
 
       <h2>Factual accuracy</h2>

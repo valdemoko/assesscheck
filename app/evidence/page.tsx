@@ -61,7 +61,7 @@ const PATHS: {
 
 export default function EvidenceLandingPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "Evidence" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Evidence" }]}>
       <h1>Evidence</h1>
       <p>
         Evidence is what turns a disagreement about your assessment into

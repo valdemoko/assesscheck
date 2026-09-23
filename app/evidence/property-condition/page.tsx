@@ -18,6 +18,7 @@ export default function PropertyConditionPage() {
   return (
     <PageShell
       breadcrumbs={[
+        { href: "/", label: "Home" },
         { href: "/evidence/", label: "Evidence" },
         { label: "Property Condition" },
       ]}

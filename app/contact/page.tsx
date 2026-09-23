@@ -17,7 +17,7 @@ export default function ContactPage() {
   const email = siteConfig.contact.email;
 
   return (
-    <PageShell breadcrumbs={[{ label: "Contact" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Contact" }]}>
       <h1>Contact</h1>
 
       <p>

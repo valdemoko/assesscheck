@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function MethodologyPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "Methodology" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Methodology" }]}>
       <h1>Methodology</h1>
 
       <h2>Data sources and hierarchy</h2>

@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function DisclaimerPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "Legal" }, { label: "Disclaimer" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Legal" }, { label: "Disclaimer" }]}>
       <h1>Disclaimer</h1>
       <p>
         Last updated: <time dateTime={siteConfig.legal.lastUpdated.disclaimer}>{siteConfig.legal.lastUpdated.disclaimer}</time>

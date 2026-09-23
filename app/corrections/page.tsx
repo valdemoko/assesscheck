@@ -14,7 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function CorrectionsPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "Corrections" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Corrections" }]}>
       <h1>Corrections</h1>
 
       <h2>Reporting an error</h2>

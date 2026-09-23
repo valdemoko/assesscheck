@@ -19,7 +19,7 @@ export const metadata: Metadata = buildMetadata({
 export default function ConsentPreferencesPage() {
   return (
     <PageShell
-      breadcrumbs={[{ label: "Legal" }, { label: "Consent preferences" }]}
+      breadcrumbs={[{ href: "/", label: "Home" }, { label: "Legal" }, { label: "Consent preferences" }]}
     >
       <h1>Consent Preferences</h1>
 

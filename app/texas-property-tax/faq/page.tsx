@@ -178,6 +178,7 @@ export default function TexasFAQPage() {
   return (
     <PageShell
       breadcrumbs={[
+        { href: "/", label: "Home" },
         { href: "/texas-property-tax/", label: "Texas Property Tax" },
         { label: "FAQ" },
       ]}

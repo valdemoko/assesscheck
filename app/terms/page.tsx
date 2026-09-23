@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function TermsPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "Legal" }, { label: "Terms of use" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Legal" }, { label: "Terms of use" }]}>
       <h1>Terms of Use</h1>
       <p>
         Last updated: <time dateTime={siteConfig.legal.lastUpdated.terms}>{siteConfig.legal.lastUpdated.terms}</time>

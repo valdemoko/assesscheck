@@ -79,7 +79,7 @@ const APPEAL_ROUTES = [
 
 export default function FAQPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "FAQ" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "FAQ" }]}>
       <h1>Property Tax FAQ</h1>
       <p>
         These are the questions that produce the same kind of answer in every

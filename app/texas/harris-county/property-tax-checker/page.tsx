@@ -20,6 +20,7 @@ export default function HarrisCountyCheckerPage() {
   return (
     <PageShell
       breadcrumbs={[
+        { href: "/", label: "Home" },
         { label: "Texas" },
         { href: "/texas/harris-county/", label: "Harris County" },
         { label: "Property Tax Checker" },

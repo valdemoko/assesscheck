@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
 export default function AccessibilityPage() {
   return (
     <PageShell
-      breadcrumbs={[{ label: "About" }, { label: "Accessibility" }]}
+      breadcrumbs={[{ href: "/", label: "Home" }, { label: "About" }, { label: "Accessibility" }]}
     >
       <h1>Accessibility</h1>
       <p>

@@ -18,7 +18,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function CheckerPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "Assessment Checker" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Assessment Checker" }]}>
       <h1>Property Tax Assessment Checker</h1>
       <p>
         This tool organizes a review of your assessment. You enter the values

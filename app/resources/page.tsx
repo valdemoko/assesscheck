@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function ResourcesPage() {
   return (
-    <PageShell breadcrumbs={[{ label: "Official Resources" }]}>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Official Resources" }]}>
       <h1>Official Resources</h1>
       <p>
         Every link below goes to an official government source. Where an

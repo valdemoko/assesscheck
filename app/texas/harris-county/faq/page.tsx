@@ -18,6 +18,7 @@ export default function HarrisCountyFAQPage() {
   return (
     <PageShell
       breadcrumbs={[
+        { href: "/", label: "Home" },
         { label: "Texas" },
         { href: "/texas/harris-county/", label: "Harris County" },
         { label: "FAQ" },

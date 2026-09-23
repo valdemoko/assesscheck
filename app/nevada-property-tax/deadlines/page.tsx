@@ -45,6 +45,7 @@ export default function Page() {
   return (
     <PageShell
       breadcrumbs={[
+        { href: "/", label: "Home" },
         { href: "/nevada-property-tax/", label: "Nevada Property Tax" },
         { label: "Deadlines" },
       ]}

@@ -18,6 +18,7 @@ export default function Page() {
   return (
     <PageShell
       breadcrumbs={[
+        { href: "/", label: "Home" },
         { href: "/arizona-property-tax/", label: "Arizona Property Tax" },
         { label: "Appeal Evidence" },
       ]}

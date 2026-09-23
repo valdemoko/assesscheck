@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
 export default function AdvertisingDisclosurePage() {
   return (
     <PageShell
-      breadcrumbs={[{ label: "Legal" }, { label: "Advertising disclosure" }]}
+      breadcrumbs={[{ href: "/", label: "Home" }, { label: "Legal" }, { label: "Advertising disclosure" }]}
     >
       <h1>Advertising Disclosure</h1>
       <p>

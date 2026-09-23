@@ -26,6 +26,7 @@ export default function HarrisCountyPage() {
   return (
     <PageShell
       breadcrumbs={[
+        { href: "/", label: "Home" },
         { label: "Texas" },
         { label: "Harris County" },
       ]}

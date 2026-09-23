@@ -18,6 +18,7 @@ export default function Page() {
   return (
     <PageShell
       breadcrumbs={[
+        { href: "/", label: "Home" },
         { href: "/oregon-property-tax/", label: "Oregon Property Tax" },
         { label: "Measure 50 and the MAV" },
       ]}

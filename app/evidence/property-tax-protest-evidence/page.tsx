@@ -22,6 +22,7 @@ export default function EvidenceGuidePage() {
   return (
     <PageShell
       breadcrumbs={[
+        { href: "/", label: "Home" },
         { href: "/evidence/", label: "Evidence" },
         { label: "Property Tax Protest Evidence" },
       ]}
