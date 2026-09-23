@@ -129,10 +129,19 @@ concept, not the pages.**
 ## 5. County layer
 
 One county is published (Harris, Texas). `lib/data/counties.ts` holds four more
-Texas records — Dallas, Tarrant, Bexar and Travis — and all four are
-`research-needed` **placeholders with no sources and no verification date**. They
-exist so the architecture is extensible. Nothing renders them, and the hub,
-sitemap and nav must not until they clear the bar.
+Texas records. Nothing renders them, and the hub, sitemap and nav must not until
+each clears the bar.
+
+| County | Status | What is missing |
+|---|---|---|
+| Harris | Published (3 pages + checker) | — |
+| Dallas | Research under way — 3 of 4 criteria verified | A verifiable DCAD property-search URL; see `docs/dallas-county-research.md` |
+| Tarrant, Bexar, Travis | No research at all | Everything. Records with empty `sources` and no verification date |
+
+Dallas is the instructive case: its protest procedure and deadline are now read
+from the district's own articles, which is most of the work, and it still does not
+clear the bar — because the property-search URL could not be read from a site that
+returns no body text to a text extractor. The bar is not a formality.
 
 The bar is the one the project set for itself when Miami-Dade failed it:
 

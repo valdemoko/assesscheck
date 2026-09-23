@@ -65,11 +65,26 @@ export const COUNTIES: CountyRecord[] = [
     },
     populationTier: "",
     taxYear: "current tax year",
+    // Still research-needed, and deliberately so: three of the four county-bar
+    // criteria are verified, but DCAD's property-search URL could not be read
+    // from the district's site (it returns no body text), and the bar requires
+    // all four. See docs/dallas-county-research.md §3.
     researchStatus: "research-needed",
-    lastVerifiedDate: "",
-    sources: [],
+    lastVerifiedDate: "2026-09-23",
+    sources: [
+      {
+        sourceId: "dcad-protest-deadline",
+        supports:
+          "May 15 or 30 days after delivery of the Notice of Appraised Value, whichever is later; first business day if the date falls on a weekend or holiday; postmark rule.",
+      },
+      {
+        sourceId: "dcad-protest-questions",
+        supports:
+          "uFile filing opens April 15; written protests accepted, not fax or email; one uFile protest per account.",
+      },
+    ],
     notes:
-      "PLACEHOLDER — NOT PUBLISHED. Dallas County has not been researched. This record exists only to keep the architecture extensible; the hub, sitemap, and nav must never render it until its researchStatus reaches 'source-verified'.",
+      "NOT PUBLISHED. Research started: the protest procedure and the deadline are read from DCAD's own articles (three of the four county-bar criteria pass — see docs/dallas-county-research.md). The open criterion is a verifiable DCAD property-search URL, so nothing links to a Dallas page and the hub, sitemap and nav must not render it until researchStatus reaches 'source-verified'. The '61 local governing bodies' figure that appears in search results is deliberately not used: it was not read at the source.",
   },
   {
     countyId: "tarrant-county",
