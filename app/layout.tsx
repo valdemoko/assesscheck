@@ -21,7 +21,10 @@ const serif = Source_Serif_4({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL_RESOLVED),
   title: {
-    default: `${SITE_NAME} — Understand your Texas property assessment`,
+    // Not "your Texas property assessment": this is the title a page without its
+    // own falls back to (the 404 page, for one), and the site covers seven
+    // states. A state named here is a claim that goes wrong every expansion.
+    default: `${SITE_NAME} — Understand your property tax assessment`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
