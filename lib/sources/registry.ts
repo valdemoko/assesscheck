@@ -270,6 +270,21 @@ export const SOURCES: Record<string, SourceRecord> = {
       "Read in full 2026-09-23 in a browser session: michigan.gov returns 403 to a plain text fetch, so this page is another case for the browser-first method recorded in docs/california-expansion-research.md C2. It states that MCL 211.27a(6) defines 'transfer of ownership' generally as the conveyance of title to, or a present interest in, property where the value is substantially equal to the value of the fee interest, that 211.27a(6) gives examples of what constitutes a transfer, and that 211.27a(7) lists transfers EXEMPT from the definition which therefore do not uncap. Its own words on timing: 'In accordance with the Michigan Constitution as amended by Proposal A of 1994, a transfer of ownership will cause the taxable value of the transferred property to uncap in the calendar year following the year of the transfer of ownership.' No statutory text is quoted on any page until the statute itself has been read; leg.state.mi.us is WAF-blocked (see docs/michigan-expansion-research.md).",
     status: "verified",
   },
+  "mi-oakland-faq": {
+    sourceId: "mi-oakland-faq",
+    title: "Equalization FAQ — I Disagree with My Assessment; March Board of Review; Michigan Tax Tribunal",
+    publisher: "Oakland County, Michigan (Equalization Division)",
+    authorityLevel: "primary",
+    url: "https://www.oaklandcountymi.gov/government/management-budget/equalization/faq",
+    lastVerifiedDate: "2026-09-23",
+    jurisdiction: "Michigan",
+    jurisdictionLevel: "county",
+    jurisdictionId: "michigan",
+    topic: "appeal-procedure",
+    notes:
+      "Read in full 2026-09-23. The source for Michigan's appeal ladder, and the reason the state is buildable despite its statute site being unreachable. Records: the sequence (property record card, then the assessor, then an appointment for the March Board of Review) and that a March Board appeal is what RESERVES the right to go to the Michigan Tax Tribunal; that since 2007 commercial and industrial real property may appeal DIRECTLY to the Tribunal on or before MAY 31 without petitioning the March Board; that personal property may go direct if a Personal Property Statement was filed before the March Board commences (statements due February 20); that RESIDENTIAL and AGRICULTURAL must protest to the Board first and their Tribunal deadline is JULY 31 of the tax year; that the board must notify a protester in writing no later than the FIRST MONDAY IN JUNE, and that the notice must state the right of appeal, the time limits and the Tribunal's address; the grounds (classification — six classes: agricultural, commercial, developmental, industrial, residential, timber cutover; status; equity at a uniform 50% ratio; and the § 211.7u(1) poverty/hardship exemption, which must be filed and approved EVERY year); the evidence rules (assessments rest on sales of similar properties, but a sale price 'cannot be the sole determining factor', and mortgage appraisals may not show true cash value; non-residents may appeal by letter); and the Tribunal's two divisions (Entire Tribunal formal in Lansing; Small Claims informal, about 30 minutes, heard in the county).",
+    status: "verified",
+  },
   "mi-oakland-equalization": {
     sourceId: "mi-oakland-equalization",
     title: "Real & Personal Property Information",

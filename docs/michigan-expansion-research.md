@@ -54,6 +54,41 @@ official county government page and it states the whole system:
   township **by June 1** for the succeeding summer tax levy, or **by November 1**
   for the succeeding winter tax levy.
 
+### The appeal ladder and its windows, from Oakland County's FAQ
+
+Read in full (`oaklandcountymi.gov`, same Equalization Division). This is what
+unblocked the appeal and deadline pages:
+
+- **The required first stop is the March Board of Review**, and the sequence the
+  county gives is: review the property record card, raise it with the assessor,
+  then make an appointment for the March Board. A March Board appeal is what
+  **reserves** the right to go to the Michigan Tax Tribunal.
+- **Two classes are exempt from that first stop.** Since **2007**, commercial and
+  industrial real property no longer has to petition the March Board and may
+  appeal **directly to the Tax Tribunal on or before May 31**. Personal property
+  may also go direct, provided a Personal Property Statement was filed before the
+  March Board commences.
+- **Residential and agricultural are required to protest to the Board first**, and
+  their Tribunal deadline is **July 31** of the tax year involved. So Michigan has
+  two Tribunal deadlines that differ by class, and the one most homeowners need is
+  the later one.
+- **The board must notify a protester in writing by the first Monday in June** of
+  its action, and that notice must state the right to appeal to the Tribunal, the
+  time limits, and the Tribunal's address. The decision binds the current
+  assessment year only.
+- **Grounds the county lists**: classification (six classes — agricultural,
+  commercial, developmental, industrial, residential, timber cutover), status
+  (exempt property), equity (everything assessed at the same 50% ratio), and the
+  § 211.7u(1) poverty or hardship exemption, which must be filed and approved
+  **every year**.
+- **Evidence**: assessments rest on sales of similar properties, but "the sale
+  price of a property cannot be the sole determining factor", and mortgage
+  appraisals may not show true cash value. Non-resident owners may appeal by
+  letter.
+- **The Tribunal has two divisions**: an Entire Tribunal (formal, one record,
+  usually with attorneys, heard in Lansing) and a Small Claims Division (informal,
+  about 30 minutes, parties usually unrepresented, heard in the county).
+
 ### The uncapping rule, from the Department of Treasury
 
 Read in full (`michigan.gov/taxes/property/change-ownership`, which refuses a
@@ -80,7 +115,7 @@ shock — the second one is.
 | **MCL 211.27a text itself**, and MCL 211.30 (boards of review) | **NOT VERIFIED** — `legislature.mi.gov` is behind a WAF that returns "Attack blocked by web application protection / Check Point CloudGuard" to both a text fetch and a real browser session | The statute is cited as the *Treasury's* reference (it names § 211.27a(6) and (7)), not quoted. No statutory language is on any page until it is read |
 | **The annual Inflation Rate Multiplier for the current year** | **NOT VERIFIED** — published by the State Tax Commission in PDF bulletins, and PDFs cannot be read here (the browser's viewer exposes no text) | The cap is stated as a *rule* ("inflation or 5%, whichever is less") with no number attached, exactly as Nevada's rate ceiling is handled |
 | **The State Tax Commission's Property Tax and Equalization Calendar** | **NOT VERIFIED** — Bulletin 11 of 2025 is a PDF | No Michigan date is published from it. Dates must come from HTML sources |
-| **The Michigan Tax Tribunal route and its filing window** | **NOT VERIFIED** — `michigan.gov/taxtribunal` timed out in the browser session and 403s a plain fetch | The appeal ladder cannot be written yet. This is the single biggest gap, because it is the second stage of every Michigan appeal |
+| **The Michigan Tax Tribunal route and its filing window** | **VERIFIED at county level** (see §1) — `michigan.gov/taxtribunal` itself is unreachable (404 behind the site's own router, and the ESA page that does load concerns the EMPP exemption, not real property). The county FAQ states the routes and the class-specific windows | The appeal page can be written, disclosing that the windows come from the county's statement of the procedure rather than from the statute or the Tribunal's own site |
 | **County-level procedure** (a specific county's board of review dates, its filing form) | **NOT VERIFIED** — search results show a City of Detroit page with a March 9, 2026 filing deadline, but it was not read | No county page and no county deadline. A snippet is not a source |
 
 Note what the two blocked sources have in common, since it is a pattern worth
@@ -118,20 +153,27 @@ that makes Texas and Florida screenable is defeated here by the uncapping rule �
 but that is a decision to take deliberately, with the reason written down, as the
 other four non-screenable states do.
 
-## 4. What has to be read before pages can be written
+## 4. What is still missing, and what it blocks
 
-1. The **Tax Tribunal** route and window (retry `michigan.gov/taxtribunal` in a
-   browser session; it timed out rather than refusing).
-2. **MCL 211.30** board-of-review mechanics: the second-Monday-in-March session,
-   who may protest, and the July and December boards for the cases they cover.
-   Search results quote the statute, but quoting is not reading.
-3. One **county's** own pages, to check Michigan's terminology against state law
-   and to decide whether any county clears the county bar in §5 of the roadmap.
+The state now has enough behind it for all six pages, with two disclosures that
+have to appear wherever the gap is material:
 
-Items 1 and 2 block the two pages that a state hub cannot ship without — the
-appeal ladder and the deadline calendar — because Michigan's filing windows run
-through the boards of review and the Tax Tribunal. The hub, the taxable-value
-page, the uncapping page and the notice page all have enough behind them today.
+1. **MCL 211.30's statutory mechanics remain unread** — the exact session
+   requirement (the board must hold at least three hours during the week of the
+   second Monday in March), and the authority of the **July and December boards**,
+   are known only from search snippets and secondary guides. The pages can
+   describe the March Board, its notification duty and the Tribunal routes from
+   the county's own text, but any sentence about *when in March* the board sits,
+   or about what a July board may and may not do, must either wait for a source or
+   be left out. Do not fill it from a snippet.
+2. **The current year's Inflation Rate Multiplier is unread** (State Tax
+   Commission PDF). The cap is published as a rule with no number, the way
+   Nevada's rate ceiling is handled.
+
+Neither gap blocks the hub, the taxable-value page, the uncapping page, the
+notice page, the appeal page or the deadline page — but the deadline page is the
+one to watch, because Michigan's dates run through the boards and the Tribunal
+and that is where the unread statute would show.
 
 ## 5. Sources registered
 
@@ -139,6 +181,7 @@ page, the uncapping page and the notice page all have enough behind them today.
 |---|---|---|
 | `mi-treasury-change-ownership` | Michigan Department of Treasury | The definition structure of § 211.27a(6)/(7), and that Proposal A uncapping lands in the calendar year after the transfer |
 | `mi-oakland-equalization` | Oakland County (Equalization Division) | Proposal A; the inflation-or-5% cap; the Capped Value formula and the IRM ceiling of 1.05; AV as of December 31 at 50% of true cash value; SEV; TV as the lesser of SEV or CV; the uncapping rule; the 24-month sales study; the notice before the March boards; the PRE affidavit dates of June 1 and November 1 |
+| `mi-oakland-faq` | Oakland County (Equalization Division) | The appeal ladder: the March Board first for residential and agricultural with a July 31 Tribunal deadline, direct-to-Tribunal for commercial and industrial by May 31, the first-Monday-in-June notification duty, the grounds, the evidence rules and the Tribunal's two divisions |
 
 Both are `primary`, both carry a verification date, and no Michigan page cites
 them yet — the pages are the next step, and they come after items 1 and 2 above,
