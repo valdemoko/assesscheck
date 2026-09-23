@@ -1,0 +1,63 @@
+name: CI
+
+# The suite is where this project keeps its promises: page standards, state
+# isolation, source integrity, and `tests/review-schedule.test.ts`, which fails
+# once a figure that the government republishes is past its interval. A check
+# nothing runs is not a check — until this workflow existed, every one of those
+# promises only held if somebody remembered to run `npm test`, and the freshness
+# alarm in particular could never fire on its own.
+#
+# So the same commands a contributor runs locally run here: on every push, on
+# every pull request, and once a week regardless of whether anything changed.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Mondays, 08:00 UTC. The dated checks compare against the real date, so the
+    # schedule is what turns "no figure is past its interval" from a statement
+    # about the last commit into a statement about today.
+    - cron: "0 8 * * 1"
+  # So a failing scheduled run can be reproduced without pushing a commit.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    env:
+      # lib/seo/metadata.ts refuses to build without a production URL, and it is
+      # right to: canonicals, robots and the sitemap are generated from it. CI
+      # passes the real domain so that guard is exercised, not bypassed.
+      NEXT_PUBLIC_SITE_URL: https://assesscheck.site
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Tests
+        run: npm test
+
+      - name: Build
+        run: npm run build
