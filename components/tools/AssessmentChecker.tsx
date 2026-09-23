@@ -27,6 +27,16 @@ export function AssessmentChecker({
   // Fail loudly at render time if a page passes an unregistered jurisdiction.
   const rules = requireJurisdictionRules(jurisdictionId);
 
+  // The figures the limit is tested against are named by the jurisdiction, not
+  // here: "appraised value" is correct in Texas and wrong in Florida, where the
+  // limitation attaches to the assessed value. The fallback keeps a future
+  // jurisdiction rendering rather than crashing, and a test requires every
+  // jurisdiction with a checker to declare its own labels explicitly.
+  const valueLabels = rules.valueInputLabels ?? {
+    current: "Current value ($)",
+    previous: "Prior-year value ($)",
+  };
+
   const set = (k: keyof CheckerInput) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -63,7 +73,7 @@ export function AssessmentChecker({
           </legend>
           <p>
             <label htmlFor="currentAppraised">
-              Current appraised value ($)
+              {valueLabels.current}
             </label>
             <input
               id="currentAppraised"
@@ -76,7 +86,7 @@ export function AssessmentChecker({
           </p>
           <p>
             <label htmlFor="previousAppraised">
-              Prior-year appraised value ($)
+              {valueLabels.previous}
             </label>
             <input
               id="previousAppraised"
@@ -87,6 +97,7 @@ export function AssessmentChecker({
               autoComplete="off"
             />
           </p>
+          {valueLabels.help && <p className="muted-note">{valueLabels.help}</p>}
           {rules.homesteadCapQuestion && (
             <p>
               <label>

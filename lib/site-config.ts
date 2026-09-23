@@ -34,7 +34,12 @@ export const siteConfig = {
       deadlinesPath: "/florida-property-tax/deadlines/",
       howToFilePath: "/florida-property-tax/vab-petition/",
       evidenceGuidePath: "/florida-property-tax/vab-evidence/",
-      checkerPath: "/property-tax-checker/", // Florida-specific tool is a later phase
+      // The Florida edition of the checker. It screens the assessed-value pair
+      // against the Save Our Homes limitation, which is one of the two rules on
+      // the site that two notices are enough to test (see
+      // docs/expansion-roadmap.md). The labels that ask for assessed rather than
+      // market value come from valueInputLabels in lib/data/jurisdictions.ts.
+      checkerPath: "/florida-property-tax/checker/",
     },
     california: {
       name: "California",

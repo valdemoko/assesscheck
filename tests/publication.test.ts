@@ -52,9 +52,9 @@ describe("sitemap publication gate", () => {
     expect(getSitemapPages()).toEqual(expected);
   });
 
-  it("all 74 expected URLs are present in the registry", () => {
-    expect(SITE_PAGES).toHaveLength(74);
-    expect(getSitemapPages()).toHaveLength(74);
+  it("all 75 expected URLs are present in the registry", () => {
+    expect(SITE_PAGES).toHaveLength(75);
+    expect(getSitemapPages()).toHaveLength(75);
   });
 
   it("oregon state pages are published; no oregon county pages exist in the registry", () => {

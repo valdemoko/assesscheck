@@ -252,10 +252,12 @@ export default function FAQPage() {
       <p>
         Yes, and it is free. Our{" "}
         <Link href="/property-tax-checker/">assessment checker</Link> works where
-        the rule can be tested arithmetically from the numbers on your notice.
-        That is Texas today. Florida is the other rule on this site that two
-        consecutive notices are enough to test, but a Florida edition of the tool
-        is not built yet. It is deliberately not offered for California,
+        the rule can be tested arithmetically from the numbers on your notice —
+        in <Link href="/property-tax-checker/">Texas</Link> and{" "}
+        <Link href="/florida-property-tax/checker/">Florida</Link> today. The two
+        ask for different figures, because the limitations attach to different
+        ones: the appraised value in Texas, the assessed value in Florida. It is
+        deliberately not offered for California,
         Arizona, Nevada or Oregon, because the check those states need cannot be
         made by comparing one year to the next: California measures against a
         base year value, Arizona measures the limited property value while you

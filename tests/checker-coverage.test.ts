@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { JURISDICTION_RULES } from "@/lib/data/jurisdictions";
+import { siteConfig } from "@/lib/site-config";
 
 /**
  * What the site claims the assessment checker covers must be what it renders.
@@ -66,32 +67,77 @@ describe("assessment checker coverage claims", () => {
     }
   });
 
-  it("is offered for TEXAS ONLY — Florida is supported underneath but has no edition", () => {
-    // This is the assertion that would have caught the drift. Florida appears
-    // here as a negative: the engine can screen it, but no page renders it, so
-    // no public sentence may say it is offered.
-    expect(RENDERED_STATES).toEqual(["texas"]);
+  it("is offered for Texas and Florida, and for nothing else", () => {
+    // The set is asserted exactly, so this fails whether an edition is added
+    // without updating the prose or removed while the prose still promises it.
+    expect(RENDERED_STATES).toEqual(["florida", "texas"]);
 
     expect(
       JURISDICTION_RULES.florida.homesteadCapQuestion,
       "Florida is expected to support the screen the tool runs"
     ).toBeDefined();
-    expect(
-      JURISDICTION_RULES.california.homesteadCapQuestion,
-      "California is deliberately not screenable this way"
-    ).toBeUndefined();
+    for (const id of ["california", "arizona", "nevada", "oregon"]) {
+      expect(
+        JURISDICTION_RULES[id].homesteadCapQuestion,
+        `${id} is deliberately not screenable by comparing two years`
+      ).toBeUndefined();
+    }
   });
 
-  it("keeps the public coverage sentences free of editions that do not exist", () => {
-    const prose = ["app/page.tsx", "app/faq/page.tsx"]
-      .map((f) => readFileSync(f, "utf8"))
-      .join("\n");
-    expect(prose).not.toMatch(/offered for[^.]{0,140}Florida/i);
-    expect(prose).not.toMatch(/checker[^.]{0,200}Texas and Florida/i);
-    expect(prose).not.toMatch(/assessment checker[^.]{0,200}Florida today/i);
+  it("names the states whose rule the tool tests, without promising more", () => {
+    const home = readFileSync("app/page.tsx", "utf8");
+    const faq = readFileSync("app/faq/page.tsx", "utf8");
 
-    // And the claim that IS true should be there, so a later edit cannot simply
-    // delete the coverage statement instead of correcting it.
-    expect(prose).toMatch(/offered for <strong>Texas<\/strong>/);
+    // The claim that IS true, so a later edit cannot delete the coverage
+    // statement instead of correcting it.
+    expect(home).toMatch(/offered for <strong>Texas and Florida<\/strong>/);
+    expect(faq).toMatch(/florida-property-tax\/checker\//);
+
+    // Any state named after a NON-negated "offered for" must have an edition.
+    // The negation has to be read, because "not offered for California" is a
+    // true and useful sentence: the original bug was the opposite claim, made
+    // while no Florida edition existed, and a plain pattern match cannot tell
+    // the two apart.
+    const prose = `${home}\n${faq}`;
+    const withoutEdition = ["California", "Arizona", "Nevada", "Oregon"];
+    // The clause stops at a comma or a full stop. Without that, a long sentence
+    // that mentions a state much later — "offered for Texas and Florida ... and
+    // the California pages explain why" — reads as a claim about California.
+    const claims = [...prose.matchAll(/(.{0,40})offered for\s+([^.,]{0,160})/g)];
+    expect(claims.length, "no coverage sentence found to check").toBeGreaterThan(0);
+    for (const [, prefix, clause] of claims) {
+      const negated = /(?:not|never|n\u2019t)\s*$/i.test(prefix.trim());
+      for (const id of withoutEdition) {
+        if (!clause.includes(id)) continue;
+        expect(
+          negated,
+          `"offered for ... ${id}" must be a negated statement, because ${id} has no edition`
+        ).toBe(true);
+      }
+    }
+  });
+
+  it("gives each edition labels in its own vocabulary, not a shared one", () => {
+    // The reason a Florida edition needed a model change: Texas caps the
+    // appraised value and Florida caps the assessed value, so a shared input
+    // label would invite a Florida owner to type the wrong figure and be shown a
+    // flag the law does not support.
+    for (const id of ["texas", "florida"]) {
+      const labels = JURISDICTION_RULES[id].valueInputLabels;
+      expect(labels, `${id} must declare its value labels`).toBeDefined();
+      expect(labels!.current).not.toBe(labels!.previous);
+      expect(labels!.help && labels!.help.length).toBeGreaterThan(40);
+    }
+    expect(JURISDICTION_RULES.texas.valueInputLabels!.current).toContain("appraised");
+    expect(JURISDICTION_RULES.florida.valueInputLabels!.current).toContain("Assessed");
+    expect(JURISDICTION_RULES.florida.valueInputLabels!.help).toMatch(/not the just or market value/i);
+  });
+
+  it("renders the checker on the page each jurisdiction's config points at", () => {
+    // A config entry pointing at a page that does not render the tool (or at
+    // the wrong state's edition) would send readers somewhere useless.
+    const floridaPage = readFileSync("app/florida-property-tax/checker/page.tsx", "utf8");
+    expect(floridaPage).toContain('jurisdictionId="florida"');
+    expect(siteConfig.jurisdictions.florida.checkerPath).toBe("/florida-property-tax/checker/");
   });
 });

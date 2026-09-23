@@ -57,6 +57,7 @@ export const SITE_PAGES: SitePageRecord[] = [
   { path: "/florida-property-tax/vab-petition/", title: "Florida VAB petition", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/florida-property-tax/vab-evidence/", title: "Florida VAB evidence", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/florida-property-tax/deadlines/", title: "Florida deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
+  { path: "/florida-property-tax/checker/", title: "Florida assessment checker", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   // California (state-only — no county pages; a California county page needs the
   // same verification bar as Harris County. See docs/california-expansion-research.md)
   { path: "/california-property-tax/", title: "California property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },

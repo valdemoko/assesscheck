@@ -157,6 +157,14 @@ export default function Page() {
           </Link>{" "}
           — what each kind of evidence can and cannot show.
         </li>
+        <li>
+          <Link href="/florida-property-tax/checker/">
+            Florida assessment checker
+          </Link>{" "}
+          — enter two years of assessed values and see whether the change is
+          larger than Save Our Homes allows. It runs in your browser and shows
+          the arithmetic.
+        </li>
       </ul>
 
       <SourceList

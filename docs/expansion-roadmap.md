@@ -15,14 +15,14 @@
 
 ## 1. Published coverage
 
-Six states, 74 registered routes, one pilot county. Every state below has a
+Six states, 75 registered routes, one pilot county. Every state below has a
 research doc recording what was read, what could not be read, and the open points
 that follow.
 
 | State | Routes | Research doc | Provenance class | Open points |
 |---|---|---|---|---|
 | Texas | 19 state + 3 Harris County | `docs/florida-expansion-research.md` (shared origin) | Statute and Comptroller text | County layer beyond Harris (§5) |
-| Florida | 6 state | `docs/florida-expansion-research.md` | Statute and DOR text | Miami-Dade county pages, SOH CPI figure |
+| Florida | 7 state (incl. checker) | `docs/florida-expansion-research.md` | Statute and DOR text | Miami-Dade county pages, SOH CPI figure |
 | California | 6 state | `docs/california-expansion-research.md` | Official pages stating the rule (`leginfo` unreadable) | `C1` statute text |
 | Arizona | 6 state | `docs/arizona-expansion-research.md` | Statute text read, plus SBOE and counties | `A3` checker, `A4` counties |
 | Nevada | 6 state | `docs/nevada-expansion-research.md` | Agencies naming the rule (`leg.state.nv.us` 403) | `N1`–`N4` |
@@ -113,6 +113,12 @@ What a state actually costs, measured on the four that were built:
 | New `DeadlineType` | yes (2) | yes (2) | yes (3) | yes (1) |
 | `homesteadCapQuestion` | no | no | no | no |
 | New state routes | 6 | 6 | 6 | 6 |
+
+The checker is a separate axis: it exists for the two states whose limit two
+consecutive notices are enough to test (Texas on the appraised value, Florida on
+the assessed value). The other four pages explain why the same arithmetic would
+mislead there, and `tests/checker-coverage.test.ts` keeps the tool's real
+coverage and the sentences that promise it in step.
 
 Oregon was the cheapest because Nevada had already widened the model. The
 practical lesson: **the expensive part is the first state that needs a new

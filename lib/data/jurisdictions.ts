@@ -113,6 +113,23 @@ export interface JurisdictionRules {
     capId: string;
     checkboxLabel: string;
   };
+  /**
+   * What to call the two values the user types, in this state's own vocabulary.
+   *
+   * This is not cosmetic. Every state has several values on its notice and only
+   * ONE of them is the figure the limit is tested against, so a shared label
+   * would make some states wrong. Texas caps the appraised value, so "appraised
+   * value" is right there. Florida caps the ASSESSED value, and a homestead's
+   * just value can rise far past 3% while its assessed value does not — a
+   * Florida owner who typed their just value would be shown a cap flag that the
+   * law does not support. The label has to name the correct figure.
+   */
+  valueInputLabels?: {
+    current: string;
+    previous: string;
+    /** Shown under the pair, telling the reader where on the notice to look. */
+    help?: string;
+  };
   /** Thresholds that are editorial screening heuristics, explicitly labeled as such. */
   largeIncreaseThresholdPercent: number;
   largeDecreaseThresholdPercent: number;
@@ -158,6 +175,14 @@ export const JURISDICTION_RULES: Record<string, JurisdictionRules> = {
       capId: "tx-homestead-cap",
       checkboxLabel:
         "This property had a residence homestead exemption last year and this year",
+    },
+    // Texas caps the APPRAISED value before exemptions, which is why this state
+    // is the one where "appraised value" is the correct figure to type.
+    valueInputLabels: {
+      current: "Current appraised value ($)",
+      previous: "Prior-year appraised value ($)",
+      help:
+        "Use the appraised value from your notice of appraised value, not the taxable value. The 10% homestead limitation is applied to the appraised value before exemptions are subtracted, so the appraised pair is the one the limit is tested against.",
     },
     largeIncreaseThresholdPercent: 20,
     largeDecreaseThresholdPercent: 20,
@@ -235,6 +260,15 @@ export const JURISDICTION_RULES: Record<string, JurisdictionRules> = {
       capId: "fl-soh-cap",
       checkboxLabel:
         "This property had the homestead exemption last year and this year",
+    },
+    // Assessed value, not just value: the SOH limitation is applied to the
+    // assessed value, and the two can move very differently. Entering just
+    // value here would produce a cap flag the law does not support.
+    valueInputLabels: {
+      current: "Assessed value this year ($)",
+      previous: "Assessed value last year ($)",
+      help:
+        "Use the assessed value, not the just or market value. Your TRIM notice shows all three: market value, assessed value and taxable value. Save Our Homes limits the assessed value, so that is the pair the 3% test uses — a homestead's market value may rise far more than 3% without the limitation being breached.",
     },
     largeIncreaseThresholdPercent: 20,
     largeDecreaseThresholdPercent: 20,
