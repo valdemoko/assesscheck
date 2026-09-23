@@ -5,9 +5,15 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   path: "/",
-  title: "Understand Your Property Assessment — TX, FL, CA & AZ",
+  // The title and description deliberately do NOT enumerate the states. Twice
+  // now this line has outlived an expansion — first "TX, FL, CA & AZ" while five
+  // states were covered, then a description naming five while there were seven.
+  // A list of states on a site whose next task is adding a state is a claim with
+  // an expiry date on it, and the page body, the nav and the by-state comparison
+  // all name them where a reader can see them.
+  title: "Understand Your Property Assessment",
   description:
-    "Understand your property assessment, compare the public evidence, and prepare for a property tax protest, assessment appeal or abatement claim with reliable, sourced information for Texas, Florida, California, Arizona and Nevada.",
+    "Understand your property assessment, compare the public evidence, and prepare for a property tax protest, assessment appeal or abatement claim with reliable, sourced information — state by state, each documented from its own statutes and official guidance.",
   publishStatus: "ready",
   lastVerifiedDate: "2026-09-23",
   section: "Home",

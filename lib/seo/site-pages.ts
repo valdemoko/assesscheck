@@ -26,9 +26,9 @@ export interface SitePageRecord {
 }
 
 export const SITE_PAGES: SitePageRecord[] = [
-  { path: "/", title: "Home", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
-  { path: "/property-tax-checker/", title: "Assessment checker", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
-  { path: "/texas-property-tax/", title: "Texas property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
+  { path: "/", title: "Home", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/property-tax-checker/", title: "Assessment checker", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/texas-property-tax/", title: "Texas property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/texas-property-tax/how-property-value-is-determined/", title: "How property value is determined", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/texas-property-tax/appraised-value-vs-taxable-value/", title: "Appraised vs taxable value", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/texas-property-tax/market-value/", title: "Market value", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
@@ -37,7 +37,7 @@ export const SITE_PAGES: SitePageRecord[] = [
   { path: "/texas-property-tax/appraisal-district-vs-taxing-unit/", title: "Appraisal district vs taxing unit", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/texas-property-tax/appraisal-review-board/", title: "Appraisal Review Board", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/texas-property-tax/property-owner-rights/", title: "Property owner rights", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
-  { path: "/texas-property-tax/protest/", title: "Protest overview", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
+  { path: "/texas-property-tax/protest/", title: "Protest overview", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/texas-property-tax/protest/how-it-works/", title: "How the protest works", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/texas-property-tax/protest/deadlines/", title: "Protest deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/texas-property-tax/protest/how-to-file/", title: "How to file", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
@@ -114,7 +114,7 @@ export const SITE_PAGES: SitePageRecord[] = [
   { path: "/about/", title: "About", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/about/author/", title: "About the author", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/accessibility/", title: "Accessibility", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
-  { path: "/methodology/", title: "Methodology", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
+  { path: "/methodology/", title: "Methodology", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/editorial-policy/", title: "Editorial policy", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/corrections/", title: "Corrections", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/contact/", title: "Contact", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
