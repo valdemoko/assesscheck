@@ -148,6 +148,13 @@ same page states.
   agency pages that name the section. If a future session can reach
   `leg.state.nv.us`, sections 361.471–361.4735, 361.227, 361.453 and 361.4734
   should be read and the registry notes upgraded.
+  **Re-attempted 2026-09-23: blocked at the host, not at the URL.**
+  `leg.state.nv.us/nrs/nrs-361.html` — the lower-case path, which is the form
+  search engines index and which returns the chapter's text to a browser —
+  answers 403 here, exactly like the `/NRS/NRS-361.html` form tried in the
+  original session. Changing the path or its case therefore does not help; the
+  whole host refuses this environment. A future attempt needs either a different
+  network or an official mirror, not a different URL.
 - **N2 — AB 377 (2025) is not characterised.** The claim mechanism the content
   describes is the one the counties document. What the 2025 legislation changed
   about claiming, and when the implementing regulations took effect, remain
@@ -156,6 +163,14 @@ same page states.
   the rate-cap statute because the Washoe County Assessor names it; the dollar
   figure is not published on the site because its sources are PDFs that could
   not be read.
+  **Re-attempted 2026-09-23 and confirmed still blocked.** The figure is \$3.64
+  per \$100 of assessed valuation, and it is stated by the Nevada Department of
+  Taxation (`tax.nv.gov` revenue projections) and by county documents — but every
+  one of those is a PDF, and the fetch tool refuses `application/pdf` outright,
+  so the number cannot be read from a source that meets this project's bar. Do
+  not take the figure from a search snippet: the site's rule is that a claim
+  cites something that was read, and a snippet is not a read source. An official
+  HTML page that states it is the thing to look for.
 - **N4 — county coverage.** State-level content only. Nevada has 17 county
   assessor offices and the abatement *level* and the appeal windows are
   administered locally; no county page is published until a county passes the

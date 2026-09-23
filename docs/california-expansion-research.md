@@ -255,6 +255,20 @@ consistent with state law) has not been applied to any California county.
   statements, never a paraphrase of unread statute text.
 - **C2:** `leginfo.legislature.ca.gov` readability — needed for every future
   California code citation.
+  **Re-attempted 2026-09-23 and confirmed still blocked, with the routes now
+  ruled out.** The direct section URL returns HTTP 200 but a body containing only
+  "California Code, RTC 51 / Code Section": the text is rendered client-side, so
+  a text extractor sees an empty page. The Board of Equalization's Property Tax
+  Law Guide, which would be the official HTML alternative, 404s on every path
+  tried — `/lawguides/property/current/ptlg/index.html`,
+  `/lawguides/property/current/ptlg/rtc/51.html`,
+  `/lawguides/property/current/ptlg/rule/461.html` and
+  `/lawguides/property/current/ptlg/rule/property-tax-rules.html`. Note that the
+  guide's annotation pages under `/ptlg/annt/` do resolve and are indexed, so the
+  guide exists — only the routes to statute and rule text failed. A future
+  attempt should crawl from an `/ptlg/annt/` page rather than guess sibling
+  paths. Until one of those works, California pages keep citing BOE/CDTFA
+  statements that state the rule, never a paraphrase of unread statute.
 - **C3:** The Californian checker (base year value + CPI factor screening) is a
   later phase: it needs a **factored base year value** input, not a prior-year
   figure. Same conclusion as Florida's TRIM tool.
