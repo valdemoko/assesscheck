@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   path: "/california-property-tax/",
-  title: "California Property Tax Basics",
+  title: "California Property Tax",
   description:
     "How California property tax works: the county assessor, the Proposition 13 base year value system, the Proposition 8 decline-in-value rule, and the difference between assessed and net taxable value.",
   publishStatus: "ready",
@@ -19,7 +19,7 @@ export default function Page() {
     <PageShell
       breadcrumbs={[{ href: "/", label: "Home" }, { label: "California Property Tax" }]}
     >
-      <h1>California Property Tax Basics</h1>
+      <h1>California Property Tax</h1>
 
       <p>
         California assesses property on an entirely different principle from
@@ -28,6 +28,41 @@ export default function Page() {
         adjusts that figure annually, so two identical houses on the same street
         can carry very different assessments — lawfully.
       </p>
+
+      <h2>In this section</h2>
+      <ul>
+        <li>
+          <Link href="/california-property-tax/proposition-13-and-8/">
+            Proposition 13 and Proposition 8 explained
+          </Link>{" "}
+          — the 2%/CPI base year limit and the temporary decline-in-value rule.
+        </li>
+        <li>
+          <Link href="/california-property-tax/notice-of-assessed-value/">
+            The notice of assessed value
+          </Link>{" "}
+          — why California does not send one to every owner every year.
+        </li>
+        <li>
+          <Link href="/california-property-tax/assessment-appeal/">
+            Filing an application for changed assessment
+          </Link>{" "}
+          — the county board, BOE-305-AH, and what the board can decide.
+        </li>
+        <li>
+          <Link href="/california-property-tax/appeal-evidence/">
+            Evidence for an assessment appeal
+          </Link>{" "}
+          — what the board may consider, and the burden-of-proof rules.
+        </li>
+        <li>
+          <Link href="/california-property-tax/deadlines/">
+            California property tax deadlines
+          </Link>{" "}
+          — the July 2 filing window, the payment calendar, and the county
+          variable deadline.
+        </li>
+      </ul>
 
       <h2>Who does what</h2>
       <ul>
@@ -149,41 +184,6 @@ export default function Page() {
         </Link>
         .
       </p>
-
-      <h2>Where to go next</h2>
-      <ul>
-        <li>
-          <Link href="/california-property-tax/proposition-13-and-8/">
-            Proposition 13 and Proposition 8 explained
-          </Link>{" "}
-          — the 2%/CPI base year limit and the temporary decline-in-value rule.
-        </li>
-        <li>
-          <Link href="/california-property-tax/notice-of-assessed-value/">
-            The notice of assessed value
-          </Link>{" "}
-          — why California does not send one to every owner every year.
-        </li>
-        <li>
-          <Link href="/california-property-tax/assessment-appeal/">
-            Filing an application for changed assessment
-          </Link>{" "}
-          — the county board, BOE-305-AH, and what the board can decide.
-        </li>
-        <li>
-          <Link href="/california-property-tax/appeal-evidence/">
-            Evidence for an assessment appeal
-          </Link>{" "}
-          — what the board may consider, and the burden-of-proof rules.
-        </li>
-        <li>
-          <Link href="/california-property-tax/deadlines/">
-            California property tax deadlines
-          </Link>{" "}
-          — the July 2 filing window, the payment calendar, and the county
-          variable deadline.
-        </li>
-      </ul>
 
       <SourceList
         sourceIds={[

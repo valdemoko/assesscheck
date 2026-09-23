@@ -61,6 +61,18 @@ const TOPICS = [
     blurb:
       "Equal and uniform taxation, notice of increases, and the right to protest.",
   },
+  {
+    href: "/texas-property-tax/protest/",
+    label: "The protest process",
+    blurb:
+      "Filing, the informal conference, the ARB hearing, evidence, and what follows an order.",
+  },
+  {
+    href: "/texas-property-tax/faq/",
+    label: "Texas property tax FAQ",
+    blurb:
+      "The questions this section is asked most often, answered in short form.",
+  },
 ];
 
 export default function TexasPropertyTaxPage() {

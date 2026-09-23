@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   path: "/oregon-property-tax/",
-  title: "Oregon Property Tax Basics",
+  title: "Oregon Property Tax",
   description:
     "How Oregon property tax works: Measure 50's maximum assessed value versus real market value, the assessed value as the lower of the two, and the Measure 5 limits that can compress your bill.",
   publishStatus: "ready",
@@ -19,7 +19,7 @@ export default function Page() {
     <PageShell
       breadcrumbs={[{ href: "/", label: "Home" }, { label: "Oregon Property Tax" }]}
     >
-      <h1>Oregon Property Tax Basics</h1>
+      <h1>Oregon Property Tax</h1>
 
       <p>
         Oregon runs <strong>two limits from two different ballot measures</strong>
@@ -28,6 +28,41 @@ export default function Page() {
         (1990) put a limit on the tax itself, expressed in dollars per thousand of
         value. A bill can move because of either one, and in opposite directions.
       </p>
+
+      <h2>In this section</h2>
+      <ul>
+        <li>
+          <Link href="/oregon-property-tax/measure-50-mav/">
+            Measure 50 and the maximum assessed value
+          </Link>{" "}
+          — the 103% test, and why the MAV is not simply last year&rsquo;s figure
+          plus 3%.
+        </li>
+        <li>
+          <Link href="/oregon-property-tax/changed-property-ratio/">
+            New construction and the changed property ratio
+          </Link>{" "}
+          — why a new house is taxed on a fraction of its value, and what counts
+          as an exception event.
+        </li>
+        <li>
+          <Link href="/oregon-property-tax/tax-statement/">
+            Your tax statement
+          </Link>{" "}
+          — what arrives before October 25, and how compression appears on it.
+        </li>
+        <li>
+          <Link href="/oregon-property-tax/appeal/">Appealing your value</Link> —
+          the board, the Tax Court, and what the counties accept as evidence.
+        </li>
+        <li>
+          <Link href="/oregon-property-tax/deadlines/">
+            Oregon property tax deadlines
+          </Link>{" "}
+          — the assessment date, the statement, the December 31 filing and the
+          installments.
+        </li>
+      </ul>
 
       <h2>The three values</h2>
       <ul>
@@ -153,41 +188,6 @@ export default function Page() {
         <Link href="/oregon-property-tax/appeal/">appeal page</Link> explains the
         two conditions under which it does.
       </p>
-
-      <h2>Where to go next</h2>
-      <ul>
-        <li>
-          <Link href="/oregon-property-tax/measure-50-mav/">
-            Measure 50 and the maximum assessed value
-          </Link>{" "}
-          — the 103% test, and why the MAV is not simply last year&rsquo;s figure
-          plus 3%.
-        </li>
-        <li>
-          <Link href="/oregon-property-tax/changed-property-ratio/">
-            New construction and the changed property ratio
-          </Link>{" "}
-          — why a new house is taxed on a fraction of its value, and what counts
-          as an exception event.
-        </li>
-        <li>
-          <Link href="/oregon-property-tax/tax-statement/">
-            Your tax statement
-          </Link>{" "}
-          — what arrives before October 25, and how compression appears on it.
-        </li>
-        <li>
-          <Link href="/oregon-property-tax/appeal/">Appealing your value</Link> —
-          the board, the Tax Court, and what the counties accept as evidence.
-        </li>
-        <li>
-          <Link href="/oregon-property-tax/deadlines/">
-            Oregon property tax deadlines
-          </Link>{" "}
-          — the assessment date, the statement,          the December 31 filing and the
-          installments.
-        </li>
-      </ul>
 
       <SourceList
         sourceIds={[

@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   path: "/nevada-property-tax/",
-  title: "Nevada Property Tax Basics",
+  title: "Nevada Property Tax",
   description:
     "How Nevada property tax works: the July 1 fiscal year, taxable value and the 35% assessment ratio, who sets the rate, and the partial abatement that caps the tax bill rather than the value.",
   publishStatus: "ready",
@@ -19,7 +19,7 @@ export default function Page() {
     <PageShell
       breadcrumbs={[{ href: "/", label: "Home" }, { label: "Nevada Property Tax" }]}
     >
-      <h1>Nevada Property Tax Basics</h1>
+      <h1>Nevada Property Tax</h1>
 
       <p>
         Nevada is the one state on this site whose limit is{" "}
@@ -32,6 +32,43 @@ export default function Page() {
         including the counterintuitive part: a Nevada bill can go{" "}
         <em>up</em> in a year when your assessed value goes down.
       </p>
+
+      <h2>In this section</h2>
+      <ul>
+        <li>
+          <Link href="/nevada-property-tax/tax-cap-abatement/">
+            The partial abatement
+          </Link>{" "}
+          — what is capped, what is not, and why a bill can rise when a value
+          falls.
+        </li>
+        <li>
+          <Link href="/nevada-property-tax/primary-residence-abatement/">
+            The 3% primary residence abatement
+          </Link>{" "}
+          — how the claim works and what makes a property lose it.
+        </li>
+        <li>
+          <Link href="/nevada-property-tax/value-notice/">
+            Your value notice
+          </Link>{" "}
+          — what the assessor sends, when, and what it does not include.
+        </li>
+        <li>
+          <Link href="/nevada-property-tax/value-appeal/">
+            Appealing your value
+          </Link>{" "}
+          — the January 15 track at the county board, and the separate June 30
+          abatement track.
+        </li>
+        <li>
+          <Link href="/nevada-property-tax/deadlines/">
+            Nevada property tax deadlines
+          </Link>{" "}
+          — the lien date, the notice, both appeal windows and the four
+          installments.
+        </li>
+      </ul>
 
       <h2>The fiscal year, not the calendar year</h2>
       <p>
@@ -153,43 +190,6 @@ export default function Page() {
         is not by itself a cap violation, and a cap that was applied correctly
         does not make the underlying value right.
       </p>
-
-      <h2>Where to go next</h2>
-      <ul>
-        <li>
-          <Link href="/nevada-property-tax/tax-cap-abatement/">
-            The partial abatement
-          </Link>{" "}
-          — what is capped, what is not, and why a bill can rise when a value
-          falls.
-        </li>
-        <li>
-          <Link href="/nevada-property-tax/primary-residence-abatement/">
-            The 3% primary residence abatement
-          </Link>{" "}
-          — how the claim works and what makes a property lose it.
-        </li>
-        <li>
-          <Link href="/nevada-property-tax/value-notice/">
-            Your value notice
-          </Link>{" "}
-          — what the assessor sends, when, and what it does not include.
-        </li>
-        <li>
-          <Link href="/nevada-property-tax/value-appeal/">
-            Appealing your value
-          </Link>{" "}
-          — the January 15 track at the county board, and the separate June 30
-          abatement track.
-        </li>
-        <li>
-          <Link href="/nevada-property-tax/deadlines/">
-            Nevada property tax deadlines
-          </Link>{" "}
-          — the lien date, the notice, both appeal windows and the four
-          installments.
-        </li>
-      </ul>
 
       <SourceList
         sourceIds={[

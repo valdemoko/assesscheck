@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   path: "/arizona-property-tax/",
-  title: "Arizona Property Tax Basics",
+  title: "Arizona Property Tax",
   description:
     "How Arizona property tax works: the full cash value and the limited property value, which one the tax is levied on, the legal class assessment ratios, and why the valuation year is not the tax year.",
   publishStatus: "ready",
@@ -19,7 +19,7 @@ export default function Page() {
     <PageShell
       breadcrumbs={[{ href: "/", label: "Home" }, { label: "Arizona Property Tax" }]}
     >
-      <h1>Arizona Property Tax Basics</h1>
+      <h1>Arizona Property Tax</h1>
 
       <p>
         Arizona puts <strong>two values</strong> on the same property every year,
@@ -27,6 +27,41 @@ export default function Page() {
         about Arizona assessments disappears — including the widely repeated idea
         that a successful appeal automatically lowers your tax bill.
       </p>
+
+      <h2>In this section</h2>
+      <ul>
+        <li>
+          <Link href="/arizona-property-tax/full-cash-vs-limited-value/">
+            Full cash value vs limited property value
+          </Link>{" "}
+          — the 5% formula and every statutory exception that overrides it.
+        </li>
+        <li>
+          <Link href="/arizona-property-tax/notice-of-valuation/">
+            The notice of valuation
+          </Link>{" "}
+          — what arrives before March 1, and what an amended notice changes.
+        </li>
+        <li>
+          <Link href="/arizona-property-tax/petition-for-review/">
+            The petition for review
+          </Link>{" "}
+          — the 60-day window, the form, and the two appeal routes.
+        </li>
+        <li>
+          <Link href="/arizona-property-tax/appeal-evidence/">
+            Evidence for an Arizona appeal
+          </Link>{" "}
+          — what the statute requires the petition to contain.
+        </li>
+        <li>
+          <Link href="/arizona-property-tax/deadlines/">
+            Arizona property tax deadlines
+          </Link>{" "}
+          — valuation date, notice, petition, decision, board, court and the two
+          payment halves.
+        </li>
+      </ul>
 
       <h2>The two values</h2>
       <ul>
@@ -172,41 +207,6 @@ export default function Page() {
         alone changes the tax base only if the corrected FCV falls below the LPV
         that the formula produces.
       </p>
-
-      <h2>Where to go next</h2>
-      <ul>
-        <li>
-          <Link href="/arizona-property-tax/full-cash-vs-limited-value/">
-            Full cash value vs limited property value
-          </Link>{" "}
-          — the 5% formula and every statutory exception that overrides it.
-        </li>
-        <li>
-          <Link href="/arizona-property-tax/notice-of-valuation/">
-            The notice of valuation
-          </Link>{" "}
-          — what arrives before March 1, and what an amended notice changes.
-        </li>
-        <li>
-          <Link href="/arizona-property-tax/petition-for-review/">
-            The petition for review
-          </Link>{" "}
-          — the 60-day window, the form, and the two appeal routes.
-        </li>
-        <li>
-          <Link href="/arizona-property-tax/appeal-evidence/">
-            Evidence for an Arizona appeal
-          </Link>{" "}
-          — what the statute requires the petition to contain.
-        </li>
-        <li>
-          <Link href="/arizona-property-tax/deadlines/">
-            Arizona property tax deadlines
-          </Link>{" "}
-          — valuation date, notice, petition, decision, board, court and the two
-          payment halves.
-        </li>
-      </ul>
 
       <SourceList
         sourceIds={[

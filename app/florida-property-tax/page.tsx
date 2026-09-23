@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   path: "/florida-property-tax/",
-  title: "Florida Property Tax Basics",
+  title: "Florida Property Tax",
   description:
     "How Florida property tax works: just value, assessed value, and taxable value, the property appraiser's role, and how the Value Adjustment Board review process differs from Texas.",
   publishStatus: "ready",
@@ -19,13 +19,56 @@ export default function Page() {
     <PageShell
       breadcrumbs={[{ href: "/", label: "Home" }, { label: "Florida Property Tax" }]}
     >
-      <h1>Florida Property Tax Basics</h1>
+      <h1>Florida Property Tax</h1>
 
       <p>
         Florida property tax works differently from Texas, and the vocabulary
         is different too. Before comparing any numbers, it helps to know who
         does what and which of the three "values" on your paperwork is which.
       </p>
+
+      <h2>In this section</h2>
+      <ul>
+        <li>
+          <Link href="/florida-property-tax/save-our-homes/">
+            Save Our Homes and the caps
+          </Link>{" "}
+          — how the 3%/CPI limitation and the non-homestead 10% cap work.
+        </li>
+        <li>
+          <Link href="/florida-property-tax/trim-notice/">
+            The TRIM notice explained
+          </Link>{" "}
+          — the annual notice that starts the review window.
+        </li>
+        <li>
+          <Link href="/florida-property-tax/vab-petition/">
+            Filing a VAB petition
+          </Link>{" "}
+          — the process, deadlines, and requirements.
+        </li>
+        <li>
+          <Link href="/florida-property-tax/vab-evidence/">
+            Evidence for a VAB petition
+          </Link>{" "}
+          — what each kind of evidence can and cannot show.
+        </li>
+        <li>
+          <Link href="/florida-property-tax/deadlines/">
+            Florida property tax deadlines
+          </Link>{" "}
+          — the TRIM notice, both petition windows, the evidence exchange and
+          the day the taxes are due.
+        </li>
+        <li>
+          <Link href="/florida-property-tax/checker/">
+            Florida assessment checker
+          </Link>{" "}
+          — enter two years of assessed values and see whether the change is
+          larger than Save Our Homes allows. It runs in your browser and shows
+          the arithmetic.
+        </li>
+      </ul>
 
       <h2>Who does what</h2>
       <ul>
@@ -130,42 +173,6 @@ export default function Page() {
         property appraiser's local practices are not covered on this site.
         AssessCheck has no data connection to any Florida property appraiser.
       </p>
-
-      <h2>Where to go next</h2>
-      <ul>
-        <li>
-          <Link href="/florida-property-tax/save-our-homes/">
-            Save Our Homes and the caps
-          </Link>{" "}
-          — how the 3%/CPI limitation and the non-homestead 10% cap work.
-        </li>
-        <li>
-          <Link href="/florida-property-tax/trim-notice/">
-            The TRIM notice explained
-          </Link>{" "}
-          — the annual notice that starts the review window.
-        </li>
-        <li>
-          <Link href="/florida-property-tax/vab-petition/">
-            Filing a VAB petition
-          </Link>{" "}
-          — the process, deadlines, and requirements.
-        </li>
-        <li>
-          <Link href="/florida-property-tax/vab-evidence/">
-            Evidence for a VAB petition
-          </Link>{" "}
-          — what each kind of evidence can and cannot show.
-        </li>
-        <li>
-          <Link href="/florida-property-tax/checker/">
-            Florida assessment checker
-          </Link>{" "}
-          — enter two years of assessed values and see whether the change is
-          larger than Save Our Homes allows. It runs in your browser and shows
-          the arithmetic.
-        </li>
-      </ul>
 
       <SourceList
         sourceIds={["fl-stat-193-011", "fl-stat-193-155", "fl-stat-196-031"]}
