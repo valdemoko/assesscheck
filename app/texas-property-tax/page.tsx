@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
+import { SourceList } from "@/components/sources/SourceList";
 import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -87,6 +88,8 @@ export default function TexasPropertyTaxPage() {
         straight to your county's page:{" "}
         <Link href="/texas/harris-county/">Harris County</Link>.
       </p>
+
+      <SourceList sourceIds={["tx-comptroller-basics", "tx-comptroller-arb"]} />
     </PageShell>
   );
 }

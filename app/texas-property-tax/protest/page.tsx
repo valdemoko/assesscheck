@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
+import { SourceList } from "@/components/sources/SourceList";
 import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -135,6 +136,17 @@ export default function ProtestHubPage() {
           </li>
         ))}
       </ul>
+
+      <SourceList
+        sourceIds={[
+          "tx-tax-code-41-41",
+          "tx-tax-code-41-44",
+          "tx-tax-code-41-45",
+          "tx-tax-code-25-19",
+          "tx-tax-code-42-21",
+          "tx-comptroller-appraisal-protests",
+        ]}
+      />
     </PageShell>
   );
 }

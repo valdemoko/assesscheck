@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
+import { SourceList } from "@/components/sources/SourceList";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { AssessmentChecker } from "@/components/tools/AssessmentChecker";
 import { DataIntegrationNotice } from "@/components/tools/DataIntegrationNotice";
@@ -57,6 +58,15 @@ export default function CheckerPage() {
         </Link>
         .
       </p>
+
+      <SourceList
+        sourceIds={[
+          "tx-tax-code-23-23",
+          "tx-tax-code-25-19",
+          "tx-tax-code-41-41",
+          "tx-comptroller-basics",
+        ]}
+      />
     </PageShell>
   );
 }
