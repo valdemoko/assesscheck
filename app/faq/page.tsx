@@ -6,188 +6,271 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   path: "/faq/",
-  title: "Texas Property Tax FAQ",
+  title: "Property Tax FAQ",
   description:
-    "Straight answers to common Texas property tax questions: protests, deadlines, evidence, ARB hearings, exemptions, and what an assessment can and cannot mean.",
+    "Questions that work the same way in every state we cover — Texas, Florida, California, Arizona and Nevada — and where each one answers differently: who sets value versus rates, where appeals are filed, and what a percentage cap really limits.",
   publishStatus: "ready",
-  lastVerifiedDate: "2026-09-17",
+  lastVerifiedDate: "2026-09-23",
   section: "FAQ",
 });
 
-const FAQS = [
+const APPEAL_ROUTES = [
   {
-    q: "What is a property tax assessment?",
-    a: (
-      <>
-        In Texas, the key document is the notice of appraised value, which the
-        appraisal district sends when your value rises, when the property is new
-        to the roll, when an exemption changed, or when your value exceeds your
-        rendition. It states the district's determination of your property's
-        value as of January 1.
-      </>
-    ),
+    state: "Texas",
+    href: "/texas-property-tax/",
+    notice: "Notice of appraised value",
+    filedWith: "The appraisal district",
+    decidedBy: "Appraisal Review Board",
+    window:
+      "May 15, or 30 days after the district delivered your notice, whichever is later",
+    basis: "Anchored to the delivery of your notice",
   },
   {
-    q: "Does a higher assessment automatically mean higher taxes?",
-    a: (
-      <>
-        No. Your tax bill is the taxable value (appraised value minus
-        exemptions) multiplied by each taxing unit's rate — and taxing units set
-        their rates every year, sometimes lower when values rise. The appraisal
-        district determines value; the taxing units determine rates. That is
-        why the notice itself states that the appraisal district only
-        determines value.
-      </>
-    ),
+    state: "Florida",
+    href: "/florida-property-tax/",
+    notice: "TRIM notice",
+    filedWith: "The value adjustment board clerk",
+    decidedBy: "Value Adjustment Board",
+    window: "On or before the 25th day after the notice is mailed",
+    basis: "Anchored to the mailing of your notice",
   },
   {
-    q: "Can I protest my property value?",
-    a: (
-      <>
-        Yes. Texas Tax Code § 41.41 entitles a property owner to protest before
-        the ARB, including the determination of appraised value and unequal
-        appraisal, and the law forbids charging a fee to file. See{" "}
-        <Link href="/texas-property-tax/protest/how-it-works/">how the
-        process works</Link>.
-      </>
-    ),
+    state: "California",
+    href: "/california-property-tax/",
+    notice: "Notice of assessed value",
+    filedWith: "The clerk of the board of supervisors",
+    decidedBy: "County assessment appeals board",
+    window:
+      "A fixed seasonal window: from July 2 to September 15, or to November 30 in counties that have adopted the longer period",
+    basis: "A calendar window, not a count of days from your notice",
   },
   {
-    q: "What is the protest deadline?",
-    a: (
-      <>
-        Generally May 15, or 30 days after the appraisal district delivered
-        your notice of appraised value — whichever is later. Details and edge
-        cases (late filing, military and offshore exceptions) are on our{" "}
-        <Link href="/texas-property-tax/protest/deadlines/">deadlines
-        page</Link>.
-      </>
-    ),
+    state: "Arizona",
+    href: "/arizona-property-tax/",
+    notice: "Notice of valuation",
+    filedWith: "The county assessor, as a petition for review",
+    decidedBy:
+      "The assessor first, then the county board of equalization or Tax Court",
+    window: "Within 60 days after the notice is mailed",
+    basis: "Anchored to the mailing of your notice",
   },
   {
-    q: "What evidence can I use?",
-    a: (
-      <>
-        The Comptroller's guidance lists property photographs, repair estimates
-        or receipts, sales price documentation, comparable-property information,
-        median-level-of-appraisal calculations (for unequal appraisal),
-        affidavits, architectural drawings, engineering reports, surveys, and
-        deed records. Each is explained in our{" "}
-        <Link href="/evidence/property-tax-protest-evidence/">evidence
-        guide</Link>.
-      </>
-    ),
-  },
-  {
-    q: "How do comparable properties work?",
-    a: (
-      <>
-        Texas law defines what makes a sale comparable: for residential
-        property in counties over 150,000 population, the sale must have
-        occurred within 36 months of the valuation date, and comparability
-        turns on location, size, age, condition, access, amenities, and legal
-        restrictions — not just proximity. See our{" "}
-        <Link href="/methodology/">comparable methodology</Link>.
-      </>
-    ),
-  },
-  {
-    q: "What happens at an ARB hearing?",
-    a: (
-      <>
-        A panel hears both sides: you and the appraisal district's
-        representative each present evidence and may state an opinion of value.
-        You can appear in person, remotely, or by affidavit. The panel does not
-        rule on the spot; the ARB issues a written order afterward. Details:{" "}
-        <Link href="/texas-property-tax/protest/arb-hearing/">the ARB
-        hearing</Link>.
-      </>
-    ),
-  },
-  {
-    q: "What happens after the protest?",
-    a: (
-      <>
-        The ARB's written order states the final value for the tax year. If the
-        value changed, the taxing units are notified and your bills reflect it,
-        with refunds if you already paid. If you disagree with the order, appeal
-        routes exist on a 60-day (or shorter) clock:{" "}
-        <Link href="/texas-property-tax/protest/appeal-options/">appeal
-        options</Link>.
-      </>
-    ),
-  },
-  {
-    q: "Can I represent myself, or do I need an agent?",
-    a: (
-      <>
-        You can represent yourself. If you want representation, you appoint an
-        agent with Form 50-162. Owners and lessees may appoint someone to
-        handle hearings concerning their property.
-      </>
-    ),
-  },
-  {
-    q: "What if I miss the protest deadline?",
-    a: (
-      <>
-        The ARB can hear a late protest if you show good cause before it
-        approves the appraisal records; offshore workers and deployed military
-        members have specific statutory exceptions. If those windows close,
-        narrow correction remedies (clerical errors, gross over-appraisal
-        motions) may still exist:{" "}
-        <Link href="/texas-property-tax/protest/after-the-hearing/">late
-        remedies</Link>.
-      </>
-    ),
-  },
-  {
-    q: "What if the property record contains an error — wrong square footage, wrong features?",
-    a: (
-      <>
-        Characteristic errors are exactly what the review process is for. Raise
-        them at an informal conference with documentation, and include them as
-        grounds in your protest. A correction to the record can affect the
-        value without a formal value argument.
-      </>
-    ),
-  },
-  {
-    q: "Can I protest an exemption denial?",
-    a: (
-      <>
-        Yes — Tax Code § 41.41 includes denial, in whole or in part, of a
-        partial exemption among the protestable actions. Exemption
-        qualifications are described on our{" "}
-        <Link href="/texas-property-tax/exemptions/">exemptions page</Link>.
-      </>
-    ),
-  },
-  {
-    q: "What should I bring to a hearing?",
-    a: (
-      <>
-        Your evidence packet (photographs, estimates, sales documentation,
-        comparable data), copies in the form your ARB's procedures require, and
-        your own notes on your two or three strongest points. The{" "}
-        <Link href="/property-tax-checker/">assessment checker</Link> produces
-        a checklist you can work from.
-      </>
-    ),
+    state: "Nevada",
+    href: "/nevada-property-tax/",
+    notice: "Value notice",
+    filedWith: "The county assessor's office",
+    decidedBy: "County Board of Equalization (then the State Board of Equalization)",
+    window:
+      "By January 15, moving to the next business day when that date falls on a weekend or holiday",
+    basis: "A fixed calendar date, not a count of days from your notice",
   },
 ];
 
 export default function FAQPage() {
   return (
     <PageShell breadcrumbs={[{ label: "FAQ" }]}>
-      <h1>Texas Property Tax FAQ</h1>
-      {FAQS.map((f, i) => (
-        <section key={i}>
-          <h2>{f.q}</h2>
-          <p>{f.a}</p>
-        </section>
-      ))}
-      <SourceList sourceIds={["tx-comptroller-appraisal-protests"]} />
+      <h1>Property Tax FAQ</h1>
+      <p>
+        These are the questions that produce the same kind of answer in every
+        state we cover — <strong>Texas, Florida, California, Arizona and
+        Nevada</strong>{" "}
+        — with the differences stated where they matter. Questions that only
+        make sense inside one state&apos;s procedure are kept on that state&apos;s
+        own page, starting with the{" "}
+        <Link href="/texas-property-tax/faq/">Texas FAQ</Link>. Nothing here
+        substitutes for your own notice, your county&apos;s instructions or
+        advice from a professional who practices in your state.
+      </p>
+
+      <h2>Who decides what my property is worth, and who decides what I pay?</h2>
+      <p>
+        They are different bodies in all five states, and that separation is the
+        single most useful thing to understand before you read any notice.
+      </p>
+      <ul>
+        <li>
+          <strong>Texas:</strong> the appraisal district determines value; the
+          taxing units set the rates. The notice of appraised value says so on
+          its face.
+        </li>
+        <li>
+          <strong>Florida:</strong> the county property appraiser values the
+          property; the taxing authorities set millage.
+        </li>
+        <li>
+          <strong>California:</strong> the county assessor sets value, while the
+          general levy is limited to 1 percent of taxable value plus the rate
+          needed to pay debt approved by local voters — so what moves your bill
+          is mostly the value side.
+        </li>
+        <li>
+          <strong>Arizona:</strong> the county assessor determines the full cash
+          value and the limited property value; the taxing jurisdictions set the
+          rates that are applied to the limited property value.
+        </li>
+        <li>
+          <strong>Nevada:</strong> the county assessor determines taxable value,
+          but the tax rates are set by the Nevada Tax Commission in the spring
+          from local budgets, and the county treasurer bills and collects.
+        </li>
+      </ul>
+      <p>
+        The practical consequence: <strong>a valuation notice is not a tax
+        bill.</strong> A rising value and a rising bill are not the same event,
+        and in four of these five states the rate decision happens later and
+        elsewhere.
+      </p>
+
+      <h2>Where do I file an appeal, and what is the deadline?</h2>
+      <p>
+        Every state here routes the first appeal somewhere different, and no two
+        deadlines are counted the same way. This table is the fastest way to see
+        which state you are actually dealing with.
+      </p>
+      <div className="table-wrap">
+      <table>
+        <caption>
+          First-level appeal route and deadline basis by state, as documented on
+          each state&apos;s pages.
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">State</th>
+            <th scope="col">Notice</th>
+            <th scope="col">Filed with</th>
+            <th scope="col">Decided by</th>
+            <th scope="col">When</th>
+          </tr>
+        </thead>
+        <tbody>
+          {APPEAL_ROUTES.map((r) => (
+            <tr key={r.state}>
+              <th scope="row">
+                <Link href={r.href}>{r.state}</Link>
+              </th>
+              <td>{r.notice}</td>
+              <td>{r.filedWith}</td>
+              <td>{r.decidedBy}</td>
+              <td>
+                {r.window} <span className="muted-note">({r.basis})</span>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      </div>
+      <p>
+        Note the difference in kind: in Texas, Florida and Arizona the clock
+        starts with a notice, while California sets a seasonal window and Nevada
+        a fixed date. That is why advice copied from one state (&quot;you have 30
+        days from delivery&quot;) is simply wrong in another. Nevada adds a
+        second track on top of the table above — an abatement determination is
+        challenged with the assessor by June 30, not with a board. Each state
+        page states the rule it comes from.
+      </p>
+
+      <h2>Why doesn&apos;t the same percentage mean the same thing everywhere?</h2>
+      <p>
+        Because the caps in these five states do not limit the same quantity.
+        The number is only meaningful together with what it is applied to:
+      </p>
+      <ul>
+        <li>
+          <strong>Texas</strong> limits the annual increase in a homestead&apos;s{" "}
+          <em>appraised value</em> (Tax Code § 23.23), before exemptions are
+          subtracted.
+        </li>
+        <li>
+          <strong>Florida</strong> limits the annual increase in a homestead&apos;s{" "}
+          <em>assessed value</em> to the lower of 3 percent or the change in the
+          Consumer Price Index (§ 193.155).
+        </li>
+        <li>
+          <strong>California</strong> limits the increase in a property&apos;s{" "}
+          <em>base year value</em> to no more than 2 percent a year, and a
+          separate rule allows a temporary lower assessment when the market
+          falls below the base year value.
+        </li>
+        <li>
+          <strong>Arizona</strong> limits the{" "}
+          <em>limited property value</em> — the figure the tax is actually
+          computed on — to a 5 percent annual increase, while the full cash
+          value, the market estimate you appeal, has no cap at all.
+        </li>
+        <li>
+          <strong>Nevada</strong> limits neither a value nor a rate of increase
+          in a value: it limits the <em>tax bill</em>, to 3 percent a year over
+          the prior bill for a claimed primary residence and to no more than 8
+          percent for other property, and it takes the lower of that figure and
+          the calculated tax. Nevada&rsquo;s assessors state the consequence
+          plainly: the cap does not limit the increase in assessed value.
+        </li>
+      </ul>
+      <p>
+        So a &quot;5 percent cap&quot; in Arizona can leave your bill unchanged
+        if your limited value is already far below your full cash value, and a
+        &quot;3 percent cap&quot; in Florida says nothing about your school
+        levy. The{" "}
+        <Link href="/property-tax-by-state/">
+          by-state comparison of the limitation rules
+        </Link>{" "}
+        puts all five side by side.
+      </p>
+
+      <h2>Should I check my own numbers before hiring anyone?</h2>
+      <p>
+        Yes, and it is free. Our{" "}
+        <Link href="/property-tax-checker/">assessment checker</Link> works where
+        the rule can be tested arithmetically from the numbers on your notice —
+        Texas and Florida today. It is deliberately not offered for California,
+        Arizona or Nevada, because the check those states need cannot be made by
+        comparing one year to the next: California measures against a base year
+        value, Arizona measures the limited property value while you appeal the
+        full cash value, and Nevada caps the tax bill rather than any value at
+        all. Each of those state pages explains the limit rather than offering an
+        answer that would be wrong.
+      </p>
+
+      <h2>Where do I find the questions specific to my state?</h2>
+      <ul>
+        <li>
+          <Link href="/texas-property-tax/faq/">Texas property tax FAQ</Link> —
+          protests, ARB hearings, evidence and exemptions under the Texas Tax
+          Code.
+        </li>
+        <li>
+          <Link href="/florida-property-tax/">Florida property tax</Link> —
+          TRIM notices, the save-our-homes limitation and VAB petitions.
+        </li>
+        <li>
+          <Link href="/california-property-tax/">California property tax</Link> —
+          Proposition 13 and Proposition 8, assessed value notices and
+          assessment appeals boards.
+        </li>
+        <li>
+          <Link href="/arizona-property-tax/">Arizona property tax</Link> — full
+          cash value versus limited property value, notices of valuation and
+          petitions for review.
+        </li>
+        <li>
+          <Link href="/nevada-property-tax/">Nevada property tax</Link> — the
+          fiscal-year clock, value notices, the partial abatement that caps the
+          tax bill and the claim that keeps the 3% level.
+        </li>
+      </ul>
+
+      <SourceList
+        sourceIds={[
+          "tx-tax-code-23-23",
+          "tx-comptroller-appraisal-protests",
+          "fl-stat-193-155",
+          "fl-stat-194-011",
+          "ca-boe-property-tax-hub",
+          "ca-boe-appeals-faq",
+          "az-ars-42-13301",
+          "az-ars-42-16051",
+        ]}
+      />
     </PageShell>
   );
 }

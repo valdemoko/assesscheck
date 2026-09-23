@@ -3,13 +3,17 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandMark } from "@/components/brand/BrandMark";
+import { siteConfig } from "@/lib/site-config";
 
 const NAV = [
   { href: "/property-tax-checker/", label: "Assessment Checker" },
+  { href: siteConfig.statesHubPath, label: "By State" },
   { href: "/texas-property-tax/", label: "Texas" },
   { href: "/florida-property-tax/", label: "Florida" },
+  { href: "/california-property-tax/", label: "California" },
+  { href: "/arizona-property-tax/", label: "Arizona" },
+  { href: "/nevada-property-tax/", label: "Nevada" },
   { href: "/evidence/property-tax-protest-evidence/", label: "Evidence" },
-  { href: "/texas/harris-county/", label: "Harris County" },
   { href: "/resources/", label: "Resources" },
   { href: "/about/", label: "About" },
 ];

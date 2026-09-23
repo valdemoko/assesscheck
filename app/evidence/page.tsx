@@ -53,7 +53,7 @@ const PATHS: {
     situation: "The appraisal record contains factual errors (size, features, age)",
     evidence: [
       { href: "/evidence/property-tax-protest-evidence/", label: "Surveys, drawings, deed records" },
-      { href: "/faq/", label: "Record-error FAQ" },
+      { href: "/texas-property-tax/faq/", label: "Record-error FAQ" },
     ],
     note: "Correcting the record can affect value without a formal value argument.",
   },

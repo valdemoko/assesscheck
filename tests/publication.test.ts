@@ -51,9 +51,76 @@ describe("sitemap publication gate", () => {
     expect(getSitemapPages()).toEqual(expected);
   });
 
-  it("all 48 expected URLs are present in the registry", () => {
-    expect(SITE_PAGES).toHaveLength(48);
-    expect(getSitemapPages()).toHaveLength(48);
+  it("all 68 expected URLs are present in the registry", () => {
+    expect(SITE_PAGES).toHaveLength(68);
+    expect(getSitemapPages()).toHaveLength(68);
+  });
+
+  it("nevada state pages are published; no nevada county pages exist in the registry", () => {
+    const listed = SITE_PAGES.map((p) => p.path);
+    for (const p of [
+      "/nevada-property-tax/",
+      "/nevada-property-tax/tax-cap-abatement/",
+      "/nevada-property-tax/primary-residence-abatement/",
+      "/nevada-property-tax/value-notice/",
+      "/nevada-property-tax/value-appeal/",
+      "/nevada-property-tax/deadlines/",
+    ]) {
+      expect(listed).toContain(p);
+    }
+    // Nevada counties are BLOCKED until they pass the pilot-county test
+    // (verified local procedure page + a current-year deadline).
+    expect(listed.join("\n")).not.toContain("clark-county");
+    expect(listed.join("\n")).not.toContain("washoe");
+  });
+
+  it("the global FAQ is not titled after a single state, and each state has its own FAQ", () => {
+    const faq = SITE_PAGES.find((p) => p.path === "/faq/");
+    expect(faq).toBeDefined();
+    expect(faq!.title).toBe("Property tax FAQ");
+    expect(SITE_PAGES.map((p) => p.path)).toContain("/texas-property-tax/faq/");
+    // A page titled "Texas FAQ" must not live at the cross-state /faq/ path.
+    for (const p of SITE_PAGES) {
+      if (p.path === "/faq/") continue;
+      if (p.title.includes("FAQ")) expect(p.path).not.toBe("/faq/");
+    }
+  });
+
+  it("california state pages are published; no california county pages exist in the registry", () => {
+    const listed = SITE_PAGES.map((p) => p.path);
+    for (const p of [
+      "/california-property-tax/",
+      "/california-property-tax/proposition-13-and-8/",
+      "/california-property-tax/notice-of-assessed-value/",
+      "/california-property-tax/assessment-appeal/",
+      "/california-property-tax/appeal-evidence/",
+      "/california-property-tax/deadlines/",
+      "/property-tax-by-state/",
+    ]) {
+      expect(listed).toContain(p);
+    }
+    // California counties are BLOCKED until they pass the pilot-county test
+    // (verified appeal procedure page + current-year deadline).
+    expect(listed.join("\n")).not.toContain("los-angeles");
+    expect(listed.join("\n")).not.toContain("san-diego");
+  });
+
+  it("arizona state pages are published; no arizona county pages exist in the registry", () => {
+    const listed = SITE_PAGES.map((p) => p.path);
+    for (const p of [
+      "/arizona-property-tax/",
+      "/arizona-property-tax/full-cash-vs-limited-value/",
+      "/arizona-property-tax/notice-of-valuation/",
+      "/arizona-property-tax/petition-for-review/",
+      "/arizona-property-tax/appeal-evidence/",
+      "/arizona-property-tax/deadlines/",
+    ]) {
+      expect(listed).toContain(p);
+    }
+    // Arizona counties are BLOCKED until they pass the pilot-county test
+    // (verified local appeal procedure page + current-year deadline).
+    expect(listed.join("\n")).not.toContain("maricopa");
+    expect(listed.join("\n")).not.toContain("pima");
   });
 
   it("florida state pages are published; no florida county pages exist in the registry", () => {

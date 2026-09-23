@@ -10,7 +10,7 @@ export const siteConfig = {
   name: "AssessCheck",
   /** Descriptive tagline used in the footer. */
   description:
-    "Source-driven property tax assessment information, evidence guidance, and a browser-only assessment checker — starting with Texas and Florida.",
+    "Source-driven property tax assessment information, evidence guidance, and a browser-only assessment checker — Texas, Florida, California, Arizona and Nevada.",
   /** Domain — re-exported from the SEO layer, which enforces the env var. */
   url: SITE_URL_RESOLVED,
 
@@ -36,7 +36,48 @@ export const siteConfig = {
       evidenceGuidePath: "/florida-property-tax/vab-evidence/",
       checkerPath: "/property-tax-checker/", // Florida-specific tool is a later phase
     },
+    california: {
+      name: "California",
+      hubPath: "/california-property-tax/",
+      deadlinesPath: "/california-property-tax/deadlines/",
+      howToFilePath: "/california-property-tax/assessment-appeal/",
+      evidenceGuidePath: "/california-property-tax/appeal-evidence/",
+      // There is intentionally NO California checker yet: the published tool
+      // screens year-over-year changes, which cannot test California's
+      // base-year-value limit (see lib/data/jurisdictions.ts, CapBasis
+      // "base-year-inflation"). A base-year screen is a later phase.
+      checkerPath: "/california-property-tax/proposition-13-and-8/",
+    },
+    arizona: {
+      name: "Arizona",
+      hubPath: "/arizona-property-tax/",
+      deadlinesPath: "/arizona-property-tax/deadlines/",
+      howToFilePath: "/arizona-property-tax/petition-for-review/",
+      evidenceGuidePath: "/arizona-property-tax/appeal-evidence/",
+      // Same reasoning as California, with an extra trap: Arizona's tax base is
+      // the LIMITED property value, while the figure an owner holds is the FULL
+      // CASH value, and "assessed value" there means LPV x 10%. A screening tool
+      // has to take both values and ask the § 42-13302 questions first.
+      checkerPath: "/arizona-property-tax/full-cash-vs-limited-value/",
+    },
+    nevada: {
+      name: "Nevada",
+      hubPath: "/nevada-property-tax/",
+      deadlinesPath: "/nevada-property-tax/deadlines/",
+      howToFilePath: "/nevada-property-tax/value-appeal/",
+      evidenceGuidePath: "/nevada-property-tax/value-appeal/",
+      // Third state without a checker, and the reason is arithmetic rather than
+      // labelling: the published tool compares a value with last year's value,
+      // while Nevada caps the TAX BILL. An assessed value may rise by any
+      // percentage under a correctly applied abatement, so screening it would
+      // produce confident nonsense. Nevada needs the prior year's bill and the
+      // current calculated tax (see CapSubject "tax-amount").
+      checkerPath: "/nevada-property-tax/tax-cap-abatement/",
+    },
   } as const,
+
+  /** Cross-state hub page (internal linking for every covered state). */
+  statesHubPath: "/property-tax-by-state/",
 
   // Backwards-compatible aliases (Texas launch paths) — shared chrome still
   // defaults to these; per-jurisdiction pages pass their own.

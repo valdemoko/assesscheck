@@ -57,11 +57,41 @@ export const SITE_PAGES: SitePageRecord[] = [
   { path: "/florida-property-tax/vab-petition/", title: "Florida VAB petition", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/florida-property-tax/vab-evidence/", title: "Florida VAB evidence", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/florida-property-tax/deadlines/", title: "Florida deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
+  // California (state-only — no county pages; a California county page needs the
+  // same verification bar as Harris County. See docs/california-expansion-research.md)
+  { path: "/california-property-tax/", title: "California property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/california-property-tax/proposition-13-and-8/", title: "Proposition 13 and Proposition 8", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/california-property-tax/notice-of-assessed-value/", title: "California notice of assessed value", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/california-property-tax/assessment-appeal/", title: "California assessment appeal", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/california-property-tax/appeal-evidence/", title: "California appeal evidence", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/california-property-tax/deadlines/", title: "California deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  // Arizona (state-only — no county pages; see docs/arizona-expansion-research.md)
+  { path: "/arizona-property-tax/", title: "Arizona property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/arizona-property-tax/full-cash-vs-limited-value/", title: "Full cash value vs limited property value", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/arizona-property-tax/notice-of-valuation/", title: "Arizona notice of valuation", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/arizona-property-tax/petition-for-review/", title: "Arizona petition for review", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/arizona-property-tax/appeal-evidence/", title: "Arizona appeal evidence", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/arizona-property-tax/deadlines/", title: "Arizona deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  // Nevada (state-only — no county pages; see docs/nevada-expansion-research.md.
+  // Note the different provenance class: the NRS text was not readable from
+  // this environment, so every citation is an official Nevada agency page.)
+  { path: "/nevada-property-tax/", title: "Nevada property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/nevada-property-tax/tax-cap-abatement/", title: "Nevada property tax cap (partial abatement)", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/nevada-property-tax/primary-residence-abatement/", title: "Nevada 3% primary residence abatement", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/nevada-property-tax/value-notice/", title: "Nevada value notice", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/nevada-property-tax/value-appeal/", title: "Nevada value appeal", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/nevada-property-tax/deadlines/", title: "Nevada deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  // Cross-state hub — the internal-linking asset that keeps state pages from
+  // being orphans as the number of covered states grows.
+  { path: "/property-tax-by-state/", title: "Property tax by state", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/texas/harris-county/", title: "Harris County guide", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/texas/harris-county/property-tax-checker/", title: "Harris County checker", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/texas/harris-county/faq/", title: "Harris County FAQ", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/resources/", title: "Official resources", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
-  { path: "/faq/", title: "Texas FAQ", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
+  // /faq/ is the cross-state FAQ; each state keeps its own FAQ so that state
+  // intent is never split by a global page titled after one state.
+  { path: "/faq/", title: "Property tax FAQ", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/texas-property-tax/faq/", title: "Texas FAQ", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/about/", title: "About", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/about/author/", title: "About the author", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/accessibility/", title: "Accessibility", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },

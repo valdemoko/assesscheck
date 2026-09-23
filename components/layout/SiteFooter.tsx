@@ -18,14 +18,26 @@ const COLUMNS: { heading: string; links: FooterLink[] }[] = [
       { href: "/florida-property-tax/deadlines/", label: "Florida deadlines" },
       { href: "/texas-property-tax/protest/how-to-file/", label: "Texas: how to file" },
       { href: "/florida-property-tax/vab-petition/", label: "Florida: VAB petition" },
+      { href: "/california-property-tax/deadlines/", label: "California deadlines" },
+      { href: "/california-property-tax/assessment-appeal/", label: "California: appeal" },
+      { href: "/arizona-property-tax/deadlines/", label: "Arizona deadlines" },
+      { href: "/arizona-property-tax/petition-for-review/", label: "Arizona: petition" },
+      { href: "/nevada-property-tax/deadlines/", label: "Nevada deadlines" },
+      { href: "/nevada-property-tax/tax-cap-abatement/", label: "Nevada tax cap" },
     ],
   },
   {
     heading: "Learn",
     links: [
+      { href: "/property-tax-by-state/", label: "Property tax by state" },
       { href: "/texas-property-tax/", label: "Texas property tax" },
       { href: "/florida-property-tax/", label: "Florida property tax" },
+      { href: "/california-property-tax/", label: "California property tax" },
+      { href: "/arizona-property-tax/", label: "Arizona property tax" },
+      { href: "/nevada-property-tax/", label: "Nevada property tax" },
+      { href: "/arizona-property-tax/full-cash-vs-limited-value/", label: "Arizona: LPV limit" },
       { href: "/texas-property-tax/protest/", label: "Protest process (TX)" },
+      { href: "/texas-property-tax/faq/", label: "Texas FAQ" },
       { href: "/evidence/property-tax-protest-evidence/", label: "Evidence guide" },
       { href: "/comparables/", label: "Comparable properties" },
       { href: "/texas/harris-county/", label: "Harris County" },
@@ -119,9 +131,9 @@ export function SiteFooter() {
         </div>
         <p className="site-footer__disclaimer">
           {siteConfig.name} provides general educational information about
-          property tax assessments and the review process — starting with Texas
-          and Florida. It is not legal, tax, appraisal, or financial advice,
-          and it is not affiliated with any appraisal district, property
+          property tax assessments and the review process — Texas, Florida,
+          California, Arizona and Nevada. It is not legal, tax, appraisal, or financial
+          advice, and it is not affiliated with any appraisal district, property
           appraiser, or government agency. Verify current deadlines and
           procedures with the applicable authority and official sources.
         </p>
