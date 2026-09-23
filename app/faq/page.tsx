@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/faq/",
   title: "Property Tax FAQ",
   description:
-    "Questions that work the same way in every state we cover — Texas, Florida, California, Arizona, Nevada and Oregon — and where each one answers differently: who sets value versus rates, where appeals are filed, and what a percentage cap really limits.",
+    "Questions that work the same way in every state we cover — Texas, Florida, California, Arizona, Nevada, Oregon and Michigan — and where each one answers differently: who sets value versus rates, where appeals are filed, and what a percentage cap really limits.",
   publishStatus: "ready",
   lastVerifiedDate: "2026-09-23",
   section: "FAQ",
@@ -75,6 +75,18 @@ const APPEAL_ROUTES = [
       "By December 31, moving to the next business day when that date falls on a weekend or holiday",
     basis: "A fixed calendar date measured from the statement mailed before October 25",
   },
+  {
+    state: "Michigan",
+    href: "/michigan-property-tax/",
+    notice: "Notice of assessment, taxable valuation and property classification",
+    filedWith: "The March Board of Review (residential and agricultural property)",
+    decidedBy:
+      "The March Board of Review, then the Michigan Tax Tribunal — or the Tribunal directly for commercial and industrial property",
+    window:
+      "In March for the board, then July 31 for the Tribunal; May 31 for the direct commercial and industrial route",
+    basis:
+      "A month for the board rather than a date, and two class-specific dates for the Tribunal",
+  },
 ];
 
 export default function FAQPage() {
@@ -83,8 +95,8 @@ export default function FAQPage() {
       <h1>Property Tax FAQ</h1>
       <p>
         These are the questions that produce the same kind of answer in every
-        state we cover — <strong>Texas, Florida, California, Arizona, Nevada and
-        Oregon</strong>{" "}
+        state we cover — <strong>Texas, Florida, California, Arizona, Nevada,
+        Oregon and Michigan</strong>{" "}
         — with the differences stated where they matter. Questions that only
         make sense inside one state&apos;s procedure are kept on that state&apos;s
         own page, starting with the{" "}
@@ -95,7 +107,7 @@ export default function FAQPage() {
 
       <h2>Who decides what my property is worth, and who decides what I pay?</h2>
       <p>
-        They are different bodies in all six states, and that separation is the
+        They are different bodies in all seven states, and that separation is the
         single most useful thing to understand before you read any notice.
       </p>
       <ul>
@@ -130,6 +142,12 @@ export default function FAQPage() {
           comes from the individual taxing jurisdictions combined in your levy
           code area — with the Measure 5 limits then applied to cap the tax
           itself.
+        </li>
+        <li>
+          <strong>Michigan:</strong> the local assessor determines assessed value
+          as of December 31, county and state equalization produce the state
+          equalized value, and the taxing units set the millage rate that is
+          applied to taxable value.
         </li>
       </ul>
       <p>
@@ -192,7 +210,7 @@ export default function FAQPage() {
 
       <h2>Why doesn&apos;t the same percentage mean the same thing everywhere?</h2>
       <p>
-        Because the caps in these six states do not limit the same quantity.
+        Because the caps in these seven states do not limit the same quantity.
         The number is only meaningful together with what it is applied to:
       </p>
       <ul>
@@ -236,6 +254,15 @@ export default function FAQPage() {
           bill can rise by far more than 3 percent while the 3 percent limit was
           applied correctly.
         </li>
+        <li>
+          <strong>Michigan</strong> limits <em>taxable value</em> to the change
+          in the rate of inflation or 5 percent, whichever is less — but through a
+          formula whose other terms are part of the cap: the prior year&rsquo;s
+          taxable value less losses, multiplied by an inflation rate multiplier
+          that cannot exceed 1.05, plus additions. And the limit is removed
+          entirely for a year by a transfer of ownership, so a Michigan increase
+          of more than 5 percent is often the rule working rather than failing.
+        </li>
       </ul>
       <p>
         So a &quot;5 percent cap&quot; in Arizona can leave your bill unchanged
@@ -245,7 +272,7 @@ export default function FAQPage() {
         <Link href="/property-tax-by-state/">
           by-state comparison of the limitation rules
         </Link>{" "}
-        puts all six side by side.
+        puts all seven side by side.
       </p>
 
       <h2>Should I check my own numbers before hiring anyone?</h2>

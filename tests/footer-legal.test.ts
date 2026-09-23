@@ -146,9 +146,9 @@ describe("no visible placeholder content", () => {
     expect(unregistered, `Routes not registered in site-pages.ts: ${unregistered.join(", ")}`).toEqual([]);
   });
 
-  it("sitemap contains exactly the expected count (75 pages)", () => {
-    expect(SITE_PAGES).toHaveLength(78);
-    expect(getSitemapPages()).toHaveLength(78);
+  it("sitemap contains exactly the expected count (84 pages)", () => {
+    expect(SITE_PAGES).toHaveLength(84);
+    expect(getSitemapPages()).toHaveLength(84);
     expect(getSitemapPages().every((p) => isIndexableStatus(p.publishStatus))).toBe(true);
   });
 });

@@ -20,6 +20,7 @@ const STATE_DIRS: Record<string, string[]> = {
   arizona: ["app/arizona-property-tax"],
   nevada: ["app/nevada-property-tax"],
   oregon: ["app/oregon-property-tax"],
+  michigan: ["app/michigan-property-tax"],
 };
 
 // Signature phrases that belong to exactly one covered state. Terminology that
@@ -95,6 +96,7 @@ const STATE_NAMES: Record<string, string> = {
   arizona: "arizona",
   nevada: "nevada",
   oregon: "oregon",
+  michigan: "michigan",
 };
 
 // A foreign term is contamination only when it is presented as this state's own

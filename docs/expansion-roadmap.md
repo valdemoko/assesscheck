@@ -15,7 +15,7 @@
 
 ## 1. Published coverage
 
-Six states, 78 registered routes, one pilot county. Every state below has a
+Seven states, 84 registered routes, one pilot county. Every state below has a
 research doc recording what was read, what could not be read, and the open points
 that follow.
 
@@ -27,6 +27,7 @@ that follow.
 | Arizona | 6 state | `docs/arizona-expansion-research.md` | Statute text read, plus SBOE and counties | `A3` checker, `A4` counties |
 | Nevada | 7 state | `docs/nevada-expansion-research.md` | Agencies naming the rule (`leg.state.nv.us` 403) | `N1`–`N4` |
 | Oregon | 6 state | `docs/oregon-expansion-research.md` | An administrative rule in full, plus counties | `O1`–`O4` |
+| Michigan | 6 state | `docs/michigan-expansion-research.md` | An official county, plus Treasury on uncapping (`legislature.mi.gov` WAF-blocked) | The March board's session requirement; the year's inflation rate multiplier; county pages |
 
 The "provenance class" column matters more than the page count. An Arizona page
 cites statute text that was read; a California page cites official pages that
@@ -97,7 +98,6 @@ These names appeared during planning. **The ranking was never written down and i
 not recoverable from the repository**, so this list is unordered and a state is
 started only when a batch is explicitly approved.
 
-- Michigan
 - Georgia
 - Maryland
 

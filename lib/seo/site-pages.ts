@@ -87,6 +87,13 @@ export const SITE_PAGES: SitePageRecord[] = [
   { path: "/nevada-property-tax/deadlines/", title: "Nevada deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   // Oregon (state-only — 36 counties, no county pages; see
   // docs/oregon-expansion-research.md)
+  // Michigan (state-only — no county pages; see docs/michigan-expansion-research.md)
+  { path: "/michigan-property-tax/", title: "Michigan property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/michigan-property-tax/taxable-value/", title: "Michigan taxable value", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/michigan-property-tax/uncapping/", title: "Michigan uncapping", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/michigan-property-tax/notice-of-assessment/", title: "Michigan notice of assessment", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/michigan-property-tax/property-tax-appeal/", title: "Michigan property tax appeal", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/michigan-property-tax/deadlines/", title: "Michigan deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/oregon-property-tax/", title: "Oregon property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/oregon-property-tax/measure-50-mav/", title: "Measure 50 and the maximum assessed value", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/oregon-property-tax/changed-property-ratio/", title: "Changed property ratio and exception events", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },

@@ -119,6 +119,20 @@ export const REVIEW_SCHEDULE: ReviewScheduleEntry[] = [
     note:
       "No figure is stated anywhere on the site, and that is the deliberate position: the pages point the reader at their own TRIM notice instead of a national number that is superseded every January. Re-check that no later edit has quietly hardcoded a CPI figure, which is exactly what the Florida research doc warned against.",
   },
+  {
+    reviewId: "mi-inflation-rate-multiplier",
+    jurisdictionId: "michigan",
+    what:
+      "the year's inflation rate multiplier, which is the leg of Michigan's cap that decides whether the limit is the inflation change or 5%",
+    statedIn:
+      "lib/data/jurisdictions.ts → mi-taxable-value-cap, rendered on /michigan-property-tax/taxable-value/",
+    trigger: "each-tax-year",
+    intervalDays: 365,
+    sourceId: "mi-oakland-equalization",
+    lastVerifiedDate: "2026-09-23",
+    note:
+      "Deliberately unquantified, like Nevada's rate ceiling: the multiplier is issued by the State Tax Commission in a bulletin this environment cannot read, so the site states the rule with its 1.05 ceiling and leaves the number to the reader's notice. The entry exists so the decision is revisited each year — either the bulletin becomes readable and the figure is published, or the gap is recorded as permanent. The timing matters: the multiplier applies to the year being assessed, so re-reading it after the notices go out is too late for that year.",
+  },
 ];
 
 /** Days between two ISO dates (UTC), so time zones cannot shift the result. */

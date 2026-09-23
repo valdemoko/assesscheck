@@ -68,7 +68,8 @@ export default function HomePage() {
       <section className="hero" aria-label="Introduction">
         <div className="hero__content">
           <p className="hero__kicker">
-            Texas · Florida · California · Arizona · Nevada · Oregon property tax
+            Texas · Florida · California · Arizona · Nevada · Oregon · Michigan
+            property tax
           </p>
           <h1>Understand your property assessment</h1>
           <p className="hero__lede">
@@ -93,8 +94,8 @@ export default function HomePage() {
         <section aria-label="Who it is for">
           <h2>Who it is for</h2>
           <p>
-            Property owners in Texas, Florida, California, Arizona, Nevada and
-            Oregon — starting with Harris County — who want to understand their
+            Property owners in Texas, Florida, California, Arizona, Nevada,
+            Oregon and Michigan — starting with Harris County — who want to understand their
             assessment before deciding anything. If you already know you want a
             professional to handle a protest, VAB petition, assessment appeal,
             abatement claim or board petition, this site will still help you
@@ -105,7 +106,7 @@ export default function HomePage() {
         <section aria-label="States covered">
           <h2>States covered</h2>
           <p>
-            Six states, each documented from its own statutes and official
+            Seven states, each documented from its own statutes and official
             guidance — because a rule that is correct in one is usually wrong in
             the next:
           </p>
@@ -140,6 +141,11 @@ export default function HomePage() {
               maximum assessed value against real market value, the changed
               property ratio for new construction, and Measure 5 limits that can
               compress the bill.
+            </li>
+            <li>
+              <Link href="/michigan-property-tax/">Michigan</Link> — taxable value
+              under Proposal A, an inflation-or-5% limit built from a formula, and
+              an uncapping that follows a transfer of ownership.
             </li>
           </ul>
         </section>

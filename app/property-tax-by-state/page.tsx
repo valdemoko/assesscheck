@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/property-tax-by-state/",
   title: "Property Tax by State: How Assessment Limits Differ",
   description:
-    "Texas, Florida, Arizona, California, Nevada and Oregon compared: what each state's assessment limit actually caps, what resets it, and where an appeal goes. Covering only the states whose rules are verified against official sources.",
+    "Texas, Florida, Arizona, California, Nevada, Oregon and Michigan compared: what each state's assessment limit actually caps, what resets it, and where an appeal goes. Covering only the states whose rules are verified against official sources.",
   publishStatus: "ready",
   lastVerifiedDate: "2026-09-23",
   section: "States",
@@ -198,6 +198,35 @@ export default function Page() {
         </li>
       </ul>
 
+      <h2>Michigan — inflation or 5% on taxable value, and an uncapping on sale</h2>
+      <ul>
+        <li>
+          <strong>What it limits:</strong> <em>taxable value</em>, which under
+          Proposal A is the lesser of the state equalized value or the capped
+          value. The capped value is not a figure from the notice: it is the prior
+          year&rsquo;s taxable value, less losses, multiplied by an inflation rate
+          multiplier that may not exceed 1.05, plus additions.
+        </li>
+        <li>
+          <strong>What resets it:</strong> a <em>transfer of ownership</em> — the
+          only reset on this page that is a legal event rather than a change in
+          value. The taxable value becomes the state equalized value in the
+          calendar year after the transfer, and the property is capped again the
+          year following that. Additions and losses do not reset the cap; they are
+          terms inside it, which is why a lawful increase can exceed 5% in a year
+          with no transfer at all.
+        </li>
+        <li>
+          <strong>Where an appeal goes:</strong> the March Board of Review first
+          for residential and agricultural property, which is what reserves the
+          right to go on to the Michigan Tax Tribunal by July 31. Commercial and
+          industrial property may file directly with the Tribunal by May 31.
+        </li>
+        <li>
+          <Link href="/michigan-property-tax/">Michigan property tax →</Link>
+        </li>
+      </ul>
+
       <h2>The comparison that matters most</h2>
       <div className="table-wrap">
         <table>
@@ -261,6 +290,18 @@ export default function Page() {
             <td>
               Yes — the assessed value can jump when the market value recovers
               above the MAV, and exception events add value above 3%
+            </td>
+          </tr>
+          <tr>
+            <td>Michigan</td>
+            <td>Taxable value (the lesser of state equalized value or capped value)</td>
+            <td>
+              Prior taxable value less losses, &times; the inflation rate
+              multiplier (max 1.05), plus additions
+            </td>
+            <td>
+              Yes — a transfer of ownership removes the limitation for a year, and
+              additions enter the formula itself
             </td>
           </tr>
         </tbody>

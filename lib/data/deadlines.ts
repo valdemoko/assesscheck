@@ -1046,6 +1046,141 @@ export const DEADLINES: DeadlineRecord[] = [
   // why the ORS text itself is cited through official pages that name it.
   // ------------------------------------------------------------------
   {
+    deadlineId: "mi-tax-day",
+    jurisdiction: "Michigan",
+    jurisdictionId: "michigan",
+    taxYear: "recurring annual rule",
+    deadlineType: "assessment-date",
+    deadlineBasis: "fixed-date",
+    rule:
+      "Michigan assesses property as of December 31 — the state's tax day — and the assessor's determination of assessed value is made as of that date. The taxes levied on that assessment are billed in the following year, so the values on a bill are the ones the property carried at the end of the previous calendar year.",
+    sources: [
+      {
+        sourceId: "mi-oakland-equalization",
+        supports:
+          "Assessed value is determined as of December 31 (Tax Day) of the previous year.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "mi-notice-of-assessment",
+    jurisdiction: "Michigan",
+    jurisdictionId: "michigan",
+    taxYear: "recurring annual rule",
+    deadlineType: "notice-delivery",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the March meetings of the local boards of review",
+    rule:
+      "The notice of assessment, taxable valuation and property classification is mailed before the March meetings of the local boards of review. It carries the state equalized value, the principal residence exemption percentage and whether a transfer of ownership occurred, which is the fact that decides whether the taxable value is capped that year.",
+    sources: [
+      {
+        sourceId: "mi-oakland-equalization",
+        supports:
+          "The notice is mailed prior to the March board meetings and carries the SEV, the principal residence exemption percentage and whether a transfer of ownership occurred.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "mi-march-board-protest",
+    jurisdiction: "Michigan",
+    jurisdictionId: "michigan",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the March Board of Review's meetings",
+    rule:
+      "A protest to the March Board of Review is the required first step for residential and agricultural property, and making it is what reserves the right to appeal to the Michigan Tax Tribunal. The board meets in March. This site does not state the session requirement or the exact days, because the statute that sets them could not be read from an official source; your city or township publishes its own board schedule.",
+    sources: [
+      {
+        sourceId: "mi-oakland-faq",
+        supports:
+          "The March Board of Review as the required first stop for residential and agricultural property, and that a board appeal reserves the Tribunal right.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "mi-board-written-notification",
+    jurisdiction: "Michigan",
+    jurisdictionId: "michigan",
+    taxYear: "recurring annual rule",
+    deadlineType: "decision",
+    deadlineBasis: "fixed-date",
+    rule:
+      "The board must notify a protester in writing by the first Monday in June of its action on the protest, and that notice must state the right to appeal to the Michigan Tax Tribunal, the time limits for doing so, and the Tribunal's address. The board's decision binds the current assessment year only.",
+    sources: [
+      {
+        sourceId: "mi-oakland-faq",
+        supports:
+          "Written notification by the first Monday in June, its required contents, and that the decision binds only the current year.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "mi-tribunal-residential-agricultural",
+    jurisdiction: "Michigan",
+    jurisdictionId: "michigan",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "fixed-date",
+    rule:
+      "Residential and agricultural property must protest to the March Board of Review first, and its appeal to the Michigan Tax Tribunal is due on or before July 31 of the tax year involved.",
+    sources: [
+      {
+        sourceId: "mi-oakland-faq",
+        supports:
+          "Residential and agricultural property is required to protest to the board first, with a Tribunal deadline of July 31.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "mi-tribunal-commercial-industrial",
+    jurisdiction: "Michigan",
+    jurisdictionId: "michigan",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "fixed-date",
+    rule:
+      "Since 2007, commercial and industrial real property may appeal directly to the Michigan Tax Tribunal on or before May 31, without petitioning the March Board of Review first. Personal property may also go directly to the Tribunal, provided a personal property statement was filed before the board commences.",
+    sources: [
+      {
+        sourceId: "mi-oakland-faq",
+        supports:
+          "The direct-to-Tribunal route for commercial and industrial property since 2007, its May 31 deadline, and the personal property condition.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "mi-principal-residence-exemption",
+    jurisdiction: "Michigan",
+    jurisdictionId: "michigan",
+    taxYear: "recurring annual rule",
+    deadlineType: "exemption-application",
+    deadlineBasis: "fixed-date",
+    rule:
+      "The principal residence exemption affidavit is filed with the city or township by June 1 for the succeeding summer property tax levy, or by November 1 for the succeeding winter property tax levy. Which of the two applies depends on when your local unit collects its school taxes.",
+    sources: [
+      {
+        sourceId: "mi-oakland-equalization",
+        supports:
+          "The June 1 and November 1 principal residence exemption affidavit deadlines for the succeeding summer and winter levies.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
     deadlineId: "or-assessment-date",
     jurisdiction: "Oregon",
     jurisdictionId: "oregon",

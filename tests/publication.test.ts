@@ -52,9 +52,9 @@ describe("sitemap publication gate", () => {
     expect(getSitemapPages()).toEqual(expected);
   });
 
-  it("all 78 expected URLs are present in the registry", () => {
-    expect(SITE_PAGES).toHaveLength(78);
-    expect(getSitemapPages()).toHaveLength(78);
+  it("all 84 expected URLs are present in the registry", () => {
+    expect(SITE_PAGES).toHaveLength(84);
+    expect(getSitemapPages()).toHaveLength(84);
   });
 
   it("oregon state pages are published; no oregon county pages exist in the registry", () => {
@@ -210,7 +210,7 @@ describe("the roadmap agrees with the registry", () => {
       const named = state.charAt(0).toUpperCase() + state.slice(1);
       expect(roadmap, `the roadmap omits ${named}`).toContain(`| ${named} |`);
     }
-    expect(dirs.length).toBe(6);
+    expect(dirs.length).toBe(7);
   });
 
   it("matches the per-state route counts stated in its own table", () => {
@@ -220,6 +220,7 @@ describe("the roadmap agrees with the registry", () => {
       ["Arizona", "arizona-property-tax"],
       ["Nevada", "nevada-property-tax"],
       ["Oregon", "oregon-property-tax"],
+      ["Michigan", "michigan-property-tax"],
     ] as [string, string][]) {
       const actual = SITE_PAGES.filter((p) => p.path.startsWith(`/${dir}/`)).length;
       const row = roadmap.split("\n").find((l) => l.startsWith(`| ${state} `));

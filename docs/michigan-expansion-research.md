@@ -1,7 +1,8 @@
 # Michigan — expansion research
 
 Written before any page exists, per `docs/expansion-roadmap.md` §2. Michigan is the
-first state of Lote 3 and the seventh covered state if it clears the bar.
+first state of Lote 3 and the seventh covered state — published 2026-09-23, from
+this doc, without reading anything that was not already recorded here.
 
 **Verdict: buildable, at the Nevada provenance class — not the Arizona one.**
 Michigan's distinctive mechanism (Proposal A: a cap on *taxable value* that
@@ -183,6 +184,12 @@ and that is where the unread statute would show.
 | `mi-oakland-equalization` | Oakland County (Equalization Division) | Proposal A; the inflation-or-5% cap; the Capped Value formula and the IRM ceiling of 1.05; AV as of December 31 at 50% of true cash value; SEV; TV as the lesser of SEV or CV; the uncapping rule; the 24-month sales study; the notice before the March boards; the PRE affidavit dates of June 1 and November 1 |
 | `mi-oakland-faq` | Oakland County (Equalization Division) | The appeal ladder: the March Board first for residential and agricultural with a July 31 Tribunal deadline, direct-to-Tribunal for commercial and industrial by May 31, the first-Monday-in-June notification duty, the grounds, the evidence rules and the Tribunal's two divisions |
 
-Both are `primary`, both carry a verification date, and no Michigan page cites
-them yet — the pages are the next step, and they come after items 1 and 2 above,
-not before.
+All three are `primary` and carry a verification date. The uncapping page cites
+the Treasury source for the timing and the county source for the mechanics; the
+taxable-value page cites the county for the formula; the appeal and deadlines
+pages cite the county FAQ for the ladder. The two items in §4 are still open, and
+the pages disclose them where they are material: the March board's session
+requirement is stated as unread on the deadlines and appeal pages rather than
+filled in from a summary, and the year's inflation rate multiplier is left
+unquantified, with an entry in `lib/data/review-schedule.ts` so the decision is
+revisited each year.

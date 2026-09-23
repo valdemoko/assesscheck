@@ -79,6 +79,21 @@ export const siteConfig = {
       // current calculated tax (see CapSubject "tax-amount").
       checkerPath: "/nevada-property-tax/tax-cap-abatement/",
     },
+    michigan: {
+      name: "Michigan",
+      hubPath: "/michigan-property-tax/",
+      deadlinesPath: "/michigan-property-tax/deadlines/",
+      howToFilePath: "/michigan-property-tax/property-tax-appeal/",
+      evidenceGuidePath: "/michigan-property-tax/property-tax-appeal/",
+      // Fifth state without a checker, and the reason is arithmetic. The limit is
+      // the LOWER of the inflation rate or 5%, and the State Tax Commission
+      // publishes that rate in a bulletin this site cannot read; and the
+      // limitation does not apply at all in the calendar year after a transfer of
+      // ownership, which is exactly the year a large increase is lawful. A
+      // year-over-year screen would fire on the assessments that are most
+      // obviously correct.
+      checkerPath: "/michigan-property-tax/taxable-value/",
+    },
     oregon: {
       name: "Oregon",
       hubPath: "/oregon-property-tax/",

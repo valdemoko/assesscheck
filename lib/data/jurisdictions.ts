@@ -718,6 +718,116 @@ export const JURISDICTION_RULES: Record<string, JurisdictionRules> = {
     ],
   },
 
+  michigan: {
+    jurisdictionId: "michigan",
+    jurisdictionName: "Michigan",
+    caps: [
+      {
+        capId: "mi-taxable-value-cap",
+        appliesTo: "all-real-property",
+        capSubject: "assessed-value",
+        basis: "lower-of-or-cpi",
+        maxAnnualIncreasePercent: 5,
+        label: "taxable value cap (Proposal A)",
+        detail:
+          "Since Proposal A (1994) Michigan taxes taxable value, and taxable value is limited: assuming there were no losses or additions to the property, it may not rise by more than the change in the rate of inflation or 5%, whichever is less. The limit is applied through a formula rather than to a figure on the notice — the capped value is the prior year's taxable value, less losses, multiplied by the inflation rate multiplier, plus additions — and taxable value is the lesser of that capped value or the state equalized value. The inflation rate multiplier cannot be greater than 1.05.",
+        resetNote:
+          "A transfer of ownership removes the limitation: the taxable value becomes the state equalized value in the calendar year after the transfer, and the property is capped again the year following that. Additions and losses are terms of the formula itself, so physical changes to the property move the cap instead of sitting outside it. A common consequence is that a buyer's first bill is not the one that reflects the sale.",
+        limitations:
+          "Two limits on reading this as a single percentage. (1) The rule is the LOWER of the inflation rate change or 5%; this site does not publish the year's inflation rate multiplier, because the State Tax Commission publishes it in a bulletin this site cannot read. A comparison here tests the 5% leg only, so where the inflation leg is the lower one the notice is the authority. (2) A year-over-year comparison of assessments cannot screen Michigan even so: in the calendar year after a transfer of ownership the limitation does not apply at all, and a lawful increase can far exceed 5%.",
+        sources: [
+          {
+            sourceId: "mi-oakland-equalization",
+            supports:
+              "Proposal A of 1994 and taxable value as the tax base; the inflation-or-5% limit; the capped value formula with losses and additions; the inflation rate multiplier capped at 1.05; assessed value at 50% of true cash value; taxable value as the lesser of state equalized value or capped value; the uncapping rule; and additions entering at assessed value.",
+          },
+          {
+            sourceId: "mi-treasury-change-ownership",
+            supports:
+              "That Proposal A uncaps taxable value in the calendar year following a transfer of ownership, and the statutory structure of the transfers that are exempt from the definition.",
+          },
+        ],
+      },
+    ],
+    // NO homesteadCapQuestion, for the same reason as California, Arizona,
+    // Nevada and Oregon, but with Michigan's own trap. The obvious screen would
+    // compare taxable value year over year against 5%. In Michigan that fires on
+    // correct assessments: the limit is the LOWER of inflation or 5%, the
+    // inflation leg is not published here, additions and losses enter the
+    // formula, and in the calendar year after a transfer of ownership there is no
+    // limitation at all. A real Michigan tool has to take the state equalized
+    // value, the inflation rate multiplier and the transfer history as inputs.
+    largeIncreaseThresholdPercent: 20,
+    largeDecreaseThresholdPercent: 20,
+    propertySearch: {
+      label:
+        "your city or township assessing office (Michigan assessing is local, and the county equalization department publishes the record and the equalization study; the county page cited here documents its own)",
+      url: "https://www.oaklandcountymi.gov/government/management-budget/equalization/faq",
+    },
+    valueChain: [
+      {
+        term: "Assessed value (AV)",
+        definition:
+          "Half of the property's true cash value as the local assessor determines it on December 31, the state's tax day. It is a valuation, not a limit, and it cannot be more than 50% of true cash value.",
+        sources: [
+          {
+            sourceId: "mi-oakland-equalization",
+            supports:
+              "Assessed value as of December 31 at no more than 50% of true cash value.",
+          },
+        ],
+      },
+      {
+        term: "State equalized value (SEV)",
+        definition:
+          "The assessed value after county and state equalization, which corrects a local unit's assessment level toward the required 50% of true cash value. It is the value that taxable value is compared against.",
+        sources: [
+          {
+            sourceId: "mi-oakland-equalization",
+            supports:
+              "State equalized value as the assessed value adjusted after county and state equalization.",
+          },
+        ],
+      },
+      {
+        term: "Capped value",
+        definition:
+          "The prior year's taxable value, less losses, multiplied by the inflation rate multiplier (never more than 1.05), plus additions. It is the product of a formula rather than a figure from the notice's valuation section, and additions enter it at assessed value — half of their true cash value.",
+        sources: [
+          {
+            sourceId: "mi-oakland-equalization",
+            supports:
+              "The capped value formula, the multiplier ceiling, and the worked example in which an addition enters at 50% of its true cash value.",
+          },
+        ],
+      },
+      {
+        term: "Taxable value (TV)",
+        definition:
+          "The lesser of the state equalized value or the capped value, unless there was a transfer of ownership — in which case the taxable value becomes the state equalized value in the calendar year after the transfer. Taxable value is the figure the millage rate is applied to.",
+        sources: [
+          {
+            sourceId: "mi-oakland-equalization",
+            supports:
+              "Taxable value as the lesser of SEV or capped value, and the uncapping rule when a property is transferred.",
+          },
+          {
+            sourceId: "mi-treasury-change-ownership",
+            supports:
+              "The timing of the uncapping in the year following a transfer of ownership.",
+          },
+        ],
+      },
+    ],
+    assessmentNoticeName:
+      "Notice of Assessment, Taxable Valuation, and Property Classification",
+    reviewBoardName: "March Board of Review",
+    sourceIds: [
+      "mi-oakland-equalization",
+      "mi-oakland-faq",
+      "mi-treasury-change-ownership",
+    ],
+  },
   oregon: {
     jurisdictionId: "oregon",
     jurisdictionName: "Oregon",
