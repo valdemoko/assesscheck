@@ -9,7 +9,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "How this site selects sources, defines comparability, performs calculations, handles limitations, and corrects errors.",
   publishStatus: "ready",
-  lastVerifiedDate: "2026-09-17",
+  lastVerifiedDate: "2026-09-23",
   section: "Trust",
 });
 
@@ -80,6 +80,27 @@ export default function MethodologyPage() {
         re-verify deadline-sensitive content before each protest season. Pages
         whose underlying facts have not been re-checked are flagged internally
         and are not presented as current.
+      </p>
+      <p>
+        Some figures are different from the rest, and we treat them differently.
+        A rule changes only when a legislature changes it, but a handful of
+        figures are <strong>republished by the government on a calendar</strong>,
+        which means a page can stay consistent with itself while quietly going
+        out of date. Three on this site work that way: Nevada&rsquo;s published
+        installment dates, which expire with the fiscal year; the maximum rents
+        that qualify a Nevada rental for the 3% abatement, which are federal fair
+        market rents renewed annually; and Oregon&rsquo;s exception-event dollar
+        thresholds, which are indexed to the CPI — their accuracy decays by
+        design, because the law has not changed but the number has.
+      </p>
+      <p>
+        Each of those figures is listed in an internal review schedule with the
+        interval a verification can stand, the source that republishes it and the
+        place it is used. When an interval elapses, that check fails and the
+        figure is re-read before anything else ships. Where we could have
+        published a number but chose not to, the same schedule records why: for
+        Florida&rsquo;s Save Our Homes limit we point you at your own TRIM notice
+        rather than print a CPI figure that is superseded every January.
       </p>
 
       <h2>How errors are corrected</h2>
