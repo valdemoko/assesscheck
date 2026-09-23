@@ -62,6 +62,13 @@ export default function Page() {
           abatement track.
         </li>
         <li>
+          <Link href="/nevada-property-tax/evidence/">
+            Evidence in a value appeal
+          </Link>{" "}
+          — the burden on the owner, and the inputs a cost-method figure is
+          built from.
+        </li>
+        <li>
           <Link href="/nevada-property-tax/deadlines/">
             Nevada property tax deadlines
           </Link>{" "}

@@ -53,6 +53,7 @@ export const SITE_PAGES: SitePageRecord[] = [
   // Florida (state-only — no county pages; see docs/florida-expansion-research.md §20)
   { path: "/florida-property-tax/", title: "Florida property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/florida-property-tax/save-our-homes/", title: "Save Our Homes and caps", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
+  { path: "/florida-property-tax/non-homestead-cap/", title: "Florida non-homestead 10% cap", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/florida-property-tax/trim-notice/", title: "Florida TRIM notice", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/florida-property-tax/vab-petition/", title: "Florida VAB petition", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
   { path: "/florida-property-tax/vab-evidence/", title: "Florida VAB evidence", publishStatus: "ready", lastVerifiedDate: "2026-09-17" },
@@ -62,6 +63,7 @@ export const SITE_PAGES: SitePageRecord[] = [
   // same verification bar as Harris County. See docs/california-expansion-research.md)
   { path: "/california-property-tax/", title: "California property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/california-property-tax/proposition-13-and-8/", title: "Proposition 13 and Proposition 8", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/california-property-tax/decline-in-value/", title: "California decline in value", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/california-property-tax/notice-of-assessed-value/", title: "California notice of assessed value", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/california-property-tax/assessment-appeal/", title: "California assessment appeal", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/california-property-tax/appeal-evidence/", title: "California appeal evidence", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
@@ -80,6 +82,7 @@ export const SITE_PAGES: SitePageRecord[] = [
   { path: "/nevada-property-tax/tax-cap-abatement/", title: "Nevada property tax cap (partial abatement)", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/nevada-property-tax/primary-residence-abatement/", title: "Nevada 3% primary residence abatement", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/nevada-property-tax/value-notice/", title: "Nevada value notice", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/nevada-property-tax/evidence/", title: "Nevada appeal evidence", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/nevada-property-tax/value-appeal/", title: "Nevada value appeal", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/nevada-property-tax/deadlines/", title: "Nevada deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   // Oregon (state-only — 36 counties, no county pages; see

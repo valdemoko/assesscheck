@@ -38,6 +38,12 @@ export default function Page() {
           — the 2%/CPI base year limit and the temporary decline-in-value rule.
         </li>
         <li>
+          <Link href="/california-property-tax/decline-in-value/">
+            The decline-in-value reduction
+          </Link>{" "}
+          — why a temporary reduction can move an assessed value well beyond 2%.
+        </li>
+        <li>
           <Link href="/california-property-tax/notice-of-assessed-value/">
             The notice of assessed value
           </Link>{" "}

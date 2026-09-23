@@ -238,12 +238,12 @@ describe("Florida source registry", () => {
 });
 
 describe("Florida publication gate", () => {
-  it("all seven Florida pages are ready and in the sitemap", () => {
-    // Six content pages plus the state's edition of the assessment checker,
+  it("all eight Florida pages are ready and in the sitemap", () => {
+    // Seven content pages plus the state's edition of the assessment checker,
     // which is the only state edition outside Texas (see
     // tests/checker-coverage.test.ts for why only these two qualify).
     const ready = SITE_PAGES.filter((p) => p.path.startsWith("/florida-property-tax/"));
-    expect(ready).toHaveLength(7);
+    expect(ready).toHaveLength(8);
     expect(ready.every((p) => p.publishStatus === "ready")).toBe(true);
     expect(ready.map((p) => p.path)).toContain("/florida-property-tax/checker/");
   });

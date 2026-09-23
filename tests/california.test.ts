@@ -207,9 +207,9 @@ describe("California source registry", () => {
 });
 
 describe("California publication gate", () => {
-  it("all six California pages are ready and in the sitemap", () => {
+  it("all seven California pages are ready and in the sitemap", () => {
     const pages = SITE_PAGES.filter((p) => p.path.startsWith("/california-property-tax/"));
-    expect(pages).toHaveLength(6);
+    expect(pages).toHaveLength(7);
     expect(pages.every((p) => p.publishStatus === "ready")).toBe(true);
   });
 

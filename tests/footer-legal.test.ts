@@ -147,8 +147,8 @@ describe("no visible placeholder content", () => {
   });
 
   it("sitemap contains exactly the expected count (75 pages)", () => {
-    expect(SITE_PAGES).toHaveLength(75);
-    expect(getSitemapPages()).toHaveLength(75);
+    expect(SITE_PAGES).toHaveLength(78);
+    expect(getSitemapPages()).toHaveLength(78);
     expect(getSitemapPages().every((p) => isIndexableStatus(p.publishStatus))).toBe(true);
   });
 });

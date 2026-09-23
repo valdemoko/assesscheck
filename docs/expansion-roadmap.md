@@ -15,17 +15,17 @@
 
 ## 1. Published coverage
 
-Six states, 75 registered routes, one pilot county. Every state below has a
+Six states, 78 registered routes, one pilot county. Every state below has a
 research doc recording what was read, what could not be read, and the open points
 that follow.
 
 | State | Routes | Research doc | Provenance class | Open points |
 |---|---|---|---|---|
 | Texas | 19 state + 3 Harris County | `docs/florida-expansion-research.md` (shared origin) | Statute and Comptroller text | County layer beyond Harris (§5) |
-| Florida | 7 state (incl. checker) | `docs/florida-expansion-research.md` | Statute and DOR text | Miami-Dade county pages, SOH CPI figure |
-| California | 6 state | `docs/california-expansion-research.md` | Statute text read (2026-09-23, via a JS-capable browser) | `C1` Article XIII A § 2 |
+| Florida | 8 state (incl. checker) | `docs/florida-expansion-research.md` | Statute and DOR text | Miami-Dade county pages, SOH CPI figure |
+| California | 7 state | `docs/california-expansion-research.md` | Statute text read (2026-09-23, via a JS-capable browser) | `C1` Article XIII A § 2 |
 | Arizona | 6 state | `docs/arizona-expansion-research.md` | Statute text read, plus SBOE and counties | `A3` checker, `A4` counties |
-| Nevada | 6 state | `docs/nevada-expansion-research.md` | Agencies naming the rule (`leg.state.nv.us` 403) | `N1`–`N4` |
+| Nevada | 7 state | `docs/nevada-expansion-research.md` | Agencies naming the rule (`leg.state.nv.us` 403) | `N1`–`N4` |
 | Oregon | 6 state | `docs/oregon-expansion-research.md` | An administrative rule in full, plus counties | `O1`–`O4` |
 
 The "provenance class" column matters more than the page count. An Arizona page

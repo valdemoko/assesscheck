@@ -36,6 +36,13 @@ export default function Page() {
           — how the 3%/CPI limitation and the non-homestead 10% cap work.
         </li>
         <li>
+          <Link href="/florida-property-tax/non-homestead-cap/">
+            The 10% cap on non-homestead residential property
+          </Link>{" "}
+          — which property it covers, what ends it, and how it differs from Save
+          Our Homes.
+        </li>
+        <li>
           <Link href="/florida-property-tax/trim-notice/">
             The TRIM notice explained
           </Link>{" "}
