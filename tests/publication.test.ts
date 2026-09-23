@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { readFileSync, readdirSync } from "node:fs";
 import { COUNTIES, getPublishedCounties, getCounty } from "@/lib/data/counties";
 import {
   SITE_PAGES,
@@ -185,6 +186,45 @@ describe("sitemap publication gate", () => {
     const listed = getSitemapPages().map((p) => p.path).join("\n");
     for (const id of UNPUBLISHED) {
       expect(listed).not.toContain(id);
+    }
+  });
+});
+
+describe("the roadmap agrees with the registry", () => {
+  // docs/expansion-roadmap.md states how much is published. A doc that counts
+  // the site is a doc that goes wrong quietly, and this one is the first thing a
+  // new contributor reads, so it is checked rather than trusted.
+  const roadmap = readFileSync("docs/expansion-roadmap.md", "utf8");
+
+  it("quotes the real number of registered routes", () => {
+    const claimed = roadmap.match(/(\d+) registered routes/);
+    expect(claimed, "the roadmap no longer states a route count").not.toBeNull();
+    expect(Number(claimed![1])).toBe(SITE_PAGES.length);
+  });
+
+  it("lists every state directory that exists, and no others", () => {
+    const dirs = readdirSync("app")
+      .filter((d) => d.endsWith("-property-tax"))
+      .map((d) => d.replace(/-property-tax$/, ""));
+    for (const state of dirs) {
+      const named = state.charAt(0).toUpperCase() + state.slice(1);
+      expect(roadmap, `the roadmap omits ${named}`).toContain(`| ${named} |`);
+    }
+    expect(dirs.length).toBe(6);
+  });
+
+  it("matches the per-state route counts stated in its own table", () => {
+    for (const [state, dir] of [
+      ["Florida", "florida-property-tax"],
+      ["California", "california-property-tax"],
+      ["Arizona", "arizona-property-tax"],
+      ["Nevada", "nevada-property-tax"],
+      ["Oregon", "oregon-property-tax"],
+    ] as [string, string][]) {
+      const actual = SITE_PAGES.filter((p) => p.path.startsWith(`/${dir}/`)).length;
+      const row = roadmap.split("\n").find((l) => l.startsWith(`| ${state} `));
+      expect(row, `no roadmap row for ${state}`).toBeDefined();
+      expect(row, `${state} row should state "${actual} state"`).toContain(`${actual} state`);
     }
   });
 });
