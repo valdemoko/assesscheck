@@ -56,7 +56,13 @@ a batch that skips a line is a batch that has not finished.
    `anchoredTo` that names the event.
 5. **Six pages** minimum: a hub, the state's distinctive rule, the notice, the
    appeal route, the evidence question, and the deadline calendar rendered from
-   the registry.
+   the registry. The hub is an article *with its index at the top*: the
+   explanation the reader came for, and — above it, in "In this section" — a
+   link to each of the pages below with a line saying what is in it. Texas wrote
+   its hub as a directory and the five states added after it wrote theirs as
+   articles with the links at the bottom; that split was never decided and is
+   now one shape. A hub that does not link a page in its own cluster is a
+   `tests/page-standards.test.ts` failure, not a style question.
 6. **Tests in `tests/<state>.test.ts`** covering: the rules and their semantics,
    zero bleed of other states' law or vocabulary, deadlines, the source
    partition, and the publication gate.
@@ -71,6 +77,17 @@ The generic guards added along the way now do part of this work automatically:
 state's vocabulary, `tests/american-english.test.ts` fails on dialect drift, and
 `tests/checker-coverage.test.ts` fails if the tool's real coverage stops matching
 the sentences that promise it.
+
+`tests/page-standards.test.ts` covers three more, all derived from `site-config`
+and `SITE_PAGES` rather than from lists that can rot: every page that makes
+claims about a state cites at least one registered source, every breadcrumb trail
+starts at Home (and only the last crumb is the current page), and every state hub
+links every page directly below it. None of the three had any test before, which
+is exactly why all three had drifted: three pages cited nothing, every child page
+began its trail at its state hub, and two hubs never linked children they had.
+The lesson worth keeping is that a suite of 240 tests can be green while an
+entire class of promise goes unexamined — the guards are only ever as good as the
+question they were asked.
 
 ---
 
