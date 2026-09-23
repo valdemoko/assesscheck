@@ -259,12 +259,14 @@ export default function HomePage() {
             nothing.
           </p>
           <p>
-            It is offered for <strong>Texas and Florida</strong> properties,
-            where the question &ldquo;did this year&rsquo;s figure move more
-            than the law allows?&rdquo; can be answered from the notice itself.
-            The California, Arizona, Nevada and Oregon pages explain why the same
-            arithmetic would give a misleading answer there, and what to check
-            instead.
+            It is offered for <strong>Texas</strong> properties today, where the
+            question &ldquo;did this year&rsquo;s figure move more than the law
+            allows?&rdquo; can be answered from the notice itself. A Florida
+            edition is not built yet, even though the homestead limit is the
+            other rule on this site that two consecutive notices are enough to
+            test. The California, Arizona, Nevada and Oregon pages explain why
+            the same arithmetic would give a misleading answer there, and what to
+            check instead.
           </p>
         </section>
 
