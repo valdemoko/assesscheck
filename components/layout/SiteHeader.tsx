@@ -13,6 +13,7 @@ const NAV = [
   { href: "/california-property-tax/", label: "California" },
   { href: "/arizona-property-tax/", label: "Arizona" },
   { href: "/nevada-property-tax/", label: "Nevada" },
+  { href: "/oregon-property-tax/", label: "Oregon" },
   { href: "/evidence/property-tax-protest-evidence/", label: "Evidence" },
   { href: "/resources/", label: "Resources" },
   { href: "/about/", label: "About" },

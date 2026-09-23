@@ -75,7 +75,7 @@ export default function Page() {
       </p>
       <ul>
         <li>an appeal of a single-family dwelling occupied by the owner as a primary residence;</li>
-        <li>non-enrolment of purchase prices, if you timely filed a Change in Ownership Statement;</li>
+        <li>non-enrollment of purchase prices, if you timely filed a Change in Ownership Statement;</li>
         <li>the assessor asking to enrol a <em>higher</em> value than the roll shows;</li>
         <li>escape assessments not caused by your failure to file a Change in Ownership Statement, business property statement or new-construction permits;</li>
         <li>penalty assessments.</li>
@@ -152,7 +152,7 @@ export default function Page() {
         <strong>What it does not tell you:</strong> what your property is worth,
         whether the assessor&rsquo;s adjustment methodology is wrong, or whether
         the board will accept your comparables as genuinely similar. Those are
-        judgements made on the record at the hearing.
+        judgments made on the record at the hearing.
       </p>
 
       <h2>Where to go next</h2>

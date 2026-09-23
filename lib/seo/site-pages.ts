@@ -81,6 +81,14 @@ export const SITE_PAGES: SitePageRecord[] = [
   { path: "/nevada-property-tax/value-notice/", title: "Nevada value notice", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/nevada-property-tax/value-appeal/", title: "Nevada value appeal", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   { path: "/nevada-property-tax/deadlines/", title: "Nevada deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  // Oregon (state-only — 36 counties, no county pages; see
+  // docs/oregon-expansion-research.md)
+  { path: "/oregon-property-tax/", title: "Oregon property tax", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/oregon-property-tax/measure-50-mav/", title: "Measure 50 and the maximum assessed value", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/oregon-property-tax/changed-property-ratio/", title: "Changed property ratio and exception events", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/oregon-property-tax/tax-statement/", title: "Oregon tax statement", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/oregon-property-tax/appeal/", title: "Oregon appeal", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
+  { path: "/oregon-property-tax/deadlines/", title: "Oregon deadlines", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },
   // Cross-state hub — the internal-linking asset that keeps state pages from
   // being orphans as the number of covered states grows.
   { path: "/property-tax-by-state/", title: "Property tax by state", publishStatus: "ready", lastVerifiedDate: "2026-09-23" },

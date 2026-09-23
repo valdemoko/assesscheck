@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/property-tax-by-state/",
   title: "Property Tax by State: How Assessment Limits Differ",
   description:
-    "Texas, Florida, Arizona, California and Nevada compared: what each state's assessment limit actually caps, what resets it, and where an appeal goes. Covering only the states whose rules are verified against official sources.",
+    "Texas, Florida, Arizona, California, Nevada and Oregon compared: what each state's assessment limit actually caps, what resets it, and where an appeal goes. Covering only the states whose rules are verified against official sources.",
   publishStatus: "ready",
   lastVerifiedDate: "2026-09-23",
   section: "States",
@@ -32,7 +32,7 @@ export default function Page() {
       <p>
         AssessCheck publishes a state only after its rules have been read in
         official sources and its deadlines verified. That is why this page lists
-        five states and not fifty: an unverified page is worse than no page.
+        six states and not fifty: an unverified page is worse than no page.
       </p>
 
       <h2>Texas — 10% limit on a homestead&rsquo;s appraised value</h2>
@@ -160,6 +160,44 @@ export default function Page() {
         </li>
       </ul>
 
+      <h2>Oregon — 3% on the maximum assessed value, plus Measure 5 limits on the tax</h2>
+      <ul>
+        <li>
+          <strong>What it limits:</strong> the <em>maximum assessed value</em>,
+          a limit created by Measure 50 beside the property&rsquo;s real market
+          value. Assuming no change to the property it is the greater of 103% of
+          the prior year&rsquo;s assessed value or 100% of the prior MAV, and the
+          tax base — the assessed value — is the <strong>lower</strong> of the MAV
+          or the real market value.
+        </li>
+        <li>
+          <strong>What resets it:</strong> the limit is not reset, and that is the
+          point. It may rise by more than 3% only through an exception event: new
+          construction, an addition or a renovation above the published
+          thresholds, a partition or subdivision, rezoning, omitted property, or
+          loss of a special assessment. New property enters at real market value
+          multiplied by the county&rsquo;s changed property ratio, which is why new
+          construction is taxed on a fraction of its value.
+        </li>
+        <li>
+          <strong>Where an appeal goes:</strong> a petition to the county Board of
+          Property Tax Appeals, filed with the county clerk by December 31 after
+          the tax statement arrives; then the Oregon Tax Court, Magistrate
+          Division (30 days from the order), then the Regular Division (60 days).
+        </li>
+        <li>
+          <strong>A second limit on the tax itself:</strong> Measure 5 caps
+          education taxes at $5 and general government taxes at $10 per $1,000 of
+          real market value, with bond levies and some special assessments
+          excluded. The bill is the lower of that calculation and the assessed
+          value multiplied by the rate, so a property can be held down by
+          compression — and can rise by more than 3% when compression is lost.
+        </li>
+        <li>
+          <Link href="/oregon-property-tax/">Oregon property tax →</Link>
+        </li>
+      </ul>
+
       <h2>The comparison that matters most</h2>
       <div className="table-wrap">
         <table>
@@ -214,6 +252,15 @@ export default function Page() {
             <td>
               Yes — value new to the roll is not abated, and non-ad valorem items
               on the bill are outside the cap
+            </td>
+          </tr>
+          <tr>
+            <td>Oregon</td>
+            <td>Maximum assessed value (the tax base is the lower of it or market value)</td>
+            <td>The greater of prior assessed value &times; 1.03 or the prior MAV</td>
+            <td>
+              Yes — the assessed value can jump when the market value recovers
+              above the MAV, and exception events add value above 3%
             </td>
           </tr>
         </tbody>
@@ -281,6 +328,10 @@ export default function Page() {
           "nv-washoe-abatement-appeal",
           "nv-washoe-assessor-faq",
           "nv-clark-tax-abatement",
+          "or-oar-150-308-0120",
+          "or-multco-assessment-faq",
+          "or-multco-tax-calculation",
+          "or-hood-river-cpr",
         ]}
       />
     </PageShell>

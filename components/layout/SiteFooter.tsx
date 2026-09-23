@@ -24,6 +24,8 @@ const COLUMNS: { heading: string; links: FooterLink[] }[] = [
       { href: "/arizona-property-tax/petition-for-review/", label: "Arizona: petition" },
       { href: "/nevada-property-tax/deadlines/", label: "Nevada deadlines" },
       { href: "/nevada-property-tax/tax-cap-abatement/", label: "Nevada tax cap" },
+      { href: "/oregon-property-tax/deadlines/", label: "Oregon deadlines" },
+      { href: "/oregon-property-tax/measure-50-mav/", label: "Oregon: MAV limit" },
     ],
   },
   {
@@ -35,6 +37,7 @@ const COLUMNS: { heading: string; links: FooterLink[] }[] = [
       { href: "/california-property-tax/", label: "California property tax" },
       { href: "/arizona-property-tax/", label: "Arizona property tax" },
       { href: "/nevada-property-tax/", label: "Nevada property tax" },
+      { href: "/oregon-property-tax/", label: "Oregon property tax" },
       { href: "/arizona-property-tax/full-cash-vs-limited-value/", label: "Arizona: LPV limit" },
       { href: "/texas-property-tax/protest/", label: "Protest process (TX)" },
       { href: "/texas-property-tax/faq/", label: "Texas FAQ" },
@@ -132,7 +135,7 @@ export function SiteFooter() {
         <p className="site-footer__disclaimer">
           {siteConfig.name} provides general educational information about
           property tax assessments and the review process — Texas, Florida,
-          California, Arizona and Nevada. It is not legal, tax, appraisal, or financial
+          California, Arizona, Nevada and Oregon. It is not legal, tax, appraisal, or financial
           advice, and it is not affiliated with any appraisal district, property
           appraiser, or government agency. Verify current deadlines and
           procedures with the applicable authority and official sources.

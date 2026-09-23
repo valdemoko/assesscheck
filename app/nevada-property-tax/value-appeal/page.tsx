@@ -71,7 +71,7 @@ export default function Page() {
       <ul>
         <li>
           <strong>The land</strong> is valued from market sales and other
-          recognised appraisal methods, considering location, zoning and actual
+          recognized appraisal methods, considering location, zoning and actual
           use.
         </li>
         <li>

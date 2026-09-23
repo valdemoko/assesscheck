@@ -19,6 +19,7 @@ const STATE_DIRS: Record<string, string[]> = {
   california: ["app/california-property-tax"],
   arizona: ["app/arizona-property-tax"],
   nevada: ["app/nevada-property-tax"],
+  oregon: ["app/oregon-property-tax"],
 };
 
 // Signature phrases that belong to exactly one covered state. Terminology that
@@ -29,13 +30,17 @@ const STATE_DIRS: Record<string, string[]> = {
 // cash value" (Nevada's assessors use it for the market value of the land, as
 // NRS 361 does) — because banning shared words would only make the rule
 // dishonest. Each of these was found by this test flagging correct text.
+//
+// "rendition" is the same case: it is a shared value of DeadlineType in
+// lib/data/deadlines.ts, so it appears in every state's deadlines page as a
+// lookup key. Texas and Oregon both file a rendition of business personal
+// property, so the word carries no ownership.
 const SIGNATURE_PHRASES: Record<string, string[]> = {
   texas: [
     "appraisal district",
     "appraisal review board",
     "notice of appraised value",
     "form 50-162",
-    "rendition",
     "texas tax code",
   ],
   florida: [
@@ -68,13 +73,28 @@ const SIGNATURE_PHRASES: Record<string, string[]> = {
     "fair market rent",
     "nrs 361",
   ],
+  oregon: [
+    "measure 50",
+    "maximum assessed value",
+    "changed property ratio",
+    "exception event",
+    "compression",
+    "board of property tax appeals",
+    "levy code area",
+    "bopta",
+  ],
 };
 
+// Every covered state must be listed here. A missing entry makes
+// `context.includes(STATE_NAMES[owner])` compare against undefined, so a page
+// that legitimately contrasts with that state by name would still be flagged.
 const STATE_NAMES: Record<string, string> = {
   texas: "texas",
   florida: "florida",
   california: "california",
   arizona: "arizona",
+  nevada: "nevada",
+  oregon: "oregon",
 };
 
 // A foreign term is contamination only when it is presented as this state's own

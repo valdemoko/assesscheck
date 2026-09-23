@@ -51,9 +51,26 @@ describe("sitemap publication gate", () => {
     expect(getSitemapPages()).toEqual(expected);
   });
 
-  it("all 68 expected URLs are present in the registry", () => {
-    expect(SITE_PAGES).toHaveLength(68);
-    expect(getSitemapPages()).toHaveLength(68);
+  it("all 74 expected URLs are present in the registry", () => {
+    expect(SITE_PAGES).toHaveLength(74);
+    expect(getSitemapPages()).toHaveLength(74);
+  });
+
+  it("oregon state pages are published; no oregon county pages exist in the registry", () => {
+    const listed = SITE_PAGES.map((p) => p.path);
+    for (const p of [
+      "/oregon-property-tax/",
+      "/oregon-property-tax/measure-50-mav/",
+      "/oregon-property-tax/changed-property-ratio/",
+      "/oregon-property-tax/tax-statement/",
+      "/oregon-property-tax/appeal/",
+      "/oregon-property-tax/deadlines/",
+    ]) {
+      expect(listed).toContain(p);
+    }
+    // Oregon counties are BLOCKED until they pass the pilot-county test.
+    expect(listed.join("\n")).not.toContain("multnomah");
+    expect(listed.join("\n")).not.toContain("yamhill");
   });
 
   it("nevada state pages are published; no nevada county pages exist in the registry", () => {

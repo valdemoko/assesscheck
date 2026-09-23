@@ -10,7 +10,7 @@ export const siteConfig = {
   name: "AssessCheck",
   /** Descriptive tagline used in the footer. */
   description:
-    "Source-driven property tax assessment information, evidence guidance, and a browser-only assessment checker — Texas, Florida, California, Arizona and Nevada.",
+    "Source-driven property tax assessment information, evidence guidance, and a browser-only assessment checker — Texas, Florida, California, Arizona, Nevada and Oregon.",
   /** Domain — re-exported from the SEO layer, which enforces the env var. */
   url: SITE_URL_RESOLVED,
 
@@ -67,12 +67,26 @@ export const siteConfig = {
       howToFilePath: "/nevada-property-tax/value-appeal/",
       evidenceGuidePath: "/nevada-property-tax/value-appeal/",
       // Third state without a checker, and the reason is arithmetic rather than
-      // labelling: the published tool compares a value with last year's value,
+      // labeling: the published tool compares a value with last year's value,
       // while Nevada caps the TAX BILL. An assessed value may rise by any
       // percentage under a correctly applied abatement, so screening it would
       // produce confident nonsense. Nevada needs the prior year's bill and the
       // current calculated tax (see CapSubject "tax-amount").
       checkerPath: "/nevada-property-tax/tax-cap-abatement/",
+    },
+    oregon: {
+      name: "Oregon",
+      hubPath: "/oregon-property-tax/",
+      deadlinesPath: "/oregon-property-tax/deadlines/",
+      howToFilePath: "/oregon-property-tax/appeal/",
+      evidenceGuidePath: "/oregon-property-tax/appeal/",
+      // Fourth state without a checker. Oregon caps the MAXIMUM ASSESSED
+      // VALUE, not the assessed value the bill uses, and the assessed value
+      // can lawfully jump far beyond 3% (RMV recovering above the MAV,
+      // exception value, lost compression). A year-over-year screen would fire
+      // on correct assessments; a real tool needs RMV, MAV and the exception
+      // events as inputs.
+      checkerPath: "/oregon-property-tax/measure-50-mav/",
     },
   } as const,
 

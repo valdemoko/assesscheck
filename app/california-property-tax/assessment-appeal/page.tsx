@@ -129,7 +129,7 @@ export default function Page() {
         you must sign a written authorization before the hearing. An authorized
         agent may be a corporation or entity rather than a named individual, but
         the authorization block on the application itself must be signed by the
-        applicant (or an officer or authorised employee of the applicant) — if
+        applicant (or an officer or authorized employee of the applicant) — if
         the agent signs it, the application is invalid.
       </p>
 

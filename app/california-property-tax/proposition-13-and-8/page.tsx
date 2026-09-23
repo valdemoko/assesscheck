@@ -35,7 +35,7 @@ export default function Page() {
       <h2>Proposition 13: the base year value and the 2% factor</h2>
       <p>
         Proposition 13 added Article XIII A to the California Constitution. The
-        Board of Equalization summarises three effects:
+        Board of Equalization summarizes three effects:
       </p>
       <ul>
         <li>
@@ -74,7 +74,7 @@ export default function Page() {
           <strong>The limit resets on transfer or new construction.</strong> A
           change in ownership or completed new construction establishes a new
           base year value at market value, which is why a recently purchased home
-          can be assessed far above an identical neighbouring one. That is the
+          can be assessed far above an identical neighboring one. That is the
           system working as designed, not an error.
         </li>
       </ul>

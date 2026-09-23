@@ -1024,6 +1024,107 @@ export const SOURCES: Record<string, SourceRecord> = {
       "Read (the publication index and the descriptions it carries). The Department publishes the GENERAL ABATEMENT FACTORS (tax cap) tables that county officials use to forecast how much property tax must be abated, with the statement that 'the tax cap provides property owners relief from rising property values by capping the amount of property taxes which can be assessed', plus a tax cap explanation. It also publishes the FAIR MARKET RENTS FOR RENTAL ABATEMENT, stating that NRS 361.4724 requires the rents collected on a rental property to be compared with the fair market rent for the county most recently published by HUD. The individual documents are PDFs and were not extractable here, so they are used only for what the index states in text.",
     status: "verified",
   },
+
+  // ------------------------------------------------------------------
+  // OREGON — the strongest single source here is an ADMINISTRATIVE RULE read
+  // in full on the Secretary of State's OARD site (the 103% test and a worked
+  // example). The ORS text itself was NOT readable: the Legislature's chapter
+  // page for ORS 308 timed out at 20 seconds on every attempt (one very large
+  // HTML file), and the Department of Revenue's manuals are PDFs. Every ORS
+  // citation below therefore comes from an official page that names the
+  // section. See docs/oregon-expansion-research.md §1.2.
+  // ------------------------------------------------------------------
+  "or-oar-150-308-0120": {
+    sourceId: "or-oar-150-308-0120",
+    title:
+      "OAR 150-308-0120 — Reduction of maximum assessed value when a building is demolished or removed",
+    publisher: "Oregon Secretary of State (Administrative Rules), implementing ORS 308.146",
+    authorityLevel: "primary",
+    url: "https://secure.sos.state.or.us/oard/view.action?ruleNumber=150-308-0120",
+    lastVerifiedDate: "2026-09-23",
+    jurisdiction: "Oregon",
+    jurisdictionLevel: "state",
+    jurisdictionId: "oregon",
+    topic: "maximum-assessed-value",
+    notes:
+      "Read in full, and it is the source that settles Oregon's core formula. Step 1 states the 103% test explicitly: 'Perform the 103% test as if the property had not changed. Multiply the prior year assessed value (AV) by 1.03. Compare the result to the prior year MAV to determine the larger amount. The larger amount becomes the current year MAV (unadjusted) as if the account had not changed.' The rule then works a full example (2007-08 MAV $87,379, prior AV $87,379, RMV $100,000, house demolished on 1 September 2007) through five steps to an adjusted MAV of $22,500 — which is how exception value is removed when part of a property disappears. It also confirms that ORS 308.146(8)(a) is the statutory basis and that ORS 308.146(6) can place the RMV determination date at July 1.",
+    status: "verified",
+  },
+  "or-hood-river-cpr": {
+    sourceId: "or-hood-river-cpr",
+    title: "What is the Changed Property Ratio and how does it affect property taxes?",
+    publisher: "Hood River County (Oregon)",
+    authorityLevel: "primary",
+    url: "https://www.hoodrivercounty.gov/changed-property-ratio",
+    lastVerifiedDate: "2026-09-23",
+    jurisdiction: "Oregon",
+    jurisdictionLevel: "county",
+    jurisdictionId: "oregon",
+    topic: "changed-property-ratio",
+    notes:
+      "Read in full. Explains Measure 50 (1997-98) as redefining each property's assessed value to 90% of the 1995-96 assessed value and limiting each district to a permanent tax rate; defines the maximum assessed value as the taxable value limit established for each property, first set for 1997-98 as the property's 1995-96 REAL MARKET VALUE MINUS 10 PER CENT; states that 'MAV can increase for only two reasons: a three (3) percent annual increase or specific property events called exceptions (such as new property or improvements, partitions or subdivisions, rezoning, etc.)'; and defines the changed property ratio as average MAV divided by average RMV of ALL UNCHANGED properties in the county within the same property classification. Its own example: Hood River residential CPR has been below 60% for six years and was an all-time low of 42.1% in 2022, so a new residential home valued at $500,000 carried only $210,500 of taxable value ($500,000 x .421). This is the plainest official explanation found of why new construction is not taxed at its value in Oregon.",
+    status: "verified",
+  },
+  "or-multco-assessment-faq": {
+    sourceId: "or-multco-assessment-faq",
+    title: "Property Assessment FAQs",
+    publisher: "Multnomah County (Oregon)",
+    authorityLevel: "primary",
+    url: "https://multco.us/info/property-assessment-faqs",
+    lastVerifiedDate: "2026-09-23",
+    jurisdiction: "Oregon",
+    jurisdictionLevel: "county",
+    jurisdictionId: "oregon",
+    topic: "assessment-values",
+    notes:
+      "Read in full. Assessed value as 'the lower of last year's Maximum Assessed Value (MAV) plus 3%, or the current Real Market Value (RMV)'; the ORS 308.205(1) RMV definition (cash that an informed buyer would pay an informed seller, neither acting under compulsion, in an arm's-length transaction as of the assessment date); the appraisal methods used; MAV as 'the greater of 103% of the prior year's assessed value (AV), or 100 percent of the prior year's MAV'; the pre-1995 MAV basis (1995-96 RMV less 10%) and the post-1995 basis (RMV as of the January 1 following construction or creation x the CPR for that year); the flat statement that 'MAV is the only component of your property taxes where a 3% increase limit applies'; the two reasons an assessed value can jump; the EXCEPTION EVENT list — new construction/additions and remodelling/renovation/rehabilitation valued at more than $18,700 in one year or $46,200 over five years (indexed annually to the CPI by the Department of Revenue after 2024), partitioning or subdivision, rezoning where the property is used consistently with the new zoning, discovery of omitted property, and disqualification from an exemption or special assessment — citing ORS 308.149 and OAR 150-308-0160; the ongoing-maintenance distinction citing OAR 150-308-0130; and that property values and taxes are tied to the property, not the owner.",
+    status: "verified",
+  },
+  "or-multco-tax-calculation": {
+    sourceId: "or-multco-tax-calculation",
+    title: "How Your Property Taxes Are Calculated",
+    publisher: "Multnomah County (Oregon)",
+    authorityLevel: "primary",
+    url: "https://multco.us/info/how-your-property-taxes-are-calculated",
+    lastVerifiedDate: "2026-09-23",
+    jurisdiction: "Oregon",
+    jurisdictionLevel: "county",
+    jurisdictionId: "oregon",
+    topic: "tax-calculation",
+    notes:
+      "Read in full. Two calculations are performed each year and 'your tax bill is always the lower of these two amounts': (1) assessed value x the tax rate for your levy code area plus special assessments; (2) real market value x the Measure 5 limits of $5 per $1,000 for education taxes and $10 per $1,000 for general government taxes, plus the amounts for items EXCLUDED from the Measure 5 limits. Compression is defined as the situation where the Measure 5 calculation produces a lower bill than the assessed-value calculation. Excluded items include bond levies and some special assessments, and are computed on assessed value and rate. On why a bill can jump: 'Tax amounts are not limited to a 3% increase from one year to the next. The Maximum Assessed Value is the only place where a 3% limit applies' — listing a change in the levy code area's tax rate, loss of compression savings, an exception event, or a combination.",
+    status: "verified",
+  },
+  "or-multco-property-taxes": {
+    sourceId: "or-multco-property-taxes",
+    title: "Property Taxes — statements, payment dates and installments",
+    publisher: "Multnomah County (Oregon)",
+    authorityLevel: "primary",
+    url: "https://multco.us/info/property-taxes",
+    lastVerifiedDate: "2026-09-23",
+    jurisdiction: "Oregon",
+    jurisdictionLevel: "county",
+    jurisdictionId: "oregon",
+    topic: "payment",
+    notes:
+      "Read in full. 'Property tax statements are mailed before October 25 every year. Pay your taxes in full by November 15 or make partial payments with further installments due in February and May. If the 15th falls on a weekend or holiday, due date is the next business day.' The county's payment FAQ names the three dates as November 15, February 15 and May 15. Also lists the property types assessed (real property, business personal property, industrial machinery and equipment, manufactured structures, floating property, moorages).",
+    status: "verified",
+  },
+  "or-yamhill-appeals": {
+    sourceId: "or-yamhill-appeals",
+    title: "Property Valuation & Appeals Process",
+    publisher: "Yamhill County Assessor / Tax Collector (Oregon)",
+    authorityLevel: "primary",
+    url: "https://www.yamhillcounty.gov/729/Property-Valuation-Appeals-Process",
+    lastVerifiedDate: "2026-09-23",
+    jurisdiction: "Oregon",
+    jurisdictionLevel: "county",
+    jurisdictionId: "oregon",
+    topic: "appeals",
+    notes:
+      "Read in full. The county prepares the assessment roll as of January 1; a business personal property return (form 150-553-004) is due March 15 with no late-filing extension, and assessments are canceled below $16,500 of value. Informal 'Request for Review' may be made through December 16; after that the owner must file a board petition. Petitions to the Property Valuation Appeals Board (the county's name for BOPTA) may be filed after tax bills are received in late October through December 31, moving to the next business day when December 31 falls on a weekend or legal holiday, and are filed with the COUNTY CLERK, not the assessor. A board appeal is limited to the current tax year's values, and in some cases MAV, SAV and AV may be appealed; the board also hears late-filing penalty appeals and may waive a penalty for good and sufficient cause. Hearings run from the first Monday in February to April 15, with at least five days' written notice, and are informal; there is no board filing fee. A real market value reduction may NOT change the bill, depending on whether the reduced RMV falls below the assessed value or is enough to change the Measure 5 / Measure 50 comparison. The page lists official supporting documentation (arm's-length sale of the property, sales of similar homes close to January 1, a fee appraisal, a broker's market analysis, documented new-construction cost, contractor estimates for major repairs, proof of a listing below the roll value, income and expense data for commercial property) and what is NOT evidence (statistical reports from outside organizations, old listings, sales outside the market area, and comparisons of your value or taxes with your neighbors'). Also: industrial property appraised by the Department of Revenue is appealed directly to the Magistrate Division of the Oregon Tax Court (same December 31 deadline, with a fee, $281 at the time of writing); a complaint against a board order must be filed with the Magistrate Division within 30 days (not one month) of the order's mailing; a magistrate decision may be appealed to the Regular Division within 60 days; then the Supreme Court. Cites ORS 308.242 for tax corrections by December 31 and ORS 309.200 for the ratio-study sales period.",
+    status: "verified",
+  },
 };
 
 export function getSource(sourceId: string): SourceRecord | undefined {

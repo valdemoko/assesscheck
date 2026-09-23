@@ -595,7 +595,7 @@ export const JURISDICTION_RULES: Record<string, JurisdictionRules> = {
       },
     ],
     // NO homesteadCapQuestion, and here the reason is arithmetic rather than
-    // labelling. The shared checker compares a value this year with a value last
+    // labeling. The shared checker compares a value this year with a value last
     // year and flags a gap above the cap. Nevada's cap is on the TAX AMOUNT: an
     // assessed value may rise by any percentage while the bill is correctly
     // abated, and the county assessor says exactly that ('only the amount of
@@ -681,6 +681,132 @@ export const JURISDICTION_RULES: Record<string, JurisdictionRules> = {
       "nv-clark-assessor-real-property",
       "nv-clark-tax-abatement",
       "nv-dor-lgs-publications",
+    ],
+  },
+
+  oregon: {
+    jurisdictionId: "oregon",
+    jurisdictionName: "Oregon",
+    caps: [
+      {
+        capId: "or-maximum-assessed-value-cap",
+        appliesTo: "all-real-property",
+        capSubject: "assessed-value",
+        basis: "annual-increase",
+        maxAnnualIncreasePercent: 3,
+        label: "maximum assessed value (Measure 50)",
+        detail:
+          "Since Measure 50 (1997), Oregon property carries a maximum assessed value — a limit on the taxable value — beside the real market value, which is the assessor's opinion of value. Assuming the property has not changed, the MAV is the GREATER of 103% of the prior year's assessed value or 100% of the prior year's MAV, and the assessed value the tax rate is applied to is the LOWER of the current MAV or the current RMV. So the 3% belongs to the MAV, which is a limit, and not to the assessed value, which is what the arithmetic actually produces: a property taxed below its MAV can see its MAV rise by more than 3% with no change to the property at all.",
+        resetNote:
+          "The MAV may rise by more than 3% for only one reason: an exception event. The published list covers new construction or additions, and remodelling, renovation or rehabilitation, above the thresholds the Department of Revenue publishes and indexes to the CPI ($18,700 in one year or $46,200 over five years at the time of writing); partitioning or subdivision; rezoning where the property is used consistently with the new zoning; discovery of omitted property; and disqualification from an exemption or special assessment. Ordinary ongoing maintenance and repair is not an exception event. Property built or created after 1995 does not start from 1995-96 values: its MAV is the RMV as of the January 1 following construction multiplied by the county's changed property ratio.",
+        limitations:
+          "Three limits on reading this as a cap on your bill. (1) The 3% applies to the MAXIMUM ASSESSED VALUE only — the counties state it directly: it is the only component where a 3% limit applies, and tax amounts are not limited to a 3% increase. (2) An assessed value can lawfully rise by much more than 3% without any exception event, when the real market value recovers above the MAV after years below it. (3) The exception thresholds above are the published figures and are indexed to the CPI, so they move.",
+        sources: [
+          {
+            sourceId: "or-oar-150-308-0120",
+            supports:
+              "The 103% test in the rule's own words: the current MAV is the larger of the prior year's AV x 1.03 or the prior year's MAV.",
+          },
+          {
+            sourceId: "or-multco-assessment-faq",
+            supports:
+              "MAV as the greater of 103% of the prior AV or 100% of the prior MAV; assessed value as the lower of MAV + 3% or the current RMV; the exception-event list and its dollar thresholds; the post-1995 MAV basis; and the statement that MAV is the only component with a 3% limit.",
+          },
+          {
+            sourceId: "or-hood-river-cpr",
+            supports:
+              "Measure 50's origin of the MAV, the 1995-96 basis, and the rule that the MAV can rise for only two reasons: the 3% annual increase or an exception.",
+          },
+        ],
+      },
+    ],
+    // NO homesteadCapQuestion, for the same reason as California, Arizona and
+    // Nevada but with an Oregon-specific trap. The obvious screen would compare
+    // the assessed value year over year against 3%. In Oregon an assessed value
+    // may lawfully exceed that (the RMV recovering above the MAV, exception
+    // value being added, compression being lost) and may also stay flat while
+    // the MAV rises, because the assessed value is the LOWER of MAV and RMV.
+    // Screening it would fire on correct assessments. A real Oregon tool has to
+    // take RMV, MAV and the exception events as inputs.
+    largeIncreaseThresholdPercent: 20,
+    largeDecreaseThresholdPercent: 20,
+    propertySearch: {
+      label:
+        "your county assessor's office (Oregon's 36 counties each run their own valuation and payment lookup; the county page cited here documents its own)",
+      url: "https://multco.us/info/property-assessment-faqs",
+    },
+    valueChain: [
+      {
+        term: "Real market value (RMV)",
+        definition:
+          "The assessor's opinion of what the property would sell for: the amount in cash that an informed buyer would pay an informed seller, neither acting under compulsion, in an arm's-length transaction as of the assessment date. It is not the tax base unless it is the lower of the two values.",
+        sources: [
+          {
+            sourceId: "or-multco-assessment-faq",
+            supports:
+              "The ORS 308.205(1) definition of real market value and the appraisal methods used to estimate it.",
+          },
+        ],
+      },
+      {
+        term: "Maximum assessed value (MAV)",
+        definition:
+          "A limit created by Measure 50, not an opinion of value: the greater of 103% of the prior year's assessed value or 100% of the prior year's MAV, increased by more than that only through an exception event. Property built after 1995 starts from its market value multiplied by the changed property ratio.",
+        sources: [
+          {
+            sourceId: "or-multco-assessment-faq",
+            supports: "The MAV formula, the pre-1995 and post-1995 bases, and the exception events.",
+          },
+          {
+            sourceId: "or-hood-river-cpr",
+            supports:
+              "The changed property ratio: average MAV divided by average RMV of unchanged property in the same class, and the county's own worked example.",
+          },
+          {
+            sourceId: "or-oar-150-308-0120",
+            supports: "The 103% test and how exception value is removed when a structure is demolished.",
+          },
+        ],
+      },
+      {
+        term: "Assessed value (AV)",
+        definition:
+          "The lower of the maximum assessed value or the real market value. This is the figure the tax rate is applied to, and it is why a fall in the market can lower the tax base while the MAV limit keeps rising.",
+        sources: [
+          {
+            sourceId: "or-multco-assessment-faq",
+            supports:
+              "Assessed value as the lower of last year's MAV plus 3% or the current RMV, and the two reasons an assessed value can increase sharply.",
+          },
+        ],
+      },
+      {
+        term: "Tax bill (after Measure 5 compression)",
+        definition:
+          "The bill is the LOWER of two calculations: the assessed value multiplied by your levy code area's tax rate plus special assessments, or the real market value multiplied by the Measure 5 limits ($5 per $1,000 for education, $10 per $1,000 for general government) plus the amounts excluded from those limits. When the second is lower the property is compressed, and losing that compression is one of the reasons a bill can rise by more than 3%.",
+        sources: [
+          {
+            sourceId: "or-multco-tax-calculation",
+            supports:
+              "The two calculations and the lower-of rule, the Measure 5 limits, the excluded items, the definition of compression, and the causes of a larger increase.",
+          },
+          {
+            sourceId: "or-multco-property-taxes",
+            supports: "Statement mailing before October 25 and the payment and installment dates.",
+          },
+        ],
+      },
+    ],
+    assessmentNoticeName: "tax statement",
+    reviewBoardName:
+      "county Board of Property Tax Appeals (called the Property Valuation Appeals Board in some counties), then the Magistrate Division of the Oregon Tax Court",
+    sourceIds: [
+      "or-oar-150-308-0120",
+      "or-hood-river-cpr",
+      "or-multco-assessment-faq",
+      "or-multco-tax-calculation",
+      "or-multco-property-taxes",
+      "or-yamhill-appeals",
     ],
   },
 };

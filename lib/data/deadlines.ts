@@ -39,7 +39,12 @@ export type DeadlineType =
   //   Nevada Tax Commission for an abatement determination).
   | "abatement-claim"
   | "abatement-review"
-  | "appeal-higher-board";
+  | "appeal-higher-board"
+  // Added for Oregon: counties run a documented informal review of the value
+  // before (and instead of) a board petition, closing on a stated date. It is
+  // not a petition, a protest or an exemption application, so labeling it as
+  // any of those would mis-describe what the owner is actually doing.
+  | "informal-review";
 
 /**
  * How the deadline is legally expressed (FLORIDA-IMPLEMENTATION §3.2):
@@ -1022,6 +1027,195 @@ export const DEADLINES: DeadlineRecord[] = [
       {
         sourceId: "nv-washoe-assessor-dates",
         supports: "The four quarterly installment dates in rule form.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // OREGON — tax year 2026-2027. The clock is anchored to the TAX STATEMENT
+  // mailed by October 25 (Oregon does not run a separate value-notice step in
+  // the way the other states here do), and the board deadline is a fixed
+  // calendar date, December 31. See docs/oregon-expansion-research.md §1.2 on
+  // why the ORS text itself is cited through official pages that name it.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "or-assessment-date",
+    jurisdiction: "Oregon",
+    jurisdictionId: "oregon",
+    taxYear: "recurring annual rule",
+    deadlineType: "assessment-date",
+    deadlineBasis: "fixed-date",
+    rule:
+      "The county assessor prepares the assessment roll as of January 1 of each year, and the real market value is the property's value as of that assessment date. Evidence you present about value has to speak to the property as it existed on that date, not to later market movement.",
+    sources: [
+      {
+        sourceId: "or-yamhill-appeals",
+        supports: "The roll is prepared as of January 1; evidence must reflect the value as of January 1.",
+      },
+      {
+        sourceId: "or-multco-assessment-faq",
+        supports:
+          "Real market value is the amount that would be paid as of the assessment date for the tax year.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "or-business-personal-property-return",
+    jurisdiction: "Oregon",
+    jurisdictionId: "oregon",
+    taxYear: "recurring annual rule",
+    deadlineType: "rendition",
+    deadlineBasis: "fixed-date",
+    rule:
+      "A business owning or possessing taxable business personal property must file a Confidential Personal Property Return (form 150-553-004) with the county assessor by March 15. No late-filing extension is allowed, and the board may waive a late-filing penalty only for good and sufficient cause.",
+    sources: [
+      {
+        sourceId: "or-yamhill-appeals",
+        supports:
+          "March 15 return deadline with no extension, the return form number, and the board's power to hear penalty appeals.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "or-tax-statement-mailing",
+    jurisdiction: "Oregon",
+    jurisdictionId: "oregon",
+    taxYear: "recurring annual rule",
+    deadlineType: "notice-delivery",
+    deadlineBasis: "fixed-date",
+    rule:
+      "The county mails the property tax statement before October 25 each year. The statement carries the assessed value, the maximum assessed value and the real market value, which is why the appeal clock runs from receiving it rather than from a separate value notice.",
+    sources: [
+      {
+        sourceId: "or-multco-property-taxes",
+        supports: "Statements are mailed before October 25 every year.",
+      },
+      {
+        sourceId: "or-yamhill-appeals",
+        supports:
+          "Board petitions may be filed after tax bills are received in late October, and the appeal deadline is measured from the statement.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "or-informal-review",
+    jurisdiction: "Oregon",
+    jurisdictionId: "oregon",
+    taxYear: "recurring annual rule",
+    deadlineType: "informal-review",
+    deadlineBasis: "fixed-date",
+    rule:
+      "A request for review of the value may be made to the assessor's office through December 16. The counties ask owners not to wait until that date, because the account has to be reviewed and any warranted reduction processed in time for the tax corrections that must be completed by December 31.",
+    sources: [
+      {
+        sourceId: "or-yamhill-appeals",
+        supports:
+          "Request for review through December 16, the request not to wait, and the December 31 corrections requirement (ORS 308.242).",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "or-bopta-petition",
+    jurisdiction: "Oregon",
+    jurisdictionId: "oregon",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "fixed-date",
+    rule:
+      "A petition to the county Board of Property Tax Appeals (called the Property Valuation Appeals Board in some counties) may be filed once tax statements are received in late October, and must be filed with the county clerk by December 31 — or the next business day if December 31 falls on a weekend or legal holiday. There is no fee at this level. Hearings are held between the first Monday in February and April 15, with written notice at least five days in advance, and the owner is not required to attend.",
+    sources: [
+      {
+        sourceId: "or-yamhill-appeals",
+        supports:
+          "Filing window from late October to December 31 with the next-business-day rule, filed with the county clerk, no fee, the hearing window, the five-day notice and the owner's right not to appear.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "or-tax-court-magistrate",
+    jurisdiction: "Oregon",
+    jurisdictionId: "oregon",
+    taxYear: "recurring annual rule",
+    deadlineType: "judicial-review",
+    deadlineBasis: "fixed-date",
+    rule:
+      "Some matters go directly to the Magistrate Division of the Oregon Tax Court rather than to the county board — industrial property appraised by the Department of Revenue, and an appeal filed after the board deadline or about a prior year. That filing is also due by December 31, moving to the next business day, and carries a court filing fee ($281 at the time of the county's page). Certain standards must be met for the magistrate to hear the appeal.",
+    sources: [
+      {
+        sourceId: "or-yamhill-appeals",
+        supports:
+          "Direct Magistrate Division route and its December 31 deadline, the fee, and the standards that must be met.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "or-tax-court-complaint",
+    jurisdiction: "Oregon",
+    jurisdictionId: "oregon",
+    taxYear: "recurring annual rule",
+    deadlineType: "judicial-review",
+    deadlineBasis: "rule-based",
+    rule:
+      "A board decision is appealed to the Magistrate Division of the Oregon Tax Court by filing a written complaint within 30 days — the county stresses that this is 30 days, not one month — after the board's order is mailed. A filing fee applies at this level.",
+    anchoredTo: "the mailing date of the board's order",
+    sources: [
+      {
+        sourceId: "or-yamhill-appeals",
+        supports:
+          "Complaint within 30 days (not one month) of the order's mailing, and the filing fee at the Tax Court level.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "or-tax-court-regular-division",
+    jurisdiction: "Oregon",
+    jurisdictionId: "oregon",
+    taxYear: "recurring annual rule",
+    deadlineType: "judicial-review",
+    deadlineBasis: "rule-based",
+    rule:
+      "A magistrate's decision may be appealed to the Regular Division of the Oregon Tax Court by filing a complaint within 60 days — again, days, not two months — after the date of the magistrate's decision. A Regular Division trial is a formal proceeding, and a decision there can be appealed to the Oregon Supreme Court.",
+    anchoredTo: "the date of the magistrate's decision",
+    sources: [
+      {
+        sourceId: "or-yamhill-appeals",
+        supports:
+          "Complaint within 60 days of the magistrate's decision, the formal nature of the proceeding, and the route to the Supreme Court.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "or-payment-installments",
+    jurisdiction: "Oregon",
+    jurisdictionId: "oregon",
+    taxYear: "recurring annual rule",
+    deadlineType: "payment",
+    deadlineBasis: "rule-based",
+    rule:
+      "Taxes may be paid in full by November 15, or in up to three installments due November 15, February 15 and May 15. When the 15th falls on a weekend or holiday the due date moves to the next business day.",
+    anchoredTo: "the tax statement mailed before October 25",
+    sources: [
+      {
+        sourceId: "or-multco-property-taxes",
+        supports: "Payment in full by November 15, further installments in February and May, and the next-business-day rule.",
       },
     ],
     lastVerifiedDate: "2026-09-23",

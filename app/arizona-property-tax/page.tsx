@@ -45,7 +45,7 @@ export default function Page() {
         </li>
       </ul>
       <p>
-        The LPV is not a discretionary judgement by the assessor; Arizona law
+        The LPV is not a discretionary judgment by the assessor; Arizona law
         defines it as a calculation from the prior year&rsquo;s LPV and the new
         full cash value, and the county assessors describe it that way. That is
         why an LPV that rises by more than 5% normally points to one

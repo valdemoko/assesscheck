@@ -189,7 +189,7 @@ export default function TexasFAQPage() {
         every question below is scoped to Texas law and Texas institutions. For
         questions that work the same way in every state we cover, see the{" "}
         <Link href="/faq/">general property tax FAQ</Link>; for how Texas
-        compares with Florida, California, Arizona and Nevada, see{" "}
+        compares with Florida, California, Arizona, Nevada and Oregon, see{" "}
         <Link href="/property-tax-by-state/">property tax by state</Link>.
       </p>
       {FAQS.map((f, i) => (

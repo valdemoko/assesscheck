@@ -68,7 +68,7 @@ export default function HomePage() {
       <section className="hero" aria-label="Introduction">
         <div className="hero__content">
           <p className="hero__kicker">
-            Texas · Florida · California · Arizona · Nevada property tax
+            Texas · Florida · California · Arizona · Nevada · Oregon property tax
           </p>
           <h1>Understand your property assessment</h1>
           <p className="hero__lede">
@@ -93,19 +93,19 @@ export default function HomePage() {
         <section aria-label="Who it is for">
           <h2>Who it is for</h2>
           <p>
-            Property owners in Texas, Florida, California, Arizona and Nevada —
-            starting with Harris County — who want to understand their assessment
-            before deciding anything. If you already know you want a
-            professional to handle a protest, VAB petition, assessment appeal or
-            abatement claim, this site will still help you understand what that
-            process involves.
+            Property owners in Texas, Florida, California, Arizona, Nevada and
+            Oregon — starting with Harris County — who want to understand their
+            assessment before deciding anything. If you already know you want a
+            professional to handle a protest, VAB petition, assessment appeal,
+            abatement claim or board petition, this site will still help you
+            understand what that process involves.
           </p>
         </section>
 
         <section aria-label="States covered">
           <h2>States covered</h2>
           <p>
-            Five states, each documented from its own statutes and official
+            Six states, each documented from its own statutes and official
             guidance — because a rule that is correct in one is usually wrong in
             the next:
           </p>
@@ -135,6 +135,12 @@ export default function HomePage() {
               fiscal year, the 35% assessment ratio, and a partial abatement
               that caps the tax bill rather than the value.
             </li>
+            <li>
+              <Link href="/oregon-property-tax/">Oregon</Link> — Measure 50&rsquo;s
+              maximum assessed value against real market value, the changed
+              property ratio for new construction, and Measure 5 limits that can
+              compress the bill.
+            </li>
           </ul>
         </section>
 
@@ -159,7 +165,7 @@ export default function HomePage() {
             year: it anchors each property to a base year value and adjusts that
             figure by the lower of the CPI change or 2%. That is why a lawful
             assessment can jump far more than 2% in one year, why two identical
-            neighbouring houses can carry very different values, and why the
+            neighboring houses can carry very different values, and why the
             checker published here does not screen California properties. Start
             with{" "}
             <Link href="/california-property-tax/">California property tax basics</Link>,
@@ -212,6 +218,26 @@ export default function HomePage() {
           </p>
         </section>
 
+        <section aria-label="Oregon property tax">
+          <h2>Oregon property tax</h2>
+          <p>
+            Oregon carries two limits from two ballot measures. Measure 50 gives
+            every property a maximum assessed value that grows on its own
+            schedule, and the tax base is the <em>lower</em> of that limit or the
+            real market value — which is why a falling market does reach the bill
+            even though the limit keeps rising. New construction enters at a
+            fraction of its value through the county&rsquo;s changed property
+            ratio, and Measure 5 caps the tax itself at $5 and $10 per $1,000 of
+            real market value: when that calculation is lower, your property is
+            compressed. Start with{" "}
+            <Link href="/oregon-property-tax/">Oregon property tax basics</Link>,
+            the{" "}
+            <Link href="/oregon-property-tax/measure-50-mav/">maximum assessed value</Link>{" "}
+            or the{" "}
+            <Link href="/oregon-property-tax/deadlines/">Oregon deadlines</Link>.
+          </p>
+        </section>
+
         <section aria-label="Compare the states">
           <h2>Compare the states</h2>
           <p>
@@ -236,7 +262,7 @@ export default function HomePage() {
             It is offered for <strong>Texas and Florida</strong> properties,
             where the question &ldquo;did this year&rsquo;s figure move more
             than the law allows?&rdquo; can be answered from the notice itself.
-            The California, Arizona and Nevada pages explain why the same
+            The California, Arizona, Nevada and Oregon pages explain why the same
             arithmetic would give a misleading answer there, and what to check
             instead.
           </p>
@@ -248,9 +274,10 @@ export default function HomePage() {
             Official sources only: state statutes and departments of revenue
             (including the Texas Comptroller, the Florida Legislature and
             Department of Revenue, the California State Board of Equalization
-            and CDTFA, and the Arizona Revised Statutes, State Board of
-            Equalization and county assessors, and the Nevada Department of
-            Taxation and Nevada county assessors and treasurers), plus official
+            and CDTFA, the Arizona Revised Statutes, State Board of Equalization
+            and county assessors, the Nevada Department of Taxation and Nevada
+            county assessors and treasurers, and Oregon&rsquo;s Secretary of
+            State administrative rules and county assessors), plus official
             appraisal district and county assessor materials. Every important factual claim on this site links
             to its source with the date we verified it. See our{" "}
             <Link href="/methodology/">methodology</Link>.

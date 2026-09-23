@@ -131,7 +131,7 @@ pages do.
 `assessment-roll` (January 1 close of the roll and the value-notice mailing) and
 `abatement-claim` (the June 15 rental claim and the primary-residence claim).
 Neither is a protest filing, a VAB petition or an exemption application, and
-labelling them as any of those would mis-describe the obligation.
+labeling them as any of those would mis-describe the obligation.
 
 ### 2.5 The three installments are recorded as rules with the published year's dates
 
