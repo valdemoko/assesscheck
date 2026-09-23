@@ -402,6 +402,11 @@ export const DEADLINES: DeadlineRecord[] = [
       "whether your county assessor provided value notices to all secured-roll assessees by August 1 (and, where relevant, whether you received timely notice)",
     sources: [
       {
+        sourceId: "ca-rtc-1603",
+        supports:
+          "The statute itself, read 2026-09-23: (b)(1) filing 'within the time period from July 2 to September 15, inclusive', with the postmark rule; (b)(2) the 60-day fallback where the § 619 notice arrived less than 15 calendar days before the deadline; (b)(3) the extension to November 30 where the assessor does not provide that notice by August 1. This is the authority for the county-by-county difference, not the state calendar.",
+      },
+      {
         sourceId: "ca-cdtfa-important-dates",
         supports:
           "July 2 opening; September 15 where value notices were provided by August 1; November 30 (December 1 in the 2026 list) in all other counties; extension when timely notice was not received.",
