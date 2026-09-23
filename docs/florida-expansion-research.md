@@ -484,11 +484,22 @@ When (and only when) Miami-Dade's VAB pages verify, it becomes a strong pilot �
 
 # 22. Open Questions
 
-1. **Current-year VAB petition deadline rule** — the 25-day figure needs re-verification (statute + county page). Blocks any Florida deadline content.
+> **Reconciliation note (2026-09-23).** This list was written before
+> implementation and is kept as the original record. Two items have since been
+> closed and are struck below; the rest are still open. Leaving a closed item
+> looking open is how a research doc stops being trusted.
+
+1. ~~**Current-year VAB petition deadline rule.**~~ **CLOSED** — registered as
+   `fl-vab-petition-value` (`§ 194.011(3)(d)`: on or before the 25th day
+   following the mailing of the assessment notice), `source-verified`, and
+   published on the Florida deadlines page.
 2. **DOR NAL/SDF terms of use** — commercial reuse, attribution, redistribution. Blocks any future data feature (not V1).
 3. **Miami-Dade VAB procedure + online filing** — blocks Phase E.
 4. **SOH CPI value for the current tax year** — needed for a correct TRIM checker; published annually by DOR; must be a tax-year config value with source, never hardcoded.
-5. **Exact TRIM mailing window** — statute references verified, day-count re-verify.
+5. ~~**Exact TRIM mailing window.**~~ **CLOSED for delivery, open for day-count** —
+   `fl-trim-notice` is registered and `source-verified` for the appraiser's
+   delivery of the Notice of Proposed Property Taxes and for the petition date
+   printed on its face; a pure day-count window is still not asserted.
 6. **DR-486/DR-486A form numbers and where to file in Miami-Dade** — blocks county VAB page.
 7. **Does the site want a `/florida/property-tax-checker/` (TRIM review) in V1 or Phase 2?** — Recommendation: Phase 2 (state content first, tool after the content earns trust).
 

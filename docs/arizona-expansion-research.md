@@ -188,7 +188,7 @@ Official state agency (SBOE) and county pages read:
 
 | Item | Status | Consequence |
 |---|---|---|
-| The full text of **Art. IX § 18** of the Arizona Constitution (Proposition 117) | **NOT VERIFIED** — the Secretary of State's 2012 publicity pamphlet returned 403 | The pages cite **A.R.S. §§ 42-13301, 42-13304, 42-15101, 42-16051** (read) and Proposition 117 as the reason the LPV became the tax basis, sourced to the Cochise County Assessor statement. No constitutional text is quoted. |
+| The full text of **Art. IX § 18** of the Arizona Constitution (Proposition 117) | **VERIFIED** (corrected 2026-09-23) | Read in full at `azleg.gov/const/9/18.htm` and registered as `az-const-art9-s18`. An earlier pass failed on the Secretary of State's 2012 publicity pamphlet (403), and this row kept saying NOT VERIFIED after the statute site served the text. It settles three things the pages rely on: the 1% residential ceiling with its exclusions, the historical "Rule A / Rule B" comparison that ran through tax year 2014, and the five per cent test that replaced it for taxes levied from tax year 2015 — which is the constitutional basis of the LPV and of § 42-13301. It also documents the senior property valuation protection option (§ 18(7): apply by September 1, decision by December 1, reapply every three years) that the state pages describe only as existing. |
 | The **LPV re-establishment mechanics** beyond § 42-13302 (the practical "Rule A / Rule B" comparison described in secondary sources and in the JLBC Tax Handbook, a PDF) | **NOT VERIFIED** | The pages describe only what § 42-13301 and § 42-13302 say, plus the county-level operational description. No secondary formula is presented. |
 | The **amended-notice** practice dates per county, and whether a given county mails amended notices | **NOT VERIFIED** (SBOE says "typically late September") | The notice page states the statutory 60-day power to amend and the SBOE's general timing, and tells the owner that a second notice can restart the 60-day petition clock. |
 | **Exemption and relief amounts** (state aid to education reduction, senior/disabled freeze eligibility) | **NOT VERIFIED** | No dollar amount is published. The pages state only that the class three reduction and the valuation-protection program exists and is administered by the county assessor. |
@@ -285,6 +285,9 @@ and Maricopa's own site was not readable from this environment.
 | `az-ars-42-16051` | Arizona Legislature | 60 days from mailing (or amended mailing); petition must state the owner's opinion of FCV and the method, with at least one comparable in the same geographic area; postmark evidence; class three simplified form |
 | `az-ars-42-15003` | Arizona Legislature | Class three assessed valuation = 10% of FCV or limited valuation, as applicable |
 | `az-ars-42-15004` | Arizona Legislature | Class four assessed valuation = 10% of FCV or limited valuation, as applicable |
+| `az-ars-42-12003` | Arizona Legislature | The class three definition itself, so the primary-residence restriction is quoted from statute and not from a county FAQ |
+| `az-ars-42-12004` | Arizona Legislature | The class four definition, including that it catches residential property the other classes do not |
+| `az-const-art9-s18` | Arizona Legislature (Constitution of Arizona) | The 1% residential ceiling and its exclusions; the pre-2015 "Rule A / Rule B" comparison; the five per cent test from tax year 2015 that is the constitutional basis of the LPV; the senior property valuation protection option and its deadlines |
 | `az-sboe-how-to-appeal` | Arizona State Board of Equalization | The three-step appeal ladder and its windows, the forms, August 15 decision, no-further-appeal when the assessor agrees, the December 15 Tax Court route, Maricopa Superior Court venue |
 | `az-cochise-assessor-faq` | Cochise County Assessor | Taxes levied on the LPV since Tax Year 2015; LPV rises while FCV falls and never exceeds FCV; 5% subject to no change in use or new construction; class three restricted to the primary residence since 2012; class ratios; valuation year and 18-month sales data; the owner's burden on appeal |
 | `az-pima-treasurer-info` | Pima County Treasurer | Assessment on the assessed limited value; rates set the third Monday in August; September statements; the two payment halves and delinquency dates; full-year by December 31; the $100 rule; 16% interest; next-business-day rule; partial payments |
@@ -314,13 +317,19 @@ and Maricopa's own site was not readable from this environment.
 
 # 6. Open items (carry forward)
 
-- **A1:** read Art. IX § 18 of the Arizona Constitution (Prop 117) on a readable
-  official source; the Secretary of State pamphlet is not fetchable from this
-  environment.
-- **A2:** read § 42-12003 and § 42-12004 (the class three and class four
-  definitions) directly, so the primary-residence restriction is stated from
-  statute rather than from a county FAQ.
-- **A3:** the Arizona checker: it needs two inputs (FCV and LPV) and the
+- ~~**A1:** read Art. IX § 18 of the Arizona Constitution (Prop 117).~~
+  **CLOSED 2026-09-23.** Read in full at `azleg.gov/const/9/18.htm` and
+  registered as `az-const-art9-s18`. The SoS pamphlet 403 was a dead end, not a
+  blocker: the Legislature serves the constitution itself. This is where the
+  five per cent test turns out to live in the constitution rather than only in
+  the statute, and where the senior valuation protection option's September 1
+  and December 1 dates are stated.
+- ~~**A2:** read § 42-12003 and § 42-12004 (the class three and class four
+  definitions).~~ **CLOSED 2026-09-23.** Both read and registered
+  (`az-ars-42-12003`, `az-ars-42-12004`). The primary-residence restriction on
+  class three is now quoted from the statute rather than from a county FAQ.
+- **A3 (open):** the Arizona checker: it needs two inputs (FCV and LPV) and the
   § 42-13302 questions before it can screen anything honestly.
-- **A4:** county pages (Maricopa, Pima) only after the 5-point pilot test, and
-  only then can the county-level amended-notice practice be stated as fact.
+- **A4 (open):** county pages (Maricopa, Pima) only after the 5-point pilot
+  test, and only then can the county-level amended-notice practice be stated as
+  fact.
