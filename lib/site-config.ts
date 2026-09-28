@@ -108,6 +108,153 @@ export const siteConfig = {
       // events as inputs.
       checkerPath: "/oregon-property-tax/measure-50-mav/",
     },
+    colorado: {
+      name: "Colorado",
+      hubPath: "/colorado-property-tax/",
+      deadlinesPath: "/colorado-property-tax/",
+      howToFilePath: "/colorado-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Eighth state, and the seventh without a checker. Colorado's tax base
+      // is actual value × a legislatively-set assessment rate × the mill
+      // levy; the rate changes by statute (two residential rates since 2025),
+      // and real property revalues only in odd years — so a year-over-year
+      // screen would fire in every even year when the notice value simply
+      // carried over. A real tool needs the actual value, the applicable
+      // rate(s) and the revaluation cycle as inputs.
+      checkerPath: "/colorado-property-tax/",
+    },
+    ohio: {
+      name: "Ohio",
+      hubPath: "/ohio-property-tax/",
+      deadlinesPath: "/ohio-property-tax/",
+      howToFilePath: "/ohio-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Ninth state, and the eighth without a checker. Ohio taxes 35% of true
+      // value on a six-year reappraisal cycle with triennial updates, so a
+      // year-over-year screen would fire on the reappraisal reset itself.
+      checkerPath: "/ohio-property-tax/",
+    },
+    "north-carolina": {
+      name: "North Carolina",
+      hubPath: "/north-carolina-property-tax/",
+      deadlinesPath: "/north-carolina-property-tax/",
+      howToFilePath: "/north-carolina-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Tenth state, and the ninth without a checker. Values carry over from
+      // the last revaluation (at least every 8 years), so the year-over-year
+      // change measures the revaluation cycle, not a limit — and there is no
+      // percentage limit to test at all.
+      checkerPath: "/north-carolina-property-tax/",
+    },
+    massachusetts: {
+      name: "Massachusetts",
+      hubPath: "/massachusetts-property-tax/",
+      deadlinesPath: "/massachusetts-property-tax/",
+      howToFilePath: "/massachusetts-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Eleventh state, and the tenth without a checker. There is no
+      // percentage cap on value at all — Proposition 2 1/2 limits the
+      // municipal levy, a revenue limit — so a value comparison has no rule
+      // to test against.
+      checkerPath: "/massachusetts-property-tax/",
+    },
+    virginia: {
+      name: "Virginia",
+      hubPath: "/virginia-property-tax/",
+      deadlinesPath: "/virginia-property-tax/",
+      howToFilePath: "/virginia-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Twelfth state, and the eleventh without a checker. Assessments are
+      // at 100% of fair market value with no cap on the change; the owner's
+      // protections are procedural (15-day notice, board, de novo court), so
+      // a year-over-year screen has no limit to test against.
+      checkerPath: "/virginia-property-tax/",
+    },
+    "new-york": {
+      name: "New York",
+      hubPath: "/new-york-property-tax/",
+      deadlinesPath: "/new-york-property-tax/",
+      howToFilePath: "/new-york-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Thirteenth state, and the twelfth without a checker. Assessments sit
+      // at a municipality-chosen uniform percentage of market value with no
+      // cap, and the roll already shows the market-value estimate — the
+      // meaningful comparison is assessment vs. that estimate, not year over year.
+      checkerPath: "/new-york-property-tax/",
+    },
+    georgia: {
+      name: "Georgia",
+      hubPath: "/georgia-property-tax/",
+      deadlinesPath: "/georgia-property-tax/",
+      howToFilePath: "/georgia-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Fourteenth state, and the thirteenth without a checker. Values are
+      // reassessed at market every January 1 with no cap (local valuation
+      // freezes are the exception), so a year-over-year screen has no limit
+      // to test against.
+      checkerPath: "/georgia-property-tax/",
+    },
+    maryland: {
+      name: "Maryland",
+      hubPath: "/maryland-property-tax/",
+      deadlinesPath: "/maryland-property-tax/",
+      howToFilePath: "/maryland-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Fifteenth state, and the fourteenth without a checker. The value
+      // standard has no year-over-year limit (100% of market, triennial, with
+      // a three-year phase-in), and the 10% homestead cap binds the TAXABLE
+      // ASSESSMENT change from the prior year's taxable assessment — a
+      // phase-in-and-credit interaction a two-notice screen cannot model.
+      checkerPath: "/maryland-property-tax/",
+    },
+    indiana: {
+      name: "Indiana",
+      hubPath: "/indiana-property-tax/",
+      deadlinesPath: "/indiana-property-tax/",
+      howToFilePath: "/indiana-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Sixteenth state, and the fifteenth without a checker. The circuit
+      // breaker caps the TAX BILL at a percentage of GROSS assessed value —
+      // the same capSubject problem as Nevada — and the caps are computed per
+      // property class with referendum carve-outs. A value screen cannot test it.
+      checkerPath: "/indiana-property-tax/",
+    },
+    washington: {
+      name: "Washington",
+      hubPath: "/washington-property-tax/",
+      deadlinesPath: "/washington-property-tax/",
+      howToFilePath: "/washington-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Seventeenth state, and the sixteenth without a checker. The limit is
+      // a LEVY limit — a growth bound on the dollars each district collects,
+      // not on any value — so there is no value change to screen at all; the
+      // bill side belongs to district budgets (see the capSubject notes on
+      // Nevada and Indiana).
+      checkerPath: "/washington-property-tax/",
+    },
+    "new-jersey": {
+      name: "New Jersey",
+      hubPath: "/new-jersey-property-tax/",
+      deadlinesPath: "/new-jersey-property-tax/",
+      howToFilePath: "/new-jersey-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Eighteenth state, and the seventeenth without a checker. The Chapter
+      // 123 test compares the ASSESSMENT RATIO with a ±15% band around a
+      // certified average — it needs the district's average ratio, not two
+      // years of the owner's values, so a two-notice screen cannot run it.
+      checkerPath: "/new-jersey-property-tax/",
+    },
+    minnesota: {
+      name: "Minnesota",
+      hubPath: "/minnesota-property-tax/",
+      deadlinesPath: "/minnesota-property-tax/",
+      howToFilePath: "/minnesota-property-tax/",
+      evidenceGuidePath: "/evidence/property-tax-protest-evidence/",
+      // Nineteenth state, and the eighteenth without a checker. There is no
+      // value cap anywhere in the system — class rates distribute the levy —
+      // so a year-over-year screen has no limit to test against.
+      checkerPath: "/minnesota-property-tax/",
+    },
   } as const,
 
   /** Cross-state hub page (internal linking for every covered state). */

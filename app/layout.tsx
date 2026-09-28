@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { IBM_Plex_Sans, Source_Serif_4 } from "next/font/google";
+import { ConsentScripts } from "@/components/ConsentScripts";
 import { SITE_NAME, SITE_URL_RESOLVED } from "@/lib/seo/metadata";
 import "./globals.css";
 
@@ -56,6 +57,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${plex.variable} ${serif.variable}`}>
       <body>
+        {/* Google consent integration: Consent Mode v2 default denied + the
+            official Google CMP (Privacy & Messaging) + AdSense loader.
+            All env-gated; nothing loads without configuration. */}
+        <ConsentScripts />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}

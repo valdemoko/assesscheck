@@ -75,7 +75,8 @@ export default function HomePage() {
         <div className="hero__content">
           <p className="hero__kicker">
             Texas · Florida · California · Arizona · Nevada · Oregon · Michigan
-            property tax
+            · Colorado · Ohio · North Carolina · Massachusetts · Virginia · New
+            York · Georgia · Maryland · Indiana property tax
           </p>
           <h1>Understand your property assessment</h1>
           <p className="hero__lede">
@@ -101,7 +102,10 @@ export default function HomePage() {
           <h2>Who it is for</h2>
           <p>
             Property owners in Texas, Florida, California, Arizona, Nevada,
-            Oregon and Michigan — starting with Harris County — who want to understand their
+            Oregon, Michigan, Colorado, Ohio, North Carolina, Massachusetts,
+            Virginia, New York, Georgia, Maryland, Indiana, Washington, New
+            Jersey and Minnesota — starting with Harris County — who want to
+            understand their
             assessment before deciding anything. If you already know you want a
             professional to handle a protest, VAB petition, assessment appeal,
             abatement claim or board petition, this site will still help you
@@ -112,7 +116,7 @@ export default function HomePage() {
         <section aria-label="States covered">
           <h2>States covered</h2>
           <p>
-            Seven states, each documented from its own statutes and official
+            Nineteen states, each documented from its own statutes and official
             guidance — because a rule that is correct in one is usually wrong in
             the next:
           </p>
@@ -152,6 +156,73 @@ export default function HomePage() {
               <Link href="/michigan-property-tax/">Michigan</Link> — taxable value
               under Proposal A, an inflation-or-5% limit built from a formula, and
               an uncapping that follows a transfer of ownership.
+            </li>
+            <li>
+              <Link href="/colorado-property-tax/">Colorado</Link> — actual value
+              times a legislatively-set assessment rate, an odd-year
+              reassessment cycle, and a protest window that closes in early June.
+            </li>
+            <li>
+              <Link href="/ohio-property-tax/">Ohio</Link> — taxable value at 35%
+              of true value, a six-year county reappraisal cycle with triennial
+              updates, and the DTE Form 1 complaint to the Board of Revision.
+            </li>
+            <li>
+              <Link href="/north-carolina-property-tax/">North Carolina</Link> —
+              revaluation at least every eight years, a Board of Equalization and
+              Review that convenes in April and closes when it adjourns, and a
+              30-day appeal to the Property Tax Commission.
+            </li>
+            <li>
+              <Link href="/massachusetts-property-tax/">Massachusetts</Link> —
+              municipal assessors under Proposition 2½, an abatement application
+              due with the first actual bill, and a three-month deemed denial.
+            </li>
+            <li>
+              <Link href="/virginia-property-tax/">Virginia</Link> — assessments
+              at 100% of fair market value, a 15-day notice of an increased
+              assessment, and a de novo circuit court appeal.
+            </li>
+            <li>
+              <Link href="/new-york-property-tax/">New York</Link> — a uniform
+              percentage of market value chosen by each town, Grievance Day
+              (usually the fourth Tuesday in May), and a 30-day judicial-review
+              window after the final roll.
+            </li>
+            <li>
+              <Link href="/georgia-property-tax/">Georgia</Link> — annual
+              assessment at market with a 40% ratio, a 45-day appeal window
+              with a declared method, and a bill of rights that puts the burden
+              on the county.
+            </li>
+            <li>
+              <Link href="/maryland-property-tax/">Maryland</Link> — the only
+              state-run assessment system, 100% of market value on a triennial
+              cycle with a three-year phase-in, and a 45-30-30 day appeal
+              ladder to the Maryland Tax Court.
+            </li>
+            <li>
+              <Link href="/indiana-property-tax/">Indiana</Link> — annual
+              adjustment instead of periodic reassessment, a Form 130 appeal
+              where a 5% increase shifts the burden to the county, and 1%/2%/3%
+              circuit-breaker caps on the bill itself.
+            </li>
+            <li>
+              <Link href="/washington-property-tax/">Washington</Link> — a
+              levy limit that caps the dollars districts collect rather than
+              the value, and a Board of Equalization deadline of July 1 or 30
+              days after the change-of-value notice, whichever is later.
+            </li>
+            <li>
+              <Link href="/new-jersey-property-tax/">New Jersey</Link> — an
+              April 1 appeal deadline with a Chapter 123 common level range of
+              ±15% around the certified average ratio.
+            </li>
+            <li>
+              <Link href="/minnesota-property-tax/">Minnesota</Link> —
+              assessment on January 2 for taxes payable the next year, appeal
+              boards whose meeting dates are the deadlines, and a direct route
+              to the Minnesota Tax Court by April 30 of the payable year.
             </li>
           </ul>
         </section>
@@ -250,6 +321,43 @@ export default function HomePage() {
           </p>
         </section>
 
+        <section aria-label="Eleven more states, eleven different systems">
+          <h2>Eleven more states, eleven different systems</h2>
+          <p>
+            Ohio, North Carolina, Massachusetts, Virginia, New York, Georgia,
+            Maryland, Indiana, Washington, New Jersey and Minnesota round out
+            the coverage, and each adds a mechanism none of the others uses:
+            Ohio taxes 35% of true value on a county revaluation calendar;
+            North Carolina runs its appeals through a county board that
+            convenes in April and closes when it adjourns; Massachusetts
+            anchors abatement rights to the first actual tax bill with a
+            three-month deemed denial; Virginia assesses at 100% of market
+            value with no cap but a strong notice-and-hearing procedure; New
+            York lets each town choose its uniform percentage of market value
+            and grieves by Grievance Day; Georgia reassesses at market every
+            January 1 while putting the burden of proof on the county; Maryland
+            runs the only state-level assessment office with a three-year
+            phase-in; Indiana caps the bill itself at 1%, 2% or 3% while
+            shifting the burden to the county after a 5% increase; Washington
+            caps the levy — the dollars collected — instead of any value; New
+            Jersey tests assessments against a ±15% band around a certified
+            average ratio; and Minnesota ties its appeal deadlines to board
+            meeting dates with a direct route to its Tax Court.
+            Start with{" "}
+            <Link href="/ohio-property-tax/">Ohio property tax</Link>,{" "}
+            <Link href="/north-carolina-property-tax/">North Carolina</Link>,{" "}
+            <Link href="/massachusetts-property-tax/">Massachusetts</Link>,{" "}
+            <Link href="/virginia-property-tax/">Virginia</Link>,{" "}
+            <Link href="/new-york-property-tax/">New York</Link>,{" "}
+            <Link href="/georgia-property-tax/">Georgia</Link>,{" "}
+            <Link href="/maryland-property-tax/">Maryland</Link>,{" "}
+            <Link href="/indiana-property-tax/">Indiana</Link>,{" "}
+            <Link href="/washington-property-tax/">Washington</Link>,{" "}
+            <Link href="/new-jersey-property-tax/">New Jersey</Link> or{" "}
+            <Link href="/minnesota-property-tax/">Minnesota</Link>.
+          </p>
+        </section>
+
         <section aria-label="Compare the states">
           <h2>Compare the states</h2>
           <p>
@@ -276,9 +384,10 @@ export default function HomePage() {
             than the law allows?&rdquo; can be answered from the notice itself —
             in Texas on the appraised value, in Florida on the assessed value,
             because those are the figures each state&rsquo;s limitation attaches
-            to. The California, Arizona, Nevada and Oregon pages explain why the
-            same arithmetic would give a misleading answer there, and what to
-            check instead.
+            to. The other ten state pages explain why the
+            same arithmetic would give a misleading answer there — or, in the
+            four states with no percentage cap, why there is no limit to test
+            against at all — and what to check instead.
           </p>
         </section>
 
@@ -290,8 +399,15 @@ export default function HomePage() {
             Department of Revenue, the California State Board of Equalization
             and CDTFA, the Arizona Revised Statutes, State Board of Equalization
             and county assessors, the Nevada Department of Taxation and Nevada
-            county assessors and treasurers, and Oregon&rsquo;s Secretary of
-            State administrative rules and county assessors), plus official
+            county assessors and treasurers, Oregon&rsquo;s Secretary of
+            State administrative rules and county assessors, the Ohio
+            Department of Taxation and Board of Tax Appeals, the North
+            Carolina Department of Revenue, the Massachusetts Citizen
+            Information Service, the Code of Virginia on the state&rsquo;s
+            law portal, the New York State Department of Taxation and Finance,
+            the Georgia Department of Revenue, the Maryland Tax Court and
+            State Archives, and the Indiana Department of Local Government
+            Finance), plus official
             appraisal district and county assessor materials. Every important factual claim on this site links
             to its source with the date we verified it. See our{" "}
             <Link href="/methodology/">methodology</Link>.
@@ -332,7 +448,7 @@ export default function HomePage() {
             the appeal routes that exist if you disagree with it. The filing
             deadline is generally May 15 or 30 days after your notice was
             delivered, whichever is later. These pages are specific to Texas;
-            for the equivalent steps in the other three states, follow the
+            for the equivalent steps in the other states, follow the
             state pages above or the{" "}
             <Link href="/property-tax-by-state/">by-state comparison</Link>.
           </p>
@@ -346,17 +462,18 @@ export default function HomePage() {
         </section>
 
         <section aria-label="Harris County starting point">
-          <h2>Harris County starting point</h2>
+          <h2>Texas county starting points</h2>
           <p>
-            The Harris Central Appraisal District (HCAD) determines values for
-            roughly 1.9 million parcels across more than 600 taxing units. Our{" "}
-            <Link href="/texas/harris-county/">Harris County guide</Link> covers
-            the local starting points — HCAD's role, filing a protest, official
-            forms, and the local FAQ — and the{" "}
+            Our county guides cover the local starting points — the appraisal
+            district's role, filing a protest, official forms, and the official
+            property search: the{" "}
+            <Link href="/texas/harris-county/">Harris County guide</Link>{" "}
+            (with the{" "}
             <Link href="/texas/harris-county/property-tax-checker/">
               Harris County checker
-            </Link>{" "}
-            is the local edition of the tool.
+            </Link>
+            ) and the{" "}
+            <Link href="/texas/dallas-county/">Dallas County guide</Link>.
           </p>
         </section>
 

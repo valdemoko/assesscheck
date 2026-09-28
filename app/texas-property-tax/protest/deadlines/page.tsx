@@ -9,9 +9,9 @@ export const metadata: Metadata = buildMetadata({
   path: "/texas-property-tax/protest/deadlines/",
   title: "Texas Property Tax Protest Deadlines",
   description:
-    "The Texas protest deadline is May 15 or 30 days after the notice of appraised value was delivered, whichever is later — plus the other dates that matter.",
+    "The Texas protest deadline is May 15 or 30 days after the notice of appraised value was delivered, whichever is later — plus late-protest options, correction motions, and the other dates that matter.",
   publishStatus: "ready",
-  lastVerifiedDate: "2026-09-17",
+  lastVerifiedDate: "2026-09-28",
   section: "Texas Protest",
 });
 
@@ -95,15 +95,73 @@ export default function Page() {
         might extend the deadline, or a safe "last day to act." File early.
       </p>
 
-      <h2>If you missed the deadline</h2>
+      <h2>What if I missed the Texas property tax protest deadline?</h2>
       <p>
-        The ARB can grant a hearing to owners who filed late if they show good
-        cause before the ARB approves the appraisal records. Missing the good-cause
-        window, or filing after the ARB approves the records, can forfeit the
-        right to protest for that year. Specific statutory exceptions allow
-        late filing for offshore workers and for members of the military
-        serving outside the United States, in each case before the taxes become
-        delinquent and with evidence.
+        Missing the May 15 / 30-day deadline does not always end the matter,
+        but the options that remain are specific and none of them is a general
+        "late protest." These are the pathways the Comptroller documents:
+      </p>
+      <ul>
+        <li>
+          <strong>Good-cause late protest (§ 41.44(b)).</strong> The ARB can
+          grant a hearing to owners who filed late if they show good cause for
+          missing the deadline — and only before the ARB approves the appraisal
+          records. Missing the good-cause window, or filing after approval,
+          can forfeit the right to protest for that year. Offshore workers and
+          full-time military members serving outside the United States have
+          their own statutory exceptions (§§ 41.44(c-1), (c-2)), in each case
+          before the taxes become delinquent and with evidence.
+        </li>
+        <li>
+          <strong>You did not receive a required notice (§ 41.411).</strong> If
+          the appraisal district or ARB failed to send you a notice it was
+          required to send — for example a notice of appraised value — you may
+          protest that failure. You must file before the delinquency date and
+          must not let your property taxes become delinquent.
+        </li>
+        <li>
+          <strong>Motion to correct a substantially over-appraised property
+          (§ 25.25(c), (c-1)).</strong> If a residence homestead was appraised
+          at least one-fourth higher (or a non-homestead property at least
+          one-third higher) than its correct appraised value, you may file a
+          motion for correction. The motion — and payment of taxes on the
+          undisputed portion of the value — must reach the ARB before the
+          delinquency date. Important limit: the appraisal roll cannot be
+          corrected for a tax year in which the property was already subject
+          to a property value protest.
+        </li>
+        <li>
+          <strong>Motion to correct a clerical error, multiple appraisal of
+          the same property, or an ownership error (§ 25.25(c)).</strong> This
+          late-correction motion may cover the current year and the five
+          preceding tax years.
+        </li>
+        <li>
+          <strong>Joint motion with the chief appraiser.</strong> If you and
+          the chief appraiser agree on the correction, a joint motion goes to
+          the ARB for approval.
+        </li>
+      </ul>
+      <p>
+        (Correction motions are filed on Comptroller Form 50-771 — Property
+        Owner's Motion for Correction of Appraisal Roll — available from the{" "}
+        <a
+          href="https://comptroller.texas.gov/forms/50-771.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Comptroller's official forms
+        </a>
+        .)
+      </p>
+      <p>
+        A motion that changes the appraisal roll can carry a late-correction
+        penalty on the affected taxes, and every one of these routes has its
+        own conditions and deadlines. Because eligibility turns on the details
+        of your specific situation — what kind of property, what kind of error,
+        whether a protest was already filed — confirm your options with your
+        appraisal district or the ARB before relying on any of them. This page
+        is general information, not legal advice.
       </p>
 
       <h2>Other dates that matter</h2>

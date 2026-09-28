@@ -40,6 +40,18 @@ const COLUMNS: { heading: string; links: FooterLink[] }[] = [
       { href: "/arizona-property-tax/", label: "Arizona property tax" },
       { href: "/nevada-property-tax/", label: "Nevada property tax" },
       { href: "/oregon-property-tax/", label: "Oregon property tax" },
+      { href: "/colorado-property-tax/", label: "Colorado property tax" },
+      { href: "/ohio-property-tax/", label: "Ohio property tax" },
+      { href: "/north-carolina-property-tax/", label: "North Carolina property tax" },
+      { href: "/massachusetts-property-tax/", label: "Massachusetts property tax" },
+      { href: "/virginia-property-tax/", label: "Virginia property tax" },
+      { href: "/new-york-property-tax/", label: "New York property tax" },
+      { href: "/georgia-property-tax/", label: "Georgia property tax" },
+      { href: "/maryland-property-tax/", label: "Maryland property tax" },
+      { href: "/indiana-property-tax/", label: "Indiana property tax" },
+      { href: "/washington-property-tax/", label: "Washington property tax" },
+      { href: "/new-jersey-property-tax/", label: "New Jersey property tax" },
+      { href: "/minnesota-property-tax/", label: "Minnesota property tax" },
       { href: "/michigan-property-tax/", label: "Michigan property tax" },
       { href: "/arizona-property-tax/full-cash-vs-limited-value/", label: "Arizona: LPV limit" },
       { href: "/texas-property-tax/protest/", label: "Protest process (TX)" },
@@ -47,6 +59,7 @@ const COLUMNS: { heading: string; links: FooterLink[] }[] = [
       { href: "/evidence/property-tax-protest-evidence/", label: "Evidence guide" },
       { href: "/comparables/", label: "Comparable properties" },
       { href: "/texas/harris-county/", label: "Harris County" },
+  { href: "/texas/dallas-county/", label: "Dallas County" },
       { href: "/resources/", label: "Official resources" },
       { href: "/faq/", label: "FAQ" },
     ],
@@ -138,7 +151,9 @@ export function SiteFooter() {
         <p className="site-footer__disclaimer">
           {siteConfig.name} provides general educational information about
           property tax assessments and the review process — Texas, Florida,
-          California, Arizona, Nevada, Oregon and Michigan. It is not legal, tax, appraisal, or financial
+          California, Arizona, Nevada, Oregon, Michigan, Colorado, Ohio,
+          North Carolina, Massachusetts, Virginia, New York, Georgia,
+          Maryland and Indiana. It is not legal, tax, appraisal, or financial
           advice, and it is not affiliated with any appraisal district, property
           appraiser, or government agency. Verify current deadlines and
           procedures with the applicable authority and official sources.

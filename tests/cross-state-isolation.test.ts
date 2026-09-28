@@ -21,6 +21,18 @@ const STATE_DIRS: Record<string, string[]> = {
   nevada: ["app/nevada-property-tax"],
   oregon: ["app/oregon-property-tax"],
   michigan: ["app/michigan-property-tax"],
+  colorado: ["app/colorado-property-tax"],
+  ohio: ["app/ohio-property-tax"],
+  "north-carolina": ["app/north-carolina-property-tax"],
+  massachusetts: ["app/massachusetts-property-tax"],
+  virginia: ["app/virginia-property-tax"],
+  "new-york": ["app/new-york-property-tax"],
+  georgia: ["app/georgia-property-tax"],
+  maryland: ["app/maryland-property-tax"],
+  indiana: ["app/indiana-property-tax"],
+  washington: ["app/washington-property-tax"],
+  "new-jersey": ["app/new-jersey-property-tax"],
+  minnesota: ["app/minnesota-property-tax"],
 };
 
 // Signature phrases that belong to exactly one covered state. Terminology that
@@ -36,6 +48,42 @@ const STATE_DIRS: Record<string, string[]> = {
 // lib/data/deadlines.ts, so it appears in every state's deadlines page as a
 // lookup key. Texas and Oregon both file a rendition of business personal
 // property, so the word carries no ownership.
+//
+// "notice of valuation" joined that list when Colorado was added: it is
+// Colorado's statutory notice name (capitalized by the Division as "Notice of
+// Valuation") just as it is Arizona's, so the phrase belongs to both and can
+// arbitrate neither.
+//
+// "board of equalization", "de novo", "revaluation" and "assessment appeals
+// board" joined that list when Ohio, North Carolina, Massachusetts, Virginia,
+// Maryland and Indiana were added: "board of equalization" names the appeal
+// board in California, Arizona, Nevada, Colorado AND Virginia (and North
+// Carolina's is the "Board of Equalization and Review"), "de novo" is the
+// standard description of Virginia's circuit court appeal AND Florida's
+// § 194.036(3) circuit-court proceeding, "revaluation" is North Carolina's
+// statutory term (G.S. 105-286) that Ohio's and Colorado's own pages also use
+// for their reappraisal cycles, and Maryland's county boards are formally the
+// "Property Tax Assessment Appeals Boards" — the same words California uses
+// for its county panels. Each is the honest name of a mechanism several
+// states share, so none can arbitrate.
+//
+// Three more joined that list when Washington, New Jersey and Minnesota were
+// added: "change of value notice" is Washington's statutory notice name but
+// describes what several county assessors do; "classification" is
+// Minnesota's statutory pairing with value — Oregon's and Florida's pages
+// use the same word for their own class systems; and "average ratio" is New
+// Jersey's Chapter 123 term that Indiana's DLGF pages also use for its ratio
+// studies. None of the three can arbitrate between the states that use them
+// honestly.
+//
+// Two of this batch's own candidates failed the same way and joined the
+// shared list: "board of tax appeals" cannot be Washington's signature
+// because OHIO's state appeal body has been the Board of Tax Appeals since
+// before Washington was covered (oh-bta-appeal-info) — two different bodies
+// with the same generic name; and "tax cap" cannot stay in Nevada's list
+// because it is a substring of Minnesota's statutory term "tax capacity"
+// (TMV × class rate), which appears throughout Minnesota's honest
+// explanation of its own system.
 const SIGNATURE_PHRASES: Record<string, string[]> = {
   texas: [
     "appraisal district",
@@ -57,18 +105,15 @@ const SIGNATURE_PHRASES: Record<string, string[]> = {
     "decline-in-value",
     "proposition 13",
     "proposition 8",
-    "assessment appeals board",
     "cdtfa",
   ],
   arizona: [
     "limited property value",
-    "notice of valuation",
     "class three",
     "class four",
   ],
   nevada: [
     "partial abatement",
-    "tax cap",
     "remainder parcel",
     "recorded ownership document",
     "fair market rent",
@@ -84,6 +129,67 @@ const SIGNATURE_PHRASES: Record<string, string[]> = {
     "levy code area",
     "bopta",
   ],
+  ohio: [
+    "dte form 1",
+    "board of revision",
+    "triennial update",
+    "sexennial",
+  ],
+  "north-carolina": [
+    "board of equalization and review",
+    "property tax commission",
+  ],
+  massachusetts: [
+    "appellate tax board",
+    "deemed denied",
+    "state tax form 128",
+  ],
+  virginia: [
+    "commissioner of the revenue",
+    "fairfax",
+  ],
+  "new-york": [
+    "grievance day",
+    "rp-524",
+    "small claims assessment review",
+    "equalization rate",
+  ],
+  georgia: [
+    "board of tax assessors",
+    "pt-311a",
+    "tax commissioner",
+  ],
+  maryland: [
+    "sdat",
+    "supervisor of assessments",
+    "maryland tax court",
+    "homestead property tax credit",
+  ],
+  indiana: [
+    "form 130",
+    "form 131",
+    "ptaboa",
+    "gross assessed value",
+  ],
+  washington: [
+    "levy lid lift",
+    "highest lawful levy",
+    "64-0075",
+  ],
+  "new-jersey": [
+    "common level range",
+    "chapter 123",
+    "form a-1",
+    "county board of taxation",
+    "added or omitted",
+  ],
+  minnesota: [
+    "board of appeal and equalization",
+    "estimated market value",
+    "taxable market value",
+    "tax capacity",
+    "valuation notice",
+  ],
 };
 
 // Every covered state must be listed here. A missing entry makes
@@ -97,6 +203,18 @@ const STATE_NAMES: Record<string, string> = {
   nevada: "nevada",
   oregon: "oregon",
   michigan: "michigan",
+  colorado: "colorado",
+  ohio: "ohio",
+  "north-carolina": "north carolina",
+  massachusetts: "massachusetts",
+  virginia: "virginia",
+  "new-york": "new york",
+  georgia: "georgia",
+  maryland: "maryland",
+  indiana: "indiana",
+  washington: "washington",
+  "new-jersey": "new jersey",
+  minnesota: "minnesota",
 };
 
 // A foreign term is contamination only when it is presented as this state's own

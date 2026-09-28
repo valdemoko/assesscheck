@@ -134,6 +134,14 @@ describe("every page says where it is", () => {
 
 describe("every state hub indexes its own cluster", () => {
   for (const jurisdiction of Object.values(siteConfig.jurisdictions)) {
+    // A state whose only registered page is the hub itself has nothing to
+    // index yet — the test becomes meaningful the moment a second page is
+    // registered. Colorado launched hub-only, so it is skipped here until a
+    // subpage exists; any state added with children from day one is covered.
+    const hasChildren = SITE_PAGES.some(
+      (p) => p.path !== jurisdiction.hubPath && p.path.startsWith(jurisdiction.hubPath)
+    );
+    if (!hasChildren) continue;
     it(`${jurisdiction.name} links every page directly below it`, () => {
       const file = `app${jurisdiction.hubPath}page.tsx`;
       const source = read(file);

@@ -98,7 +98,8 @@ export default function TexasPropertyTaxPage() {
         Ready to look at your own situation? Start with the{" "}
         <Link href="/property-tax-checker/">assessment checker</Link>, or go
         straight to your county's page:{" "}
-        <Link href="/texas/harris-county/">Harris County</Link>.
+        <Link href="/texas/harris-county/">Harris County</Link> or{" "}
+        <Link href="/texas/dallas-county/">Dallas County</Link>.
       </p>
 
       <SourceList sourceIds={["tx-comptroller-basics", "tx-comptroller-arb"]} />

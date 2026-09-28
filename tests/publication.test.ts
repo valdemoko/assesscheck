@@ -7,12 +7,13 @@ import {
   isIndexableStatus,
 } from "@/lib/seo/site-pages";
 
-const UNPUBLISHED = ["dallas-county", "tarrant-county", "bexar-county", "travis-county"];
+const UNPUBLISHED = ["tarrant-county", "bexar-county", "travis-county"];
 
 describe("county publication gate", () => {
-  it("harris-county is published", () => {
+  it("harris-county and dallas-county are published", () => {
     const published = getPublishedCounties().map((c) => c.countyId);
     expect(published).toContain("harris-county");
+    expect(published).toContain("dallas-county");
   });
 
   it("dallas, tarrant, bexar, travis are NOT published", () => {
@@ -52,9 +53,19 @@ describe("sitemap publication gate", () => {
     expect(getSitemapPages()).toEqual(expected);
   });
 
-  it("all 84 expected URLs are present in the registry", () => {
-    expect(SITE_PAGES).toHaveLength(84);
-    expect(getSitemapPages()).toHaveLength(84);
+  it("all 140 expected URLs are present in the registry", () => {
+    expect(SITE_PAGES).toHaveLength(140);
+    expect(getSitemapPages()).toHaveLength(140);
+  });
+
+  it("colorado state pages are published; no colorado county pages exist in the registry", () => {
+    const listed = SITE_PAGES.map((p) => p.path);
+    expect(listed).toContain("/colorado-property-tax/");
+    // Colorado counties are BLOCKED until they pass the pilot-county test
+    // (verified local assessor appeal page + a property-search URL). Denver's
+    // search is registered, but no Colorado county page has been through the bar.
+    expect(listed.join("\n")).not.toContain("denver-county");
+    expect(listed.join("\n")).not.toContain("el-paso");
   });
 
   it("oregon state pages are published; no oregon county pages exist in the registry", () => {
@@ -160,18 +171,19 @@ describe("sitemap publication gate", () => {
   });
 
   it("no draft/research-needed page can reach the sitemap", () => {
-    // Simulate a page being demoted: filter logic must exclude it.
+    // Simulate a page being demoted: filter logic must exclude it. Uses a
+    // placeholder county (Tarrant has never been published) as the example.
     const withDraft = [
       ...SITE_PAGES,
       {
-        path: "/texas/dallas-county/",
-        title: "Dallas County (draft)",
+        path: "/texas/tarrant-county/",
+        title: "Tarrant County (draft)",
         publishStatus: "research-needed" as const,
         lastVerifiedDate: "2026-09-17",
       },
     ];
     const listed = withDraft.filter((p) => isIndexableStatus(p.publishStatus));
-    expect(listed.map((p) => p.path)).not.toContain("/texas/dallas-county/");
+    expect(listed.map((p) => p.path)).not.toContain("/texas/tarrant-county/");
   });
 
   it("paths are unique and carry trailing slashes (canonical consistency)", () => {
@@ -180,6 +192,15 @@ describe("sitemap publication gate", () => {
     for (const p of paths) {
       if (p !== "/") expect(p.endsWith("/")).toBe(true);
     }
+  });
+
+  it("next.config sets trailingSlash so the slash convention is enforced by redirect, not by hope", () => {
+    // The canonical convention is "with trailing slash" (every registry path,
+    // every buildMetadata canonical, every internal link). trailingSlash: true
+    // makes Next.js 308-redirect the slash-less variant to the slashed one, so
+    // there is exactly one 200-URL per content page and no duplicate-host risk.
+    const config = readFileSync("next.config.mjs", "utf8");
+    expect(config).toMatch(/trailingSlash\s*:\s*true/);
   });
 
   it("no unpublished county appears anywhere in the sitemap registry", () => {
@@ -207,10 +228,13 @@ describe("the roadmap agrees with the registry", () => {
       .filter((d) => d.endsWith("-property-tax"))
       .map((d) => d.replace(/-property-tax$/, ""));
     for (const state of dirs) {
-      const named = state.charAt(0).toUpperCase() + state.slice(1);
+      const named = state
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ");
       expect(roadmap, `the roadmap omits ${named}`).toContain(`| ${named} |`);
     }
-    expect(dirs.length).toBe(7);
+    expect(dirs.length).toBe(19);
   });
 
   it("matches the per-state route counts stated in its own table", () => {
@@ -221,6 +245,18 @@ describe("the roadmap agrees with the registry", () => {
       ["Nevada", "nevada-property-tax"],
       ["Oregon", "oregon-property-tax"],
       ["Michigan", "michigan-property-tax"],
+      ["Colorado", "colorado-property-tax"],
+      ["Ohio", "ohio-property-tax"],
+      ["North Carolina", "north-carolina-property-tax"],
+      ["Massachusetts", "massachusetts-property-tax"],
+      ["Virginia", "virginia-property-tax"],
+      ["New York", "new-york-property-tax"],
+      ["Georgia", "georgia-property-tax"],
+      ["Maryland", "maryland-property-tax"],
+      ["Indiana", "indiana-property-tax"],
+      ["Washington", "washington-property-tax"],
+      ["New Jersey", "new-jersey-property-tax"],
+      ["Minnesota", "minnesota-property-tax"],
     ] as [string, string][]) {
       const actual = SITE_PAGES.filter((p) => p.path.startsWith(`/${dir}/`)).length;
       const row = roadmap.split("\n").find((l) => l.startsWith(`| ${state} `));

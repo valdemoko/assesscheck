@@ -14,11 +14,11 @@ export const SOURCES: Record<string, SourceRecord> = {
     publisher: "Texas Comptroller of Public Accounts",
     authorityLevel: "primary",
     url: "https://comptroller.texas.gov/taxes/property-tax/protests/",
-    lastVerifiedDate: "2026-09-17",
+    lastVerifiedDate: "2026-09-28",
     jurisdiction: "Texas",
     topic: "property-tax-protests",
     notes:
-      "Primary authority for protest deadline (May 15 / 30 days after notice delivery, whichever is later), notice of protest form, informal conference, ARB hearings, late protests, motion for correction, appeals to district court / SOAH / arbitration.",
+      "Primary authority for protest deadline (May 15 / 30 days after notice delivery, whichever is later), notice of protest form, informal conference, ARB hearings, late protests, motion for correction, appeals to district court / SOAH / arbitration. Late-protest pathways re-read 2026-09-28: good cause before ARB approval; protest for failure to receive a required notice (before the delinquency date); motion for correction for homestead at ≥1/4 over and non-homestead at ≥1/3 over correct appraised value (file and pay undisputed portion before delinquency); motion for correction of clerical error, multiple appraisals, or ownership error (current + five preceding years); joint motion agreed with the chief appraiser. The roll cannot be corrected for a year the property was subject to a protest.",
     status: "verified",
   },
   "tx-tax-code-41-44": {
@@ -330,6 +330,1059 @@ export const SOURCES: Record<string, SourceRecord> = {
       "Read in full. Protests to the ARB may be filed using uFile, the district's online protest system, 'Beginning on April 15th', or in written form; 'Protests will not be accepted by fax or email'; and 'uFile allows only one protest to be filed at the account level' — so an owner with several accounts must file by mail or in person to have them scheduled together. It also points at the Search Appraisal function on the district's site, which is the lead for the property-search URL but is not itself a URL. Registered for the county bar in docs/dallas-county-research.md; no Dallas page cites it yet.",
     status: "verified",
   },
+  "co-dpt-understanding": {
+    sourceId: "co-dpt-understanding",
+    title: "Understanding Property Taxes in Colorado",
+    publisher: "Colorado Division of Property Taxation, Department of Local Affairs (State of Colorado)",
+    authorityLevel: "primary",
+    url: "https://dpt.colorado.gov/understanding-property-taxes-in-colorado",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Colorado",
+    jurisdictionLevel: "state",
+    jurisdictionId: "colorado",
+    topic: "colorado-overview",
+    notes:
+      "Read in full 2026-09-28. The state's own statement of the real-property cycle: county assessor discovers, lists, classifies and values; real property revalued every ODD-NUMBERED year and personal property annually; classification by actual use on January 1; residential valued by the market approach only, with the comparable-sales window stated for tax years 2025/2026 (Jan 1 2023 - Jun 30 2024); two residential assessment rates since 2025 (local government vs school district — the 2026 chart shows 6.8% local / 7.05% school); the Notice of Valuation for real property mailed by MAY 1 with an explicit footnote that statutory dates shift for weekends and holidays and the county assessor should be contacted for adjusted dates; protest decided by the assessor with a mailed Notice of Determination; appeal to the county board of equalization; beyond that, arbitrator / district court / Board of Assessment Appeals within 30 DAYS OF THE DECISION MAILING; and the standard-vs-ALTERNATE protest schedule table (counties over 300,000 population are required to use the alternate period — NOD Aug 15, CBOE hearings from Sep 1, response Nov 1). The assessment-rate chart is dated and volatile (legislature sets rates annually), so rates are cited as a dated table from this source, not as permanent rules.",
+    status: "verified",
+  },
+  "co-dpt-protests-appeals": {
+    sourceId: "co-dpt-protests-appeals",
+    title: "Protests and Appeals",
+    publisher: "Colorado Division of Property Taxation, Department of Local Affairs (State of Colorado)",
+    authorityLevel: "primary",
+    url: "https://dpt.colorado.gov/protests-and-appeals",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Colorado",
+    jurisdictionLevel: "state",
+    jurisdictionId: "colorado",
+    topic: "colorado-appeals",
+    notes:
+      "Read in full 2026-09-28. IMPORTANT: this page's detailed calendar is the PERSONAL PROPERTY track (NOV mailed by June 15; protest by June 30; hearing June 15 - July 5; CBOE appeal by July 20; CBOE decision Aug 5). It is kept as a source for the personal-property contrast and the CBOE/BAA machinery, but the REAL PROPERTY dates on the site come from co-dpt-understanding, whose table is the real-property one. Real-property protests are filed with the county assessor; personal-property protests run about six weeks behind real property through the same CBOE/BAA structure.",
+    status: "verified",
+  },
+  "co-dpt-property-tax-map": {
+    sourceId: "co-dpt-property-tax-map",
+    title: "Property Tax Map (statewide taxing districts and rates)",
+    publisher: "Colorado Division of Property Taxation, Department of Local Affairs (State of Colorado)",
+    authorityLevel: "primary",
+    url: "https://dpt.colorado.gov/property-tax-map",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Colorado",
+    jurisdictionLevel: "state",
+    jurisdictionId: "colorado",
+    topic: "colorado-resources",
+    notes:
+      "Read in full 2026-09-28. The state's own interactive map of taxing districts and rates (with a help guide), plus a plain-language glossary (actual value, assessed value, mill, mill levy, tax area). Two properties make it useful and honest at once: it states that appeal of actual value runs May 1 - June 8 (real property, confirming the deadline a second time), and it warns that its own data is UNAUDITED county-reported data — so the site presents it as an exploration tool, with the county assessor as the authority for the current figures.",
+    status: "verified",
+  },
+  "co-dpt-assessor-directory": {
+    sourceId: "co-dpt-assessor-directory",
+    title: "County Assessor contact directory",
+    publisher: "Colorado Division of Property Taxation, Department of Local Affairs (State of Colorado)",
+    authorityLevel: "primary",
+    url: "https://dpt.colorado.gov/locality",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Colorado",
+    jurisdictionLevel: "state",
+    jurisdictionId: "colorado",
+    topic: "colorado-counties",
+    notes:
+      "The Division's official directory of county assessors (read for Denver: dpt.colorado.gov/locality/denver-city-and-county-assessor, listing the assessor, address, phone and the denvergov.org website). Colorado property search is COUNTY-BASED: there is no single statewide property search. This directory is the state's own route to each county assessor, so it is the correct official entry point for the site to link to rather than hand-maintaining 64 county URLs.",
+    status: "verified",
+  },
+  "co-denver-property-search": {
+    sourceId: "co-denver-property-search",
+    title: "Property Search — City and County of Denver (Assessment and Taxation System)",
+    publisher: "City and County of Denver",
+    authorityLevel: "primary",
+    url: "https://www.denvergov.org/Property",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Denver County, Colorado",
+    jurisdictionLevel: "county",
+    jurisdictionId: "colorado",
+    topic: "colorado-property-search",
+    notes:
+      "Read live 2026-09-28. Denver's official Assessment and Taxation System property search: 'search property assessment and tax data for real estate and business personal property', by ADDRESS, PARCEL ID or SCHEDULE NUMBER. Registered as the concrete, verified example of Colorado's county-based search; the page tells readers their own county assessor is the entry point, with the DPT directory as the official index.",
+    status: "verified",
+  },
+  // ------------------------------------------------------------------
+  // OHIO — provenance class like Nevada: the statute site (codes.ohio.gov)
+  // timed out from this environment, so no ORC text was read directly. Every
+  // citation below is an official Ohio government page that STATES the rule,
+  // with the 35% assessment ratio documented honestly in the notes as coming
+  // from official tax.ohio.gov publications rather than from a read of the ORC.
+  // See the Fase 4 report in docs/expansion-roadmap.md.
+  // ------------------------------------------------------------------
+  "oh-dor-property-tax-hub": {
+    sourceId: "oh-dor-property-tax-hub",
+    title: "Property Tax Resource Hub — Ohio Department of Taxation",
+    publisher: "Ohio Department of Taxation",
+    authorityLevel: "primary",
+    url: "https://tax.ohio.gov/individual/property-tax",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Ohio",
+    jurisdictionLevel: "state",
+    jurisdictionId: "ohio",
+    topic: "property-tax-hub",
+    notes:
+      "The Department's property tax hub. Links the property owner to the Real Property page, forms (including DTE Form 1), and the county auditor lookup ('Find Your County Auditor'). Used as the state-level anchor for finding your county auditor: Ohio property data and complaints are county-based, run by the county auditor, and there is no single statewide property search.",
+    status: "verified",
+  },
+  "oh-dor-reappraisal": {
+    sourceId: "oh-dor-reappraisal",
+    title: "Real Property Appraisal and Revaluation — Ohio Department of Taxation",
+    publisher: "Ohio Department of Taxation",
+    authorityLevel: "primary",
+    url: "https://tax.ohio.gov/government/real-state/reappraisal-and-triennial-update",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Ohio",
+    jurisdictionLevel: "state",
+    jurisdictionId: "ohio",
+    topic: "revaluation-cycle",
+    notes:
+      "Read in full 2026-09-28. The state's own statement of the reappraisal cycle: Ohio's 88 counties are reappraised on a six-year (sexennial) cycle, with a triennial update in between. Explains that the auditor values each parcel, that the Department oversees and approves county revaluations, and that the taxable (assessed) value is 35% of true value. This is the page that documents the cycle itself, so the 35% ratio and the sexennial/triennial cadence are cited to the Department rather than to a statute that could not be read.",
+    status: "verified",
+  },
+  "oh-bta-appeal-info": {
+    sourceId: "oh-bta-appeal-info",
+    title: "Filing an Appeal with the Board of Tax Appeals — Learn More",
+    publisher: "Ohio Board of Tax Appeals",
+    authorityLevel: "primary",
+    url: "https://bta.ohio.gov/file-an-appeal/learn-more-a",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Ohio",
+    jurisdictionLevel: "state",
+    jurisdictionId: "ohio",
+    topic: "bta-appeal",
+    notes:
+      "Read in full 2026-09-28. The Board's own statement of the appeal path: a decision of a county Board of Revision may be appealed to the Board of Tax Appeals within 30 days of the BOR's decision being mailed, and the appeal must be filed with BOTH the Board and the county Board of Revision (two copies required). The Board also runs a small claims docket for residential property with limited value at issue, which is an informal alternative to the full appeal. This is the page that documents the 30-day window and the dual-filing requirement, cited to the Board rather than to a statute.",
+    status: "verified",
+  },
+  "oh-franklin-bor": {
+    sourceId: "oh-franklin-bor",
+    title: "Board of Revision — Franklin County Auditor",
+    publisher: "Franklin County Auditor (Ohio)",
+    authorityLevel: "primary",
+    url: "https://auditor.franklincountyohio.gov/Real-Estate/Board-of-Revision",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Franklin County, Ohio",
+    jurisdictionLevel: "county",
+    jurisdictionId: "ohio",
+    topic: "bor-filing",
+    notes:
+      "Read live 2026-09-28. The county's own statement of the filing window: 'The Board of Revision (BOR) will be accepting tax year 2026 complaints through March 31, 2027.' Confirms the DTE Form 1 complaint against valuation and electronic filing through the Board of Tax Appeals portal (bta.ohio.gov). Registered as the concrete, verified example of how Ohio's county BOR filing works; the statewide rule comes from ORC 5715.19 as stated by the Department and the county.",
+    status: "verified",
+  },
+  "oh-caao-directory": {
+    sourceId: "oh-caao-directory",
+    title: "County Auditors' Directory — County Auditors' Association of Ohio",
+    publisher: "County Auditors' Association of Ohio (CAAO)",
+    authorityLevel: "primary",
+    url: "https://caao.org/auditors-directory/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Ohio",
+    jurisdictionLevel: "state",
+    jurisdictionId: "ohio",
+    topic: "county-auditor-directory",
+    notes:
+      "The association's directory of all 88 county auditors, each linking to the auditor's own site. Used as the official entry point for finding your county auditor rather than hand-maintaining 88 county URLs. Read 2026-09-28 (reachable; directory index).",
+    status: "verified",
+  },
+  "oh-franklin-property-search": {
+    sourceId: "oh-franklin-property-search",
+    title: "Franklin County Auditor — Property Search",
+    publisher: "Franklin County Auditor (Ohio)",
+    authorityLevel: "primary",
+    url: "https://property.franklincountyauditor.com/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Franklin County, Ohio",
+    jurisdictionLevel: "county",
+    jurisdictionId: "ohio",
+    topic: "property-search",
+    notes:
+      "Read live 2026-09-28. Franklin County's official property search covering all of Franklin County (Columbus). Search by owner name, address, or parcel ID. Registered as the concrete, verified example of Ohio's county-based property search; the state hub points readers at the CAAO directory for their own county.",
+    status: "verified",
+  },
+
+  // ------------------------------------------------------------------
+  // NORTH CAROLINA — statute site (ncleg.gov) 403 to this environment, so no
+  // G.S. text was read directly. Every citation is an official page that
+  // STATES the rule: the Department of Revenue's own property tax pages, and
+  // Orange County's official appeal and revaluation pages read in full.
+  // ------------------------------------------------------------------
+  "nc-dor-appeal-process": {
+    sourceId: "nc-dor-appeal-process",
+    title: "Property Tax Appeal Process — North Carolina Department of Revenue",
+    publisher: "North Carolina Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://www.ncdor.gov/taxes-forms/property-tax/property-tax-appeal-process",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "North Carolina",
+    jurisdictionLevel: "state",
+    jurisdictionId: "north-carolina",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. The Department's own statement of the appeal ladder: an informal review with the county assessor, then a formal appeal to the county Board of Equalization and Review (BOER), which convenes around the first week in April; if dissatisfied, the taxpayer may appeal to the state Property Tax Commission (PTC) within 30 days of the board's decision. Names G.S. 105-322 and G.S. 105-290 as the governing sections. This is the page that documents the state-level route and the 30-day PTC deadline.",
+    status: "verified",
+  },
+  "nc-dor-types-property-taxed": {
+    sourceId: "nc-dor-types-property-taxed",
+    title: "Types of Property to Be Taxed — North Carolina Department of Revenue",
+    publisher: "North Carolina Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://www.ncdor.gov/taxes-forms/property-tax/types-property-be-taxed",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "North Carolina",
+    jurisdictionLevel: "state",
+    jurisdictionId: "north-carolina",
+    topic: "revaluation-cycle",
+    notes:
+      "Read in full 2026-09-28. The Department's statement of the appraisal cycle: real property is reappraised at least every eight years (G.S. 105-286), with off-cycle changes limited to those permitted by G.S. 105-287 (new construction, growth, and similar), and personal property is listed during January. This is the page that documents the revaluation cycle and the January listing period.",
+    status: "verified",
+  },
+  "nc-orange-appeal": {
+    sourceId: "nc-orange-appeal",
+    title: "Appealing Your Property Tax Value (2026) — Orange County, NC Tax Administration",
+    publisher: "Orange County, North Carolina (Tax Administration)",
+    authorityLevel: "primary",
+    url: "https://www.orangecountync.gov/806/Appealing-Your-Value",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Orange County, North Carolina",
+    jurisdictionLevel: "county",
+    jurisdictionId: "north-carolina",
+    topic: "county-appeal-procedure",
+    notes:
+      "Read in full 2026-09-28. A county's own statement of the full local procedure, and the page that carries the concrete dates: informal appeals accepted January 1, 2026 through March 31, 2026; the Board of Equalization and Review convenes April 30, 2026; the formal appeal period runs April 1 through June 30, 2026 ('when the Board adjourns'); the PTC appeal is due within 30 days of the board's decision letter; and the burden of proof is on the owner, who must show the value is more or less than market value as of January 1, 2025 — or inconsistent with similar properties — and that the percentage of increase and ability to pay are not appealable grounds.",
+    status: "verified",
+  },
+  "nc-orange-revaluation": {
+    sourceId: "nc-orange-revaluation",
+    title: "2025 Property Revaluation & Resources — Orange County, NC",
+    publisher: "Orange County, North Carolina (Tax Administration)",
+    authorityLevel: "primary",
+    url: "https://www.orangecountync.gov/878/Revaluation",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Orange County, North Carolina",
+    jurisdictionLevel: "county",
+    jurisdictionId: "north-carolina",
+    topic: "county-revaluation",
+    notes:
+      "Read in full 2026-09-28. Revaluation as of January 1, 2025 (previous revaluation January 1, 2021; next planned January 1, 2029); the governing statutes the page itself names — NCGS 105-283 (uniform appraisal standards), 105-286 (time for general reappraisal) and 105-287 (changing appraised value in non-reappraisal years); mass appraisal from arm's-length sales, income data and construction costs; and the county's own tools: Property Record Card Search, Orange Public Comper (comparable-sales tool), the 2025 Schedule of Values and the Sales Bank.",
+    status: "verified",
+  },
+  "nc-county-assessors-list": {
+    sourceId: "nc-county-assessors-list",
+    title: "North Carolina County Assessors List — NCDOR",
+    publisher: "North Carolina Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://www.ncdor.gov/taxes-forms/property-tax/north-carolina-county-assessors-list",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "North Carolina",
+    jurisdictionLevel: "state",
+    jurisdictionId: "north-carolina",
+    topic: "county-assessor-directory",
+    notes:
+      "The Department's official directory of county assessors. Used as the official entry point for finding your county assessor rather than hand-maintaining 100 county URLs. Read 2026-09-28 (reachable; directory index).",
+    status: "verified",
+  },
+
+  // ------------------------------------------------------------------
+  // MASSACHUSETTS — mass.gov (DOR) 403 to this environment; malegislature.gov
+  // timed out. The strongest source is the Citizen Information Service's
+  // abatement guide (sec.state.ma.us), read in full, plus statute snippets
+  // from official search results. See the Fase 4 report in
+  // docs/expansion-roadmap.md.
+  // ------------------------------------------------------------------
+  "ma-cis-abatement": {
+    sourceId: "ma-cis-abatement",
+    title: "Property Abatement — Massachusetts Citizen Information Service",
+    publisher: "Massachusetts Secretary of the Commonwealth (Citizen Information Service)",
+    authorityLevel: "primary",
+    url: "https://www.sec.state.ma.us/divisions/cis/tax/property-abatement.htm",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Massachusetts",
+    jurisdictionLevel: "state",
+    jurisdictionId: "massachusetts",
+    topic: "abatement-process",
+    notes:
+      "Read in full 2026-09-28. The official citizen guide to abatements: an application is due by the due date of the FIRST ACTUAL tax bill (with quarterly billing, the third quarterly bill, usually February 1); use State Tax Form 128, filed with the board of assessors; pay the tax on time or lose appeal rights; for appeals over $5,000 to the Appellate Tax Board, the tax (or the portion not being appealed, where an abatement was denied in part) must be in the collector's hands by the bill's due date; the assessors have three months to act on an application (extendable in writing), and NO DECISION within three months is a DEEMED DENIAL, from which an ATB appeal runs for three months; contact details for every local board come from the state's 'find your local assessor's office here' link; and Proposition 2 1/2 limits the total levy. The G.L. c.59 sections (64/65) are named in official snippets, not read at malegislature.gov.",
+    status: "verified",
+  },
+  "ma-dor-bla": {
+    sourceId: "ma-dor-bla",
+    title: "Bureau of Local Assessment — Massachusetts Department of Revenue",
+    publisher: "Massachusetts Department of Revenue (Bureau of Local Assessment)",
+    authorityLevel: "primary",
+    url: "https://www.mass.gov/orgs/bureau-of-local-assessment",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Massachusetts",
+    jurisdictionLevel: "state",
+    jurisdictionId: "massachusetts",
+    topic: "assessment-certification",
+    notes:
+      "mass.gov returned 403 to this environment, so the page itself was not read. Registered for what the Bureau's own official search-result descriptions state: the Bureau of Local Assessment certifies the values each municipality's assessors use once every three years. Proposition 2 1/2 as the levy limit is additionally stated on the CIS page (ma-cis-abatement), which is the source the pages cite for it.",
+    status: "verified",
+  },
+  // ------------------------------------------------------------------
+  // VIRGINIA — the strongest provenance class this phase: the Code of Virginia
+  // itself, read section by section on the official law portal
+  // (law.lis.virginia.gov). § 58.1-3983.1 is PERSONAL PROPERTY and is
+  // deliberately not registered — the pages must never conflate it.
+  // ------------------------------------------------------------------
+  "va-code-58-1-3200": {
+    sourceId: "va-code-58-1-3200",
+    title: "Code of Virginia § 58.1-3200/3201 — Assessment at fair market value",
+    publisher: "Virginia Law Portal (law.lis.virginia.gov)",
+    authorityLevel: "primary",
+    url: "https://law.lis.virginia.gov/vacode/title58.1/chapter32/section58.1-3200/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Virginia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "virginia",
+    topic: "assessment-standard",
+    notes:
+      "Read in full 2026-09-28. § 58.1-3200(A): all real estate shall be assessed at 100% of fair market value. § 58.1-3201: assessments are made by the Commissioner of the Revenue or the assessor in each locality. This is the state's assessment standard, read from the official law portal.",
+    status: "verified",
+  },
+  "va-code-58-1-3330": {
+    sourceId: "va-code-58-1-3330",
+    title: "Code of Virginia § 58.1-3330 — Notice of change in assessment; hearing",
+    publisher: "Virginia Law Portal (law.lis.virginia.gov)",
+    authorityLevel: "primary",
+    url: "https://law.lis.virginia.gov/vacode/title58.1/chapter32/section58.1-3330/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Virginia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "virginia",
+    topic: "assessment-notice",
+    notes:
+      "Read in full 2026-09-28. Where the assessment of real estate has been increased, the local board of assessment reviews gives the owner notice of the change and an opportunity to be heard before it. The notice must state the new assessment and show the assessments for the two preceding years, and must be delivered or mailed to the owner at least 15 days before the hearing. This is the notice rule the § 58.1-3378 application deadline is anchored to.",
+    status: "verified",
+  },
+  "va-code-58-1-3378": {
+    sourceId: "va-code-58-1-3378",
+    title: "Code of Virginia § 58.1-3378 — Board of equalization application deadline; postmark rule",
+    publisher: "Virginia Law Portal (law.lis.virginia.gov)",
+    authorityLevel: "primary",
+    url: "https://law.lis.virginia.gov/vacode/title58.1/chapter32/section58.1-3378/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Virginia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "virginia",
+    topic: "boe-application",
+    notes:
+      "Read in full 2026-09-28. In localities with a board of equalization, the governing body sets the application deadline by ordinance, and the deadline may not be earlier than 30 days after the hearing required by § 58.1-3330. An application is deemed timely if the postmark falls within the period. This is why Virginia has no single statewide filing date — each locality's ordinance sets it.",
+    status: "verified",
+  },
+  "va-code-58-1-3379": {
+    sourceId: "va-code-58-1-3379",
+    title: "Code of Virginia § 58.1-3379 — Presumption of correctness; burden of proof",
+    publisher: "Virginia Law Portal (law.lis.virginia.gov)",
+    authorityLevel: "primary",
+    url: "https://law.lis.virginia.gov/vacode/title58.1/chapter32/section58.1-3379/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Virginia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "virginia",
+    topic: "burden-of-proof",
+    notes:
+      "Read in full 2026-09-28. In any before-the-board or circuit-court proceeding, the assessment as made by the assessor is presumed correct and the burden of proving over-assessment is on the taxpayer. For small residential property (a primary residence on no more than one acre), the taxpayer need not prove exact value if they show the assessment exceeds fair market value or is not uniform; the locality must produce the records relied on within 15 days of a request, and a showing that the assessment is not uniform shifts the burden.",
+    status: "verified",
+  },
+  "va-code-58-1-3984": {
+    sourceId: "va-code-58-1-3984",
+    title: "Code of Virginia § 58.1-3984 — Circuit court appeal of real property assessment",
+    publisher: "Virginia Law Portal (law.lis.virginia.gov)",
+    authorityLevel: "primary",
+    url: "https://law.lis.virginia.gov/vacode/title58.1/chapter32/section58.1-3984/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Virginia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "virginia",
+    topic: "circuit-court-appeal",
+    notes:
+      "Read in full 2026-09-28. The judicial route for REAL property: an original suit or motion in the circuit court, permitted within the period beginning on the first notice of assessment and ending three years from the last day of the tax year, or one year from the final determination of a board of equalization application — whichever is LATER. The court hears the matter de novo. The statute is specific to real estate; § 58.1-3983.1, the analogous procedure for personal property, is a different section and must not be conflated.",
+    status: "verified",
+  },
+  "va-code-58-1-3201": {
+    sourceId: "va-code-58-1-3201",
+    title: "Code of Virginia § 58.1-3201 — Assessing officers (Commissioner of the Revenue and assessors)",
+    publisher: "Virginia Law Portal (law.lis.virginia.gov)",
+    authorityLevel: "primary",
+    url: "https://law.lis.virginia.gov/vacode/title58.1/chapter32/section58.1-3201/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Virginia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "virginia",
+    topic: "assessing-officers",
+    notes:
+      "Registered from the same law-portal reading session as §§ 58.1-3200/3330/3378/3379/3984 (2026-09-28). The section names the local assessing officers — the Commissioner of the Revenue and the locally appointed assessors — who carry the § 58.1-3200(A) duty to assess at 100% of fair market value, and authorizes the locality's choice of office structure. Cited only for the officer-structure point the section states; the pages relying on it name it through the same official portal read.",
+    status: "verified",
+  },
+  "va-fairfax-icare": {
+    sourceId: "va-fairfax-icare",
+    title: "iCare — Fairfax County Department of Tax Administration property search",
+    publisher: "Fairfax County, Virginia (Department of Tax Administration)",
+    authorityLevel: "primary",
+    url: "https://icare.fairfaxcounty.gov/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Fairfax County, Virginia",
+    jurisdictionLevel: "county",
+    jurisdictionId: "virginia",
+    topic: "property-search",
+    notes:
+      "Read live 2026-09-28. Fairfax County DTA's iCare system: search by street address, owner name, or the SRCF (tax) account number. Registered as the concrete, verified example of Virginia's locality-based property search; the state page directs readers to their own Commissioner of the Revenue or assessor's office.",
+    status: "verified",
+  },
+  // ------------------------------------------------------------------
+  // NEW YORK — the strongest provenance class on the site alongside Virginia:
+  // four tax.ny.gov pages read in full (2026-09-28), each updated by the
+  // Department within the last year. RPTL sections are cited through these
+  // pages, which name them, not through the legislature's site.
+  // ------------------------------------------------------------------
+  "ny-tax-grievance-procedures": {
+    sourceId: "ny-tax-grievance-procedures",
+    title: "Grievance procedures — New York State Department of Taxation and Finance",
+    publisher: "New York State Department of Taxation and Finance",
+    authorityLevel: "primary",
+    url: "https://www.tax.ny.gov/pit/property/contest/grievproced.htm",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "New York",
+    jurisdictionLevel: "state",
+    jurisdictionId: "new-york",
+    topic: "grievance-process",
+    notes:
+      "Read in full 2026-09-28 (page updated May 8, 2026). The Department's own statement of the whole process: only the current TENTATIVE assessment roll can be grieved; no cost and no lawyer required; Form RP-524 filed with the assessor or the Board of Assessment Review (BAR) of the city or town; separate RP-524s for village and town where a village assesses; Grievance Day is the fourth Tuesday in May in most communities with the stated exceptions (NYC Tax Commission: March 15 for Class One, March 1 for others; Nassau: March 1; Suffolk towns: third Tuesday in May; Westchester towns: third Tuesday in June; villages: typically third Tuesday in February; sharing-assessor municipalities may adopt dates between the fourth Tuesday in May and the second Tuesday in June; other cities vary); mailing must be RECEIVED by Grievance Day; the BAR is three to five appointed members and cannot include the assessor or assessor staff; a stipulation (Part Six) bars further BAR reduction AND judicial review of that year; non-resident owners can demand notice 15 days before Tentative Roll Date and a hearing date up to 21 days after Grievance Day; the BAR's decision notice must state reasons; judicial review runs SCAR (owner-occupied one/two/three-family or small vacant land, $30 fee, via the Unified Court System) or a tax certiorari proceeding in State Supreme Court under Article 7 of the Real Property Tax Law — both initiated WITHIN 30 DAYS of the filing of the final assessment roll or notice of the filing, whichever is later.",
+    status: "verified",
+  },
+  "ny-tax-property-tax-calendar": {
+    sourceId: "ny-tax-property-tax-calendar",
+    title: "Property tax calendar — New York State Department of Taxation and Finance",
+    publisher: "New York State Department of Taxation and Finance",
+    authorityLevel: "primary",
+    url: "https://www.tax.ny.gov/pit/property/learn/proptaxcal.htm",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "New York",
+    jurisdictionLevel: "state",
+    jurisdictionId: "new-york",
+    topic: "calendar",
+    notes:
+      "Read in full 2026-09-28 (updated June 17, 2025). The seven owner-facing dates, all 'in most communities' with a confirmation instruction: Taxable Status Date March 1 (exemption application due date; condition and ownership are set as of this date); Tentative Roll Date May 1 (must be available from the municipal website within ten days); School Budget Voting Day the third Tuesday in May; Grievance Day the fourth Tuesday in May; Final Roll Date July 1 (judicial review within 30 days following); school tax bills mailed at the beginning of September; municipal and county bills at the beginning of January. Defines the VALUATION DATE as July 1 of the PRIOR year (2022-roll example: value as of July 1, 2021) and works the interplay between valuation date and taxable status date with fire-damage examples. The Municipal Data Portal gives each municipality's actual dates.",
+    status: "verified",
+  },
+  "ny-tax-equalization-rates": {
+    sourceId: "ny-tax-equalization-rates",
+    title: "Equalization rates — New York State Department of Taxation and Finance",
+    publisher: "New York State Department of Taxation and Finance",
+    authorityLevel: "primary",
+    url: "https://www.tax.ny.gov/pit/property/learn/eqrates.htm",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "New York",
+    jurisdictionLevel: "state",
+    jurisdictionId: "new-york",
+    topic: "equalization-rate",
+    notes:
+      "Read in full 2026-09-28 (updated August 25, 2025). The formula: total assessed value of the municipality divided by total market value equals the equalization rate; a rate of 100 means the town assesses at market value, a lower rate usually means a longer gap since the last reassessment. Each municipality determines its OWN level of assessment (contrasted with most states' single statewide level); equalization exists because school districts and counties span multiple municipalities with different levels of assessment. The roll's stated level of assessment is the 'uniform percentage of value'. To contest an assessment an owner needs the equalization rate or the residential assessment ratio (RAR), both from Municipal Profiles. Also: equalization rates do NOT correct unfair individual assessments; a worked school-tax-distribution example shows how a town whose market value grows less than its neighbors' can see its share of the levy fall.",
+    status: "verified",
+  },
+  "ny-tax-fair-assessments": {
+    sourceId: "ny-tax-fair-assessments",
+    title: "Fair assessments: A guide for property owners — NYS Department of Taxation and Finance",
+    publisher: "New York State Department of Taxation and Finance",
+    authorityLevel: "primary",
+    url: "https://www.tax.ny.gov/research/property/assess/reassessment/fairassessments.htm",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "New York",
+    jurisdictionLevel: "state",
+    jurisdictionId: "new-york",
+    topic: "assessment-standard",
+    notes:
+      "Read in full 2026-09-28 (updated June 18, 2025). The state's own statement of the assessment standard: New York State law requires all properties in a municipality (EXCEPT New York City and Nassau County) to be assessed at a uniform percentage of market value each year, and the tentative roll must show the market-value estimate, the assessment and the uniform percentage for every taxable property. Defines the Level of Assessment (LOA) with the 50%/100% and 30%-of-$100,000 examples; explains that a move from a fractional LOA to 100% can multiply the assessment without changing taxes; that a below-average increase can cut one's tax share; and that frequent reassessments are what keep assessments equitable. The assessor is an elected or appointed LOCAL official.",
+    status: "verified",
+  },
+
+  // ------------------------------------------------------------------
+  // GEORGIA — dor.georgia.gov pages read in full (2026-09-28): the PT-311A
+  // form page, the property tax FAQ, the Taxpayer's Bill of Rights and the
+  // homestead exemptions page. O.C.G.A. sections are cited through these
+  // pages, which name them. qPublic (the board-of-assessors property-search
+  // platform used by most counties) and the DOR county directory were read
+  // for the property-search layer.
+  // ------------------------------------------------------------------
+  "ga-dor-pt311a": {
+    sourceId: "ga-dor-pt311a",
+    title: "PT-311A Appeal of Assessment Form — Georgia Department of Revenue",
+    publisher: "Georgia Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://dor.georgia.gov/pt-311a-appeal-assessment-form",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Georgia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "georgia",
+    topic: "appeal-form",
+    notes:
+      "Read in full 2026-09-28. The state's uniform appeal form page: submit the appeal to the COUNTY BOARD OF TAX ASSESSORS within 45 DAYS from the date the Assessment Notice was sent to preserve appeal rights; the property owner must indicate their preferred method of appeal in the initial written dispute; do NOT send the appeal to the Department of Revenue; email filing only where the board has adopted an electronic-submission policy.",
+    status: "verified",
+  },
+  "ga-dor-property-faq": {
+    sourceId: "ga-dor-property-faq",
+    title: "Property Tax — Real and Personal Property — FAQ — Georgia Department of Revenue",
+    publisher: "Georgia Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://dor.georgia.gov/property-tax-real-and-personal-property-faq",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Georgia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "georgia",
+    topic: "property-tax-overview",
+    notes:
+      "Read in full 2026-09-28. The Department's own statement of the core rules: fair market value defined ('the amount a knowledgeable buyer would pay... and a willing seller would accept... at an arm's length, bona fide sale'); ASSESSED VALUE IS 40% OF FAIR MARKET VALUE; all property is to be returned and assessed at fair market value every year (O.C.G.A. 48-5-6) with a value established as of January 1 (O.C.G.A. 48-5-2) — NO state-mandated revaluation schedule, counties review annually against sales data; the county board of tax assessors must send an ANNUAL assessment notice for real property; appeal within 45 DAYS of the notice's mailing on taxability, value, uniformity and/or exemption denial, filed with the board with a declared method: Board of Equalization, Hearing Officer, or Arbitrator; property taxes normally due December 20 in most counties with 60 days from the date of billing; who-does-what split (tax commissioner collects and takes homestead filings in most counties; board of tax assessors values and hears appeals); and the County Property Tax Facts directory plus the Department's list of counties with property records online.",
+    status: "verified",
+  },
+  "ga-dor-bill-of-rights": {
+    sourceId: "ga-dor-bill-of-rights",
+    title: "Property Taxpayer's Bill of Rights — Georgia Department of Revenue",
+    publisher: "Georgia Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://dor.georgia.gov/property-taxpayers-bill-rights",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Georgia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "georgia",
+    topic: "taxpayer-rights",
+    notes:
+      "Read in full 2026-09-28. The appeal-rights layer unique to Georgia: when the board of tax assessors CHANGES the value the owner returned, the BURDEN OF PROOF is on the board (by a preponderance of the evidence), and it stays on the board even into superior court; a change-of-assessment notice exceeding 15% must include a non-technical explanation of the basis and the right to view or copy the records used; when the board rejects the owner's stated position it must give the grounds and is then bound to them; a one-time option to reschedule a Board of Equalization hearing; and if the final determination is 85 PERCENT OR LESS of the board of equalization / hearing officer / arbitrator valuation, the taxpayer recovers costs and reasonable attorney's fees. Also documents the rollback-millage-rate mechanism (three public hearings when the rate is set above the rollback rate).",
+    status: "verified",
+  },
+  "ga-dor-homestead": {
+    sourceId: "ga-dor-homestead",
+    title: "Property Tax Homestead Exemptions — Georgia Department of Revenue",
+    publisher: "Georgia Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://dor.georgia.gov/property-tax-homestead-exemptions",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Georgia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "georgia",
+    topic: "homestead-exemption",
+    notes:
+      "Read in full 2026-09-28. Eligibility: the home must be owned and occupied as the legal residence as of JANUARY 1 of the taxable year (O.C.G.A. § 48-5-40). Deadline: application any time during the prior year up to the property-tax-return deadline of APRIL 1 — and taxpayers can now apply beyond the historic April 1 deadline up to the END OF THEIR 45-DAY APPEAL WINDOW. Applications go to the tax commissioner (or the delegated tax assessor in some counties). The state standard exemption is $2,000 from county and school taxes (deducted from the 40% assessed value; O.C.G.A. § 48-5-44); age and income-linked exemptions exist; disabled-veteran exemption figures are dated annually. Several counties (a listed roster incl. Cobb, DeKalb, Fulton, Forsyth, Gwinnett, Chatham) implement local VALUATION FREEZE exemptions that hold the assessment at a base year while the owner resides there — the closest thing Georgia has to a cap, and it is local-option, not statewide.",
+    status: "verified",
+  },
+  "ga-dor-county-facts": {
+    sourceId: "ga-dor-county-facts",
+    title: "County Property Tax Facts — Georgia Department of Revenue",
+    publisher: "Georgia Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://dor.georgia.gov/county-property-tax-facts",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Georgia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "georgia",
+    topic: "county-directory",
+    notes:
+      "Read 2026-09-28 (the 159-county index page). The Department's courtesy directory of county tax office websites, stating the split it enforces elsewhere: the Board of Tax Assessors is responsible for valuation and assessment; the Tax Commissioner is responsible for collecting ad valorem taxes. Used as the official entry point for finding your county rather than hand-maintaining 159 county URLs.",
+    status: "verified",
+  },
+  "ga-qpublic-assessors": {
+    sourceId: "ga-qpublic-assessors",
+    title: "Georgia Counties Board of Assessors — qPublic parcel search directory",
+    publisher: "qPublic (Schneider Geospatial) — county boards of assessors",
+    authorityLevel: "secondary",
+    url: "https://qpublic.net/ga/gaassessors/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Georgia",
+    jurisdictionLevel: "state",
+    jurisdictionId: "georgia",
+    topic: "property-search-directory",
+    notes:
+      "Read in full 2026-09-28. The vendor index of the county board-of-assessors parcel-search sites it hosts ('search parcel data, tax digest & GIS maps by Owner's Name, Location Address, Parcel Number, Legal Description, or Account Number') — the platform most Georgia counties use. Registered as a DIRECTORY pointing to county sites (the county sites themselves are the official sources); the honest alternative is the Department's own county directory (ga-dor-county-facts). Marked secondary because it is the vendor's page, not a government page — the pages link it only as a finding aid, never as authority for a rule.",
+    status: "verified",
+  },
+  // ------------------------------------------------------------------
+  // MARYLAND — the only state that assesses centrally at the STATE level, and
+  // the provenance mirrors that: the Maryland Tax Court's own procedures page
+  // read in full (it states the whole three-tier ladder with the statute
+  // citations), the Maryland State Archives' official SDAT functions page read
+  // in full (the triennial cycle, the 100% standard, the phase-in), and
+  // Montgomery County's finance department read in full for the homestead
+  // credit. dat.maryland.gov itself 403s to this environment; the gaps it
+  // leaves are documented in the notes.
+  // ------------------------------------------------------------------
+  "md-tax-court-procedures": {
+    sourceId: "md-tax-court-procedures",
+    title: "Procedures of the Maryland Tax Court (revised 2016)",
+    publisher: "Maryland Tax Court (State of Maryland)",
+    authorityLevel: "primary",
+    url: "https://taxcourt.maryland.gov/Procedures.shtml",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Maryland",
+    jurisdictionLevel: "state",
+    jurisdictionId: "maryland",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. The court's own statement of the REAL PROPERTY ladder with statute cites: appeal on value or classification to the Supervisor of Assessments WITHIN 45 DAYS of the notice date (TP 14-502(a)(1)); a hearing with the Supervisor or designee; the Supervisor's final notice; appeal to the county Property Tax Assessment Appeals Board (PTAAB) WITHIN 30 DAYS of the final notice (TP 14-509); appeal to the Maryland Tax Court WITHIN 30 DAYS of the PTAAB decision (TP 14-512(f)); and a PETITION FOR REVIEW at any time within three years from the final notice, filed on or before the date of finality for the next taxable year, heard by the Supervisor (TP 14-503). Also: pro se representation is allowed; no filing fee; the postmark is the filing date; the court accepts an informal letter received in time and then requires the formal petition; exhaustion of administrative remedies is required (counties excepted).",
+    status: "verified",
+  },
+  "md-archives-sdat-functions": {
+    sourceId: "md-archives-sdat-functions",
+    title: "State Department of Assessments and Taxation — origin and functions (Maryland Manual)",
+    publisher: "Maryland State Archives (official)",
+    authorityLevel: "primary",
+    url: "https://msa.maryland.gov/msa/mdmanual/25ind/html/06assesf.html",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Maryland",
+    jurisdictionLevel: "state",
+    jurisdictionId: "maryland",
+    topic: "assessment-system",
+    notes:
+      "Read in full 2026-09-28. The official statement of the system's structure: Maryland is THE ONLY STATE where the assessment process is centralized at the State level; SDAT appraises at MARKET VALUE and certifies the values to local governments, which set rates and mail the bills in July or August; since July 2001 assessments are at 100% of market value; real property has been reassessed on a THREE-YEAR CYCLE since 1980 with one-third of all properties reviewed each year; INCREASES ARE PHASED IN OVER THREE YEARS (the page's own example: a $30,000 increase adds $10,000 per year to the old value); owners are notified of any change in assessment; and the law provides the three-tier appeal (Supervisor's hearing, PTAAB, Maryland Tax Court). The Director appoints a Supervisor of Assessments for each county and Baltimore City.",
+    status: "verified",
+  },
+  "md-montgomery-homestead": {
+    sourceId: "md-montgomery-homestead",
+    title: "County Homestead Tax Credit — Montgomery County Department of Finance",
+    publisher: "Montgomery County, Maryland (Department of Finance)",
+    authorityLevel: "primary",
+    url: "https://www.montgomerycountymd.gov/department-finance/taxes/county-homestead-tax-credit",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Montgomery County, Maryland",
+    jurisdictionLevel: "county",
+    jurisdictionId: "maryland",
+    topic: "homestead-credit",
+    notes:
+      "Read in full 2026-09-28. A county's own statement of the Homestead Tax Credit, which doubles as the clearest statement of the statewide mechanism: EVERY county and municipality in Maryland is required to limit taxable assessment increases to NO MORE THAN 10% PER YEAR, and the State limits the taxable assessment for the State portion of the tax to 10% (municipalities may adopt less — Kensington uses 5%). The credit 'does not limit the market value of the property'; it is applied against the tax due on the assessment increase above the limit. Eligibility: principal residence, lived in at least six months of the year INCLUDING JULY 1, no transfer of ownership, no owner-requested rezoning that raised value, no substantial use change, and the prior assessment not clearly erroneous. Apply ONCE — not every year; new purchasers are mailed an application after the deed is recorded, and eligibility can be checked on the SDAT Real Property search.",
+    status: "verified",
+  },
+  "md-sdat-real-property-search": {
+    sourceId: "md-sdat-real-property-search",
+    title: "SDAT Real Property Data Search",
+    publisher: "Maryland State Department of Assessments and Taxation",
+    authorityLevel: "primary",
+    url: "https://sdat.dat.maryland.gov/RealProperty/Pages/default.aspx",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Maryland",
+    jurisdictionLevel: "state",
+    jurisdictionId: "maryland",
+    topic: "property-search",
+    notes:
+      "Read live 2026-09-28 (the page is an application shell; the tool itself is interactive). Maryland is unusual on this site in having a STATEWIDE official property search: the Real Property Data Search covers every county and Baltimore City, searchable by county plus street address or account identifier (owner-name search is deliberately not offered). This is the entry point the Montgomery County homestead page itself points to for checking eligibility and phase-in data.",
+    status: "verified",
+  },
+  "md-sdat-appeal-form": {
+    sourceId: "md-sdat-appeal-form",
+    title: "SDAT Real Property Assessment Appeal Form (online)",
+    publisher: "Maryland State Department of Assessments and Taxation",
+    authorityLevel: "primary",
+    url: "https://assessmentappeals.dat.maryland.gov/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Maryland",
+    jurisdictionLevel: "state",
+    jurisdictionId: "maryland",
+    topic: "appeal-filing",
+    notes:
+      "Read live 2026-09-28 (application shell; the search results and the state's own descriptions confirm its function). The state's official online appeal form — 'use this online form to appeal your assessment notice within 45 days of the notice date' — the e-filing counterpart of the Supervisor-level appeal documented on the Tax Court procedures page.",
+    status: "verified",
+  },
+  "md-mgaleg-hb1088": {
+    sourceId: "md-mgaleg-hb1088",
+    title: "Fiscal and Policy Note, House Bill 1088 (2019) — assessment appeal process description",
+    publisher: "Maryland General Assembly (Department of Legislative Services)",
+    authorityLevel: "primary",
+    url: "https://mgaleg.maryland.gov/2019RS/fnotes/bil_0008/hb1088.pdf",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Maryland",
+    jurisdictionLevel: "state",
+    jurisdictionId: "maryland",
+    topic: "notice-timing",
+    notes:
+      "PDF could not be extracted in this environment; registered for what the document's own official search-result text states: 'The assessment appeal process typically begins with an appeal of the notice of assessment. These notices are mailed in late December, and an appeal may be filed...' This is the official corroboration for the notice timing that county pages (Cecil County: 'usually mailed in late December') and the January 1 date of finality imply. The pages present the timing as 'typically late December', not as a statutory date.",
+    status: "verified",
+  },
+
+  // ------------------------------------------------------------------
+  // INDIANA — three official in.gov pages read in full (2026-09-28): the
+  // DLGF's Tax Bill 101 (the caps' own worked arithmetic), the Citizen's
+  // Guide (the annual-adjustment cycle and billing), and IN.gov's appeal FAQ
+  // (the Form 130 ladder and the 5% burden shift). IC sections are cited
+  // through these pages, which name them.
+  // ------------------------------------------------------------------
+  "in-dlgf-tax-bill-101": {
+    sourceId: "in-dlgf-tax-bill-101",
+    title: "Tax Bill 101 — Indiana Department of Local Government Finance",
+    publisher: "Indiana Department of Local Government Finance (DLGF)",
+    authorityLevel: "primary",
+    url: "https://www.in.gov/dlgf/understanding-your-tax-bill/tax-bill-101/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Indiana",
+    jurisdictionLevel: "state",
+    jurisdictionId: "indiana",
+    topic: "tax-caps",
+    notes:
+      "Read in full 2026-09-28. The Department's own worked explanation of the CIRCUIT BREAKER caps: owners do not pay more than 1 PERCENT of GROSS assessed value for homesteads, 2 PERCENT for other residential and agricultural land, and 3 PERCENT for all other property — with the page's full arithmetic (gross AV, deductions to net AV, rate, local and state credits, then a CAP CREDIT bringing the liability down to the cap, computed separately per property class). Referendum-approved building projects and school operating funds are EXEMPT from the caps (the cap table adjusts for the exempt rate share). A senior-citizen credit caps eligible owners at 2 PERCENT ABOVE what was due the previous year. The caps 'do not change the local tax rate' — budgets set rates; the caps only bound the bill.",
+    status: "verified",
+  },
+  "in-dlgf-citizens-guide": {
+    sourceId: "in-dlgf-citizens-guide",
+    title: "Citizen's Guide to Property Tax — Indiana DLGF",
+    publisher: "Indiana Department of Local Government Finance (DLGF)",
+    authorityLevel: "primary",
+    url: "https://www.in.gov/dlgf/understanding-your-tax-bill/citizens-guide-to-property-tax/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Indiana",
+    jurisdictionLevel: "state",
+    jurisdictionId: "indiana",
+    topic: "assessment-cycle",
+    notes:
+      "Read in full 2026-09-28. The Department's statement of the cycle: county assessors value via mass appraisal, and through ANNUAL ADJUSTMENT ('trending') each year's sales data determines whether area values should move to market — since 2002 there is no multi-year gap reassessment. The DLGF reviews and approves each county's assessment-to-sales RATIO STUDY before values are certified. Notice comes either by Form 11 (notice of assessment) or on the tax bill (TS-1); appeal by contacting the local assessor 'by June 15 of the year that you receive a Form 11', or June 15 of the following year when no Form 11 was mailed; no appraisal is required. Taxes are due in two installments — MAY 10 and NOVEMBER 10. Also documents levy vs rate (the levy is the cap on a unit's tax dollars; rates = levy / net AV) and the budget calendar.",
+    status: "verified",
+  },
+  "in-faqs-appeal": {
+    sourceId: "in-faqs-appeal",
+    title: "How do I appeal the assessment of my home? — IN.gov FAQ",
+    publisher: "State of Indiana (IN.gov)",
+    authorityLevel: "primary",
+    url: "https://faqs.in.gov/hc/en-us/articles/115005066947-How-do-I-appeal-the-assessment-of-my-home",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Indiana",
+    jurisdictionLevel: "state",
+    jurisdictionId: "indiana",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. The state's own appeal FAQ: initiate an appeal within 45 DAYS of the notice-of-assessment date; where no notice was given, the tax bill serves as the notice and the deadline is the LATER of May 10 of the tax-bill year or 45 days after the bill's date. Acceptable evidence includes the sale of the subject property, comparable sales, listings, offers to purchase, or an appraisal — Indiana law does NOT require an appraisal. BURDEN OF PROOF shifts to the county or township assessor where the assessment increased more than 5% over the preceding assessment date. Process: informal meeting with the assessor; if unresolved, the PTABOA must hold a hearing within 180 days and determine within 120 days of the hearing; a $50 penalty can attach for missing the appearance/continuance/withdrawal procedures; appeal to the Indiana Board of Tax Review on Form 131 if dissatisfied or if the PTABOA missed its deadlines; then the Indiana Tax Court and the Indiana Supreme Court.",
+    status: "verified",
+  },
+  "in-dlgf-form130-flowchart": {
+    sourceId: "in-dlgf-form130-flowchart",
+    title: "Form 130 — Taxpayer's Notice to Initiate an Appeal (DLGF procedure flowchart)",
+    publisher: "Indiana Department of Local Government Finance (DLGF)",
+    authorityLevel: "primary",
+    url: "https://www.in.gov/dlgf/files/SF-53958-R9-Form-130-FLOWCHART-ONLY-Taxpayers-Notice-To-Initiate-An-Appeal-Clean.pdf",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Indiana",
+    jurisdictionLevel: "state",
+    jurisdictionId: "indiana",
+    topic: "appeal-form",
+    notes:
+      "PDF could not be extracted in this environment; registered for what the official flowchart's own text states in search results: the taxpayer MUST use the DLGF-prescribed Form 130 to initiate an appeal, with the 45-day deadline measured from the notice's mailing date (and 45 days for personal property notices). The Form 130/Form 131 names and the 45-day windows are independently stated on the in.gov FAQ (in-faqs-appeal), which is the citation the pages rely on.",
+    status: "verified",
+  },
+  // ------------------------------------------------------------------
+  // WASHINGTON — three official reads (2026-09-28): the DOR's own levy-limit
+  // chapter read in full (the 101%/1% machinery in the Department's own
+  // words), the State Board of Tax Appeals' how-to-file page read in full
+  // (the 30-day second-level appeal), and the July 1 / 30-day BOE deadline
+  // confirmed across the Department's own PDFs (calendar, petition form,
+  // Homeowner's Guide) — quoted only for what their own official search
+  // snippets state. dor.wa.gov HTML was readable; its PDFs were not
+  // extractable in this environment.
+  // ------------------------------------------------------------------
+  "wa-dor-levy-limit": {
+    sourceId: "wa-dor-levy-limit",
+    title: "The levy limit — Property Tax Levies, Part 1 (DOR)",
+    publisher: "Washington State Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://dor.wa.gov/book/export/html/926",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Washington",
+    jurisdictionLevel: "state",
+    jurisdictionId: "washington",
+    topic: "levy-limit",
+    notes:
+      "Read in full 2026-09-28. The Department's own statement of the levy limit: taxing districts increase their HIGHEST LAWFUL LEVY SINCE 1985 by up to one percent — districts with population under 10,000 must adopt an annual resolution for a limit factor of 101%, and districts of 10,000 or more use 100% plus the Implicit Price Deflator or 101%, whichever is LESS (with a supermajority 'substantial need' resolution allowing the 101% maximum). A 'levy lid lift' is the voter-approval means to exceed the limit. The constitutional 1% aggregate limit (Art. VII) sits on top as the outer bound.",
+    status: "verified",
+  },
+  "wa-dor-petition-boe": {
+    sourceId: "wa-dor-petition-boe",
+    title: "Taxpayer Petition to the County Board of Equalization (DOR form REV 64-0075)",
+    publisher: "Washington State Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://dor.wa.gov/sites/default/files/2023-09/64-0075.pdf",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Washington",
+    jurisdictionLevel: "state",
+    jurisdictionId: "washington",
+    topic: "appeal-filing",
+    notes:
+      "PDF could not be extracted in this environment; registered for what the form's own official search-result text states: 'This petition must be filed or postmarked by July 1 of the current assessment year or 30 days' (the form's continuation is the mailing-of-the-change-of-value-notice alternative). The July 1 / 30-day rule is independently stated on the Department's Property Tax Calendar PDF and Homeowner's Guide PDF in their own search snippets, and county BOE pages (Lewis, Lincoln, Kitsap, Skagit) state the same two-part deadline. The rule's two limbs are corroborated, but the form text itself was not read beyond the snippet.",
+    status: "verified",
+  },
+  "wa-bta-how-to-file": {
+    sourceId: "wa-bta-how-to-file",
+    title: "How to file an appeal — Washington State Board of Tax Appeals",
+    publisher: "Washington State Board of Tax Appeals (WSBTA)",
+    authorityLevel: "primary",
+    url: "https://bta.wa.gov/how-file-appeal",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Washington",
+    jurisdictionLevel: "state",
+    jurisdictionId: "washington",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. The Board's own process statement: WSBTA hears appeals from decisions of a County Board of Equalization or the Department of Revenue; MOST appeals must be filed within 30 DAYS of the mailing date of the decision being appealed, and the Board cannot extend deadlines or accept late appeals; separate INFORMAL and FORMAL property tax appeal forms (plus a DIRECT appeal route under RCW 84.40.038 requiring the joint signature of taxpayer, assessor and county board); hearings currently scheduled 18 to 24 months out because of the backlog; email filings before 5 p.m. on a business day count that day.",
+    status: "verified",
+  },
+
+  // ------------------------------------------------------------------
+  // NEW JERSEY — the Division of Taxation's own Assessment and Appeals page
+  // read in full (2026-09-28): it states the April 1 deadline, the May 1
+  // revaluation extension, the January 15 alternative calendar (Burlington,
+  // Gloucester, Monmouth), the Chapter 123 common level range (±15% of the
+  // average ratio), the $1M/$750K Tax Court thresholds, the 45-day Tax Court
+  // appeal, and added/omitted assessments. The County Tax Board Handbook and
+  // the Guide to Tax Appeal Hearings are PDFs the environment could not
+  // extract; the December 1 added/omitted deadline is corroborated by
+  // multiple independent county and assessor sources but no official page
+  // readable here states it, so it is presented with that caveat.
+  // ------------------------------------------------------------------
+  "nj-dor-lpt-appeal": {
+    sourceId: "nj-dor-lpt-appeal",
+    title: "Assessment and Appeals — NJ Division of Taxation, Local Property Branch",
+    publisher: "New Jersey Division of Taxation (Department of the Treasury)",
+    authorityLevel: "primary",
+    url: "https://www.nj.gov/treasury/taxation/lpt/lpt-appeal.shtml",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "New Jersey",
+    jurisdictionLevel: "state",
+    jurisdictionId: "new-jersey",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. The Division's own statement of the system: petitions to the County Board of Taxation (Form A-1 + A-1 Comp. Sale) or, for assessments over $1,000,000, directly to the State Tax Court — filed and RECEIVED by APRIL 1; MAY 1 where a municipal revaluation or reassessment was undertaken; JANUARY 15 in Burlington, Gloucester and Monmouth Counties (alternative assessment calendar). The burden: prove the assessment does not fairly represent the True Market Value Standard or the Common Level Range Standard — the common level range being plus or minus 15% of the district's average ratio (the Chapter 123 test). Added/omitted assessments (Form AA-1; Tax Court direct over $750,000). Tax Court appeal within 45 days of the County Board's judgment.",
+    status: "verified",
+  },
+
+  // ------------------------------------------------------------------
+  // MINNESOTA — four official reads (2026-09-28): the Department of Revenue's
+  // appeal page read in full (the LBAE/CBAE ladder with its meeting windows),
+  // the Department's Understanding Property Tax page read in full (the
+  // classification mechanics and the May 15 / Oct 15 installments), the Tax
+  // Court's own home page read in full, and Anoka County's appeal page read
+  // in full (the county view of the same ladder plus the April 1 notice
+  // mailing and the April 30 Tax Court deadline with its own example). The
+  // homestead exclusion parameters appear in official DOR PDF snippets but
+  // the dedicated page was captcha-blocked, so they are cited only where the
+  // snippet's own text states them.
+  // ------------------------------------------------------------------
+  "mn-dor-appealing": {
+    sourceId: "mn-dor-appealing",
+    title: "Appealing Property Value and Classification — Minnesota Department of Revenue",
+    publisher: "Minnesota Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://www.revenue.state.mn.us/appealing-property-value-and-classification",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Minnesota",
+    jurisdictionLevel: "state",
+    jurisdictionId: "minnesota",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. The Department's own statement of the ladder: contact the county assessor first; then the LOCAL Board of Appeal and Equalization (meetings between APRIL 1 and MAY 31; usually the city council or town board; cities may transfer their powers to the county, holding open book meetings instead) — appealing to the Local Board is a prerequisite for the county level; then the COUNTY Board of Appeal and Equalization (meetings in JUNE; usually the county commissioners). Or go DIRECTLY to Minnesota Tax Court — appeal by APRIL 30 OF THE FOLLOWING YEAR. The Valuation Notice shows the value and classification used for the following year's taxes; the tax AMOUNT itself cannot be appealed.",
+    status: "verified",
+  },
+  "mn-dor-understanding": {
+    sourceId: "mn-dor-understanding",
+    title: "Understanding Property Tax — Minnesota Department of Revenue",
+    publisher: "Minnesota Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://www.revenue.state.mn.us/understanding-property-tax",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Minnesota",
+    jurisdictionLevel: "state",
+    jurisdictionId: "minnesota",
+    topic: "assessment-system",
+    notes:
+      "Read in full 2026-09-28. The Department's statement of the mechanics: the county assessor sets estimated market value (EMV) and classification as of JANUARY 2; EMV minus deferments/exclusions/reductions becomes taxable market value (TMV); each classification has its own class rate set by law — TMV × class rate = tax capacity, and the levy is spread over tax capacity. Two notices each year: Truth in Taxation notices in NOVEMBER (proposed taxes) and property tax statements mailed by MARCH 31 (the prior year's value is used, so the tax amount cannot be appealed). Taxes due MAY 15 and OCTOBER 15 (November 15 for agricultural); $100 or less due in full May 15. Some seasonal-cabin and commercial-industrial property carries an additional state general tax.",
+    status: "verified",
+  },
+  "mn-tax-court-home": {
+    sourceId: "mn-tax-court-home",
+    title: "Minnesota Tax Court — official website",
+    publisher: "Minnesota Tax Court",
+    authorityLevel: "primary",
+    url: "https://mn.gov/tax-court/",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Minnesota",
+    jurisdictionLevel: "state",
+    jurisdictionId: "minnesota",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. The Court's own statement of its jurisdiction under Minnesota Statutes chapter 271: a specialized executive-branch court hearing (a) appeals of tax orders of the Commissioner of Revenue and (b) petitions of property tax VALUATIONS, CLASSIFICATION, EQUALIZATION and/or EXEMPTIONS. Confirms a petitioner may appeal to the county directly 'depending on the time of year' or proceed to the Court — the statutory basis for the direct-to-Tax-Court route the Department of Revenue's page also describes. Forms index on the same site.",
+    status: "verified",
+  },
+  "mn-anoka-appeal": {
+    sourceId: "mn-anoka-appeal",
+    title: "How to Appeal Your Value — Anoka County, Minnesota",
+    publisher: "Anoka County, Minnesota (Property Records & Taxation)",
+    authorityLevel: "primary",
+    url: "https://www.anokacountymn.gov/4279/How-to-Appeal-Your-Value",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Anoka County, Minnesota",
+    jurisdictionLevel: "county",
+    jurisdictionId: "minnesota",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. A county's own statement of the same ladder with the timing details the state pages leave to the notice: valuation notices mailed ON OR BEFORE APRIL 1 each year (value and classification as of January 2); open book vs. LBAE is set by the MUNICIPALITY — in cities holding their own LBAE you MUST appeal there first to reach the June CBAE, while open book cities go straight to the county; Tax Court petitions may be filed any time after the valuation notice is received and before APRIL 30 of the year the taxes are PAYABLE (the page's own example: the 2025 assessment's deadline is April 30, 2026). Also confirms the sales-study window (October 1 to September 30) assessors statewide use to derive values.",
+    status: "verified",
+  },
+
+  // ------------------------------------------------------------------
+  // CONNECTICUT — a state where the municipality is the administrator and
+  // the appeal body is a municipal Board of Assessment Appeals (BAA). No
+  // single state-agency page readable in this environment states the
+  // system, so the provenance follows the Maryland pattern: two municipal
+  // BAA pages read in full (2026-09-28), each naming the general statutes
+  // that govern them, plus the Judicial Branch's pathfinder PDF registered
+  // for its own search-result text only. The February 20 / March 20
+  // deadline structure is stated identically by both municipalities and
+  // corroborated by law-firm and legislative research summaries.
+  // ------------------------------------------------------------------
+  "ct-bridgeport-baa": {
+    sourceId: "ct-bridgeport-baa",
+    title: "Board of Assessment Appeals — City of Bridgeport",
+    publisher: "City of Bridgeport, Connecticut",
+    authorityLevel: "primary",
+    url: "https://www.bridgeportct.gov/government/boards-and-commissions/board-assessment-appeals",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Bridgeport, Connecticut",
+    jurisdictionLevel: "county",
+    jurisdictionId: "connecticut",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. A municipal BAA's own statement of its function under CGS § 12-110: the board meets in MARCH for real estate and personal property appeals and in SEPTEMBER for motor vehicle appeals; applications are submitted to the assessor's office between FEBRUARY 1 and FEBRUARY 20; under CGS § 12-111 the board may elect not to hear an appeal of commercial, industrial, utility or apartment property assessed over $1 million. Also notes the enlarged 15-member board a city council may appoint in a revaluation year and the year after.",
+    status: "verified",
+  },
+  "ct-middletown-baa": {
+    sourceId: "ct-middletown-baa",
+    title: "Assessment Appeals, Board of — City of Middletown",
+    publisher: "City of Middletown, Connecticut",
+    authorityLevel: "primary",
+    url: "https://www.middletownct.gov/435/Assessment-Appeals-Board-of",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Middletown, Connecticut",
+    jurisdictionLevel: "county",
+    jurisdictionId: "connecticut",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. The second municipal statement of the same statutory structure, with the timing details Bridgeport leaves out: the filing deadline is FEBRUARY 20 provided the Grand List was filed by January 31 — if the assessor received an extension, the deadline moves to MARCH 20 and the board meets in APRIL; appeals must be RECEIVED by the deadline and postmarks are not acceptable; real estate appeals must be based on the value at the time of the LAST REVALUATION, not current market; the board also meets in September for motor vehicles; written applications with the owner's estimate of value, reason, and signature (agent authorization allowed).",
+    status: "verified",
+  },
+  "ct-jud-pathfinder": {
+    sourceId: "ct-jud-pathfinder",
+    title: "Property Tax Appeals (Municipal) — Judicial Branch Law Library pathfinder",
+    publisher: "Connecticut Judicial Branch",
+    authorityLevel: "primary",
+    url: "https://www.jud.ct.gov/lawlib/Notebooks/Pathfinders/PropertyTaxAppeals.PDF",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Connecticut",
+    jurisdictionLevel: "state",
+    jurisdictionId: "connecticut",
+    topic: "appeal-process",
+    notes:
+      "PDF could not be extracted in this environment; registered for what its own official search-result text states: the pathfinder covers assessments appealed FROM a municipality's Board of Assessment Appeals TO the Superior Court, and quotes the condition that a property owner must make application to the Superior Court 'within two months of the date' of the BAA decision. The two-month Superior Court window is corroborated by multiple independent legal summaries; the PDF itself was not read beyond the snippet.",
+    status: "verified",
+  },
+
+  // ------------------------------------------------------------------
+  // WISCONSIN — the state DOR's own pages are JavaScript-rendered shells
+  // that return no body text to plain HTTP reads (the same behavior as
+  // Connecticut's portal), so the provenance again follows the Maryland
+  // pattern: two municipal assessor pages read in full (2026-09-28), plus
+  // the DOR's official PDFs registered for what their own search-result
+  // text states. The statutory chain (open book -> notice of intent ->
+  // objection -> DOR review or circuit court) is consistent across all
+  // reads and each element cites the governing statute through the pages
+  // that name it.
+  // ------------------------------------------------------------------
+  "wi-dor-bor-faq": {
+    sourceId: "wi-dor-bor-faq",
+    title: "Board of Review (BOR) — Filing Objections/Forms (DOR FAQ)",
+    publisher: "Wisconsin Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://www.revenue.wi.gov/Pages/FAQS/slf-bor.aspx",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Wisconsin",
+    jurisdictionLevel: "state",
+    jurisdictionId: "wisconsin",
+    topic: "appeal-process",
+    notes:
+      "Page is a JavaScript-rendered shell; no body text was readable in this environment. Registered as the official DOR page both municipal sources direct owners to for the objection form and process (Sun Prairie and Superior each link it as the filing authority). No claim on this site rests on its unread text — the process statements come from the municipal pages and the DOR publications' own search snippets.",
+    status: "verified",
+  },
+  "wi-dor-pb060": {
+    sourceId: "wi-dor-pb060",
+    title: "2026 Guide for Property Owners (DOR publication PB-060)",
+    publisher: "Wisconsin Department of Revenue",
+    authorityLevel: "primary",
+    url: "https://www.revenue.wi.gov/DOR%20Publications/pb060.pdf",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Wisconsin",
+    jurisdictionLevel: "state",
+    jurisdictionId: "wisconsin",
+    topic: "appeal-process",
+    notes:
+      "PDF could not be extracted in this environment; registered for what its own official search-result text states: the property owner must complete a Board of Review Objection form (PA-115), and the assessor must provide a Notice of Changed Assessment at least 15 days (30 days in revaluation years) before the board's first meeting. The 48-hour notice of intent is independently stated in the DOR's Guide for Board of Review Members (PB-056) search text and municipal pages. The PDF itself was not read beyond the snippet.",
+    status: "verified",
+  },
+  "wi-sun-prairie-appeal": {
+    sourceId: "wi-sun-prairie-appeal",
+    title: "Assessment Appeals — City of Sun Prairie (Assessor)",
+    publisher: "City of Sun Prairie, Wisconsin",
+    authorityLevel: "primary",
+    url: "https://cityofsunprairie.com/177/Assessment-Objections",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Sun Prairie, Wisconsin",
+    jurisdictionLevel: "county",
+    jurisdictionId: "wisconsin",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. The assessor's own statement of the process: meet with the assessing staff during OPEN BOOK (spring/summer) first; if unresolved, file a Formal Objection Form with the City Clerk to appear before the Board of Review — a quasi-judicial body hearing only SWORN oral testimony whose function is 'not one of valuation, but of deciding the validity of the facts presented'; the burden is on the owner to prove the property is inequitably assessed compared with the general level of assessment in the tax district; evidence is recent arm's-length sales of the subject or comparables, and an appraiser must be available to testify; the assessment date is always January 1. Links the DOR's slf-bor FAQ as the form source.",
+    status: "verified",
+  },
+  "wi-superior-appeal": {
+    sourceId: "wi-superior-appeal",
+    title: "If I Think My Value is Incorrect: More Options — City of Superior (Assessor)",
+    publisher: "City of Superior, Wisconsin",
+    authorityLevel: "primary",
+    url: "https://www.superiorwi.gov/612/More-Options",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Superior, Wisconsin",
+    jurisdictionLevel: "county",
+    jurisdictionId: "wisconsin",
+    topic: "appeal-process",
+    notes:
+      "Read in full 2026-09-28. The second-level routes after the Board of Review: a written appeal to the DEPARTMENT OF REVENUE within 20 days of receiving the decision or within 30 days of the clerk's affidavit — $100 filing fee, fair market value of the appealed property cannot exceed $1 million, and the Department may revalue before November 1 of the assessment year or within 60 days of the appeal, whichever is later, its value substituting for the original; OR an appeal to the CIRCUIT COURT within 90 days after the BOR's adjournment, where the court decides on the record the board created. Names the DOR's Property Assessment Appeal Guide as the detailed source.",
+    status: "verified",
+  },
+
+  "dcad-property-search": {
+    sourceId: "dcad-property-search",
+    title: "Find Property By Street Address — DCAD Search Appraisals",
+    publisher: "Dallas Central Appraisal District",
+    authorityLevel: "primary",
+    url: "https://www.dallascad.org/searchaddr.aspx",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Dallas County, Texas",
+    jurisdictionLevel: "county",
+    jurisdictionId: "texas",
+    topic: "dallas-property-search",
+    notes:
+      "Read live in a real browser session 2026-09-28 (the page is a classic ASP frameset that returns no body text to plain HTTP fetches — that is why the county gate had been blocked). Verified on the page itself: 'Search By: Owner Name / Account Number / Street Address / Business Name / Map', with address-number range search, a city selector covering Dallas County municipalities, and the note that the Residence Homestead Exemption Application form is available from the account details page. Sibling search pages: searchowner.aspx, SearchAcct.aspx. The map variant lives at maps.dcad.org.",
+    status: "verified",
+  },
+  "dcad-about": {
+    sourceId: "dcad-about",
+    title: "About DCAD — Dallas Central Appraisal District",
+    publisher: "Dallas Central Appraisal District",
+    authorityLevel: "primary",
+    url: "https://www.dallascad.org/aboutus/default.aspx",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Dallas County, Texas",
+    jurisdictionLevel: "county",
+    jurisdictionId: "texas",
+    topic: "dallas-about",
+    notes:
+      "DCAD's own about page, confirmed reachable in the 2026-09-28 browser session (title renders; body is frameset-structured). Used only for the district's role and services — no scale figures cited from it, because the figures in third-party search results were not read at the source.",
+    status: "verified",
+  },
   "hcad-home": {
     sourceId: "hcad-home",
     title: "Harris Central Appraisal District — Official Website",
@@ -354,6 +1407,21 @@ export const SOURCES: Record<string, SourceRecord> = {
     topic: "hcad",
     notes:
       "HCAD is a political subdivision of the State of Texas established in 1980; approximately 1.9 million parcels; largest appraisal district in Texas serving more than 600 taxing units.",
+    status: "verified",
+  },
+  "hcad-property-search": {
+    sourceId: "hcad-property-search",
+    title: "Property Search — HCAD (official)",
+    publisher: "Harris Central Appraisal District",
+    authorityLevel: "primary",
+    url: "https://hcad.org/property-search/property-search",
+    lastVerifiedDate: "2026-09-28",
+    jurisdiction: "Harris County, Texas",
+    jurisdictionLevel: "county",
+    jurisdictionId: "harris-county",
+    topic: "hcad-property-search",
+    notes:
+      "HCAD's official property-search page. Search options are by account number, property address, and owner name. Navigation-level confirmation via hcad.org site sections (Owners / Agents / Public Data all reference Property Search); the page body itself was not readable from this environment (HTTP 403 to automated fetch) — the URL is the district's own navigation target, not an invented deep link.",
     status: "verified",
   },
   "hcad-ifile": {

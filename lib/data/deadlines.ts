@@ -10,6 +10,7 @@ export type DeadlineType =
   | "exemption-application"
   | "rendition"
   | "appeal-district-court"
+  | "late-remedy"
   | "payment"
   | "hearing-scheduling"
   | "vab-petition-filing"
@@ -138,7 +139,31 @@ export const DEADLINES: DeadlineRecord[] = [
         supports: "Comptroller description of late-filed protests.",
       },
     ],
-    lastVerifiedDate: "2026-09-17",
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "tx-missed-deadline-corrections",
+    jurisdiction: "Texas",
+    jurisdictionId: "texas",
+    taxYear: "recurring annual rule",
+    deadlineType: "late-remedy",
+    deadlineBasis: "rule-based",
+    rule:
+      "Remedies that survive a missed protest deadline: a protest for failure to receive a required notice (§ 41.411), filed before the delinquency date; a motion for correction of a substantially over-appraised homestead (at least 1/4 over) or non-homestead (at least 1/3 over), filed with the undisputed taxes before the delinquency date; and a motion to correct a clerical error, multiple appraisal, or ownership error, which may cover the current and five preceding tax years. The roll cannot be corrected for a year the property was subject to a protest.",
+    anchoredTo: "the delinquency date for the tax year",
+    sources: [
+      {
+        sourceId: "tx-comptroller-appraisal-protests",
+        supports:
+          "Comptroller 'Late-Filed Protests' section: failure-to-receive-notice protests, 1/4 and 1/3 correction motions, clerical/ownership motions, joint motions, and the no-correction-after-protest rule.",
+      },
+      {
+        sourceId: "tx-tax-code-41-411",
+        supports: "§ 41.411 protest of failure to give notice.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
     verificationStatus: "source-verified",
   },
   {
@@ -1180,6 +1205,119 @@ export const DEADLINES: DeadlineRecord[] = [
     lastVerifiedDate: "2026-09-23",
     verificationStatus: "source-verified",
   },
+  // ------------------------------------------------------------------
+  // COLORADO — state-level rules, verified 2026-09-28 against the Division
+  // of Property Taxation's own pages (dpt.colorado.gov). Two properties of
+  // this jurisdiction shape every date below: statutory dates shift for
+  // weekends and holidays (the Division's own footnote), and counties over
+  // 300,000 population must use an ALTERNATE schedule whose later steps run
+  // roughly two months behind the standard one. Real property (below) and
+  // personal property (NOV June 15, protest June 30, CBOE July 20) run on
+  // different calendars and must never be mixed.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "co-nov-real-property",
+    jurisdiction: "Colorado",
+    jurisdictionId: "colorado",
+    taxYear: "recurring annual rule (real property revalued in odd-numbered years)",
+    deadlineType: "notice-delivery",
+    deadlineBasis: "fixed-date",
+    rule:
+      "Real property Notices of Valuation are mailed by May 1 of each year. The notice lists the location, classification, value-relevant characteristics, and the actual value for the prior and current years. Statutory dates shift for weekends and holidays — the date printed on the notice and the assessor's published dates are the ones to rely on.",
+    fixedDate: "By May 1 (annual mailing; real property revalued in odd years)",
+    sources: [
+      {
+        sourceId: "co-dpt-understanding",
+        supports:
+          "Real property NOV mailed by May 1; contents of the notice; the weekend/holiday footnote.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "co-protest-real-property",
+    jurisdiction: "Colorado",
+    jurisdictionId: "colorado",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    rule:
+      "An owner who disagrees with the actual value or classification presents oral or written objections to the county assessor during the protest period, May 1 through June 8 for real property. Counties with populations over 300,000 are required to use an alternate schedule, and any county may elect it — check the assessor's published dates.",
+    anchoredTo: "the May 1 notice mailing window",
+    sources: [
+      {
+        sourceId: "co-dpt-understanding",
+        supports:
+          "Protest period May 1 - June 8 (real property); alternate schedule required in counties over 300,000 population and elective in others.",
+      },
+      {
+        sourceId: "co-dpt-property-tax-map",
+        supports:
+          "Appeal of actual value between May 1 and June 8 — second independent DPT confirmation of the deadline.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "co-nod-and-cboe",
+    jurisdiction: "Colorado",
+    jurisdictionId: "colorado",
+    taxYear: "recurring annual rule",
+    deadlineType: "decision",
+    deadlineBasis: "rule-based",
+    rule:
+      "The assessor must decide the protest and mail a Notice of Determination. Standard schedule: the county board of equalization sits from July 1 and must conclude hearings and decide by August 5, notifying the owner in writing within five business days. Alternate schedule (large counties): NOD by August 15, hearings from September 1, responses by November 1.",
+    anchoredTo: "the protest period; schedule depends on county population",
+    sources: [
+      {
+        sourceId: "co-dpt-understanding",
+        supports:
+          "The standard/alternate schedule table (NOD, CBOE hearings, CBOE response) for real property.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "co-appeal-beyond-cboe",
+    jurisdiction: "Colorado",
+    jurisdictionId: "colorado",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-district-court",
+    deadlineBasis: "rule-based",
+    rule:
+      "A county board of equalization decision can be appealed to an arbitrator, the district court, or the state Board of Assessment Appeals within 30 days of the date the decision was mailed.",
+    anchoredTo: "the CBOE decision's mailing date",
+    sources: [
+      {
+        sourceId: "co-dpt-understanding",
+        supports: "The 30-day appeal to arbitrator / district court / BAA.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "co-payment-installments",
+    jurisdiction: "Colorado",
+    jurisdictionId: "colorado",
+    taxYear: "recurring annual rule",
+    deadlineType: "payment",
+    deadlineBasis: "fixed-date",
+    rule:
+      "Tax bills reflecting the prior year's taxes are mailed as soon as possible after January 1. Amounts above $25 may be paid in one payment by April 30 or in two equal halves — the first due by the last day of February, the second by June 15. Amounts of $25 or less are due in full by April 30.",
+    fixedDate: "February 28/29 (first half) · April 30 (full or ≤$25) · June 15 (second half)",
+    sources: [
+      {
+        sourceId: "co-dpt-understanding",
+        supports: "The payment schedule and the $25 rule.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
   {
     deadlineId: "or-assessment-date",
     jurisdiction: "Oregon",
@@ -1359,6 +1497,1322 @@ export const DEADLINES: DeadlineRecord[] = [
       },
     ],
     lastVerifiedDate: "2026-09-23",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // NORTH CAROLINA — tax year 2026. The appeal ladder runs informal review
+  // -> county Board of Equalization and Review (BOER) -> Property Tax
+  // Commission (PTC) -> courts. The BOER's window is unusual: it convenes on
+  // a set date (Orange: April 30, 2026) and the filing window closes when the
+  // board ADJOURNS, so the end date is set by the board's own schedule.
+  // Verified 2026-09-28 (NCDOR pages + Orange County read in full; ncleg.gov
+  // 403, so G.S. sections are cited through official pages that name them).
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "nc-revaluation-date",
+    jurisdiction: "North Carolina",
+    jurisdictionId: "north-carolina",
+    taxYear: "recurring rule (revaluation cycle set per county; Orange County revalues every 4 years)",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the county's most recent revaluation date",
+    rule:
+      "Real property must be reappraised at least every eight years, and many counties revalue more often — Orange County completed a revaluation effective January 1, 2025, with the next planned January 1, 2029. Between revaluations the value carries over, with changes limited to what the statute allows. Evidence in an appeal must speak to the property's worth on the most recent revaluation date, even if the market has moved since.",
+    sources: [
+      {
+        sourceId: "nc-dor-types-property-taxed",
+        supports:
+          "Real property reappraised at least every eight years (G.S. 105-286), with off-cycle changes limited by G.S. 105-287.",
+      },
+      {
+        sourceId: "nc-orange-revaluation",
+        supports:
+          "Orange County's 2025 revaluation (previous 2021, next 2029) and the governing statutes the page itself names (105-283, 105-286, 105-287).",
+      },
+      {
+        sourceId: "nc-orange-appeal",
+        supports:
+          "January 1, 2025 is the valuation date used for appeals until the next revaluation; evidence must show worth as of that date.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "nc-informal-review",
+    jurisdiction: "North Carolina",
+    jurisdictionId: "north-carolina",
+    taxYear: "2026 (Orange County dates)",
+    deadlineType: "informal-review",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the county's published informal-review window",
+    rule:
+      "The first step is an informal review by the county assessor's staff — a county appraiser, not the board, reviews the evidence and sends a decision. Orange County accepted informal appeals January 1 through March 31, 2026; other counties publish their own windows. If the informal decision is unsatisfying, the formal appeal opens when the board convenes.",
+    sources: [
+      {
+        sourceId: "nc-dor-appeal-process",
+        supports: "The informal review as the first step of the appeal ladder.",
+      },
+      {
+        sourceId: "nc-orange-appeal",
+        supports:
+          "Informal appeals accepted January 1, 2026 through March 31, 2026, reviewed by a county appraiser, with a decision by mail or email.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "nc-boer-formal-appeal",
+    jurisdiction: "North Carolina",
+    jurisdictionId: "north-carolina",
+    taxYear: "2026 (Orange County dates)",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the Board of Equalization and Review's convening and adjournment dates",
+    rule:
+      "A formal appeal is a hearing before the county Board of Equalization and Review, a citizen board appointed by the county commissioners. The board convenes on a published date — the statute expects boards to convene around the first week of April; Orange County's convenes April 30, 2026 — and the filing window closes when the board adjourns. Orange County's formal appeal period runs April 1 through June 30, 2026 ('when the Board adjourns'). The end date is the board's own schedule, so the county's published dates are the operative ones. There is no filing fee and a lawyer is not required.",
+    sources: [
+      {
+        sourceId: "nc-dor-appeal-process",
+        supports:
+          "The Board of Equalization and Review convenes around the first week in April; the board hears formal appeals.",
+      },
+      {
+        sourceId: "nc-orange-appeal",
+        supports:
+          "BOER convenes April 30, 2026; formal appeal period April 1 - June 30, 2026 ('when the Board adjourns'); no cost to file.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "nc-ptc-appeal",
+    jurisdiction: "North Carolina",
+    jurisdictionId: "north-carolina",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the date of the Board of Equalization and Review's decision letter",
+    rule:
+      "A decision of the county board may be appealed to the state Property Tax Commission in Raleigh within 30 days of the decision letter. Instructions are included with the board's notice. A PTC decision can be appealed further to the NC Court of Appeals on legal or procedural issues.",
+    sources: [
+      {
+        sourceId: "nc-dor-appeal-process",
+        supports: "PTC appeal within 30 days of the board's decision.",
+      },
+      {
+        sourceId: "nc-orange-appeal",
+        supports:
+          "PTC appeal due within 30 days of the Board decision letter, with instructions included; further appeal to the Court of Appeals.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "nc-personal-property-listing",
+    jurisdiction: "North Carolina",
+    jurisdictionId: "north-carolina",
+    taxYear: "recurring annual rule",
+    deadlineType: "rendition",
+    deadlineBasis: "fixed-date",
+    rule:
+      "Personal property is listed (declared) during January of each year with the county assessor. Real property needs no annual listing — it stays on the roll from revaluation to revaluation.",
+    fixedDate: "January (annual listing period)",
+    sources: [
+      {
+        sourceId: "nc-dor-types-property-taxed",
+        supports: "Personal property is listed during January.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // OHIO — the complaint window is a fixed seasonal window: January 1
+  // through March 31 of the following tax year (or the last day to pay the
+  // first half, whichever is EARLIER — the two branches the statute and the
+  // official DTE Form 1 instructions state). Verified 2026-09-28 against
+  // tax.ohio.gov, the BTA's own pages, and Franklin County's BOR page read
+  // live; codes.ohio.gov timed out, so ORC sections are cited through
+  // official pages that name them.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "oh-revaluation-cycle",
+    jurisdiction: "Ohio",
+    jurisdictionId: "ohio",
+    taxYear: "recurring rule (six-year cycle per county)",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the county's position in the six-year reappraisal cycle",
+    rule:
+      "Ohio's 88 counties are reappraised on a six-year cycle, with a triennial update of values in between; the Department of Taxation oversees and approves the county revaluations, which the county auditor carries out. Taxable (assessed) value is 35% of true value. Whether your county was just reappraised, is mid-cycle, or had a triennial update changes what a year-over-year comparison means.",
+    sources: [
+      {
+        sourceId: "oh-dor-reappraisal",
+        supports:
+          "The six-year (sexennial) reappraisal cycle, the triennial update, the auditor's role, and the 35% assessment ratio.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "oh-bor-complaint-window",
+    jurisdiction: "Ohio",
+    jurisdictionId: "ohio",
+    taxYear: "recurring annual rule (Franklin County: tax year 2026 complaints through March 31, 2027)",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo:
+      "the tax year: the complaint runs January 1 through March 31 of the following tax year, or the last day to pay first-half taxes, whichever is earlier",
+    rule:
+      "A complaint against the valuation of real property (DTE Form 1) is filed with the county auditor for the county Board of Revision. The filing window runs January 1 through March 31 of the following tax year — Franklin County states that tax year 2026 complaints are accepted through March 31, 2027 — with the official complaint form stating the alternative earlier cutoff of the last day to pay first-half taxes where that applies. Electronic filing through the Board of Tax Appeals portal is available alongside the county's own channels.",
+    sources: [
+      {
+        sourceId: "oh-franklin-bor",
+        supports:
+          "'The Board of Revision (BOR) will be accepting tax year 2026 complaints through March 31, 2027,' with DTE Form 1 and e-filing confirmed.",
+      },
+      {
+        sourceId: "oh-dor-property-tax-hub",
+        supports:
+          "DTE Form 1 available through the Department's hub; complaints run through the county auditor.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "oh-bta-appeal",
+    jurisdiction: "Ohio",
+    jurisdictionId: "ohio",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the mailing date of the Board of Revision's decision",
+    rule:
+      "A Board of Revision decision may be appealed to the state Board of Tax Appeals within 30 days of the decision being mailed, and the notice of appeal must be filed with BOTH the Board of Tax Appeals and the county Board of Revision. The Board also offers a small claims docket for residential appeals below the value threshold, an informal alternative to the standard docket.",
+    sources: [
+      {
+        sourceId: "oh-bta-appeal-info",
+        supports:
+          "The 30-day window from the BOR decision mailing, the dual-filing requirement, and the small claims docket.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // MASSACHUSETTS — the abatement clock is anchored to the FIRST ACTUAL
+  // bill, not to an assessment notice: quarterly municipalities send the
+  // abatement deadline with the third quarterly bill (usually February 1).
+  // The deemed-denial and ATB rules are three-month counts. Verified
+  // 2026-09-28 against the Citizen Information Service's abatement guide
+  // read in full; mass.gov and malegislature.gov were not readable.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "ma-abatement-application",
+    jurisdiction: "Massachusetts",
+    jurisdictionId: "massachusetts",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the due date of the first actual tax bill of the fiscal year",
+    rule:
+      "An abatement application (State Tax Form 128) must be filed with the board of assessors by the due date of the first ACTUAL tax bill for the fiscal year. With quarterly billing that is the third quarterly bill, usually February 1. The application must be filed even while an informal discussion with the assessors is under way, and the tax must be paid on time — failing to pay on time can forfeit the appeal rights.",
+    sources: [
+      {
+        sourceId: "ma-cis-abatement",
+        supports:
+          "The first-actual-bill deadline, the third-quarterly-bill rule (usually February 1), Form 128, and the pay-on-time warning.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ma-deemed-denial",
+    jurisdiction: "Massachusetts",
+    jurisdictionId: "massachusetts",
+    taxYear: "recurring annual rule",
+    deadlineType: "decision",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the filing of the abatement application",
+    rule:
+      "The assessors have three months to act on an abatement application. They may extend that period in writing, but if they neither grant nor deny the application within three months (or the extended period), the application is DEEMED DENIED — the owner does not have to wait for a letter that never comes.",
+    sources: [
+      {
+        sourceId: "ma-cis-abatement",
+        supports:
+          "Three months to act, written extension, and deemed denial when no decision issues.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ma-atb-appeal",
+    jurisdiction: "Massachusetts",
+    jurisdictionId: "massachusetts",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the assessors' decision (or the deemed denial), with the payment precondition for larger appeals",
+    rule:
+      "An appeal from the assessors' decision — or from a deemed denial — goes to the Appellate Tax Board within three months. For appeals over $5,000, the tax (or, where an abatement was denied in part, the portion not being appealed) must have been PAID and be in the collector's hands by the bill's due date; a lower assessed value is not itself enough.",
+    sources: [
+      {
+        sourceId: "ma-cis-abatement",
+        supports:
+          "Three-month ATB appeal window and the payment-in-collector's-hands rule for appeals over $5,000.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ma-certification-cycle",
+    jurisdiction: "Massachusetts",
+    jurisdictionId: "massachusetts",
+    taxYear: "recurring rule (three-year certification cycle)",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the Department of Revenue's three-year certification cycle for each municipality",
+    rule:
+      "Municipal assessors value property locally, and the Department of Revenue's Bureau of Local Assessment certifies those values once every three years. Proposition 2 1/2 separately limits the total levy a municipality may raise. A town three years past its last certification is working from re-certified figures; one freshly certified has just been through a full revaluation.",
+    sources: [
+      {
+        sourceId: "ma-dor-bla",
+        supports:
+          "The Bureau of Local Assessment's three-year certification of municipal values (stated in the Bureau's own official descriptions; the page itself was not readable from this environment).",
+      },
+      {
+        sourceId: "ma-cis-abatement",
+        supports: "Proposition 2 1/2 as the limit on the total levy.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // VIRGINIA — the state sets NO single filing date: the Code requires each
+  // locality with a board of equalization to set its own application
+  // deadline by ordinance, no earlier than 30 days after the notice hearing
+  // (§ 58.1-3330/3378). Verified 2026-09-28 by reading the Code of Virginia
+  // sections directly on the official law portal. § 58.1-3983.1 (personal
+  // property) is deliberately absent — these records cover real property.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "va-100-percent-standard",
+    jurisdiction: "Virginia",
+    jurisdictionId: "virginia",
+    taxYear: "recurring annual rule",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the locality's annual assessment of real estate",
+    rule:
+      "All real estate in Virginia is assessed at 100% of fair market value — the state's assessment standard — by the Commissioner of the Revenue or the local assessor. There is no fractional assessment ratio to model and no cap on year-over-year change: a market rise can pass straight through to the assessment.",
+    sources: [
+      {
+        sourceId: "va-code-58-1-3200",
+        supports:
+          "§ 58.1-3200(A) assessment at 100% of fair market value; § 58.1-3201 the local assessing officer.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "va-notice-of-change",
+    jurisdiction: "Virginia",
+    jurisdictionId: "virginia",
+    taxYear: "recurring annual rule",
+    deadlineType: "notice-delivery",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the hearing before the local board of assessment reviews",
+    rule:
+      "Where a real estate assessment has been increased, the local board must give the owner notice of the change and an opportunity to be heard. The notice must state the new assessment AND show the two preceding years' assessments, and it must reach the owner at least 15 days before the hearing. That two-year comparison printed on the notice is what makes a year-over-year look at the figures legitimate here.",
+    sources: [
+      {
+        sourceId: "va-code-58-1-3330",
+        supports:
+          "Notice of an increased assessment showing the new and two prior years' assessments, at least 15 days before the hearing.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "va-boe-application",
+    jurisdiction: "Virginia",
+    jurisdictionId: "virginia",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the locality's ordinance, no earlier than 30 days after the notice hearing (§ 58.1-3330)",
+    rule:
+      "An application to the locality's board of equalization is filed by a deadline the LOCALITY sets by ordinance, and the ordinance cannot set it earlier than 30 days after the notice hearing required by § 58.1-3330. There is no single statewide date: read your locality's ordinance or your notice. An application is deemed timely if the postmark falls within the period.",
+    sources: [
+      {
+        sourceId: "va-code-58-1-3378",
+        supports:
+          "Locality-set deadline by ordinance, the 30-day floor after the notice hearing, and the postmark rule.",
+      },
+      {
+        sourceId: "va-code-58-1-3330",
+        supports: "The hearing the 30-day floor is measured from.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "va-circuit-court-appeal",
+    jurisdiction: "Virginia",
+    jurisdictionId: "virginia",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-district-court",
+    deadlineBasis: "rule-based",
+    anchoredTo:
+      "the first notice of assessment, the tax year, and any board determination — the latest of the statutory limits",
+    rule:
+      "An appeal of a real property assessment to the circuit court is an original proceeding heard de novo. The filing window is the LATEST of: three years from the last day of the tax year, one year from the first notice of assessment, or one year from the final determination of a board of equalization application. Whether or not an administrative appeal was filed, the circuit court route stays open until those limits close it — and the assessment is presumed correct, with the burden on the taxpayer (§ 58.1-3379).",
+    sources: [
+      {
+        sourceId: "va-code-58-1-3984",
+        supports:
+          "The circuit court route, the latest-of three limits, and the de novo hearing.",
+      },
+      {
+        sourceId: "va-code-58-1-3379",
+        supports: "The presumption of correctness and the taxpayer's burden.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // NEW YORK — tax year 2026 rules. New York's calendar is municipal: the
+  // statewide dates below are the "most communities" dates the Department
+  // publishes, and every one carries the same instruction — confirm with
+  // your assessor (the Municipal Data Portal lists each municipality's
+  // actual dates). Verified 2026-09-28 from four tax.ny.gov pages read in
+  // full; RPTL sections are cited through pages that name them.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "ny-valuation-and-taxable-status",
+    jurisdiction: "New York",
+    jurisdictionId: "new-york",
+    taxYear: "recurring annual rule (dates 'in most communities')",
+    deadlineType: "assessment-date",
+    deadlineBasis: "fixed-date",
+    rule:
+      "Two dates set what the roll shows: the VALUATION DATE (July 1 of the prior year in most communities) is the date the property's value is measured as of, and the TAXABLE STATUS DATE (March 1 in most communities) is the date its condition and ownership are set as of. Exemption applications are due by Taxable Status Date. A January fire on a home valued the previous July 1 is assessed as a vacant lot; the same fire on March 15 is assessed as a house. The gap between valuation date and tentative roll is deliberate — it lets assessors and taxpayers use all available sales.",
+    fixedDate: "Valuation: July 1 (prior year) · Taxable status: March 1 — both 'in most communities'",
+    sources: [
+      {
+        sourceId: "ny-tax-property-tax-calendar",
+        supports:
+          "The seven owner-facing dates, the valuation-date definition with worked examples, and the confirm-with-your-assessor instruction.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ny-tentative-roll",
+    jurisdiction: "New York",
+    jurisdictionId: "new-york",
+    taxYear: "recurring annual rule",
+    deadlineType: "notice-delivery",
+    deadlineBasis: "fixed-date",
+    rule:
+      "The tentative assessment roll is made public on May 1 in most communities and must be available from the municipal website within ten days. It shows the assessment, the assessor's estimate of market value, and the uniform percentage for every taxable property. Check your assessment soon after Tentative Roll Date and before Grievance Day — only the current TENTATIVE roll can be grieved, and prior years cannot.",
+    fixedDate: "May 1 (in most communities)",
+    sources: [
+      {
+        sourceId: "ny-tax-property-tax-calendar",
+        supports: "Tentative Roll Date May 1; availability on the municipal website within ten days.",
+      },
+      {
+        sourceId: "ny-tax-grievance-procedures",
+        supports: "Only the assessment on the current tentative assessment roll can be grieved.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ny-grievance-day",
+    jurisdiction: "New York",
+    jurisdictionId: "new-york",
+    taxYear: "recurring annual rule (dates vary by municipality)",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo:
+      "Grievance Day, the day the Board of Assessment Review meets to hear complaints — the fourth Tuesday in May in most communities, with published exceptions",
+    rule:
+      "The grievance (Form RP-524) is filed with the assessor or the Board of Assessment Review by GRIEVANCE DAY: the fourth Tuesday in May in most communities. The exceptions are the rule, not the anomaly: New York City (March 15 for Class One, March 1 for other classes), Nassau County (March 1), Suffolk County towns (third Tuesday in May), Westchester County towns (third Tuesday in June), villages that assess (typically the third Tuesday in February), and municipalities sharing an assessor (which may adopt dates between the fourth Tuesday in May and the second Tuesday in June). A mailed form must be RECEIVED by Grievance Day. There is no cost, and a lawyer is not required. On or before Grievance Day the owner and assessor may also stipulate to a reduced assessment — which then bars both further BAR review and judicial review for that year.",
+    sources: [
+      {
+        sourceId: "ny-tax-grievance-procedures",
+        supports:
+          "Grievance Day definition and exceptions, RP-524 filing, the received-by rule, the stipulation consequence, and the no-cost/no-lawyer statement.",
+      },
+      {
+        sourceId: "ny-tax-property-tax-calendar",
+        supports: "Grievance Day as the fourth Tuesday in May in most communities.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ny-judicial-review",
+    jurisdiction: "New York",
+    jurisdictionId: "new-york",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-district-court",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the filing of the final assessment roll (July 1 in most communities) or notice of the filing, whichever is later",
+    rule:
+      "Judicial review must be initiated within 30 DAYS of the filing of the final assessment roll — or of notice of that filing, whichever is later. The small-claims route (SCAR) is available to owners who occupy one-, two- or three-family homes used exclusively for residential purposes (or owners of vacant land too small for such a dwelling), with a $30 filing fee, through the Unified Court System. All other owners proceed by tax certiorari in State Supreme Court under Article 7 of the Real Property Tax Law, where an attorney is strongly recommended.",
+    sources: [
+      {
+        sourceId: "ny-tax-grievance-procedures",
+        supports:
+          "The 30-day rule, SCAR eligibility and fee, and the certiorari route.",
+      },
+      {
+        sourceId: "ny-tax-property-tax-calendar",
+        supports: "Final Roll Date July 1; judicial review within 30 days following.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ny-tax-bills",
+    jurisdiction: "New York",
+    jurisdictionId: "new-york",
+    taxYear: "recurring annual rule",
+    deadlineType: "payment",
+    deadlineBasis: "fixed-date",
+    rule:
+      "School property tax bills are mailed at the beginning of September in most communities, and municipal and county bills at the beginning of January; payment deadlines vary among school districts and municipalities. The same assessment feeds both bills, which is why an assessment reduced after Grievance Day shows up in both the September and January figures.",
+    fixedDate: "September (school) · January (municipal and county) — mailing, 'in most communities'",
+    sources: [
+      {
+        sourceId: "ny-tax-property-tax-calendar",
+        supports: "School bills mailed in the beginning of September; municipal and county bills at the beginning of January.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // GEORGIA — tax year 2026 rules. Every rule below was read on a
+  // dor.georgia.gov page (2026-09-28). Georgia's system is county-run on a
+  // statewide 40% standard with NO state revaluation schedule — values are
+  // set annually as of January 1 — and the appeal route declares itself in
+  // the first filing.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "ga-annual-assessment",
+    jurisdiction: "Georgia",
+    jurisdictionId: "georgia",
+    taxYear: "recurring annual rule",
+    deadlineType: "assessment-date",
+    deadlineBasis: "fixed-date",
+    rule:
+      "All property is returned and assessed at fair market value every year (O.C.G.A. 48-5-6), with the value established as of January 1 (O.C.G.A. 48-5-2). There is no state-mandated revaluation schedule: counties review their digests annually against sales data and update values at the frequency their market warrants. The assessed value is 40% of fair market value, and the tax is the millage rate applied to assessed value after exemptions.",
+    fixedDate: "January 1 (valuation date, annually)",
+    sources: [
+      {
+        sourceId: "ga-dor-property-faq",
+        supports:
+          "Annual fair-market-value assessment as of January 1, the 40% ratio, the worked $100,000 example, and the no-state-schedule statement.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ga-assessment-notice",
+    jurisdiction: "Georgia",
+    jurisdictionId: "georgia",
+    taxYear: "recurring annual rule",
+    deadlineType: "notice-delivery",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the county board of tax assessors' annual mailing, typically in spring",
+    rule:
+      "The county board of tax assessors must send an ANNUAL assessment notice for real property (and a notice whenever it disagrees with a personal-property return). When the notice reflects a CHANGE in assessment, it must give the owner a knowledgeable contact and, where the increase exceeds 15%, a non-technical explanation of the basis plus the right to view or copy the records used.",
+    sources: [
+      {
+        sourceId: "ga-dor-property-faq",
+        supports: "The annual assessment notice requirement for real property.",
+      },
+      {
+        sourceId: "ga-dor-bill-of-rights",
+        supports:
+          "The change-of-notice contents: contact person, the 15% explanation threshold, and access to the records used.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ga-45-day-appeal",
+    jurisdiction: "Georgia",
+    jurisdictionId: "georgia",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the date the Assessment Notice was mailed",
+    rule:
+      "The written appeal is filed with the county Board of Tax Assessors within 45 DAYS of the date the Assessment Notice was mailed — the Department states plainly that missing it forfeits the appeal rights. The appeal may be based on taxability, value, uniformity and/or a denied exemption, and in the initial written dispute the owner must DECLARE a method: the county Board of Equalization, a Hearing Officer, or an Arbitrator. The state's uniform form is PT-311A; email filing works only where the board has adopted an electronic-submission policy. When the board CHANGED the owner's returned value, the burden of proving the change rests on the board — and stays there even into superior court; and if the final determination lands at 85 percent or less of the appeal-stage valuation, the owner recovers costs and reasonable attorney's fees.",
+    sources: [
+      {
+        sourceId: "ga-dor-pt311a",
+        supports: "The 45-day rule, the filing office, and the declared method of appeal.",
+      },
+      {
+        sourceId: "ga-dor-property-faq",
+        supports: "The appeal grounds and the three appeal methods.",
+      },
+      {
+        sourceId: "ga-dor-bill-of-rights",
+        supports:
+          "The board's burden of proof, the bound-grounds rule, the one-time reschedule, and the 85% fee-and-costs provision.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ga-homestead-exemption",
+    jurisdiction: "Georgia",
+    jurisdictionId: "georgia",
+    taxYear: "recurring annual rule",
+    deadlineType: "exemption-application",
+    deadlineBasis: "fixed-date",
+    rule:
+      "The homestead exemption requires owning and occupying the home as your legal residence as of January 1 (O.C.G.A. § 48-5-40), with the application filed with the county tax commissioner (or the delegated tax assessor in some counties) by the property-tax-return deadline of April 1. Georgia has extended this: a homeowner may now apply beyond April 1 up to the END of their 45-day appeal window. The state standard exemption is $2,000 deducted from the 40% assessed value; many counties add local exemptions, including valuation-freeze exemptions that hold the assessment at a base year while the owner resides there.",
+    fixedDate: "April 1 (historic deadline; now extendable to the end of the 45-day appeal window)",
+    sources: [
+      {
+        sourceId: "ga-dor-homestead",
+        supports:
+          "January 1 occupancy requirement, the April 1 return-deadline rule, the extended 45-day window, the $2,000 standard exemption, and the local valuation-freeze roster.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ga-tax-payment",
+    jurisdiction: "Georgia",
+    jurisdictionId: "georgia",
+    taxYear: "recurring annual rule",
+    deadlineType: "payment",
+    deadlineBasis: "fixed-date",
+    rule:
+      "Property taxes are normally due December 20 in most counties, though some counties set a different date; taxpayers have 60 days from the date of billing to pay. The county tax commissioner bills and collects for the county, school and state.",
+    fixedDate: "December 20 (most counties) · 60 days from billing",
+    sources: [
+      {
+        sourceId: "ga-dor-property-faq",
+        supports: "The December 20 norm, the 60-day window, and the tax commissioner's collection role.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // MARYLAND — tax year 2026 rules. Maryland assesses centrally at the state
+  // level on a triennial cycle with a three-year phase-in and a 10%/year
+  // homestead cap on the bill side. The appeal ladder is 45 days -> 30 days
+  // -> 30 days, stated with statute cites on the Tax Court's own procedures
+  // page. Verified 2026-09-28; dat.maryland.gov 403s, so the notice timing is
+  // presented as "typically late December" (DLS fiscal note + county pages).
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "md-triennial-cycle",
+    jurisdiction: "Maryland",
+    jurisdictionId: "maryland",
+    taxYear: "recurring rule (triennial cycle)",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the triennial reassessment cycle, with each county divided into three regions",
+    rule:
+      "Maryland is the only state that assesses centrally at the state level: SDAT appraises all real property at 100% of market value and certifies the values to the counties, which set rates and bill. Real property has been reassessed on a three-year cycle since 1980 — about one-third of each county's properties each year. A NOTICE OF ASSESSMENT (typically mailed in late December for a January 1 date of finality) discloses both the old and new values, and an INCREASE is phased in over three years: a $30,000 increase adds $10,000 per year to the old value. Decreases take full effect immediately.",
+    sources: [
+      {
+        sourceId: "md-archives-sdat-functions",
+        supports:
+          "State-level centralization, the 100% market-value standard since 2001, the triennial cycle with one-third per year, the three-year phase-in with the $30,000 example, and the notice of any change.",
+      },
+      {
+        sourceId: "md-mgaleg-hb1088",
+        supports: "Assessment notices typically mailed in late December (official DLS fiscal note text).",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "md-supervisor-appeal",
+    jurisdiction: "Maryland",
+    jurisdictionId: "maryland",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the date printed on the notice of assessment",
+    rule:
+      "The first appeal — on value or classification — goes to the Supervisor of Assessments for the county within 45 DAYS of the notice's date (online filing is available through the state's own appeal form). The Supervisor or a designee holds the hearing and mails a final notice. Separately, in the two years of the cycle when no new assessment notice arrives, a PETITION FOR REVIEW may be filed at any time within three years of the last final notice — but on or before the date of finality for the next taxable year — and it is also heard by the Supervisor. And an owner whose deed was recorded between January 1 and June 30 may appeal within 60 days of the recording date.",
+    sources: [
+      {
+        sourceId: "md-tax-court-procedures",
+        supports:
+          "The 45-day Supervisor appeal (TP 14-502(a)(1)), the three-year petition for review (TP 14-503), and the hearing-and-final-notice sequence.",
+      },
+      {
+        sourceId: "md-sdat-appeal-form",
+        supports: "The state's online appeal form: within 45 days of the notice date.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "md-ptaab-appeal",
+    jurisdiction: "Maryland",
+    jurisdictionId: "maryland",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the mailing date of the Supervisor's final notice",
+    rule:
+      "If the Supervisor's final notice does not bring relief, the appeal continues to the county Property Tax Assessment Appeals Board (PTAAB) within 30 DAYS of the final notice. The board schedules and holds its own hearing.",
+    sources: [
+      {
+        sourceId: "md-tax-court-procedures",
+        supports: "PTAAB appeal within 30 days of the final notice (TP 14-509).",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "md-tax-court-appeal",
+    jurisdiction: "Maryland",
+    jurisdictionId: "maryland",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the date of the PTAAB's decision",
+    rule:
+      "Either party — taxpayer or Supervisor — may appeal the PTAAB's final determination to the Maryland Tax Court within 30 DAYS of the decision. The Tax Court is the top of the administrative ladder: pro se representation is allowed, there is no filing fee, the postmark is the filing date, and the exhaustion of administrative remedies is required before it (counties are excepted).",
+    sources: [
+      {
+        sourceId: "md-tax-court-procedures",
+        supports:
+          "The 30-day Tax Court appeal (TP 14-512(f)), pro se representation, no fee, the postmark rule, and exhaustion.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "md-homestead-credit",
+    jurisdiction: "Maryland",
+    jurisdictionId: "maryland",
+    taxYear: "recurring annual rule",
+    deadlineType: "relief-application",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the property's status as of July 1 of the application year",
+    rule:
+      "Every county and municipality must limit taxable-assessment increases on a principal residence to NO MORE THAN 10% per year (some adopt less), and the State applies the same 10% limit to the state portion of the tax. The credit is applied against the tax on the increase above the limit — it does not change the market value. Eligibility: principal residence lived in at least six months of the year including July 1, no transfer of ownership, no owner-requested rezoning that raised value, no substantial use change. Apply ONCE, not yearly — new purchasers are mailed an application after the deed is recorded, and eligibility can be checked on the state's Real Property Data Search.",
+    sources: [
+      {
+        sourceId: "md-montgomery-homestead",
+        supports:
+          "The 10% requirement on every county and municipality, the eligibility conditions including the July 1 six-month rule, the apply-once rule, and the effect on the bill.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "md-billing",
+    jurisdiction: "Maryland",
+    jurisdictionId: "maryland",
+    taxYear: "recurring annual rule",
+    deadlineType: "payment",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the local billing cycle — bills are sent in July or August each year",
+    rule:
+      "Once SDAT certifies the values, the local governments apply their own tax rates and mail the property tax bills in July or August of each year; billing and collection are administered by local finance or treasurer's offices. The assessment and the rate are therefore set by different levels of government — a Maryland appeal changes the value SDAT certified, not the rate the county set.",
+    sources: [
+      {
+        sourceId: "md-archives-sdat-functions",
+        supports: "Local jurisdictions send out tax bills in July or August; local rates applied to certified values.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // INDIANA — tax year 2026 rules. Indiana runs annual adjustments
+  // ("trending") instead of periodic reassessments, taxes a market-value-in-use
+  // standard, and caps the BILL at 1%/2%/3% of gross assessed value — the
+  // circuit breaker, with its own credit arithmetic on the DLGF's page.
+  // Verified 2026-09-28 from three in.gov pages read in full.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "in-annual-adjustment",
+    jurisdiction: "Indiana",
+    jurisdictionId: "indiana",
+    taxYear: "recurring annual rule",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the annual adjustment cycle (assessment date March 1; taxes paid in arrears the following year)",
+    rule:
+      "Indiana does not reassess every few years: since 2002 the county assessor applies ANNUAL ADJUSTMENT — or 'trending' — using each year's sales data to move area values toward market, alongside mass-appraisal characteristics (age, grade, condition). The DLGF reviews each county's assessment-to-sales ratio study before certifying the values. The standard is market value in use. The values certified for one assessment date become the bill for the following year, paid in arrears.",
+    sources: [
+      {
+        sourceId: "in-dlgf-citizens-guide",
+        supports:
+          "Annual adjustment / trending, mass appraisal, the DLGF ratio-study oversight, and the assessment-to-billing cycle.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "in-form11-notice",
+    jurisdiction: "Indiana",
+    jurisdictionId: "indiana",
+    taxYear: "recurring annual rule",
+    deadlineType: "notice-delivery",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the county's notice of assessment (Form 11) or, where none is issued, the tax bill",
+    rule:
+      "Notice of the assessed value arrives one of two ways: a Form 11 notice of assessment from the county assessor, or — where no Form 11 is issued — the tax bill itself (the TS-1 comparison statement), which serves as the notice of assessment. The 45-day appeal clock runs from the notice's date in either case.",
+    sources: [
+      {
+        sourceId: "in-dlgf-citizens-guide",
+        supports: "Notice by Form 11 or by the tax bill (TS-1).",
+      },
+      {
+        sourceId: "in-faqs-appeal",
+        supports: "Where no notice of assessment is given, the tax bill serves as the notice.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "in-form130-appeal",
+    jurisdiction: "Indiana",
+    jurisdictionId: "indiana",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the date of the notice of assessment (Form 11 or the tax bill)",
+    rule:
+      "An appeal is initiated with Form 130 — the DLGF-prescribed form, filed with the local assessor — within 45 DAYS of the notice-of-assessment date (or, when no Form 11 was mailed, by the later of May 10 of the tax-bill year or 45 days after the bill's date). The state's own FAQ adds the June 15 framing from the DLGF guide: contact the local assessor by June 15 of the year a Form 11 is received, or June 15 of the following year when none was. No appraisal is required; comparable sales, listings, offers, or the property's own sale are acceptable evidence. Where the assessment rose MORE THAN 5% over the prior year, the burden of proof shifts to the county or township assessor. An informal meeting with the assessor comes first; unresolved appeals go to the PTABOA, which must hold a hearing within 180 days and decide within 120 days of the hearing (a $50 penalty can attach for missing the appearance procedures).",
+    sources: [
+      {
+        sourceId: "in-faqs-appeal",
+        supports:
+          "The 45-day rule, the May 10 alternative, the evidence list, the no-appraisal rule, the 5% burden shift, and the PTABOA timeline.",
+      },
+      {
+        sourceId: "in-dlgf-citizens-guide",
+        supports: "The June 15 contact framing and the Form 11 notice.",
+      },
+      {
+        sourceId: "in-dlgf-form130-flowchart",
+        supports: "Form 130 as the required DLGF-prescribed initiating form.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "in-ibtr-appeal",
+    jurisdiction: "Indiana",
+    jurisdictionId: "indiana",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the PTABOA's determination (or its failure to decide within the statutory deadlines)",
+    rule:
+      "A taxpayer dissatisfied with the PTABOA's decision — or whose PTABOA never held its hearing within 180 days or never determined within 120 days of the hearing — may appeal to the Indiana Board of Tax Review on Form 131. From the Board, review continues to the Indiana Tax Court and then the Indiana Supreme Court.",
+    sources: [
+      {
+        sourceId: "in-faqs-appeal",
+        supports: "Form 131 to the Indiana Board of Tax Review, then Tax Court and Supreme Court.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "in-circuit-breaker-caps",
+    jurisdiction: "Indiana",
+    jurisdictionId: "indiana",
+    taxYear: "recurring annual rule",
+    deadlineType: "payment",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the tax bill's calculation against gross assessed value",
+    rule:
+      "Indiana caps the BILL, not a value: property taxes may not exceed 1 PERCENT of gross assessed value for homesteads, 2 PERCENT for other residential and agricultural land, and 3 PERCENT for all other property. After deductions, credits, and the rate, any excess over the cap is removed by a cap credit — computed separately for each property class on the parcel — and referendum-approved building projects and school operating funds sit OUTSIDE the caps. Eligible senior citizens get a further credit holding their taxes to 2 percent above the prior year. The caps do not change the local rate; budgets set rates. Taxes are paid in two installments, May 10 and November 10 (moved to the next business day on a weekend or holiday).",
+    sources: [
+      {
+        sourceId: "in-dlgf-tax-bill-101",
+        supports:
+          "The 1%/2%/3% caps on gross assessed value, the per-class cap-credit arithmetic, the referendum exemption, the senior credit, and the rates-vs-caps distinction.",
+      },
+      {
+        sourceId: "in-dlgf-citizens-guide",
+        supports: "The May 10 and November 10 installment due dates.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // WASHINGTON — assessment year 2026 rules. The county assessor values;
+  // the state's limit is a LEVY limit (a budget growth limit on each taxing
+  // district, 101%/1%), and the appeal deadline is the LATER of July 1 or
+  // 30 days from the change-of-value notice. Verified 2026-09-28: DOR HTML
+  // (levy limit) and the BTA's filing page read in full; the July 1 / 30-day
+  // rule from DOR's own PDFs' official text plus county BOE pages.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "wa-assessment-date",
+    jurisdiction: "Washington",
+    jurisdictionId: "washington",
+    taxYear: "recurring annual rule",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the January 1 assessment date; change-of-value notices follow the assessor's valuation work",
+    rule:
+      "The county assessor determines the assessed value — 100% of market value — as of January 1 of each assessment year. When a parcel's value CHANGES from the prior year, the assessor mails a CHANGE OF VALUE NOTICE, and it is that notice that starts the 30-day appeal window (see the BOE deadline below). Revaluation is county-level on a rotating cycle, but every parcel receives a value notice annually.",
+    sources: [
+      {
+        sourceId: "wa-dor-petition-boe",
+        supports: "The change-of-value notice as the event that starts the 30-day alternative to the July 1 filing deadline.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "wa-boe-appeal",
+    jurisdiction: "Washington",
+    jurisdictionId: "washington",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo: "July 1 of the assessment year, or 30 days from the mailing of the change-of-value notice — whichever is later",
+    rule:
+      "A petition to the county Board of Equalization must be filed or postmarked by JULY 1 of the current assessment year OR within 30 DAYS of the date the change-of-value notice was mailed — WHICHEVER IS LATER. County legislative authorities may extend the 30-day window (up to 60 days; King County uses a different schedule). The petition form is the DOR's own REV 64-0075, filed with the county BOE.",
+    sources: [
+      {
+        sourceId: "wa-dor-petition-boe",
+        supports: "Filed or postmarked by July 1 of the assessment year or 30 days from the notice — the form's own instruction.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "wa-bta-appeal",
+    jurisdiction: "Washington",
+    jurisdictionId: "washington",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the mailing date of the County Board of Equalization's decision",
+    rule:
+      "An appeal from a County Board of Equalization decision goes to the Washington State Board of Tax Appeals within 30 DAYS of the decision's mailing date — and the Board cannot extend the deadline or accept late appeals. Property tax valuation appeals use the Board's INFORMAL or FORMAL forms; a direct appeal (assessor and taxpayer jointly skip the county board) is available under RCW 84.40.038 with the assessor's co-signature. Hearings are currently being scheduled 18 to 24 months after filing.",
+    sources: [
+      {
+        sourceId: "wa-bta-how-to-file",
+        supports:
+          "The 30-day rule from the mailing date, the no-extension rule, the informal/formal/direct appeal forms, and the backlog disclosure.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "wa-levy-limit",
+    jurisdiction: "Washington",
+    jurisdictionId: "washington",
+    taxYear: "recurring annual rule",
+    deadlineType: "payment",
+    deadlineBasis: "rule-based",
+    anchoredTo: "each taxing district's highest lawful levy since 1985",
+    rule:
+      "Washington limits the LEVY — the dollars a taxing district collects — not a value: each district's levy may grow by at most 101% of its highest lawful levy since 1985 (districts of 10,000 or more population use 100% plus the Implicit Price Deflator or 101%, whichever is LESS, unless a supermajority adopts a substantial-need resolution). Voters can lift the lid. A constitutional 1% aggregate limit sits on top as the outer bound. The result: your assessment can be cut and your bill can still rise if the levies grow — which is why a Washington appeal is argued on VALUE while the bill is governed by the levy limit.",
+    sources: [
+      {
+        sourceId: "wa-dor-levy-limit",
+        supports:
+          "The 101% / IPD-or-101%-whichever-is-less limit factors, the since-1985 baseline, the resolution requirements, and levy lid lifts.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // NEW JERSEY — tax year 2026 rules. Assessments are set October 1 of the
+  // prior year; the regular appeal deadline is April 1 (May 1 after a
+  // revaluation; January 15 in three alternative-calendar counties). The
+  // Chapter 123 ±15% common level range is the state's distinctive
+  // mechanism. Verified 2026-09-28 from the Division of Taxation's own
+  // Assessment and Appeals page read in full.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "nj-annual-assessment",
+    jurisdiction: "New Jersey",
+    jurisdictionId: "new-jersey",
+    taxYear: "recurring annual rule",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "October 1 of the prior year, the statutory valuation date for the following tax year",
+    rule:
+      "New Jersey values property annually as of OCTOBER 1 of the prior year — the added/omitted mechanism exists precisely because improvements made after October 1 enter the roll later, as a separate added assessment. The assessment on the bill is the assessor's determination of FULL market value; New Jersey has no year-over-year value cap. The county tax boards and the Tax Court run on a statewide calendar set by the Division of Taxation.",
+    sources: [
+      {
+        sourceId: "nj-dor-lpt-appeal",
+        supports: "The October 1 valuation date implicit in the added/omitted assessment description.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "nj-april-1-appeal",
+    jurisdiction: "New Jersey",
+    jurisdictionId: "new-jersey",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "fixed-date",
+    anchoredTo: "April 1 of the tax year (filed AND received by that date)",
+    rule:
+      "A petition of appeal (Form A-1 with the A-1 Comp. Sale attachment) must be filed and RECEIVED by APRIL 1 with the County Board of Taxation — or with the Tax Court directly for assessments over $1,000,000. Two statewide variations: MAY 1 where the municipality undertook a revaluation or reassessment, and JANUARY 15 in Burlington, Gloucester and Monmouth Counties, which follow an alternative assessment calendar. The burden is on the petitioner to prove the assessment does not fairly represent market value or the common level range.",
+    sources: [
+      {
+        sourceId: "nj-dor-lpt-appeal",
+        supports:
+          "April 1 filed-and-received, the May 1 revaluation extension, the January 15 alternative calendar, and the $1M Tax Court threshold.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "nj-chapter-123-range",
+    jurisdiction: "New Jersey",
+    jurisdictionId: "new-jersey",
+    taxYear: "recurring annual rule",
+    deadlineType: "relief-application",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the average ratio certified annually for each taxing district by the Division of Taxation",
+    rule:
+      "New Jersey's distinctive mechanism is the Chapter 123 test: the Division of Taxation certifies an AVERAGE ASSESSMENT RATIO for each taxing district each year, and the COMMON LEVEL RANGE is that ratio plus or minus 15%. An assessment outside the range is presumptively excessive or discriminatory, and the court or board adjusts it to the range — while an assessment inside the range stands unless the owner proves the value itself is wrong. This is a different argument from a pure market-value appeal: a 35% assessment ratio with a ±15% band tolerates assessments from 20% to 50% of market before Chapter 123 even engages.",
+    sources: [
+      {
+        sourceId: "nj-dor-lpt-appeal",
+        supports: "The common level range as plus or minus 15% of the district's average ratio.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "nj-tax-court-appeal",
+    jurisdiction: "New Jersey",
+    jurisdictionId: "new-jersey",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the date of the County Board of Taxation's judgment",
+    rule:
+      "A taxpayer dissatisfied with a County Board of Taxation judgment may appeal to the Tax Court of New Jersey within 45 DAYS of the judgment's date. Assessments over $1 million (or added/omitted aggregates over $750,000) skip the county board entirely and start in the Tax Court.",
+    sources: [
+      {
+        sourceId: "nj-dor-lpt-appeal",
+        supports: "The 45-day Tax Court appeal and the $1M/$750K direct-filing thresholds.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // MINNESOTA — assessment year 2026 rules (taxes payable the following
+  // year). Value and classification are set January 2; the local appeal
+  // boards meet April–June; the Tax Court deadline is April 30 of the year
+  // the taxes are payable. Verified 2026-09-28 from two DOR pages, the Tax
+  // Court's home page and Anoka County's page, all read in full.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "mn-valuation-date",
+    jurisdiction: "Minnesota",
+    jurisdictionId: "minnesota",
+    taxYear: "recurring rule (assessment → payable next year)",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "January 2 of the assessment year; taxes are payable the FOLLOWING year",
+    rule:
+      "The county assessor sets estimated market value and classification as of JANUARY 2 of each assessment year, and those figures are used to calculate taxes PAYABLE THE FOLLOWING YEAR (Anoka's own example: the 2025 assessment drives taxes payable in 2026, with the Tax Court deadline April 30, 2026). Assessed values derive from a statutory sales-study window of October 1 to September 30. Valuation notices are mailed on or before April 1. No year-over-year value cap exists; the class-rate system does the distributional work.",
+    sources: [
+      {
+        sourceId: "mn-dor-understanding",
+        supports: "EMV and classification as of January 2, and the assessment-to-payable year lag.",
+      },
+      {
+        sourceId: "mn-anoka-appeal",
+        supports: "Notices mailed on or before April 1 and the assessment-to-payable-year example.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "mn-board-appeals",
+    jurisdiction: "Minnesota",
+    jurisdictionId: "minnesota",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the board meeting dates printed on the valuation notice — Local Board between April 1 and May 31; County Board in June",
+    rule:
+      "The local appeal boards meet on a STATEWIDE-BOUNDED, locally-set schedule: the LOCAL Board of Appeal and Equalization (usually the city council or town board) meets between APRIL 1 and MAY 31, and the COUNTY Board of Appeal and Equalization (usually the county commissioners) meets in JUNE — the exact dates are printed on each valuation notice. Where a city holds its own LBAE, appealing there is a PREREQUISITE for the county board; cities that transferred their powers to the county hold open book meetings instead. Appeals may be made in person, by letter, or by a representative. There is no fixed filing deadline — the meeting is the deadline.",
+    sources: [
+      {
+        sourceId: "mn-dor-appealing",
+        supports: "The April 1 – May 31 local window, the June county window, the LBAE-first prerequisite, and the transfer/open-book alternative.",
+      },
+      {
+        sourceId: "mn-anoka-appeal",
+        supports: "The municipality's role in choosing open book vs. LBAE and the LBAE-first rule.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "mn-tax-court-appeal",
+    jurisdiction: "Minnesota",
+    jurisdictionId: "minnesota",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "April 30 of the year the taxes are payable",
+    rule:
+      "Minnesota allows a DIRECT appeal to the Minnesota Tax Court — no need to exhaust the local boards first. The petition must be filed by APRIL 30 OF THE YEAR THE TAXES ARE PAYABLE (for the 2025 assessment: April 30, 2026). The Court, a specialized executive-branch court under chapter 271, hears petitions on valuation, classification, equalization and exemptions. After the boards, the Tax Court is also the next step for an owner dissatisfied with the county board's outcome.",
+    sources: [
+      {
+        sourceId: "mn-dor-appealing",
+        supports: "The April 30 of the following year deadline and the direct-appeal option.",
+      },
+      {
+        sourceId: "mn-tax-court-home",
+        supports: "The Court's chapter-271 jurisdiction over valuation, classification, equalization and exemption petitions.",
+      },
+      {
+        sourceId: "mn-anoka-appeal",
+        supports: "The payable-year anchoring with its own worked example.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "mn-billing-installments",
+    jurisdiction: "Minnesota",
+    jurisdictionId: "minnesota",
+    taxYear: "recurring annual rule",
+    deadlineType: "payment",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the March 31 statement and the May 15 / October 15 installments",
+    rule:
+      "Two notices structure the year: Truth in Taxation notices in NOVEMBER (proposed taxes before budgets are finalized) and property tax statements mailed by MARCH 31. Taxes are due in two equal installments, MAY 15 and OCTOBER 15 (November 15 for agricultural property; $100 or less is due in full May 15). The statement uses the PRIOR year's value, so the tax amount itself cannot be appealed — only the value and classification that produced it.",
+    sources: [
+      {
+        sourceId: "mn-dor-understanding",
+        supports: "The November Truth in Taxation notice, the March 31 statement, and the May 15 / October 15 installments.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // CONNECTICUT — the October 1 Grand List and the February 20 appeal
+  // deadline (March 20 when the assessor's Grand List filing was
+  // extended), a municipal BAA meeting in March, and a two-month window
+  // to the Superior Court. Verified 2026-09-28 from two municipal BAA
+  // pages read in full; the municipalities are the administrators in
+  // Connecticut and each names its governing statutes.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "ct-grand-list",
+    jurisdiction: "Connecticut",
+    jurisdictionId: "connecticut",
+    taxYear: "recurring annual rule",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "October 1 of each year, the Grand List valuation date",
+    rule:
+      "Connecticut's municipalities assess annually as of OCTOBER 1 — the Grand List date — and appeals are argued on the value at the time of the LAST REVALUATION, not current market (Middletown's board states this expressly). Each municipality's assessor certifies the Grand List, normally by January 31; an extension of that filing is what moves the appeal deadline from February 20 to March 20. There is no cap on the assessed value; revaluation cycles are municipal and can be dramatic in a revaluation year.",
+    sources: [
+      {
+        sourceId: "ct-middletown-baa",
+        supports: "The last-revaluation-value standard, the Grand List filing tie, and the extension mechanism.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ct-baa-appeal",
+    jurisdiction: "Connecticut",
+    jurisdictionId: "connecticut",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "fixed-date",
+    anchoredTo: "February 20 — or March 20 where the assessor's Grand List filing was extended",
+    rule:
+      "The application to the municipal Board of Assessment Appeals must be filed with the assessor between FEBRUARY 1 and FEBRUARY 20 for the October 1 Grand List — and the appeal must be RECEIVED by the deadline, because postmarks are not acceptable. Where the assessor received an extension to file the Grand List, the deadline moves to MARCH 20 and the board meets in April. Appeals are in writing, with the owner's estimate of value, reason, and signature (agent authorization allowed). The BAA hears real estate and personal property appeals in MARCH; motor vehicle appeals are heard in SEPTEMBER. Under CGS § 12-111, a board may elect not to hear commercial, industrial, utility or apartment property assessed over $1 million.",
+    sources: [
+      {
+        sourceId: "ct-bridgeport-baa",
+        supports: "The February 1–20 application window, the March hearings, the September motor-vehicle session, and the § 12-111 million-dollar exception.",
+      },
+      {
+        sourceId: "ct-middletown-baa",
+        supports: "The February 20 / March 20 alternative, the no-postmark rule, and the written-application contents.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "ct-superior-court-appeal",
+    jurisdiction: "Connecticut",
+    jurisdictionId: "connecticut",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "two months from the date of the BAA's decision",
+    rule:
+      "An owner aggrieved by the Board of Assessment Appeals' decision appeals to the Connecticut Superior Court by application filed WITHIN TWO MONTHS of the decision's date — the judicial level that takes the place of the tax court other states have. The path to the Superior Court runs through the BAA first; the Judicial Branch's own pathfinder describes the municipal-to-Superior-Court structure.",
+    sources: [
+      {
+        sourceId: "ct-jud-pathfinder",
+        supports: "The two-month Superior Court application window from the BAA decision (official search text).",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+
+  // ------------------------------------------------------------------
+  // WISCONSIN — the Open Book / Board of Review structure: an informal
+  // Open Book period, a 48-hour notice of intent, the formal objection
+  // heard on sworn testimony, and two second-level routes (DOR review or
+  // circuit court). Verified 2026-09-28 from two municipal assessor pages
+  // read in full; the DOR's own pages are JS shells and its PDFs are
+  // registered for their own stated text only.
+  // ------------------------------------------------------------------
+  {
+    deadlineId: "wi-assessment-date",
+    jurisdiction: "Wisconsin",
+    jurisdictionId: "wisconsin",
+    taxYear: "recurring annual rule",
+    deadlineType: "assessment-date",
+    deadlineBasis: "rule-based",
+    anchoredTo: "January 1 of each year, the assessment date",
+    rule:
+      "The assessment date is always JANUARY 1 (Sun Prairie states this expressly), and municipalities revalue on their own cycles — the Notice of Changed Assessment must reach owners at least 15 days before the Board of Review's first meeting, 30 days in revaluation years (DOR PB-060's own text). There is no cap on assessed value; the equalization process at the county and state levels adjusts for market swings between municipal revaluations.",
+    sources: [
+      {
+        sourceId: "wi-sun-prairie-appeal",
+        supports: "The January 1 assessment date.",
+      },
+      {
+        sourceId: "wi-dor-pb060",
+        supports: "The 15-day (30-day in revaluation years) notice of changed assessment before the board's first meeting.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "wi-open-book-bor",
+    jurisdiction: "Wisconsin",
+    jurisdictionId: "wisconsin",
+    taxYear: "recurring annual rule",
+    deadlineType: "protest-filing",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the Open Book period and the Board of Review's first scheduled meeting (dates set locally, published by the municipal clerk)",
+    rule:
+      "The appeal structure is two-stage and locally scheduled. OPEN BOOK: the assessment roll is open for inspection (at least two hours, per statute, before the board convenes) and owners meet the assessor informally — many disputes end here. BOARD OF REVIEW: a quasi-judicial municipal board hearing formal objections on SWORN oral testimony only — the owner must give the board's clerk a written or oral NOTICE OF INTENT to file an objection at least 48 HOURS before the first scheduled meeting (waivable only in limited cases), then file the Formal Objection Form with the clerk. The burden is on the owner to prove the property is inequitably assessed compared with the general level of assessment in the tax district; recent arm's-length sales are the core evidence, and an appraiser must be available to testify. The board decides validity of the facts presented, not valuation itself.",
+    sources: [
+      {
+        sourceId: "wi-sun-prairie-appeal",
+        supports: "The Open Book first step, the formal objection with the clerk, the sworn-testimony format, and the owner's burden.",
+      },
+      {
+        sourceId: "wi-dor-pb060",
+        supports: "The PA-115 objection form and the 15/30-day changed-assessment notice.",
+      },
+      {
+        sourceId: "wi-dor-bor-faq",
+        supports: "The official DOR page both municipal sources designate for the forms.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
+    verificationStatus: "source-verified",
+  },
+  {
+    deadlineId: "wi-dor-or-court-appeal",
+    jurisdiction: "Wisconsin",
+    jurisdictionId: "wisconsin",
+    taxYear: "recurring annual rule",
+    deadlineType: "appeal-higher-board",
+    deadlineBasis: "rule-based",
+    anchoredTo: "the BOR decision (20/30 days) or the BOR's adjournment (90 days)",
+    rule:
+      "Two routes leave the Board of Review. DOR REVIEW: a written appeal to the Department of Revenue within 20 DAYS of receiving the decision, or within 30 days of the clerk's affidavit — $100 filing fee, appealed value capped at $1 million, and the Department may revalue before November 1 of the assessment year or within 60 days of the appeal, whichever is later, substituting its value for the original. CIRCUIT COURT: an appeal within 90 DAYS after the board's adjournment, where the court decides on the record the board created — which is why what was said (and sworn) at the board hearing matters. From the DOR's decision, review continues to the circuit court.",
+    sources: [
+      {
+        sourceId: "wi-superior-appeal",
+        supports: "The 20/30-day DOR route with fee and value cap, the November 1 / 60-day revaluation window, and the 90-day circuit court window on the board record.",
+      },
+    ],
+    lastVerifiedDate: "2026-09-28",
     verificationStatus: "source-verified",
   },
 ];

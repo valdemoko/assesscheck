@@ -63,14 +63,18 @@ export const COUNTIES: CountyRecord[] = [
       abbreviation: "DCAD",
       website: "https://www.dcad.org/",
     },
-    populationTier: "",
+    populationTier:
+      "DCAD appraises property for the City of Dallas and surrounding Dallas County cities; the district publishes its own annual report and certified value summaries.",
     taxYear: "current tax year",
-    // Still research-needed, and deliberately so: three of the four county-bar
-    // criteria are verified, but DCAD's property-search URL could not be read
-    // from the district's site (it returns no body text), and the bar requires
-    // all four. See docs/dallas-county-research.md §3.
-    researchStatus: "research-needed",
-    lastVerifiedDate: "2026-09-23",
+    // Verified 2026-09-28: all four county-bar criteria now pass. The last one
+    // (a verifiable DCAD property-search URL) was read live in a real browser
+    // session: the district's Search Appraisals pages work at
+    // dallascad.org/searchaddr.aspx, /searchowner.aspx and /SearchAcct.aspx
+    // (Owner Name / Account Number / Street Address / Business Name / Map),
+    // and the account details page exposes the homestead exemption form. See
+    // docs/dallas-county-research.md §3 for the full trail.
+    researchStatus: "source-verified",
+    lastVerifiedDate: "2026-09-28",
     sources: [
       {
         sourceId: "dcad-protest-deadline",
@@ -82,9 +86,19 @@ export const COUNTIES: CountyRecord[] = [
         supports:
           "uFile filing opens April 15; written protests accepted, not fax or email; one uFile protest per account.",
       },
+      {
+        sourceId: "dcad-property-search",
+        supports:
+          "Official property search by owner name, account number, street address, business name, or map, read live in a browser session on 2026-09-28.",
+      },
+      {
+        sourceId: "dcad-about",
+        supports:
+          "DCAD's role, services, and self-description as the county's appraisal district.",
+      },
     ],
     notes:
-      "NOT PUBLISHED. Research started: the protest procedure and the deadline are read from DCAD's own articles (three of the four county-bar criteria pass — see docs/dallas-county-research.md). The open criterion is a verifiable DCAD property-search URL, so nothing links to a Dallas page and the hub, sitemap and nav must not render it until researchStatus reaches 'source-verified'. The '61 local governing bodies' figure that appears in search results is deliberately not used: it was not read at the source.",
+      "PUBLISHED 2026-09-28. All four county-bar criteria verified: (1) protest deadline from DCAD's own articles, (2) protest procedure incl. uFile from DCAD's own articles, (3) official search pages read live in a browser, (4) district scale/role from DCAD's own site. The '61 local governing bodies' figure that appears in search results is deliberately not used: it was not read at the source.",
   },
   {
     countyId: "tarrant-county",

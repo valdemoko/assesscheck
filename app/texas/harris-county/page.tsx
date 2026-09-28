@@ -8,18 +8,25 @@ import { getCounty } from "@/lib/data/counties";
 
 export const metadata: Metadata = buildMetadata({
   path: "/texas/harris-county/",
-  title: "Harris County Property Tax Assessment Guide",
+  // Named for what a searcher is actually asking about — "HCAD" and
+  // "Harris County appraisal" — and framed as a guide so it does not compete
+  // with the checker page (the tool) or impersonate HCAD (the agency).
+  title: "Harris County Property Tax & HCAD Appraisal Guide",
   description:
-    "How Harris County property assessment works: HCAD's role, the protest process, official deadlines, official forms, and verified resources for property owners.",
+    "AssessCheck's independent guide to Harris County property taxes: what HCAD does, how your appraisal is set, official HCAD property search, protest deadlines, and links to every official resource.",
   publishStatus: "ready",
-  lastVerifiedDate: "2026-09-17",
+  lastVerifiedDate: "2026-09-28",
   section: "Harris County",
 });
 
 export default function HarrisCountyPage() {
   const county = getCounty("harris-county");
   const txDeadlines = getDeadlines("texas");
-  const localIds = new Set<string>(["hcad-home", "hcad-about"]);
+  const localIds = new Set<string>([
+    "hcad-home",
+    "hcad-about",
+    "hcad-property-search",
+  ]);
   txDeadlines.forEach((d) => d.sources.forEach((s) => localIds.add(s.sourceId)));
   if (county) county.sources.forEach((s) => localIds.add(s.sourceId));
 
@@ -37,10 +44,25 @@ export default function HarrisCountyPage() {
         Appraisal District (HCAD), a political subdivision of the State of Texas
         created in 1980. HCAD describes itself as the largest appraisal district
         in Texas: roughly 1.9 million parcels of property, serving more than 600
-        taxing units, with a total market value of nearly $905 billion. Texas
+        taxing units, with a total market        value of nearly $905 billion. Texas
         statewide rules — the same statutes and deadlines described in our{" "}
         <Link href="/texas-property-tax/">Texas property tax section</Link> —
         govern what HCAD does; this page is the Harris County starting point.
+        If you already have your notice values and want a structured review,
+        the <Link href="/texas/harris-county/property-tax-checker/">Harris
+        County assessment checker</Link> is the tool for that; this page is the
+        guide.
+      </p>
+
+      <h2>What this page is — and is not</h2>
+      <p>
+        This is an independent guide published by AssessCheck. It explains how
+        Harris County appraisal and property tax works and links to official
+        sources. AssessCheck is <strong>not</strong> HCAD and not affiliated
+        with any government agency: we do not keep property records, cannot
+        look up an individual account, do not issue tax bills, and do not set
+        values. Your official records live with HCAD, and the links below take
+        you there directly.
       </p>
 
       <h2>What HCAD determines (and what it does not)</h2>
@@ -124,15 +146,39 @@ export default function HarrisCountyPage() {
         </li>
       </ul>
 
-      <h2>Official property information</h2>
+      <h2>Official property information (HCAD)</h2>
       <p>
-        HCAD provides a public property search by account, address, or owner
-        name for real and business personal property, plus a property tax
-        database showing taxes each taxing unit will impose. Start from{" "}
+        HCAD provides a public property search for real and business personal
+        property with three ways to look up a record: <strong>by account
+        number</strong>, <strong>by property address</strong>, and <strong>by
+        owner name</strong>. The search itself — and the values, exemptions,
+        and parcel details it returns — is an official HCAD service; AssessCheck
+        does not host or mirror it.
+      </p>
+      <p>
+        <a
+          className="button"
+          href="https://hcad.org/property-search/property-search"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Official HCAD property search →
+        </a>
+      </p>
+      <p>
+        Two related official services worth knowing: HCAD's{" "}
+        <a
+          href="https://hcad.org/hcad-online-services/property-tax-database"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          property tax database
+        </a>{" "}
+        shows the taxes each taxing unit will impose on a property, and{" "}
         <a href="https://hcad.org/" target="_blank" rel="noopener noreferrer">
           hcad.org
-        </a>
-        .
+        </a>{" "}
+        is the district's homepage for everything else.
       </p>
 
       <h2>Evidence and hearing preparation</h2>
@@ -151,7 +197,8 @@ export default function HarrisCountyPage() {
       <h2>Methodology and update date</h2>
       <p>
         This page reflects HCAD and Comptroller sources verified on September
-        17, 2026. See our <Link href="/methodology/">methodology</Link> and{" "}
+        28, 2026 (originally published against sources verified September 17,
+        2026). See our <Link href="/methodology/">methodology</Link> and{" "}
         <Link href="/corrections/">corrections</Link> policies. HCAD-specific
         procedures beyond what HCAD's own pages state have not been verified and
         are not presented here.

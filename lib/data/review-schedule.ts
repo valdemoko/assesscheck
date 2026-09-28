@@ -120,6 +120,34 @@ export const REVIEW_SCHEDULE: ReviewScheduleEntry[] = [
       "No figure is stated anywhere on the site, and that is the deliberate position: the pages point the reader at their own TRIM notice instead of a national number that is superseded every January. Re-check that no later edit has quietly hardcoded a CPI figure, which is exactly what the Florida research doc warned against.",
   },
   {
+    reviewId: "nc-orange-appeal-dates",
+    jurisdictionId: "north-carolina",
+    what:
+      "Orange County's published appeal calendar (informal window January 1 - March 31, 2026; Board convenes April 30, 2026; formal period April 1 - June 30, 2026 'when the Board adjourns')",
+    statedIn:
+      "lib/data/deadlines.ts → nc-informal-review and nc-boer-formal-appeal, rendered on /north-carolina-property-tax/",
+    trigger: "each-tax-year",
+    intervalDays: 365,
+    sourceId: "nc-orange-appeal",
+    lastVerifiedDate: "2026-09-28",
+    note:
+      "The county publishes a new set of dates for each tax year, and the formal-window end is the board's own adjournment date. The hub states the 2026 dates explicitly as Orange County's, so an overdue re-read produces visibly stale years — but the hub is also the only county page, which raises the stakes on keeping it current.",
+  },
+  {
+    reviewId: "oh-franklin-bor-window",
+    jurisdictionId: "ohio",
+    what:
+      "Franklin County's Board of Revision filing window ('tax year 2026 complaints through March 31, 2027')",
+    statedIn:
+      "lib/data/deadlines.ts → oh-bor-complaint-window, rendered on /ohio-property-tax/",
+    trigger: "each-tax-year",
+    intervalDays: 365,
+    sourceId: "oh-franklin-bor",
+    lastVerifiedDate: "2026-09-28",
+    note:
+      "The statutory window (January 1 - March 31 of the following tax year) does not expire, but the county's tax-year-specific statement does. The hub quotes the county's current-year sentence, so it must be re-read once the county publishes the next tax year's page.",
+  },
+  {
     reviewId: "mi-inflation-rate-multiplier",
     jurisdictionId: "michigan",
     what:

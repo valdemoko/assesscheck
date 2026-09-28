@@ -13,6 +13,7 @@ export default function NotFound() {
         <li><Link href="/property-tax-checker/">Assessment checker</Link></li>
         <li><Link href="/texas-property-tax/">Texas property tax</Link></li>
         <li><Link href="/texas/harris-county/">Harris County</Link></li>
+        <li><Link href="/texas/dallas-county/">Dallas County</Link></li>
         <li><Link href="/resources/">Official resources</Link></li>
       </ul>
     </PageShell>
