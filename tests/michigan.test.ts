@@ -137,7 +137,7 @@ describe("Michigan source partition", () => {
 
 describe("Michigan publication gate", () => {
   it("all six Michigan pages are ready and in the sitemap", () => {
-    expect(MICHIGAN_PAGES).toHaveLength(6);
+    expect(MICHIGAN_PAGES).toHaveLength(7);
     expect(MICHIGAN_PAGES.every((p) => p.publishStatus === "ready")).toBe(true);
   });
 
@@ -164,7 +164,7 @@ describe("Michigan publication gate", () => {
       }
     };
     walk(dir);
-    expect(files.length).toBe(6);
+    expect(files.length).toBe(7);
 
     const all = files.map((f) => readFileSync(f, "utf8")).join("\n");
     expect(all).toMatch(/taxable value/i);

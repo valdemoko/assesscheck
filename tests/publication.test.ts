@@ -53,9 +53,9 @@ describe("sitemap publication gate", () => {
     expect(getSitemapPages()).toEqual(expected);
   });
 
-  it("all 140 expected URLs are present in the registry", () => {
-    expect(SITE_PAGES).toHaveLength(140);
-    expect(getSitemapPages()).toHaveLength(140);
+  it("all 148 expected URLs are present in the registry", () => {
+    expect(SITE_PAGES).toHaveLength(148);
+    expect(getSitemapPages()).toHaveLength(148);
   });
 
   it("colorado state pages are published; no colorado county pages exist in the registry", () => {

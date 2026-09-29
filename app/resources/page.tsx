@@ -1,199 +1,204 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { SourceList } from "@/components/sources/SourceList";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { siteConfig } from "@/lib/site-config";
+import { ESTIMATOR_CONFIGS } from "@/lib/tools/estimator/configs";
+import {
+  getSourcesForJurisdiction,
+  SOURCES,
+} from "@/lib/sources/registry";
 
 export const metadata: Metadata = buildMetadata({
   path: "/resources/",
-  title: "Official Property Tax Resources",
+  title: "Official Property Tax Resources by State",
   description:
-    "Verified official resources by state: Texas Comptroller, Tax Code, HCAD protest filing and forms; Florida Statutes and the Department of Revenue property tax hub.",
+    "Verified official property tax resources for every state AssessCheck covers: statutes, departments of revenue, county assessors, appeal boards, forms, and property searches — with our own guides for each state.",
   publishStatus: "ready",
-  lastVerifiedDate: "2026-09-17",
+  lastVerifiedDate: "2026-09-29",
   section: "Resources",
 });
 
+// State-oriented resource directory. The entries are derived from
+// siteConfig.jurisdictions (the states the site actually covers) and the
+// source registry (what has actually been verified), so the page cannot list a
+// state that has no pages, or a source that was never read. County-level
+// sources are included where the site cites them (Harris, Dallas, Franklin,
+// Orange, Fairfax, Denver, Anoka, Montgomery); a state with no verified county
+// layer says so rather than inventing local links.
+
+const estimatorPaths = new Set(Object.values(ESTIMATOR_CONFIGS).map((c) => c.jurisdictionId));
+
+// One-line description of what each state's resource set covers, written from
+// the state's own system (not generic filler).
+const STATE_DESCRIPTIONS: Record<string, string> = {
+  texas:
+    "Texas Comptroller guidance, the Tax Code, appraisal district forms, and county pages for Harris and Dallas.",
+  florida:
+    "Florida Statutes chapters on assessment, exemptions and VAB review, plus the Department of Revenue's property tax hub.",
+  california:
+    "Board of Equalization and CDTFA calendars, Revenue and Taxation Code sections, and the base-year/decline-in-value framework.",
+  arizona:
+    "Arizona Revised Statutes sections on valuation and appeals, the State Board of Equalization's procedure, and county assessor guidance.",
+  nevada:
+    "Nevada county assessor and treasurer pages, the Department of Taxation's abatement factors, and the NRS framework as stated by officials.",
+  oregon:
+    "The administrative rule behind Measure 50, Multnomah County's assessment and tax-calculation guides, and county appeal routes.",
+  michigan:
+    "Treasury's uncapping guidance, Oakland County's equalization documentation of Proposal A, and the Tax Tribunal route.",
+  colorado:
+    "The Division of Property Taxation's guides, the property tax map, the county assessor directory, and Denver's search as the verified example.",
+  ohio:
+    "The Department of Taxation's hub and reappraisal pages, the Board of Tax Appeals' filing guide, and Franklin County's Board of Revision.",
+  "north-carolina":
+    "NCDOR's appeal-process and revaluation pages, the county assessors list, and Orange County's own appeal calendar.",
+  massachusetts:
+    "The Citizen Information Service abatement guide, the DOR Bureau of Local Assessment, and Proposition 2½ as stated by officials.",
+  virginia:
+    "The Code of Virginia sections on assessment, notice, boards of equalization, and circuit-court appeal, plus Fairfax's iCare search.",
+  "new-york":
+    "The Department of Taxation and Finance's grievance, calendar, equalization-rate and fair-assessments pages.",
+  georgia:
+    "The Department of Revenue's FAQ, homestead, PT-311A and Taxpayer's Bill of Rights pages, plus the county directory.",
+  maryland:
+    "The Tax Court's procedures page (the whole 45-30-30 ladder), the State Archives' SDAT functions page, and Montgomery County's homestead page.",
+  indiana:
+    "DLGF's Tax Bill 101 (the caps' arithmetic), the Citizen's Guide, and the state appeal FAQ covering the Form 130 ladder.",
+  washington:
+    "DOR's levy-limit chapter, the Board of Tax Appeals' how-to-file page, and the change-of-value notice deadline from DOR's own forms.",
+  "new-jersey":
+    "The Division of Taxation's Assessment and Appeals page: April 1 deadline, Chapter 123 range, and Tax Court thresholds.",
+  minnesota:
+    "DOR's appealing and understanding pages, the Tax Court's home page, and Anoka County's appeal guide.",
+};
+
+interface StateEntry {
+  id: string;
+  name: string;
+  hubPath: string;
+  description: string;
+  // Selected source ids (state-level first, then the county examples the site
+  // actually cites). Capped to keep the page a directory, not a wall of links.
+  sourceIds: string[];
+}
+
+function sourcesFor(id: string): string[] {
+  const all = getSourcesForJurisdiction(id);
+  // Prefer state-level sources; keep at most six, prioritized by order in the
+  // registry (which is research order, roughly hub-first).
+  const state = all.filter((s) => s.jurisdictionLevel === "state");
+  const county = all.filter((s) => s.jurisdictionLevel === "county");
+  const picked = [...state.slice(0, 5), ...county.slice(0, 2)].map((s) => s.sourceId);
+  if (picked.length === 0) {
+    throw new Error(
+      `Resources page: no verified sources registered for jurisdiction "${id}".`
+    );
+  }
+  return picked;
+}
+
+const STATE_ENTRIES: StateEntry[] = Object.entries(siteConfig.jurisdictions).map(
+  ([id, j]) => ({
+    id,
+    name: j.name,
+    hubPath: j.hubPath,
+    description: STATE_DESCRIPTIONS[id] ?? "",
+    sourceIds: sourcesFor(id),
+  })
+);
+
+
+function estimatorLink(id: string) {
+  return estimatorPaths.has(id) ? ESTIMATOR_CONFIGS[id].path : null;
+}
+
 export default function ResourcesPage() {
   return (
-    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Official Resources" }]}>
-      <h1>Official Resources</h1>
+    <PageShell breadcrumbs={[{ href: "/", label: "Home" }, { label: "Resources" }]}>
+      <h1>Official Property Tax Resources</h1>
       <p>
-        Every link below goes to an official government source. Where an
-        official source exists for information, we link to it rather than to
-        unofficial summaries — including our own pages.
+        Every resource below is either an official government source — statute,
+        department of revenue, county assessor, appeal board — or an
+        AssessCheck guide built from those sources. Nothing here is a
+        third-party summary: where an official source exists for information, we
+        link to it, including rather than to our own pages.
       </p>
 
-      <h2>Texas — statewide</h2>
-      <dl>
-        <dt>
-          <a href="https://comptroller.texas.gov/taxes/property-tax/" target="_blank" rel="noopener noreferrer">
-            Texas Comptroller — Property Tax Assistance
-          </a>
-        </dt>
-        <dd>
-          The state's hub for property tax information, publications, forms,
-          and calendars.
-        </dd>
-
-        <dt>
-          <a href="https://comptroller.texas.gov/taxes/property-tax/protests/" target="_blank" rel="noopener noreferrer">
-            Appraisal Protests and Appeals (Comptroller)
-          </a>
-        </dt>
-        <dd>
-          The Comptroller's official guide to protesting, ARB hearings, and
-          appeal options.
-        </dd>
-
-        <dt>
-          <a href="https://comptroller.texas.gov/taxes/property-tax/forms/" target="_blank" rel="noopener noreferrer">
-            Property Tax Forms (Comptroller)
-          </a>
-        </dt>
-        <dd>
-          Official forms index, including Form 50-132 (Notice of Protest) and
-          Form 50-162 (Appointment of Agent).
-        </dd>
-
-        <dt>
-          <a href="https://comptroller.texas.gov/taxes/property-tax/exemptions/" target="_blank" rel="noopener noreferrer">
-            Property Tax Exemptions (Comptroller)
-          </a>
-        </dt>
-        <dd>Official exemption guidance, including homestead exemptions.</dd>
-
-        <dt>
-          <a href="https://comptroller.texas.gov/taxes/property-tax/arb/" target="_blank" rel="noopener noreferrer">
-            Appraisal Review Boards (Comptroller)
-          </a>
-        </dt>
-        <dd>ARB composition, procedures, and training materials.</dd>
-
-        <dt>
-          <a href="https://statutes.capitol.texas.gov/Docs/TX/htm/TX.1.htm" target="_blank" rel="noopener noreferrer">
-            Texas Tax Code (official statutes site)
-          </a>
-        </dt>
-        <dd>
-          The statutes themselves, maintained by the Texas Legislature. Key
-          chapters: Chapter 23 (appraisal), Chapter 25 (local appraisal),
-          Chapter 41 (protests), Chapter 42 (appeals).
-        </dd>
-      </dl>
-
-      <h2>Harris County</h2>
-      <dl>
-        <dt>
-          <a href="https://hcad.org/" target="_blank" rel="noopener noreferrer">
-            Harris Central Appraisal District (HCAD)
-          </a>
-        </dt>
-        <dd>
-          Official site: property search, online services, forms, and district
-          information.
-        </dd>
-        <dt>
-          <a href="https://hcad.org/hcad-online-services/ifile-protest/" target="_blank" rel="noopener noreferrer">
-            HCAD iFile Protest
-          </a>
-        </dt>
-        <dd>HCAD's official online protest filing entry point.</dd>
-        <dt>
-          <a href="https://hcad.org/hcad-forms/hcad-all-forms/" target="_blank" rel="noopener noreferrer">
-            HCAD Forms
-          </a>
-        </dt>
-        <dd>
-          Official local forms, including the Notice of Protest and homestead
-          exemption applications.
-        </dd>
-      </dl>
-
-      <h2>Florida — statewide</h2>
-      <dl>
-        <dt>
-          <a href="https://floridarevenue.com/property/Pages/Home.aspx" target="_blank" rel="noopener noreferrer">
-            Florida Department of Revenue — Property Tax
-          </a>
-        </dt>
-        <dd>
-          The state's property tax oversight hub: forms, publications, and
-          guidance for taxpayers and local officials.
-        </dd>
-
-        <dt>
-          <a href="https://www.flsenate.gov/Laws/Statutes/2024/Chapter193" target="_blank" rel="noopener noreferrer">
-            Florida Statutes, Chapter 193 — Assessments
-          </a>
-        </dt>
-        <dd>
-          Just valuation (§ 193.011), the Save Our Homes homestead cap
-          (§ 193.155), and the non-homestead residential cap (§ 193.1554).
-        </dd>
-
-        <dt>
-          <a href="https://www.flsenate.gov/Laws/Statutes/2024/Chapter194" target="_blank" rel="noopener noreferrer">
-            Florida Statutes, Chapter 194 — Administrative and Judicial Review
-          </a>
-        </dt>
-        <dd>
-          The Value Adjustment Board process: petitions (§ 194.011), hearings
-          (§§ 194.032–194.035), and appeals (§ 194.036).
-        </dd>
-
-        <dt>
-          <a href="https://www.flsenate.gov/Laws/Statutes/2024/Chapter196" target="_blank" rel="noopener noreferrer">
-            Florida Statutes, Chapter 196 — Exemptions
-          </a>
-        </dt>
-        <dd>
-          The homestead exemption (§ 196.031) and the March 1 application
-          requirement (§ 196.011).
-        </dd>
-
-        <dt>
-          <a href="https://www.flsenate.gov/Laws/Statutes/2024/Chapter200" target="_blank" rel="noopener noreferrer">
-            Florida Statutes, Chapter 200 — Millage (TRIM)
-          </a>
-        </dt>
-        <dd>
-          § 200.069: the standardized Notice of Proposed Property Taxes
-          (TRIM notice) and what it must contain.
-        </dd>
-      </dl>
-
+      <h2>Browse by state</h2>
       <p>
-        County-level pages (a Florida property appraiser's office, a county
-        Value Adjustment Board) are not listed here yet: AssessCheck does not
-        publish a county page until its local procedure and deadlines have
-        been verified from official sources.
+        AssessCheck covers {STATE_ENTRIES.length} states. Each state below links
+        its guide hub, its official sources, and — where the state&rsquo;s data
+        supports one — its property value estimator.
       </p>
+      <ul className="resource-state-list">
+        {STATE_ENTRIES.map((s) => {
+          const est = estimatorLink(s.id);
+          return (
+            <li key={s.id}>
+              <strong>
+                <Link href={s.hubPath}>{s.name} property tax</Link>
+              </strong>{" "}
+              — {s.description}
+              {est && (
+                <>
+                  {" "}
+                  See also the <Link href={est}>{s.name} property value estimator</Link>.
+                </>
+              )}
+              <ul>
+                {s.sourceIds.map((sid) => {
+                  const src = SOURCES[sid];
+                  return (
+                    <li key={sid}>
+                      <a href={src.url} target="_blank" rel="noopener noreferrer">
+                        {src.publisher}: {src.title}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
+          );
+        })}
+      </ul>
 
+      <h2>Cross-state resources</h2>
+      <ul>
+        <li>
+          <Link href="/property-tax-by-state/">Property tax by state</Link> —
+          what each state&rsquo;s limit actually measures, side by side.
+        </li>
+        <li>
+          <Link href="/property-value-estimator/">Property value estimator</Link>{" "}
+          — the value chain and an optional tax estimate, state by state.
+        </li>
+        <li>
+          <Link href="/property-tax-checker/">Assessment checker</Link> — screen
+          two years of notice values (Texas and Florida editions).
+        </li>
+        <li>
+          <Link href="/evidence/">Evidence &amp; sources</Link> — what the site
+          relies on and when official documentation is essential.
+        </li>
+        <li>
+          <Link href="/faq/">Property tax FAQ</Link> — cross-state questions.
+        </li>
+      </ul>
+
+      <h2>What is not here, deliberately</h2>
       <p>
-        Found a broken link or a better official source? Please{" "}
-        <a href="/contact/">tell us</a>.
+        County-level links appear only where the site has verified them (for
+        example Harris and Dallas in Texas, Franklin in Ohio, Fairfax in
+        Virginia). For other counties, start from the state-level directory
+        above — each state&rsquo;s department or association directory is the
+        official route to your county office. Found a broken link or a better
+        official source? Please <Link href="/contact/">tell us</Link>.
       </p>
 
       <SourceList
-        sourceIds={[
-          // Texas
-          "tx-comptroller-appraisal-protests",
-          "tx-comptroller-forms",
-          "tx-comptroller-exemptions",
-          "tx-comptroller-arb",
-          "hcad-home",
-          "hcad-ifile",
-          "hcad-forms",
-          // Florida (state-level only — no county sources verified yet)
-          "fl-dor-property-hub",
-          "fl-stat-193-011",
-          "fl-stat-193-155",
-          "fl-stat-193-1554",
-          "fl-stat-196-031",
-          "fl-stat-196-011",
-          "fl-stat-194-011",
-          "fl-stat-200-069",
-        ]}
+        heading="About the sources on this page"
+        sourceIds={[...new Set(STATE_ENTRIES.flatMap((s) => s.sourceIds))]}
       />
     </PageShell>
   );

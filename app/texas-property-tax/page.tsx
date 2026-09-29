@@ -73,6 +73,12 @@ const TOPICS = [
     blurb:
       "The questions this section is asked most often, answered in short form.",
   },
+  {
+    href: "/texas-property-tax/property-value-estimator/",
+    label: "Texas property value estimator",
+    blurb:
+      "See how an appraised value becomes a taxable value with the homestead exemption computed, and estimate the tax at your own rate.",
+  },
 ];
 
 export default function TexasPropertyTaxPage() {

@@ -70,6 +70,13 @@ export default function Page() {
           — Tax Day, the notice, the boards, both Tribunal dates and the
           principal residence affidavit.
         </li>
+        <li>
+          <Link href="/michigan-property-tax/property-value-estimator/">
+            Michigan property value estimator
+          </Link>{" "}
+          — see how the 50% assessment works, when a transfer uncaps the
+          taxable value, and estimate the tax at your own millage.
+        </li>
       </ul>
 
       <h2>The four figures, in order</h2>

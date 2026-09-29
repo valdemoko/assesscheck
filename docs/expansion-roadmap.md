@@ -15,7 +15,7 @@
 
 ## 1. Published coverage
 
-Nineteen states, 140 registered routes, two pilot counties. Every state below has a
+Nineteen states, 148 registered routes, two pilot counties. Every state below has a
 research trail recording what was read, what could not be read, and the open points
 that follow. The last eleven (Ohio, North Carolina, Massachusetts, Virginia, New York,
 Georgia, Maryland, Indiana, Washington, New Jersey, Minnesota) were verified against
@@ -23,20 +23,20 @@ official sources on 2026-09-28 and documented in §7.
 
 | State | Routes | Research doc | Provenance class | Open points |
 |---|---|---|---|---|
-| Texas | 19 state + 3 Harris County + 1 Dallas County | `docs/florida-expansion-research.md` (shared origin); `docs/dallas-county-research.md` | Statute and Comptroller text | County layer beyond Harris and Dallas (§5) |
-| Florida | 8 state (incl. checker) | `docs/florida-expansion-research.md` | Statute and DOR text | Miami-Dade county pages, SOH CPI figure |
+| Texas | 20 state + 3 Harris County + 1 Dallas County | `docs/florida-expansion-research.md` (shared origin); `docs/dallas-county-research.md` | Statute and Comptroller text | County layer beyond Harris and Dallas (§5) |
+| Florida | 9 state (incl. checker) | `docs/florida-expansion-research.md` | Statute and DOR text | Miami-Dade county pages, SOH CPI figure |
 | California | 7 state | `docs/california-expansion-research.md` | Statute text read (2026-09-23, via a JS-capable browser) | `C1` Article XIII A § 2 |
-| Arizona | 6 state | `docs/arizona-expansion-research.md` | Statute text read, plus SBOE and counties | `A3` checker, `A4` counties |
-| Nevada | 7 state | `docs/nevada-expansion-research.md` | Agencies naming the rule (`leg.state.nv.us` 403) | `N1`–`N4` |
+| Arizona | 7 state | `docs/arizona-expansion-research.md` | Statute text read, plus SBOE and counties | `A3` checker, `A4` counties |
+| Nevada | 8 state | `docs/nevada-expansion-research.md` | Agencies naming the rule (`leg.state.nv.us` 403) | `N1`–`N4` |
 | Oregon | 6 state | `docs/oregon-expansion-research.md` | An administrative rule in full, plus counties | `O1`–`O4` |
-| Michigan | 6 state | `docs/michigan-expansion-research.md` | An official county, plus Treasury on uncapping (`legislature.mi.gov` WAF-blocked) | The March board's session requirement; the year's inflation rate multiplier; county pages |
+| Michigan | 7 state | `docs/michigan-expansion-research.md` | An official county, plus Treasury on uncapping (`legislature.mi.gov` WAF-blocked) | The March board's session requirement; the year's inflation rate multiplier; county pages |
 | Colorado | 5 state | `docs/fifty-state-coverage.md` §2 | The Division of Property Taxation's own pages read in full (2026-09-28), plus Denver's search read live | Rate table is legislative and volatile (cited as a dated table, not restated); alternate protest schedule in large counties; no county pages |
-| Ohio | 5 state | `docs/expansion-roadmap.md` §7 | Official Department of Taxation pages + the Board of Tax Appeals' own pages + Franklin County's BOR page read live (`codes.ohio.gov` timed out; ORC named only where an official page names it) | The ORC text itself; county pages beyond Franklin; the "last day to pay first half" alternative cutoff needs a second official confirmation |
+| Ohio | 6 state | `docs/expansion-roadmap.md` §7 | Official Department of Taxation pages + the Board of Tax Appeals' own pages + Franklin County's BOR page read live (`codes.ohio.gov` timed out; ORC named only where an official page names it) | The ORC text itself; county pages beyond Franklin; the "last day to pay first half" alternative cutoff needs a second official confirmation |
 | North Carolina | 4 state | `docs/expansion-roadmap.md` §7 | NCDOR pages + Orange County's appeal and revaluation pages read in full (2026-09-28) (`ncleg.gov` 403; G.S. sections named only where an official page names them) | The G.S. text itself; the other 99 counties' windows; the "board adjourns" end date makes every county's dates its own |
 | Massachusetts | 4 state | `docs/expansion-roadmap.md` §7 | The Citizen Information Service abatement guide read in full (2026-09-28); mass.gov and malegislature.gov not readable — G.L. c.59 §§ 64/65 named in official snippets only | The statute text itself; per-municipality quarterly-billing variation; abatement dollar figures deliberately unpublished |
 | Virginia | 4 state | `docs/expansion-roadmap.md` §7 | The Code of Virginia read section by section on the official law portal (2026-09-28): §§ 58.1-3200/3201, 3330, 3378, 3379, 3984, plus Fairfax's iCare read live | The strongest provenance of the four; open point is the 95 localities' ordinances (no single statewide date exists to publish) |
 | New York | 4 state | `docs/expansion-roadmap.md` §7 | Four tax.ny.gov pages read in full (2026-09-28): grievance procedures (updated May 2026), property tax calendar, equalization rates, fair-assessments guide | Grievance Day is per-municipality (the state page states the exceptions); SCAR forms live on nycourts.gov (read via snippets only); RPTL sections named by the pages |
-| Georgia | 4 state | `docs/expansion-roadmap.md` §7 | Four dor.georgia.gov pages read in full (2026-09-28): PT-311A, property tax FAQ, Taxpayer's Bill of Rights, homestead exemptions; county directory + qPublic index for the search layer | Superior court stage named but not read in full; qPublic directory is vendor-run (marked secondary, used only as a finding aid) |
+| Georgia | 5 state | `docs/expansion-roadmap.md` §7 | Four dor.georgia.gov pages read in full (2026-09-28): PT-311A, property tax FAQ, Taxpayer's Bill of Rights, homestead exemptions; county directory + qPublic index for the search layer | Superior court stage named but not read in full; qPublic directory is vendor-run (marked secondary, used only as a finding aid) |
 | Maryland | 6 state | `docs/expansion-roadmap.md` §7 | The Maryland Tax Court's procedures page read in full (the whole ladder with statute cites), the Maryland State Archives' SDAT functions page read in full, Montgomery County's homestead page read in full; SDAT's own appeal form and property search read live (`dat.maryland.gov` 403s to this environment) | SDAT's own explanatory pages (homeowners' guide, homestead program page); notice timing presented as "typically late December" per DLS fiscal notes, not as a statutory date |
 | Indiana | 5 state | `docs/expansion-roadmap.md` §7 | Three in.gov pages read in full (2026-09-28): DLGF Tax Bill 101 (the caps' worked arithmetic), the Citizen's Guide (trending + billing), and the state appeal FAQ (Form 130 ladder + 5% burden shift) | IC sections named only through the pages; the Form 130 flowchart PDF was not extractable (registered for its own stated text only) |
 | Washington | 5 state | `docs/expansion-roadmap.md` §7 | DOR's levy-limit chapter read in full (HTML), the Board of Tax Appeals' how-to-file page read in full, and the July 1 / 30-day BOE deadline from DOR's own form and calendar PDFs' official text (PDFs not extractable; county BOE pages corroborate) | DOR's PDF guides not extractable in full; King County's different schedule and county-by-county BOE variations not enumerated |

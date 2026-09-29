@@ -61,6 +61,13 @@ export default function Page() {
           — valuation date, notice, petition, decision, board, court and the two
           payment halves.
         </li>
+        <li>
+          <Link href="/arizona-property-tax/property-value-estimator/">
+            Arizona property value estimator
+          </Link>{" "}
+          — work from your notice's full cash and limited values to the 10%
+          assessed value the rates apply to, and estimate the tax.
+        </li>
       </ul>
 
       <h2>The two values</h2>

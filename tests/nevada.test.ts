@@ -321,7 +321,7 @@ describe("Nevada source registry", () => {
 
 describe("Nevada publication gate", () => {
   it("all seven Nevada pages are ready and in the sitemap", () => {
-    expect(NEVADA_PAGES).toHaveLength(7);
+    expect(NEVADA_PAGES).toHaveLength(8);
     expect(NEVADA_PAGES.every((p) => p.publishStatus === "ready")).toBe(true);
   });
 

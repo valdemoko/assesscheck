@@ -61,6 +61,13 @@ export default function Page() {
           — the revaluation calendar, the complaint window, and the BTA
           appeal clock.
         </li>
+        <li>
+          <Link href="/ohio-property-tax/property-value-estimator/">
+            Ohio property value estimator
+          </Link>{" "}
+          — convert a true value into taxable value at the 35% ratio and
+          estimate the tax that follows.
+        </li>
       </ul>
 
       <h2>Who does what</h2>

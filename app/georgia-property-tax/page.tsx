@@ -59,6 +59,13 @@ export default function Page() {
           — the notice calendar, the exemption windows, and the December
           20 payment norm.
         </li>
+        <li>
+          <Link href="/georgia-property-tax/property-value-estimator/">
+            Georgia property value estimator
+          </Link>{" "}
+          — see the 40% ratio and the state standard homestead exemption
+          applied to a fair market value, and estimate the tax.
+        </li>
       </ul>
 
       <h2>Who does what</h2>

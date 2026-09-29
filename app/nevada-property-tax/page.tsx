@@ -75,6 +75,13 @@ export default function Page() {
           — the lien date, the notice, both appeal windows and the four
           installments.
         </li>
+        <li>
+          <Link href="/nevada-property-tax/property-value-estimator/">
+            Nevada property value estimator
+          </Link>{" "}
+          — convert the assessor's taxable value to the 35% assessed value and
+          estimate the tax at your own rate.
+        </li>
       </ul>
 
       <h2>The fiscal year, not the calendar year</h2>

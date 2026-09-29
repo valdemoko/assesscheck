@@ -243,7 +243,7 @@ describe("Florida publication gate", () => {
     // which is the only state edition outside Texas (see
     // tests/checker-coverage.test.ts for why only these two qualify).
     const ready = SITE_PAGES.filter((p) => p.path.startsWith("/florida-property-tax/"));
-    expect(ready).toHaveLength(8);
+    expect(ready).toHaveLength(9);
     expect(ready.every((p) => p.publishStatus === "ready")).toBe(true);
     expect(ready.map((p) => p.path)).toContain("/florida-property-tax/checker/");
   });

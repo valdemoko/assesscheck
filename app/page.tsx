@@ -89,8 +89,8 @@ export default function HomePage() {
             <Link href="/property-tax-checker/" className="button">
               Start with the assessment checker
             </Link>
-            <Link href="/florida-property-tax/" className="button button--inverse">
-              Florida property tax
+            <Link href="/property-value-estimator/" className="button button--inverse">
+              Estimate a property's value
             </Link>
           </div>
         </div>
@@ -355,6 +355,18 @@ export default function HomePage() {
             <Link href="/washington-property-tax/">Washington</Link>,{" "}
             <Link href="/new-jersey-property-tax/">New Jersey</Link> or{" "}
             <Link href="/minnesota-property-tax/">Minnesota</Link>.
+          </p>
+        </section>
+
+        <section aria-label="Property value estimator">
+          <h2>Estimate a property's value chain</h2>
+          <p>
+            The <Link href="/property-value-estimator/">property value
+            estimator</Link> takes a value you supply and works it through a
+            state's actual system — assessment ratio, exemptions, taxable value
+            — and, at the rate from your own bill, an estimated annual tax.
+            Seven states are supported with rules verified from official
+            sources; each edition is different, because the systems are.
           </p>
         </section>
 

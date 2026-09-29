@@ -226,7 +226,7 @@ describe("Arizona source registry", () => {
 describe("Arizona publication gate", () => {
   it("all six Arizona pages are ready and in the sitemap", () => {
     const pages = SITE_PAGES.filter((p) => p.path.startsWith("/arizona-property-tax/"));
-    expect(pages).toHaveLength(6);
+    expect(pages).toHaveLength(7);
     expect(pages.every((p) => p.publishStatus === "ready")).toBe(true);
   });
 

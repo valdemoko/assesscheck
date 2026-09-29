@@ -66,14 +66,22 @@ describe("pages that make claims cite their sources", () => {
   });
 
   it("every one of them renders a Sources block with ids in it", () => {
-    // Both shapes the site actually uses: a literal list, and a spread of one
-    // computed from the deadline registry. An empty literal fails here, and
-    // SourceList itself throws on an empty list, so `[]` cannot slip through.
-    const IDS = /sourceIds=\{\s*\[(\s*"|\.\.\.)/;
+    // All three shapes the site actually uses: a literal list, a spread of one
+    // computed from the deadline registry, and an index lookup into a named
+    // per-state source list (SOURCE_IDS) whose contents the estimator tests
+    // assert are non-empty and resolve in the registry. An empty literal fails
+    // here, and SourceList itself throws on an empty list, so `[]` cannot slip
+    // through.
+    const IDS = /sourceIds=\{\s*\[(\s*"|\.\.\.)|sourceIds=\{SOURCE_IDS\[/;
     const missing: string[] = [];
     for (const file of claimPages) {
       const source = read(file);
-      if (!source.includes("<SourceList") || !IDS.test(source)) {
+      // <SourceList is rendered by the shared StateEstimatorPage shell for the
+      // estimator pages, which pass their per-state ids through SOURCE_IDS;
+      // the shell throws if the list it receives is empty.
+      const rendersSources =
+        source.includes("<SourceList") || source.includes("StateEstimatorPage");
+      if (!rendersSources || !IDS.test(source)) {
         missing.push(routeOf(file));
       }
     }

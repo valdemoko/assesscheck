@@ -75,6 +75,14 @@ export default function Page() {
           larger than Save Our Homes allows. It runs in your browser and shows
           the arithmetic.
         </li>
+        <li>
+          <Link href="/florida-property-tax/property-value-estimator/">
+            Florida property value estimator
+          </Link>{" "}
+          — see how just value becomes taxable value with the two-tier
+          homestead exemption computed, and estimate the tax at your own
+          millage rate.
+        </li>
       </ul>
 
       <h2>Who does what</h2>
