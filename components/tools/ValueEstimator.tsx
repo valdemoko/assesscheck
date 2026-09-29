@@ -200,8 +200,8 @@ export function ValueEstimator({ jurisdictionId }: { jurisdictionId: string }) {
                   <th scope="row">{line.term}</th>
                   <td className="est-table__amount">
                     {line.amount !== undefined
-                      ? line.term.includes("ratio") || line.amount < 1
-                        ? num(line.amount) + "%"
+                      ? line.term.includes("ratio")
+                        ? num(line.amount * 100) + "%"
                         : money2(line.amount)
                       : "—"}
                   </td>
