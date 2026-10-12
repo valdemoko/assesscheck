@@ -380,7 +380,7 @@ export const SOURCES: Record<string, SourceRecord> = {
     title: "County Assessor contact directory",
     publisher: "Colorado Division of Property Taxation, Department of Local Affairs (State of Colorado)",
     authorityLevel: "primary",
-    url: "https://dpt.colorado.gov/locality",
+    url: "https://dpt.colorado.gov/localities",
     lastVerifiedDate: "2026-09-28",
     jurisdiction: "Colorado",
     jurisdictionLevel: "state",

@@ -137,7 +137,7 @@ export default function Page() {
         </a>{" "}
         if that is your county, or find your county assessor through the{" "}
         <a
-          href="https://dpt.colorado.gov/locality"
+          href="https://dpt.colorado.gov/localities"
           target="_blank"
           rel="noopener noreferrer"
         >
